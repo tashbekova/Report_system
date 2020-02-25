@@ -1,0 +1,2605 @@
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+                                                ------------------------------------------------------------
+  HALYK KYRGYZ BANK/ATM                            Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM247581
+                                                   Reg #:     1204199910016
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant ATM
+                                                   Cycle from 04/12/2019 to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 00075015           SIC:  6011 ATM               Cycle Num/Type:27 / Cash-Out
+ Device Name:   A-75015 GM "GLOBUS"                 Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ ATM: ATM KYRGYZ BANK --> Our Local  04/12/2019      21          65,600.00            0.00         65,600.00
+ Card KGS
+ ATM: ATM KYRGYZ BANK --> VISA Cards 04/12/2019       4          26,700.00            0.00         26,700.00
+ KGS
+ ATM: ATM KYRGYZ BANK --> Our VISA   04/12/2019       2          12,500.00            0.00         12,500.00
+ Cards KGS
+ ATM: ATM KYRGYZ BANK --> ELECTRON   04/12/2019       1             300.00            0.00            300.00
+ KYRGYZ BANK KGS
+
+ TOTAL this Posting Date              Number of Trans:                         28
+                                      Transaction Amount:              105,100.00
+                                      Discount:                              0.00
+                                      Account Amount:                  105,100.00
+
+ TOTAL for Cycle                      Number of Trans:                          28
+                                      Transaction Amount:               105,100.00
+                                      Discount:                               0.00
+                                      Account Amount:                   105,100.00
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ TOTAL this Device                    Number of Trans:                         28
+                                      Transaction Amount:              105,100.00
+                                      Discount:                              0.00
+                                      Account Amount:                  105,100.00
+
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM247581     SIC:                         Cycle Num/Type: /
+ Device Name:   HALYK KYRGYZ BANK/ATM               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Merchant Transit Due Special KGS    05/12/2019       0               0.00            0.00              0.00
+ Кредит Счета в БВУ: Client Account  05/12/2019       1        -105,100.00            0.00       -105,100.00
+ --> Bank Account KGS
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:             -105,100.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -105,100.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:              -105,100.00
+                                      Discount:                               0.00
+                                      Account Amount:                  -105,100.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:             -105,100.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -105,100.00
+
+ TOTAL this Currency                  Number of Trans:                         29
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+                                                ------------------------------------------------------------
+  HALYK KYRGYZ BANK/ATM                            Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM359725
+                                                   Reg #:     1204199910016
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant ATM
+                                                   Cycle from 04/12/2019 to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 00075007           SIC:  6011 ATM               Cycle Num/Type:35 / Cash-Out
+ Device Name:   A-75007 ELIT STROY                  Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ ATM: ATM KYRGYZ BANK --> Our Local  04/12/2019      13          57,800.00            0.00         57,800.00
+ Card KGS
+ ATM: ATM KYRGYZ BANK --> VISA Cards 04/12/2019       1             100.00            0.00            100.00
+ KGS
+
+ TOTAL this Posting Date              Number of Trans:                         14
+                                      Transaction Amount:               57,900.00
+                                      Discount:                              0.00
+                                      Account Amount:                   57,900.00
+
+ TOTAL for Cycle                      Number of Trans:                          14
+                                      Transaction Amount:                57,900.00
+                                      Discount:                               0.00
+                                      Account Amount:                    57,900.00
+
+ TOTAL this Device                    Number of Trans:                         14
+                                      Transaction Amount:               57,900.00
+                                      Discount:                              0.00
+                                      Account Amount:                   57,900.00
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM359725     SIC:                         Cycle Num/Type: /
+ Device Name:   HALYK KYRGYZ BANK/ATM               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Кредит Счета в БВУ: Client Account  05/12/2019       1         -57,900.00            0.00        -57,900.00
+ --> Bank Account KGS
+ Merchant Transit Due Special KGS    05/12/2019       0               0.00            0.00              0.00
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:              -57,900.00
+                                      Discount:                              0.00
+                                      Account Amount:                  -57,900.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:               -57,900.00
+                                      Discount:                               0.00
+                                      Account Amount:                   -57,900.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:              -57,900.00
+                                      Discount:                              0.00
+                                      Account Amount:                  -57,900.00
+
+ TOTAL this Currency                  Number of Trans:                         15
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+                                                ------------------------------------------------------------
+  HALYK KYRGYZ BANK/ATM                            Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM626081
+                                                   Reg #:     1204199910016
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant ATM
+                                                   Cycle from 04/12/2019 to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 00075016           SIC:  6011 ATM               Cycle Num/Type:12 / Cash-Out
+ Device Name:   A-75016 14,VERHNE UVAM              Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ ATM: ATM KYRGYZ BANK --> VISA Cards 04/12/2019       1           1,000.00            0.00          1,000.00
+ KGS
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:                1,000.00
+                                      Discount:                              0.00
+                                      Account Amount:                    1,000.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:                 1,000.00
+                                      Discount:                               0.00
+                                      Account Amount:                     1,000.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:                1,000.00
+                                      Discount:                              0.00
+                                      Account Amount:                    1,000.00
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM626081     SIC:                         Cycle Num/Type: /
+ Device Name:   HALYK KYRGYZ BANK/ATM               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Кредит Счета в БВУ: Client Account  05/12/2019       1          -1,000.00            0.00         -1,000.00
+ --> Bank Account KGS
+ Merchant Transit Due Special KGS    05/12/2019       0               0.00            0.00              0.00
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:               -1,000.00
+                                      Discount:                              0.00
+                                      Account Amount:                   -1,000.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:                -1,000.00
+                                      Discount:                               0.00
+                                      Account Amount:                    -1,000.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:               -1,000.00
+                                      Discount:                              0.00
+                                      Account Amount:                   -1,000.00
+
+ TOTAL this Currency                  Number of Trans:                          2
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+                                                ------------------------------------------------------------
+  HALYK KYRGYZ BANK/ATM                            Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM060679
+                                                   Reg #:     1204199910016
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant ATM
+                                                   Cycle from 04/12/2019 to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 00075001           SIC:  6011 ATM               Cycle Num/Type:30 / Cash-Out
+ Device Name:   A-75001 GM "GLOBUS"                 Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ ATM: ATM KYRGYZ BANK --> VISA       04/12/2019       1           3,000.00            0.00          3,000.00
+ KYRGYZ BANK KGS
+ ATM: ATM KYRGYZ BANK --> VISA Cards 04/12/2019       1           1,500.00            0.00          1,500.00
+ KGS
+ ATM: ATM KYRGYZ BANK --> ELECTRON   04/12/2019       3          15,700.00            0.00         15,700.00
+ KYRGYZ BANK KGS
+ ATM: ATM KYRGYZ BANK --> Our Local  04/12/2019       4          24,200.00            0.00         24,200.00
+ Card KGS
+
+ TOTAL this Posting Date              Number of Trans:                          9
+                                      Transaction Amount:               44,400.00
+                                      Discount:                              0.00
+                                      Account Amount:                   44,400.00
+
+ TOTAL for Cycle                      Number of Trans:                           9
+                                      Transaction Amount:                44,400.00
+                                      Discount:                               0.00
+                                      Account Amount:                    44,400.00
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ TOTAL this Device                    Number of Trans:                          9
+                                      Transaction Amount:               44,400.00
+                                      Discount:                              0.00
+                                      Account Amount:                   44,400.00
+
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM060679     SIC:                         Cycle Num/Type: /
+ Device Name:   HALYK KYRGYZ BANK/ATM               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Кредит Счета в БВУ: Client Account  05/12/2019       1         -44,400.00            0.00        -44,400.00
+ --> Bank Account KGS
+ Merchant Transit Due Special KGS    05/12/2019       0               0.00            0.00              0.00
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:              -44,400.00
+                                      Discount:                              0.00
+                                      Account Amount:                  -44,400.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:               -44,400.00
+                                      Discount:                               0.00
+                                      Account Amount:                   -44,400.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:              -44,400.00
+                                      Discount:                              0.00
+                                      Account Amount:                  -44,400.00
+
+ TOTAL this Currency                  Number of Trans:                         10
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+                                                ------------------------------------------------------------
+  HALYK KYRGYZ BANK/ATM                            Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM238192
+                                                   Reg #:     1204199910016
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant ATM
+                                                   Cycle from 04/12/2019 to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 00075003           SIC:  6011 ATM               Cycle Num/Type:44 / Cash-Out
+ Device Name:   A-75003 119A, AHUNBAEV              Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ ATM: ATM KYRGYZ BANK --> Our Local  04/12/2019      51         278,500.00            0.00        278,500.00
+ Card KGS
+ ATM: ATM KYRGYZ BANK --> Our VISA   04/12/2019       1          11,500.00            0.00         11,500.00
+ Cards KGS
+ ATM: ATM KYRGYZ BANK --> ELECTRON   04/12/2019       7          54,700.00            0.00         54,700.00
+ KYRGYZ BANK KGS
+ ATM: ATM KYRGYZ BANK --> Our        04/12/2019       3          18,700.00            0.00         18,700.00
+ Electron/Plus KGS
+ ATM: ATM KYRGYZ BANK --> VISA Cards 04/12/2019       2          13,500.00            0.00         13,500.00
+ KGS
+
+ TOTAL this Posting Date              Number of Trans:                         64
+                                      Transaction Amount:              376,900.00
+                                      Discount:                              0.00
+                                      Account Amount:                  376,900.00
+
+ TOTAL for Cycle                      Number of Trans:                          64
+                                      Transaction Amount:               376,900.00
+                                      Discount:                               0.00
+                                      Account Amount:                   376,900.00
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ TOTAL this Device                    Number of Trans:                         64
+                                      Transaction Amount:              376,900.00
+                                      Discount:                              0.00
+                                      Account Amount:                  376,900.00
+
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM238192     SIC:                         Cycle Num/Type: /
+ Device Name:   HALYK KYRGYZ BANK/ATM               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Кредит Счета в БВУ: Client Account  05/12/2019       1        -376,900.00            0.00       -376,900.00
+ --> Bank Account KGS
+ Merchant Transit Due Special KGS    05/12/2019       0               0.00            0.00              0.00
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:             -376,900.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -376,900.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:              -376,900.00
+                                      Discount:                               0.00
+                                      Account Amount:                  -376,900.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:             -376,900.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -376,900.00
+
+ TOTAL this Currency                  Number of Trans:                         65
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+                                                ------------------------------------------------------------
+  HALYK KYRGYZ BANK/ATM                            Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM358511
+                                                   Reg #:     1204199910016
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant ATM
+                                                   Cycle from 04/12/2019 to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 00075006           SIC:  6011 ATM               Cycle Num/Type:43 / Cash-Out
+ Device Name:   A-75006 B/N, TOKTOGULA              Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ ATM: ATM KYRGYZ BANK --> Our Local  04/12/2019      30         103,900.00            0.00        103,900.00
+ Card KGS
+ ATM: ATM KYRGYZ BANK --> Our VISA   04/12/2019       1          10,000.00            0.00         10,000.00
+ Cards KGS
+ ATM: ATM KYRGYZ BANK --> VISA Cards 04/12/2019       1           7,000.00            0.00          7,000.00
+ KGS
+
+ TOTAL this Posting Date              Number of Trans:                         32
+                                      Transaction Amount:              120,900.00
+                                      Discount:                              0.00
+                                      Account Amount:                  120,900.00
+
+ TOTAL for Cycle                      Number of Trans:                          32
+                                      Transaction Amount:               120,900.00
+                                      Discount:                               0.00
+                                      Account Amount:                   120,900.00
+
+ TOTAL this Device                    Number of Trans:                         32
+                                      Transaction Amount:              120,900.00
+                                      Discount:                              0.00
+                                      Account Amount:                  120,900.00
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM358511     SIC:                         Cycle Num/Type: /
+ Device Name:   HALYK KYRGYZ BANK/ATM               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Кредит Счета в БВУ: Client Account  05/12/2019       1        -120,900.00            0.00       -120,900.00
+ --> Bank Account KGS
+ Merchant Transit Due Special KGS    05/12/2019       0               0.00            0.00              0.00
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:             -120,900.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -120,900.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:              -120,900.00
+                                      Discount:                               0.00
+                                      Account Amount:                  -120,900.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:             -120,900.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -120,900.00
+
+ TOTAL this Currency                  Number of Trans:                         33
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+                                                ------------------------------------------------------------
+  HALYK KYRGYZ BANK/ATM                            Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM430245
+                                                   Reg #:     1204199910016
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant ATM
+                                                   Cycle from 04/12/2019 to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 00075021           SIC:  6011 ATM               Cycle Num/Type:14 / Cash-Out
+ Device Name:   A-75021 19A, RAZZAKOV               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ ATM: ATM KYRGYZ BANK --> Our Local  04/12/2019      39         231,600.00            0.00        231,600.00
+ Card KGS
+
+ TOTAL this Posting Date              Number of Trans:                         39
+                                      Transaction Amount:              231,600.00
+                                      Discount:                              0.00
+                                      Account Amount:                  231,600.00
+
+ TOTAL for Cycle                      Number of Trans:                          39
+                                      Transaction Amount:               231,600.00
+                                      Discount:                               0.00
+                                      Account Amount:                   231,600.00
+
+
+
+
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 3
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 00075021           SIC:  6011 ATM               Cycle Num/Type:15 / Cash-Out
+ Device Name:   A-75021 19A, RAZZAKOV               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ ATM: ATM KYRGYZ BANK --> ELECTRON   04/12/2019       1             200.00            0.00            200.00
+ KYRGYZ BANK KGS
+ ATM: ATM KYRGYZ BANK --> VISA Cards 04/12/2019       1           2,000.00            0.00          2,000.00
+ KGS
+ ATM: ATM KYRGYZ BANK --> Our Local  04/12/2019      10          64,800.00            0.00         64,800.00
+ Card KGS
+
+ TOTAL this Posting Date              Number of Trans:                         12
+                                      Transaction Amount:               67,000.00
+                                      Discount:                              0.00
+                                      Account Amount:                   67,000.00
+
+ TOTAL for Cycle                      Number of Trans:                          12
+                                      Transaction Amount:                67,000.00
+                                      Discount:                               0.00
+                                      Account Amount:                    67,000.00
+
+ TOTAL this Device                    Number of Trans:                         51
+                                      Transaction Amount:              298,600.00
+                                      Discount:                              0.00
+                                      Account Amount:                  298,600.00
+
+
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 3
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM430245     SIC:                         Cycle Num/Type: /
+ Device Name:   HALYK KYRGYZ BANK/ATM               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Кредит Счета в БВУ: Client Account  05/12/2019       1        -298,600.00            0.00       -298,600.00
+ --> Bank Account KGS
+ Merchant Transit Due Special KGS    05/12/2019       0               0.00            0.00              0.00
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:             -298,600.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -298,600.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:              -298,600.00
+                                      Discount:                               0.00
+                                      Account Amount:                  -298,600.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:             -298,600.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -298,600.00
+
+ TOTAL this Currency                  Number of Trans:                         52
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 3 of 3
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+                                                ------------------------------------------------------------
+  HALYK KYRGYZ BANK/ATM                            Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM210753
+                                                   Reg #:     1204199910016
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant ATM
+                                                   Cycle from 04/12/2019 to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 00075024           SIC:  6011 ATM               Cycle Num/Type:56 / Cash-Out
+ Device Name:   A-75024 11,LENIN ST                 Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ ATM: ATM KYRGYZ BANK --> Our Local  04/12/2019      32         154,600.00            0.00        154,600.00
+ Card KGS
+ ATM: ATM KYRGYZ BANK --> Our VISA   04/12/2019       2           6,000.00            0.00          6,000.00
+ Cards KGS
+ ATM: ATM KYRGYZ BANK --> Our        04/12/2019       1           5,000.00            0.00          5,000.00
+ Electron/Plus KGS
+
+ TOTAL this Posting Date              Number of Trans:                         35
+                                      Transaction Amount:              165,600.00
+                                      Discount:                              0.00
+                                      Account Amount:                  165,600.00
+
+ TOTAL for Cycle                      Number of Trans:                          35
+                                      Transaction Amount:               165,600.00
+                                      Discount:                               0.00
+                                      Account Amount:                   165,600.00
+
+ TOTAL this Device                    Number of Trans:                         35
+                                      Transaction Amount:              165,600.00
+                                      Discount:                              0.00
+                                      Account Amount:                  165,600.00
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM210753     SIC:                         Cycle Num/Type: /
+ Device Name:   HALYK KYRGYZ BANK/ATM               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Merchant Transit Due Special KGS    05/12/2019       0               0.00            0.00              0.00
+ Кредит Счета в БВУ: Client Account  05/12/2019       1        -165,600.00            0.00       -165,600.00
+ --> Bank Account KGS
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:             -165,600.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -165,600.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:              -165,600.00
+                                      Discount:                               0.00
+                                      Account Amount:                  -165,600.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:             -165,600.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -165,600.00
+
+ TOTAL this Currency                  Number of Trans:                         36
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+                                                ------------------------------------------------------------
+  HALYK KYRGYZ BANK/ATM                            Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM292918
+                                                   Reg #:     1204199910016
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant ATM
+                                                   Cycle from 04/12/2019 to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 00075011           SIC:  6011 ATM               Cycle Num/Type:80 / Cash-Out
+ Device Name:   A-75011 390, FRUNZE ST              Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ ATM: ATM KYRGYZ BANK --> Our Local  04/12/2019      31         135,000.00            0.00        135,000.00
+ Card KGS
+ ATM: ATM KYRGYZ BANK --> VISA       04/12/2019       3          12,100.00            0.00         12,100.00
+ KYRGYZ BANK KGS
+ ATM: ATM KYRGYZ BANK --> Our VISA   04/12/2019       1             100.00            0.00            100.00
+ Cards KGS
+ ATM: ATM KYRGYZ BANK --> ELECTRON   04/12/2019      12          65,900.00            0.00         65,900.00
+ KYRGYZ BANK KGS
+
+ TOTAL this Posting Date              Number of Trans:                         47
+                                      Transaction Amount:              213,100.00
+                                      Discount:                              0.00
+                                      Account Amount:                  213,100.00
+
+ TOTAL for Cycle                      Number of Trans:                          47
+                                      Transaction Amount:               213,100.00
+                                      Discount:                               0.00
+                                      Account Amount:                   213,100.00
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 3
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ TOTAL this Device                    Number of Trans:                         47
+                                      Transaction Amount:              213,100.00
+                                      Discount:                              0.00
+                                      Account Amount:                  213,100.00
+
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM292918     SIC:                         Cycle Num/Type: /
+ Device Name:   HALYK KYRGYZ BANK/ATM               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Кредит Счета в БВУ: Client Account  05/12/2019       1        -213,100.00            0.00       -213,100.00
+ --> Bank Account KGS
+ P2P Receivable Due Special KGS      04/12/2019       0               0.00            0.00              0.00
+ Merchant Transit Due Special KGS    05/12/2019       0               0.00            0.00              0.00
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:             -213,100.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -213,100.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:              -213,100.00
+                                      Discount:                               0.00
+                                      Account Amount:                  -213,100.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:             -213,100.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -213,100.00
+
+ TOTAL this Currency                  Number of Trans:                         48
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 3
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KZT   Device: 00075011           SIC:  6012 Financial institu Cycle Num/Type: /
+ Device Name:   A-75011 390, FRUNZE ST              Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ CH Payment: ATM KYRGYZ BANK --> Our 04/12/2019       1         -93,700.00            0.00        -16,847.26
+ VISA Cards KZT
+ CH Debit: ATM KYRGYZ BANK -->       04/12/2019       1          93,700.00          -50.00         16,847.26
+ ELECTRON KYRGYZ BANK KZT
+
+ TOTAL this Posting Date              Number of Trans:                          2
+                                      Transaction Amount:                    0.00
+                                      Discount:                            -50.00
+                                      Account Amount:                        0.00
+
+ TOTAL for Cycle                      Number of Trans:                           2
+                                      Transaction Amount:                     0.00
+                                      Discount:                             -50.00
+                                      Account Amount:                         0.00
+
+ TOTAL this Device                    Number of Trans:                          2
+                                      Transaction Amount:                    0.00
+                                      Discount:                            -50.00
+                                      Account Amount:                        0.00
+
+ TOTAL this Currency                  Number of Trans:                          2
+                                      Transaction Amount:                    0.00
+                                      Discount:                            -50.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 3 of 3
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+                                                ------------------------------------------------------------
+  HALYK KYRGYZ BANK/ATM                            Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM302279
+                                                   Reg #:     1204199910016
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant ATM
+                                                   Cycle from 04/12/2019 to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 00075023           SIC:  6011 ATM               Cycle Num/Type:37 / Cash-Out
+ Device Name:   A-75023 217,ZHIBEK-ZHO              Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ ATM: ATM KYRGYZ BANK --> Our Local  04/12/2019      69         453,400.00            0.00        453,400.00
+ Card KGS
+ ATM: ATM KYRGYZ BANK --> Our VISA   04/12/2019       2           5,200.00            0.00          5,200.00
+ Cards KGS
+ ATM: ATM KYRGYZ BANK --> VISA Cards 04/12/2019       3           3,200.00            0.00          3,200.00
+ KGS
+
+ TOTAL this Posting Date              Number of Trans:                         74
+                                      Transaction Amount:              461,800.00
+                                      Discount:                              0.00
+                                      Account Amount:                  461,800.00
+
+ TOTAL for Cycle                      Number of Trans:                          74
+                                      Transaction Amount:               461,800.00
+                                      Discount:                               0.00
+                                      Account Amount:                   461,800.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 4
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 00075023           SIC:  6011 ATM               Cycle Num/Type:38 / Cash-Out
+ Device Name:   A-75023 217,ZHIBEK-ZHO              Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ ATM: ATM KYRGYZ BANK --> Our Local  04/12/2019       9          61,900.00            0.00         61,900.00
+ Card KGS
+
+ TOTAL this Posting Date              Number of Trans:                          9
+                                      Transaction Amount:               61,900.00
+                                      Discount:                              0.00
+                                      Account Amount:                   61,900.00
+
+ TOTAL for Cycle                      Number of Trans:                           9
+                                      Transaction Amount:                61,900.00
+                                      Discount:                               0.00
+                                      Account Amount:                    61,900.00
+
+ TOTAL this Device                    Number of Trans:                         83
+                                      Transaction Amount:              523,700.00
+                                      Discount:                              0.00
+                                      Account Amount:                  523,700.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 4
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM302279     SIC:                         Cycle Num/Type:38 /
+ Device Name:   HALYK KYRGYZ BANK/ATM               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Merchant Transit Due Special KGS    04/12/2019       0        -523,700.00            0.00       -523,700.00
+
+ TOTAL this Posting Date              Number of Trans:                          0
+                                      Transaction Amount:             -523,700.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -523,700.00
+
+ TOTAL for Cycle                      Number of Trans:                           0
+                                      Transaction Amount:              -523,700.00
+                                      Discount:                               0.00
+                                      Account Amount:                  -523,700.00
+
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM302279     SIC:                         Cycle Num/Type: /
+ Device Name:   HALYK KYRGYZ BANK/ATM               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Merchant Transit Due Special KGS    04/12/2019       0         523,700.00            0.00        523,700.00
+
+ TOTAL this Posting Date              Number of Trans:                          0
+                                      Transaction Amount:              523,700.00
+                                      Discount:                              0.00
+                                      Account Amount:                  523,700.00
+
+ TOTAL for Cycle                      Number of Trans:                           0
+                                      Transaction Amount:               523,700.00
+                                      Discount:                               0.00
+                                      Account Amount:                   523,700.00
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 3 of 4
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ TOTAL this Device                    Number of Trans:                          0
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+ TOTAL this Currency                  Number of Trans:                         83
+                                      Transaction Amount:              523,700.00
+                                      Discount:                              0.00
+                                      Account Amount:                  523,700.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 4 of 4
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+                                                ------------------------------------------------------------
+  HALYK KYRGYZ BANK/ATM                            Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM690392
+                                                   Reg #:     1204199910016
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant ATM
+                                                   Cycle from 04/12/2019 to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 00075020           SIC:  6011 ATM               Cycle Num/Type:15 / Cash-Out
+ Device Name:   A-75020 215,ST FRUNZE               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ ATM: ATM KYRGYZ BANK --> VISA Cards 04/12/2019       1          15,000.00            0.00         15,000.00
+ KGS
+ ATM: ATM KYRGYZ BANK --> Our Local  04/12/2019      11          14,800.00            0.00         14,800.00
+ Card KGS
+
+ TOTAL this Posting Date              Number of Trans:                         12
+                                      Transaction Amount:               29,800.00
+                                      Discount:                              0.00
+                                      Account Amount:                   29,800.00
+
+ TOTAL for Cycle                      Number of Trans:                          12
+                                      Transaction Amount:                29,800.00
+                                      Discount:                               0.00
+                                      Account Amount:                    29,800.00
+
+ TOTAL this Device                    Number of Trans:                         12
+                                      Transaction Amount:               29,800.00
+                                      Discount:                              0.00
+                                      Account Amount:                   29,800.00
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM690392     SIC:                         Cycle Num/Type: /
+ Device Name:   HALYK KYRGYZ BANK/ATM               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Кредит Счета в БВУ: Client Account  05/12/2019       1         -29,800.00            0.00        -29,800.00
+ --> Bank Account KGS
+ Merchant Transit Due Special KGS    05/12/2019       0               0.00            0.00              0.00
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:              -29,800.00
+                                      Discount:                              0.00
+                                      Account Amount:                  -29,800.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:               -29,800.00
+                                      Discount:                               0.00
+                                      Account Amount:                   -29,800.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:              -29,800.00
+                                      Discount:                              0.00
+                                      Account Amount:                  -29,800.00
+
+ TOTAL this Currency                  Number of Trans:                         13
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+                                                ------------------------------------------------------------
+  HALYK KYRGYZ BANK/ATM                            Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM897930
+                                                   Reg #:     1204199910016
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant ATM
+                                                   Cycle from 03/07/2019 to 04/12/2019
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 1
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+                                                ------------------------------------------------------------
+  HALYK KYRGYZ BANK/ATM                            Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM364832
+                                                   Reg #:     1204199910016
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant ATM
+                                                   Cycle from 04/12/2019 to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 00075017           SIC:  6011 ATM               Cycle Num/Type:15 / Cash-Out
+ Device Name:   A-75017 299B AITMATOVA              Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ ATM: ATM KYRGYZ BANK --> VISA Cards 04/12/2019       3          44,500.00            0.00         44,500.00
+ KGS
+ ATM: ATM KYRGYZ BANK --> Our Local  04/12/2019       6         122,000.00            0.00        122,000.00
+ Card KGS
+ ATM: ATM KYRGYZ BANK --> ELECTRON   04/12/2019       6          28,000.00            0.00         28,000.00
+ KYRGYZ BANK KGS
+
+ TOTAL this Posting Date              Number of Trans:                         15
+                                      Transaction Amount:              194,500.00
+                                      Discount:                              0.00
+                                      Account Amount:                  194,500.00
+
+ TOTAL for Cycle                      Number of Trans:                          15
+                                      Transaction Amount:               194,500.00
+                                      Discount:                               0.00
+                                      Account Amount:                   194,500.00
+
+ TOTAL this Device                    Number of Trans:                         15
+                                      Transaction Amount:              194,500.00
+                                      Discount:                              0.00
+                                      Account Amount:                  194,500.00
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM364832     SIC:                         Cycle Num/Type: /
+ Device Name:   HALYK KYRGYZ BANK/ATM               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Merchant Transit Due Special KGS    05/12/2019       0               0.00            0.00              0.00
+ Кредит Счета в БВУ: Client Account  05/12/2019       1        -194,500.00            0.00       -194,500.00
+ --> Bank Account KGS
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:             -194,500.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -194,500.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:              -194,500.00
+                                      Discount:                               0.00
+                                      Account Amount:                  -194,500.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:             -194,500.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -194,500.00
+
+ TOTAL this Currency                  Number of Trans:                         16
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+                                                ------------------------------------------------------------
+  HALYK KYRGYZ BANK/ATM                            Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM007225
+                                                   Reg #:     1204199910016
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant ATM
+                                                   Cycle from 04/12/2019 to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 00075004           SIC:  6011 ATM               Cycle Num/Type:13 / Cash-Out
+ Device Name:   A-75004 44,BAITIK BATY              Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ ATM: ATM KYRGYZ BANK --> ELECTRON   04/12/2019       1           8,000.00            0.00          8,000.00
+ KYRGYZ BANK KGS
+ ATM: ATM KYRGYZ BANK --> Our Local  04/12/2019      24          90,300.00            0.00         90,300.00
+ Card KGS
+ ATM: ATM KYRGYZ BANK --> VISA Cards 04/12/2019       1          10,000.00            0.00         10,000.00
+ KGS
+
+ TOTAL this Posting Date              Number of Trans:                         26
+                                      Transaction Amount:              108,300.00
+                                      Discount:                              0.00
+                                      Account Amount:                  108,300.00
+
+ TOTAL for Cycle                      Number of Trans:                          26
+                                      Transaction Amount:               108,300.00
+                                      Discount:                               0.00
+                                      Account Amount:                   108,300.00
+
+ TOTAL this Device                    Number of Trans:                         26
+                                      Transaction Amount:              108,300.00
+                                      Discount:                              0.00
+                                      Account Amount:                  108,300.00
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM007225     SIC:                         Cycle Num/Type: /
+ Device Name:   HALYK KYRGYZ BANK/ATM               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Merchant Transit Due Special KGS    05/12/2019       0               0.00            0.00              0.00
+ Кредит Счета в БВУ: Client Account  05/12/2019       1        -108,300.00            0.00       -108,300.00
+ --> Bank Account KGS
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:             -108,300.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -108,300.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:              -108,300.00
+                                      Discount:                               0.00
+                                      Account Amount:                  -108,300.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:             -108,300.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -108,300.00
+
+ TOTAL this Currency                  Number of Trans:                         27
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+                                                ------------------------------------------------------------
+  HALYK KYRGYZ BANK/ATM                            Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM609475
+                                                   Reg #:     1204199910016
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant ATM
+                                                   Cycle from 04/12/2019 to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 00075026           SIC:  6011 ATM               Cycle Num/Type:10 / Cash-Out
+ Device Name:   HALYK KYRGYZ BANK/ATM               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ ATM: ATM KYRGYZ BANK --> Our Local  04/12/2019       8          46,700.00            0.00         46,700.00
+ Card KGS
+
+ TOTAL this Posting Date              Number of Trans:                          8
+                                      Transaction Amount:               46,700.00
+                                      Discount:                              0.00
+                                      Account Amount:                   46,700.00
+
+ TOTAL for Cycle                      Number of Trans:                           8
+                                      Transaction Amount:                46,700.00
+                                      Discount:                               0.00
+                                      Account Amount:                    46,700.00
+
+ TOTAL this Device                    Number of Trans:                          8
+                                      Transaction Amount:               46,700.00
+                                      Discount:                              0.00
+                                      Account Amount:                   46,700.00
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM609475     SIC:                         Cycle Num/Type: /
+ Device Name:   HALYK KYRGYZ BANK/ATM               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Merchant Transit Due Special KGS    05/12/2019       0               0.00            0.00              0.00
+ Кредит Счета в БВУ: Client Account  05/12/2019       1         -46,700.00            0.00        -46,700.00
+ --> Bank Account KGS
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:              -46,700.00
+                                      Discount:                              0.00
+                                      Account Amount:                  -46,700.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:               -46,700.00
+                                      Discount:                               0.00
+                                      Account Amount:                   -46,700.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:              -46,700.00
+                                      Discount:                              0.00
+                                      Account Amount:                  -46,700.00
+
+ TOTAL this Currency                  Number of Trans:                          9
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+                                                ------------------------------------------------------------
+  HALYK KYRGYZ BANK/ATM                            Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM635678
+                                                   Reg #:     1204199910016
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant ATM
+                                                   Cycle from 04/12/2019 to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 00075010           SIC:  6011 ATM               Cycle Num/Type:39 / Cash-Out
+ Device Name:   A-75010 14, MANASA ST.              Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ ATM: ATM KYRGYZ BANK --> Our Local  04/12/2019       6          50,400.00            0.00         50,400.00
+ Card KGS
+
+ TOTAL this Posting Date              Number of Trans:                          6
+                                      Transaction Amount:               50,400.00
+                                      Discount:                              0.00
+                                      Account Amount:                   50,400.00
+
+ TOTAL for Cycle                      Number of Trans:                           6
+                                      Transaction Amount:                50,400.00
+                                      Discount:                               0.00
+                                      Account Amount:                    50,400.00
+
+ TOTAL this Device                    Number of Trans:                          6
+                                      Transaction Amount:               50,400.00
+                                      Discount:                              0.00
+                                      Account Amount:                   50,400.00
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM635678     SIC:                         Cycle Num/Type: /
+ Device Name:   HALYK KYRGYZ BANK/ATM               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Кредит Счета в БВУ: Client Account  05/12/2019       1         -50,400.00            0.00        -50,400.00
+ --> Bank Account KGS
+ Merchant Transit Due Special KGS    05/12/2019       0               0.00            0.00              0.00
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:              -50,400.00
+                                      Discount:                              0.00
+                                      Account Amount:                  -50,400.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:               -50,400.00
+                                      Discount:                               0.00
+                                      Account Amount:                   -50,400.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:              -50,400.00
+                                      Discount:                              0.00
+                                      Account Amount:                  -50,400.00
+
+ TOTAL this Currency                  Number of Trans:                          7
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+                                                ------------------------------------------------------------
+  HALYK KYRGYZ BANK/ATM                            Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM382305
+                                                   Reg #:     1204199910016
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant ATM
+                                                   Cycle from 04/12/2019 to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 00075008           SIC:  6011 ATM               Cycle Num/Type:31 / Cash-Out
+ Device Name:   A-75008 60,ST SOVETSKA              Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ ATM: ATM KYRGYZ BANK --> Our Local  04/12/2019      23         103,400.00            0.00        103,400.00
+ Card KGS
+ ATM: ATM KYRGYZ BANK --> VISA Cards 04/12/2019       3           7,000.00            0.00          7,000.00
+ KGS
+ ATM: ATM KYRGYZ BANK --> Our VISA   04/12/2019       1             500.00            0.00            500.00
+ Cards KGS
+
+ TOTAL this Posting Date              Number of Trans:                         27
+                                      Transaction Amount:              110,900.00
+                                      Discount:                              0.00
+                                      Account Amount:                  110,900.00
+
+ TOTAL for Cycle                      Number of Trans:                          27
+                                      Transaction Amount:               110,900.00
+                                      Discount:                               0.00
+                                      Account Amount:                   110,900.00
+
+ TOTAL this Device                    Number of Trans:                         27
+                                      Transaction Amount:              110,900.00
+                                      Discount:                              0.00
+                                      Account Amount:                  110,900.00
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM382305     SIC:                         Cycle Num/Type: /
+ Device Name:   HALYK KYRGYZ BANK/ATM               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Кредит Счета в БВУ: Client Account  05/12/2019       1        -110,900.00            0.00       -110,900.00
+ --> Bank Account KGS
+ Merchant Transit Due Special KGS    05/12/2019       0               0.00            0.00              0.00
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:             -110,900.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -110,900.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:              -110,900.00
+                                      Discount:                               0.00
+                                      Account Amount:                  -110,900.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:             -110,900.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -110,900.00
+
+ TOTAL this Currency                  Number of Trans:                         28
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+                                                ------------------------------------------------------------
+  HALYK KYRGYZ BANK/ATM                            Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM612305
+                                                   Reg #:     1204199910016
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant ATM
+                                                   Cycle from 04/12/2019 to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 00075025           SIC:  6011 ATM               Cycle Num/Type:27 / Cash-Out
+ Device Name:   A-75025 LENINA ST                   Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ ATM: ATM KYRGYZ BANK --> VISA Cards 04/12/2019       2          26,000.00            0.00         26,000.00
+ KGS
+ ATM: ATM KYRGYZ BANK --> Our Local  04/12/2019      72         432,800.00            0.00        432,800.00
+ Card KGS
+
+ TOTAL this Posting Date              Number of Trans:                         74
+                                      Transaction Amount:              458,800.00
+                                      Discount:                              0.00
+                                      Account Amount:                  458,800.00
+
+ TOTAL for Cycle                      Number of Trans:                          74
+                                      Transaction Amount:               458,800.00
+                                      Discount:                               0.00
+                                      Account Amount:                   458,800.00
+
+
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 3
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 00075025           SIC:  6011 ATM               Cycle Num/Type:29 / Cash-Out
+ Device Name:   A-75025 LENINA ST                   Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ ATM: ATM KYRGYZ BANK --> Our Local  04/12/2019       3          11,900.00            0.00         11,900.00
+ Card KGS
+
+ TOTAL this Posting Date              Number of Trans:                          3
+                                      Transaction Amount:               11,900.00
+                                      Discount:                              0.00
+                                      Account Amount:                   11,900.00
+
+ TOTAL for Cycle                      Number of Trans:                           3
+                                      Transaction Amount:                11,900.00
+                                      Discount:                               0.00
+                                      Account Amount:                    11,900.00
+
+ TOTAL this Device                    Number of Trans:                         77
+                                      Transaction Amount:              470,700.00
+                                      Discount:                              0.00
+                                      Account Amount:                  470,700.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 3
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM612305     SIC:                         Cycle Num/Type: /
+ Device Name:   HALYK KYRGYZ BANK/ATM               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Merchant Transit Due Special KGS    05/12/2019       0               0.00            0.00              0.00
+ Кредит Счета в БВУ: Client Account  05/12/2019       1        -470,700.00            0.00       -470,700.00
+ --> Bank Account KGS
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:             -470,700.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -470,700.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:              -470,700.00
+                                      Discount:                               0.00
+                                      Account Amount:                  -470,700.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:             -470,700.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -470,700.00
+
+ TOTAL this Currency                  Number of Trans:                         78
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 3 of 3
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+                                                ------------------------------------------------------------
+  HALYK KYRGYZ BANK/ATM                            Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM662755
+                                                   Reg #:     1204199910016
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant ATM
+                                                   Cycle from 04/12/2019 to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 00075009           SIC:  6011 ATM               Cycle Num/Type:49 / Cash-Out
+ Device Name:   A-75009 27,TOKTOGULA S              Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ ATM: ATM KYRGYZ BANK --> ELECTRON   04/12/2019       2          13,500.00            0.00         13,500.00
+ KYRGYZ BANK KGS
+ ATM: ATM KYRGYZ BANK --> VISA Cards 04/12/2019       1           5,500.00            0.00          5,500.00
+ KGS
+ ATM: ATM KYRGYZ BANK --> Our Local  04/12/2019      21          95,900.00            0.00         95,900.00
+ Card KGS
+
+ TOTAL this Posting Date              Number of Trans:                         24
+                                      Transaction Amount:              114,900.00
+                                      Discount:                              0.00
+                                      Account Amount:                  114,900.00
+
+ TOTAL for Cycle                      Number of Trans:                          24
+                                      Transaction Amount:               114,900.00
+                                      Discount:                               0.00
+                                      Account Amount:                   114,900.00
+
+ TOTAL this Device                    Number of Trans:                         24
+                                      Transaction Amount:              114,900.00
+                                      Discount:                              0.00
+                                      Account Amount:                  114,900.00
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM662755     SIC:                         Cycle Num/Type: /
+ Device Name:   HALYK KYRGYZ BANK/ATM               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Merchant Transit Due Special KGS    05/12/2019       0               0.00            0.00              0.00
+ Кредит Счета в БВУ: Client Account  05/12/2019       1        -114,900.00            0.00       -114,900.00
+ --> Bank Account KGS
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:             -114,900.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -114,900.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:              -114,900.00
+                                      Discount:                               0.00
+                                      Account Amount:                  -114,900.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:             -114,900.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -114,900.00
+
+ TOTAL this Currency                  Number of Trans:                         25
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+                                                ------------------------------------------------------------
+  HALYK KYRGYZ BANK/ATM                            Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM788592
+                                                   Reg #:     1204199910016
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant ATM
+                                                   Cycle from 04/12/2019 to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 00075018           SIC:  6011 ATM               Cycle Num/Type:22 / Cash-Out
+ Device Name:   A-75018 GM "GLOBUS"                 Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ ATM: ATM KYRGYZ BANK --> VISA Cards 04/12/2019       2          10,500.00            0.00         10,500.00
+ KGS
+ ATM: ATM KYRGYZ BANK --> Our Local  04/12/2019       7          28,100.00            0.00         28,100.00
+ Card KGS
+ ATM: ATM KYRGYZ BANK --> Our        04/12/2019       3           8,600.00            0.00          8,600.00
+ Electron/Plus KGS
+ ATM: ATM KYRGYZ BANK --> ELECTRON   04/12/2019       1             500.00            0.00            500.00
+ KYRGYZ BANK KGS
+ ATM: ATM KYRGYZ BANK --> Our VISA   04/12/2019       1           3,000.00            0.00          3,000.00
+ Cards KGS
+
+ TOTAL this Posting Date              Number of Trans:                         14
+                                      Transaction Amount:               50,700.00
+                                      Discount:                              0.00
+                                      Account Amount:                   50,700.00
+
+ TOTAL for Cycle                      Number of Trans:                          14
+                                      Transaction Amount:                50,700.00
+                                      Discount:                               0.00
+                                      Account Amount:                    50,700.00
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ TOTAL this Device                    Number of Trans:                         14
+                                      Transaction Amount:               50,700.00
+                                      Discount:                              0.00
+                                      Account Amount:                   50,700.00
+
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM788592     SIC:                         Cycle Num/Type: /
+ Device Name:   HALYK KYRGYZ BANK/ATM               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Merchant Transit Due Special KGS    05/12/2019       0               0.00            0.00              0.00
+ Кредит Счета в БВУ: Client Account  05/12/2019       1         -50,700.00            0.00        -50,700.00
+ --> Bank Account KGS
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:              -50,700.00
+                                      Discount:                              0.00
+                                      Account Amount:                  -50,700.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:               -50,700.00
+                                      Discount:                               0.00
+                                      Account Amount:                   -50,700.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:              -50,700.00
+                                      Discount:                              0.00
+                                      Account Amount:                  -50,700.00
+
+ TOTAL this Currency                  Number of Trans:                         15
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+                                                ------------------------------------------------------------
+  HALYK KYRGYZ BANK/ATM                            Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM940169
+                                                   Reg #:     1204199910016
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant ATM
+                                                   Cycle from 04/12/2019 to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 00075014           SIC:  6011 ATM               Cycle Num/Type:41 / Cash-Out
+ Device Name:   A-75014 211, TOKTOGUL               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ ATM: ATM KYRGYZ BANK --> Our Local  04/12/2019      32         166,400.00            0.00        166,400.00
+ Card KGS
+ ATM: ATM KYRGYZ BANK --> ELECTRON   04/12/2019       1           5,000.00            0.00          5,000.00
+ KYRGYZ BANK KGS
+ ATM: ATM KYRGYZ BANK --> VISA       04/12/2019       1          20,000.00            0.00         20,000.00
+ KYRGYZ BANK KGS
+ ATM: ATM KYRGYZ BANK --> VISA Cards 04/12/2019       3           5,000.00            0.00          5,000.00
+ KGS
+
+ TOTAL this Posting Date              Number of Trans:                         37
+                                      Transaction Amount:              196,400.00
+                                      Discount:                              0.00
+                                      Account Amount:                  196,400.00
+
+ TOTAL for Cycle                      Number of Trans:                          37
+                                      Transaction Amount:               196,400.00
+                                      Discount:                               0.00
+                                      Account Amount:                   196,400.00
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ TOTAL this Device                    Number of Trans:                         37
+                                      Transaction Amount:              196,400.00
+                                      Discount:                              0.00
+                                      Account Amount:                  196,400.00
+
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM940169     SIC:                         Cycle Num/Type: /
+ Device Name:   HALYK KYRGYZ BANK/ATM               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Merchant Transit Due Special KGS    05/12/2019       0               0.00            0.00              0.00
+ Кредит Счета в БВУ: Client Account  05/12/2019       1        -196,400.00            0.00       -196,400.00
+ --> Bank Account KGS
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:             -196,400.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -196,400.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:              -196,400.00
+                                      Discount:                               0.00
+                                      Account Amount:                  -196,400.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:             -196,400.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -196,400.00
+
+ TOTAL this Currency                  Number of Trans:                         38
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+                                                ------------------------------------------------------------
+  HALYK KYRGYZ BANK/ATM                            Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM976577
+                                                   Reg #:     1204199910016
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant ATM
+                                                   Cycle from 04/12/2019 to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 00075022           SIC:  6011 ATM               Cycle Num/Type:26 / Cash-Out
+ Device Name:   A-75022 204,CHUY ST                 Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ ATM: ATM KYRGYZ BANK --> ELECTRON   04/12/2019       2           9,000.00            0.00          9,000.00
+ KYRGYZ BANK KGS
+ ATM: ATM KYRGYZ BANK --> VISA Cards 04/12/2019       1           5,000.00            0.00          5,000.00
+ KGS
+ ATM: ATM KYRGYZ BANK --> Our Local  04/12/2019      65         281,700.00            0.00        281,700.00
+ Card KGS
+
+ TOTAL this Posting Date              Number of Trans:                         68
+                                      Transaction Amount:              295,700.00
+                                      Discount:                              0.00
+                                      Account Amount:                  295,700.00
+
+ TOTAL for Cycle                      Number of Trans:                          68
+                                      Transaction Amount:               295,700.00
+                                      Discount:                               0.00
+                                      Account Amount:                   295,700.00
+
+ TOTAL this Device                    Number of Trans:                         68
+                                      Transaction Amount:              295,700.00
+                                      Discount:                              0.00
+                                      Account Amount:                  295,700.00
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM976577     SIC:                         Cycle Num/Type: /
+ Device Name:   HALYK KYRGYZ BANK/ATM               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Merchant Transit Due Special KGS    05/12/2019       0               0.00            0.00              0.00
+ Кредит Счета в БВУ: Client Account  05/12/2019       1        -295,700.00            0.00       -295,700.00
+ --> Bank Account KGS
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:             -295,700.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -295,700.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:              -295,700.00
+                                      Discount:                               0.00
+                                      Account Amount:                  -295,700.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:             -295,700.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -295,700.00
+
+ TOTAL this Currency                  Number of Trans:                         69
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+                                                ------------------------------------------------------------
+  HALYK KYRGYZ BANK/ATM                            Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM005534
+                                                   Reg #:     1204199910016
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant ATM
+                                                   Cycle from 04/12/2019 to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 00075012           SIC:  6011 ATM               Cycle Num/Type:10 / Cash-Out
+ Device Name:   A-75012 20, GORKIY ST               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ ATM: ATM KYRGYZ BANK --> ELECTRON   04/12/2019       3          20,000.00            0.00         20,000.00
+ KYRGYZ BANK KGS
+ ATM: ATM KYRGYZ BANK --> VISA Cards 04/12/2019       1           5,000.00            0.00          5,000.00
+ KGS
+ ATM: ATM KYRGYZ BANK --> Our Local  04/12/2019       4           3,100.00            0.00          3,100.00
+ Card KGS
+
+ TOTAL this Posting Date              Number of Trans:                          8
+                                      Transaction Amount:               28,100.00
+                                      Discount:                              0.00
+                                      Account Amount:                   28,100.00
+
+ TOTAL for Cycle                      Number of Trans:                           8
+                                      Transaction Amount:                28,100.00
+                                      Discount:                               0.00
+                                      Account Amount:                    28,100.00
+
+ TOTAL this Device                    Number of Trans:                          8
+                                      Transaction Amount:               28,100.00
+                                      Discount:                              0.00
+                                      Account Amount:                   28,100.00
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM005534     SIC:                         Cycle Num/Type: /
+ Device Name:   HALYK KYRGYZ BANK/ATM               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Merchant Transit Due Special KGS    05/12/2019       0               0.00            0.00              0.00
+ Кредит Счета в БВУ: Client Account  05/12/2019       1         -28,100.00            0.00        -28,100.00
+ --> Bank Account KGS
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:              -28,100.00
+                                      Discount:                              0.00
+                                      Account Amount:                  -28,100.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:               -28,100.00
+                                      Discount:                               0.00
+                                      Account Amount:                   -28,100.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:              -28,100.00
+                                      Discount:                              0.00
+                                      Account Amount:                  -28,100.00
+
+ TOTAL this Currency                  Number of Trans:                          9
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+                                                ------------------------------------------------------------
+  HALYK KYRGYZ BANK/ATM                            Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM164331
+                                                   Reg #:     1204199910016
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant ATM
+                                                   Cycle from 04/12/2019 to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 00075013           SIC:  6011 ATM               Cycle Num/Type:40 / Cash-Out
+ Device Name:   A-75013 314, LENINA ST              Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ ATM: ATM KYRGYZ BANK --> ELECTRON   04/12/2019       4           4,300.00            0.00          4,300.00
+ KYRGYZ BANK KGS
+ ATM: ATM KYRGYZ BANK --> Our Local  04/12/2019      83         581,500.00            0.00        581,500.00
+ Card KGS
+
+ TOTAL this Posting Date              Number of Trans:                         87
+                                      Transaction Amount:              585,800.00
+                                      Discount:                              0.00
+                                      Account Amount:                  585,800.00
+
+ TOTAL for Cycle                      Number of Trans:                          87
+                                      Transaction Amount:               585,800.00
+                                      Discount:                               0.00
+                                      Account Amount:                   585,800.00
+
+ TOTAL this Device                    Number of Trans:                         87
+                                      Transaction Amount:              585,800.00
+                                      Discount:                              0.00
+                                      Account Amount:                  585,800.00
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM164331     SIC:                         Cycle Num/Type: /
+ Device Name:   HALYK KYRGYZ BANK/ATM               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Merchant Transit Due Special KGS    05/12/2019       0               0.00            0.00              0.00
+ Кредит Счета в БВУ: Client Account  05/12/2019       1        -585,800.00            0.00       -585,800.00
+ --> Bank Account KGS
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:             -585,800.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -585,800.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:              -585,800.00
+                                      Discount:                               0.00
+                                      Account Amount:                  -585,800.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:             -585,800.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -585,800.00
+
+ TOTAL this Currency                  Number of Trans:                         88
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+                                                ------------------------------------------------------------
+  HALYK KYRGYZ BANK/ATM                            Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM302535
+                                                   Reg #:     1204199910016
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant ATM
+                                                   Cycle from 04/12/2019 to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 00075019           SIC:  6011 ATM               Cycle Num/Type:17 / Cash-Out
+ Device Name:   A-75019 267,AHUNBAEV                Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ ATM: ATM KYRGYZ BANK --> Our Local  04/12/2019       7          42,200.00            0.00         42,200.00
+ Card KGS
+
+ TOTAL this Posting Date              Number of Trans:                          7
+                                      Transaction Amount:               42,200.00
+                                      Discount:                              0.00
+                                      Account Amount:                   42,200.00
+
+ TOTAL for Cycle                      Number of Trans:                           7
+                                      Transaction Amount:                42,200.00
+                                      Discount:                               0.00
+                                      Account Amount:                    42,200.00
+
+ TOTAL this Device                    Number of Trans:                          7
+                                      Transaction Amount:               42,200.00
+                                      Discount:                              0.00
+                                      Account Amount:                   42,200.00
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM302535     SIC:                         Cycle Num/Type: /
+ Device Name:   HALYK KYRGYZ BANK/ATM               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Merchant Transit Due Special KGS    05/12/2019       0               0.00            0.00              0.00
+ Кредит Счета в БВУ: Client Account  05/12/2019       1         -42,200.00            0.00        -42,200.00
+ --> Bank Account KGS
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:              -42,200.00
+                                      Discount:                              0.00
+                                      Account Amount:                  -42,200.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:               -42,200.00
+                                      Discount:                               0.00
+                                      Account Amount:                   -42,200.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:              -42,200.00
+                                      Discount:                              0.00
+                                      Account Amount:                  -42,200.00
+
+ TOTAL this Currency                  Number of Trans:                          8
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+                                                ------------------------------------------------------------
+  HALYK KYRGYZ BANK/ATM                            Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM484945
+                                                   Reg #:     1204199910016
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant ATM
+                                                   Cycle from 04/12/2019 to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 00075002           SIC:  6011 ATM               Cycle Num/Type:46 / Cash-Out
+ Device Name:   A-75002 " FOAO HBK-AZI              Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ ATM: ATM KYRGYZ BANK --> ELECTRON   04/12/2019      18          85,200.00            0.00         85,200.00
+ KYRGYZ BANK KGS
+ ATM: ATM KYRGYZ BANK --> Our Local  04/12/2019      24         125,000.00            0.00        125,000.00
+ Card KGS
+ ATM: ATM KYRGYZ BANK --> VISA Cards 04/12/2019       1           5,000.00            0.00          5,000.00
+ KGS
+
+ TOTAL this Posting Date              Number of Trans:                         43
+                                      Transaction Amount:              215,200.00
+                                      Discount:                              0.00
+                                      Account Amount:                  215,200.00
+
+ TOTAL for Cycle                      Number of Trans:                          43
+                                      Transaction Amount:               215,200.00
+                                      Discount:                               0.00
+                                      Account Amount:                   215,200.00
+
+ TOTAL this Device                    Number of Trans:                         43
+                                      Transaction Amount:              215,200.00
+                                      Discount:                              0.00
+                                      Account Amount:                  215,200.00
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM484945     SIC:                         Cycle Num/Type: /
+ Device Name:   HALYK KYRGYZ BANK/ATM               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Merchant Transit Due Special KGS    05/12/2019       0               0.00            0.00              0.00
+ Кредит Счета в БВУ: Client Account  05/12/2019       1        -215,200.00            0.00       -215,200.00
+ --> Bank Account KGS
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:             -215,200.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -215,200.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:              -215,200.00
+                                      Discount:                               0.00
+                                      Account Amount:                  -215,200.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:             -215,200.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -215,200.00
+
+ TOTAL this Currency                  Number of Trans:                         44
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+                                                ------------------------------------------------------------
+  HALYK KYRGYZ BANK/ATM                            Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM649927
+                                                   Reg #:     1204199910016
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant ATM
+                                                   Cycle from 04/12/2019 to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 00075005           SIC:  6011 ATM               Cycle Num/Type:23 / Cash-Out
+ Device Name:   A-75005 TRC ASIA MALL               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ ATM: ATM KYRGYZ BANK --> VISA Cards 04/12/2019       2          17,500.00            0.00         17,500.00
+ KGS
+ ATM: ATM KYRGYZ BANK --> Our Local  04/12/2019       2           5,500.00            0.00          5,500.00
+ Card KGS
+
+ TOTAL this Posting Date              Number of Trans:                          4
+                                      Transaction Amount:               23,000.00
+                                      Discount:                              0.00
+                                      Account Amount:                   23,000.00
+
+ TOTAL for Cycle                      Number of Trans:                           4
+                                      Transaction Amount:                23,000.00
+                                      Discount:                               0.00
+                                      Account Amount:                    23,000.00
+
+
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 3
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 00075005           SIC:  6011 ATM               Cycle Num/Type:24 / Cash-Out
+ Device Name:   A-75005 TRC ASIA MALL               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ ATM: ATM KYRGYZ BANK --> Our Local  04/12/2019       7          69,200.00            0.00         69,200.00
+ Card KGS
+
+ TOTAL this Posting Date              Number of Trans:                          7
+                                      Transaction Amount:               69,200.00
+                                      Discount:                              0.00
+                                      Account Amount:                   69,200.00
+
+ TOTAL for Cycle                      Number of Trans:                           7
+                                      Transaction Amount:                69,200.00
+                                      Discount:                               0.00
+                                      Account Amount:                    69,200.00
+
+ TOTAL this Device                    Number of Trans:                         11
+                                      Transaction Amount:               92,200.00
+                                      Discount:                              0.00
+                                      Account Amount:                   92,200.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 3
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM649927     SIC:                         Cycle Num/Type: /
+ Device Name:   HALYK KYRGYZ BANK/ATM               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Merchant Transit Due Special KGS    05/12/2019       0               0.00            0.00              0.00
+ Кредит Счета в БВУ: Client Account  05/12/2019       1         -92,200.00            0.00        -92,200.00
+ --> Bank Account KGS
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:              -92,200.00
+                                      Discount:                              0.00
+                                      Account Amount:                  -92,200.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:               -92,200.00
+                                      Discount:                               0.00
+                                      Account Amount:                   -92,200.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:              -92,200.00
+                                      Discount:                              0.00
+                                      Account Amount:                  -92,200.00
+
+ TOTAL this Currency                  Number of Trans:                         12
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 3 of 3
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+                                                ------------------------------------------------------------
+  HALYK KYRGYZ BANK/ATM                            Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM646490
+                                                   Reg #:     1204199910016
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant ATM
+                                                   Cycle from 04/12/2019 to 04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 00075028           SIC:  6011 ATM               Cycle Num/Type:19 / Cash-Out
+ Device Name:   A-75028 390,FRUNZE STR              Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ ATM: ATM KYRGYZ BANK --> Our VISA   04/12/2019       2          10,000.00            0.00         10,000.00
+ Cards KGS
+ ATM: ATM KYRGYZ BANK --> Our Local  04/12/2019      36         186,800.00            0.00        186,800.00
+ Card KGS
+ ATM: ATM KYRGYZ BANK --> ELECTRON   04/12/2019       5          11,300.00            0.00         11,300.00
+ KYRGYZ BANK KGS
+ ATM: ATM KYRGYZ BANK --> VISA       04/12/2019       1          18,000.00            0.00         18,000.00
+ KYRGYZ BANK KGS
+
+ TOTAL this Posting Date              Number of Trans:                         44
+                                      Transaction Amount:              226,100.00
+                                      Discount:                              0.00
+                                      Account Amount:                  226,100.00
+
+ TOTAL for Cycle                      Number of Trans:                          44
+                                      Transaction Amount:               226,100.00
+                                      Discount:                               0.00
+                                      Account Amount:                   226,100.00
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 3
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ TOTAL this Device                    Number of Trans:                         44
+                                      Transaction Amount:              226,100.00
+                                      Discount:                              0.00
+                                      Account Amount:                  226,100.00
+
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM646490     SIC:                         Cycle Num/Type:19 /
+ Device Name:   HALYK KYRGYZ BANK/ATM               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Merchant Transit Due Special KGS    04/12/2019       0        -226,100.00            0.00       -226,100.00
+
+ TOTAL this Posting Date              Number of Trans:                          0
+                                      Transaction Amount:             -226,100.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -226,100.00
+
+ TOTAL for Cycle                      Number of Trans:                           0
+                                      Transaction Amount:              -226,100.00
+                                      Discount:                               0.00
+                                      Account Amount:                  -226,100.00
+
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM646490     SIC:                         Cycle Num/Type: /
+ Device Name:   HALYK KYRGYZ BANK/ATM               Posting Date:  04/12/2019     Value Date:04/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Merchant Transit Due Special KGS    04/12/2019       0         226,100.00            0.00        226,100.00
+
+ TOTAL this Posting Date              Number of Trans:                          0
+                                      Transaction Amount:              226,100.00
+                                      Discount:                              0.00
+                                      Account Amount:                  226,100.00
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 3
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 04/12/2019
+ TOTAL for Cycle                      Number of Trans:                           0
+                                      Transaction Amount:               226,100.00
+                                      Discount:                               0.00
+                                      Account Amount:                   226,100.00
+
+ TOTAL this Device                    Number of Trans:                          0
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+ TOTAL this Currency                  Number of Trans:                         44
+                                      Transaction Amount:              226,100.00
+                                      Discount:                              0.00
+                                      Account Amount:                  226,100.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 3 of 3
+

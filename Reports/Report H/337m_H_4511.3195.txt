@@ -1,0 +1,2059 @@
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+                                                ------------------------------------------------------------
+  OAO HALYK BANK KYRGYZSTAN                        Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM476150
+                                                   Reg #:     600200048129
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant Cash
+                                                   Cycle from 03/12/2019 to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KZT   Device: 35560629           SIC:  6010 POS Cash          Cycle Num/Type:1 / Batch Uplo
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Cash: POS KYRGYZ BANK --> Our VISA  03/12/2019       1          47,000.00            0.00         47,000.00
+ Cards KZT
+ Cash: POS KYRGYZ BANK --> Our       03/12/2019       1         311,000.00            0.00        311,000.00
+ Electron/Plus KZT
+
+ TOTAL this Posting Date              Number of Trans:                          2
+                                      Transaction Amount:              358,000.00
+                                      Discount:                              0.00
+                                      Account Amount:                  358,000.00
+
+ TOTAL for Cycle                      Number of Trans:                           2
+                                      Transaction Amount:               358,000.00
+                                      Discount:                               0.00
+                                      Account Amount:                   358,000.00
+
+ TOTAL this Device                    Number of Trans:                          2
+                                      Transaction Amount:              358,000.00
+                                      Discount:                              0.00
+                                      Account Amount:                  358,000.00
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                 Page 1 of 15
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KZT   Device: 35560631           SIC:  6010 POS Cash          Cycle Num/Type: /
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Cash: POS KYRGYZ BANK --> Our VISA  03/12/2019       1         188,500.00            0.00        188,500.00
+ Cards KZT
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:              188,500.00
+                                      Discount:                              0.00
+                                      Account Amount:                  188,500.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:               188,500.00
+                                      Discount:                               0.00
+                                      Account Amount:                   188,500.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:              188,500.00
+                                      Discount:                              0.00
+                                      Account Amount:                  188,500.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                 Page 2 of 15
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KZT   Device: 511-COMM476150     SIC:                         Cycle Num/Type:1 /
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Merchant Transit Due Special KZT    03/12/2019       0        -546,500.00            0.00       -546,500.00
+
+ TOTAL this Posting Date              Number of Trans:                          0
+                                      Transaction Amount:             -546,500.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -546,500.00
+
+ TOTAL for Cycle                      Number of Trans:                           0
+                                      Transaction Amount:              -546,500.00
+                                      Discount:                               0.00
+                                      Account Amount:                  -546,500.00
+
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KZT   Device: 511-COMM476150     SIC:                         Cycle Num/Type: /
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Merchant Transit Due Special KZT    03/12/2019       0         546,500.00            0.00        546,500.00
+
+ TOTAL this Posting Date              Number of Trans:                          0
+                                      Transaction Amount:              546,500.00
+                                      Discount:                              0.00
+                                      Account Amount:                  546,500.00
+
+ TOTAL for Cycle                      Number of Trans:                           0
+                                      Transaction Amount:               546,500.00
+                                      Discount:                               0.00
+                                      Account Amount:                   546,500.00
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                 Page 3 of 15
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+ TOTAL this Device                    Number of Trans:                          0
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+ TOTAL this Currency                  Number of Trans:                          3
+                                      Transaction Amount:              546,500.00
+                                      Discount:                              0.00
+                                      Account Amount:                  546,500.00
+
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      USD   Device: 35560006           SIC:  6010 POS Cash          Cycle Num/Type: /
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Cash: POS KYRGYZ BANK --> ELECTRON  03/12/2019       1             300.00            0.00            300.00
+ KYRGYZ BANK USD
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:                  300.00
+                                      Discount:                              0.00
+                                      Account Amount:                      300.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:                   300.00
+                                      Discount:                               0.00
+                                      Account Amount:                       300.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:                  300.00
+                                      Discount:                              0.00
+                                      Account Amount:                      300.00
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                 Page 4 of 15
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      USD   Device: 511-COMM476150     SIC:                         Cycle Num/Type: /
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Кредит Счета в БВУ: Client Account  04/12/2019       1            -300.00            0.00           -300.00
+ --> Bank Account USD
+ Merchant Transit Due Special USD    04/12/2019       0               0.00            0.00              0.00
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:                 -300.00
+                                      Discount:                              0.00
+                                      Account Amount:                     -300.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:                  -300.00
+                                      Discount:                               0.00
+                                      Account Amount:                      -300.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:                 -300.00
+                                      Discount:                              0.00
+                                      Account Amount:                     -300.00
+
+ TOTAL this Currency                  Number of Trans:                          2
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                 Page 5 of 15
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 35560001           SIC:  6010 POS Cash          Cycle Num/Type:1 / Batch Uplo
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Cash: POS KYRGYZ BANK --> Our Local 03/12/2019       3          60,269.00            0.00         60,269.00
+ Card KGS
+ Cash: POS KYRGYZ BANK --> VISA      03/12/2019       2          90,129.00            0.00         90,129.00
+ KYRGYZ BANK KGS
+
+ TOTAL this Posting Date              Number of Trans:                          5
+                                      Transaction Amount:              150,398.00
+                                      Discount:                              0.00
+                                      Account Amount:                  150,398.00
+
+ TOTAL for Cycle                      Number of Trans:                           5
+                                      Transaction Amount:               150,398.00
+                                      Discount:                               0.00
+                                      Account Amount:                   150,398.00
+
+ TOTAL this Device                    Number of Trans:                          5
+                                      Transaction Amount:              150,398.00
+                                      Discount:                              0.00
+                                      Account Amount:                  150,398.00
+
+
+
+
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                 Page 6 of 15
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 35560003           SIC:  6010 POS Cash          Cycle Num/Type: /
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Cash: POS KYRGYZ BANK --> Our Local 03/12/2019       1          25,000.00            0.00         25,000.00
+ Card KGS
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:               25,000.00
+                                      Discount:                              0.00
+                                      Account Amount:                   25,000.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:                25,000.00
+                                      Discount:                               0.00
+                                      Account Amount:                    25,000.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:               25,000.00
+                                      Discount:                              0.00
+                                      Account Amount:                   25,000.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                 Page 7 of 15
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 35560006           SIC:  6010 POS Cash          Cycle Num/Type: /
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Cash: POS KYRGYZ BANK --> Our Local 03/12/2019       1           2,340.00            0.00          2,340.00
+ Card KGS
+ Cash: POS KYRGYZ BANK --> ELECTRON  03/12/2019       1          13,366.00            0.00         13,366.00
+ KYRGYZ BANK KGS
+
+ TOTAL this Posting Date              Number of Trans:                          2
+                                      Transaction Amount:               15,706.00
+                                      Discount:                              0.00
+                                      Account Amount:                   15,706.00
+
+ TOTAL for Cycle                      Number of Trans:                           2
+                                      Transaction Amount:                15,706.00
+                                      Discount:                               0.00
+                                      Account Amount:                    15,706.00
+
+ TOTAL this Device                    Number of Trans:                          2
+                                      Transaction Amount:               15,706.00
+                                      Discount:                              0.00
+                                      Account Amount:                   15,706.00
+
+
+
+
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                 Page 8 of 15
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 35560624           SIC:  6010 POS Cash          Cycle Num/Type: /
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Cash: POS KYRGYZ BANK --> Our Local 03/12/2019       4          23,240.00            0.00         23,240.00
+ Card KGS
+
+ TOTAL this Posting Date              Number of Trans:                          4
+                                      Transaction Amount:               23,240.00
+                                      Discount:                              0.00
+                                      Account Amount:                   23,240.00
+
+ TOTAL for Cycle                      Number of Trans:                           4
+                                      Transaction Amount:                23,240.00
+                                      Discount:                               0.00
+                                      Account Amount:                    23,240.00
+
+ TOTAL this Device                    Number of Trans:                          4
+                                      Transaction Amount:               23,240.00
+                                      Discount:                              0.00
+                                      Account Amount:                   23,240.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                 Page 9 of 15
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 35560625           SIC:  6010 POS Cash          Cycle Num/Type:1 / Batch Uplo
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Cash: POS KYRGYZ BANK --> Our Local 03/12/2019       3          72,850.00            0.00         72,850.00
+ Card KGS
+
+ TOTAL this Posting Date              Number of Trans:                          3
+                                      Transaction Amount:               72,850.00
+                                      Discount:                              0.00
+                                      Account Amount:                   72,850.00
+
+ TOTAL for Cycle                      Number of Trans:                           3
+                                      Transaction Amount:                72,850.00
+                                      Discount:                               0.00
+                                      Account Amount:                    72,850.00
+
+ TOTAL this Device                    Number of Trans:                          3
+                                      Transaction Amount:               72,850.00
+                                      Discount:                              0.00
+                                      Account Amount:                   72,850.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                Page 10 of 15
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 35560626           SIC:  6010 POS Cash          Cycle Num/Type:1 / Batch Uplo
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Cash: POS KYRGYZ BANK --> ELECTRON  03/12/2019       1               1.00            0.00              1.00
+ KYRGYZ BANK KGS
+ Cash Reversal: POS KYRGYZ BANK -->  03/12/2019       1              -1.00            0.00             -1.00
+ ELECTRON KYRGYZ BANK KGS
+
+ TOTAL this Posting Date              Number of Trans:                          2
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+ TOTAL for Cycle                      Number of Trans:                           2
+                                      Transaction Amount:                     0.00
+                                      Discount:                               0.00
+                                      Account Amount:                         0.00
+
+ TOTAL this Device                    Number of Trans:                          2
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                Page 11 of 15
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 35560629           SIC:  6010 POS Cash          Cycle Num/Type:1 / Batch Uplo
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Cash: POS KYRGYZ BANK --> ELECTRON  03/12/2019       1          15,600.00            0.00         15,600.00
+ KYRGYZ BANK KGS
+ Cash: POS KYRGYZ BANK --> Our Local 03/12/2019       3         154,000.00            0.00        154,000.00
+ Card KGS
+
+ TOTAL this Posting Date              Number of Trans:                          4
+                                      Transaction Amount:              169,600.00
+                                      Discount:                              0.00
+                                      Account Amount:                  169,600.00
+
+ TOTAL for Cycle                      Number of Trans:                           4
+                                      Transaction Amount:               169,600.00
+                                      Discount:                               0.00
+                                      Account Amount:                   169,600.00
+
+ TOTAL this Device                    Number of Trans:                          4
+                                      Transaction Amount:              169,600.00
+                                      Discount:                              0.00
+                                      Account Amount:                  169,600.00
+
+
+
+
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                Page 12 of 15
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 35560631           SIC:  6010 POS Cash          Cycle Num/Type: /
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Cash: POS KYRGYZ BANK --> Our Local 03/12/2019      13         123,271.00            0.00        123,271.00
+ Card KGS
+
+ TOTAL this Posting Date              Number of Trans:                         13
+                                      Transaction Amount:              123,271.00
+                                      Discount:                              0.00
+                                      Account Amount:                  123,271.00
+
+ TOTAL for Cycle                      Number of Trans:                          13
+                                      Transaction Amount:               123,271.00
+                                      Discount:                               0.00
+                                      Account Amount:                   123,271.00
+
+ TOTAL this Device                    Number of Trans:                         13
+                                      Transaction Amount:              123,271.00
+                                      Discount:                              0.00
+                                      Account Amount:                  123,271.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                Page 13 of 15
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 35560635           SIC:  6010 POS Cash          Cycle Num/Type:1 / Batch Uplo
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Cash: POS KYRGYZ BANK --> ELECTRON  03/12/2019       1           5,340.00            0.00          5,340.00
+ KYRGYZ BANK KGS
+ Cash: POS KYRGYZ BANK --> Our Local 03/12/2019       9         105,000.00            0.00        105,000.00
+ Card KGS
+
+ TOTAL this Posting Date              Number of Trans:                         10
+                                      Transaction Amount:              110,340.00
+                                      Discount:                              0.00
+                                      Account Amount:                  110,340.00
+
+ TOTAL for Cycle                      Number of Trans:                          10
+                                      Transaction Amount:               110,340.00
+                                      Discount:                               0.00
+                                      Account Amount:                   110,340.00
+
+ TOTAL this Device                    Number of Trans:                         10
+                                      Transaction Amount:              110,340.00
+                                      Discount:                              0.00
+                                      Account Amount:                  110,340.00
+
+
+
+
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                Page 14 of 15
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM476150     SIC:                         Cycle Num/Type: /
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Merchant Transit Due Special KGS    04/12/2019       0               0.00            0.00              0.00
+ Кредит Счета в БВУ: Client Account  04/12/2019       1        -690,405.00            0.00       -690,405.00
+ --> Bank Account KGS
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:             -690,405.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -690,405.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:              -690,405.00
+                                      Discount:                               0.00
+                                      Account Amount:                  -690,405.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:             -690,405.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -690,405.00
+
+ TOTAL this Currency                  Number of Trans:                         45
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                Page 15 of 15
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+                                                ------------------------------------------------------------
+  OAO HALYK BANK KYRGYZSTAN                        Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM485710
+                                                   Reg #:     600200048129
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant Cash
+                                                   Cycle from 03/12/2019 to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 35560008           SIC:  6010 POS Cash          Cycle Num/Type: /
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Cash: POS KYRGYZ BANK --> ELECTRON  03/12/2019       1           8,150.00            0.00          8,150.00
+ KYRGYZ BANK KGS
+ Cash: POS KYRGYZ BANK --> Our Local 03/12/2019       3          14,200.00            0.00         14,200.00
+ Card KGS
+
+ TOTAL this Posting Date              Number of Trans:                          4
+                                      Transaction Amount:               22,350.00
+                                      Discount:                              0.00
+                                      Account Amount:                   22,350.00
+
+ TOTAL for Cycle                      Number of Trans:                           4
+                                      Transaction Amount:                22,350.00
+                                      Discount:                               0.00
+                                      Account Amount:                    22,350.00
+
+ TOTAL this Device                    Number of Trans:                          4
+                                      Transaction Amount:               22,350.00
+                                      Discount:                              0.00
+                                      Account Amount:                   22,350.00
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM485710     SIC:                         Cycle Num/Type: /
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Кредит Счета в БВУ: Client Account  04/12/2019       1         -22,350.00            0.00        -22,350.00
+ --> Bank Account KGS
+ Merchant Transit Due Special KGS    04/12/2019       0               0.00            0.00              0.00
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:              -22,350.00
+                                      Discount:                              0.00
+                                      Account Amount:                  -22,350.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:               -22,350.00
+                                      Discount:                               0.00
+                                      Account Amount:                   -22,350.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:              -22,350.00
+                                      Discount:                              0.00
+                                      Account Amount:                  -22,350.00
+
+ TOTAL this Currency                  Number of Trans:                          5
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+                                                ------------------------------------------------------------
+  OAO HALYK BANK KYRGYZSTAN                        Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM312138
+                                                   Reg #:     600200048129
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant Cash
+                                                   Cycle from 03/12/2019 to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 33560635           SIC:  6010 POS Cash          Cycle Num/Type: /
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Cash: POS KYRGYZ BANK --> Our Local 03/12/2019       1          45,000.00            0.00         45,000.00
+ Card KGS
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:               45,000.00
+                                      Discount:                              0.00
+                                      Account Amount:                   45,000.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:                45,000.00
+                                      Discount:                               0.00
+                                      Account Amount:                    45,000.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:               45,000.00
+                                      Discount:                              0.00
+                                      Account Amount:                   45,000.00
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM312138     SIC:                         Cycle Num/Type: /
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Merchant Transit Due Special KGS    04/12/2019       0               0.00            0.00              0.00
+ Кредит Счета в БВУ: Client Account  04/12/2019       1         -45,000.00            0.00        -45,000.00
+ --> Bank Account KGS
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:              -45,000.00
+                                      Discount:                              0.00
+                                      Account Amount:                  -45,000.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:               -45,000.00
+                                      Discount:                               0.00
+                                      Account Amount:                   -45,000.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:              -45,000.00
+                                      Discount:                              0.00
+                                      Account Amount:                  -45,000.00
+
+ TOTAL this Currency                  Number of Trans:                          2
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+                                                ------------------------------------------------------------
+  OAO HALYK BANK KYRGYZSTAN                        Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM598017
+                                                   Reg #:     600200048129
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant Cash
+                                                   Cycle from 03/12/2019 to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KZT   Device: 35560627           SIC:  6010 POS Cash          Cycle Num/Type:1 / Batch Uplo
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Cash: POS KYRGYZ BANK --> Our VISA  03/12/2019       1          57,000.00            0.00         57,000.00
+ Cards KZT
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:               57,000.00
+                                      Discount:                              0.00
+                                      Account Amount:                   57,000.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:                57,000.00
+                                      Discount:                               0.00
+                                      Account Amount:                    57,000.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:               57,000.00
+                                      Discount:                              0.00
+                                      Account Amount:                   57,000.00
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 4
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KZT   Device: 511-COMM598017     SIC:                         Cycle Num/Type: /
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Merchant Transit Due Special KZT    04/12/2019       0               0.00            0.00              0.00
+ Кредит Счета в БВУ: Client Account  04/12/2019       1         -57,000.00            0.00        -57,000.00
+ --> Bank Account KZT
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:              -57,000.00
+                                      Discount:                              0.00
+                                      Account Amount:                  -57,000.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:               -57,000.00
+                                      Discount:                               0.00
+                                      Account Amount:                   -57,000.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:              -57,000.00
+                                      Discount:                              0.00
+                                      Account Amount:                  -57,000.00
+
+ TOTAL this Currency                  Number of Trans:                          2
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 4
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 35560627           SIC:  6010 POS Cash          Cycle Num/Type:1 / Batch Uplo
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Cash: POS KYRGYZ BANK --> Our Local 03/12/2019       1          10,000.00            0.00         10,000.00
+ Card KGS
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:               10,000.00
+                                      Discount:                              0.00
+                                      Account Amount:                   10,000.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:                10,000.00
+                                      Discount:                               0.00
+                                      Account Amount:                    10,000.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:               10,000.00
+                                      Discount:                              0.00
+                                      Account Amount:                   10,000.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 3 of 4
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM598017     SIC:                         Cycle Num/Type: /
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Кредит Счета в БВУ: Client Account  04/12/2019       1         -10,000.00            0.00        -10,000.00
+ --> Bank Account KGS
+ Merchant Transit Due Special KGS    04/12/2019       0               0.00            0.00              0.00
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:              -10,000.00
+                                      Discount:                              0.00
+                                      Account Amount:                  -10,000.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:               -10,000.00
+                                      Discount:                               0.00
+                                      Account Amount:                   -10,000.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:              -10,000.00
+                                      Discount:                              0.00
+                                      Account Amount:                  -10,000.00
+
+ TOTAL this Currency                  Number of Trans:                          2
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 4 of 4
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+                                                ------------------------------------------------------------
+  OAO HALYK BANK KYRGYZSTAN                        Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM603700
+                                                   Reg #:     600200048129
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant Cash
+                                                   Cycle from 03/12/2019 to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 33560683           SIC:  6010 POS Cash          Cycle Num/Type:1 / Batch Uplo
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Cash: POS KYRGYZ BANK --> Our Local 03/12/2019       3          14,390.00            0.00         14,390.00
+ Card KGS
+
+ TOTAL this Posting Date              Number of Trans:                          3
+                                      Transaction Amount:               14,390.00
+                                      Discount:                              0.00
+                                      Account Amount:                   14,390.00
+
+ TOTAL for Cycle                      Number of Trans:                           3
+                                      Transaction Amount:                14,390.00
+                                      Discount:                               0.00
+                                      Account Amount:                    14,390.00
+
+ TOTAL this Device                    Number of Trans:                          3
+                                      Transaction Amount:               14,390.00
+                                      Discount:                              0.00
+                                      Account Amount:                   14,390.00
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM603700     SIC:                         Cycle Num/Type: /
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Кредит Счета в БВУ: Client Account  04/12/2019       1         -14,390.00            0.00        -14,390.00
+ --> Bank Account KGS
+ Merchant Transit Due Special KGS    04/12/2019       0               0.00            0.00              0.00
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:              -14,390.00
+                                      Discount:                              0.00
+                                      Account Amount:                  -14,390.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:               -14,390.00
+                                      Discount:                               0.00
+                                      Account Amount:                   -14,390.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:              -14,390.00
+                                      Discount:                              0.00
+                                      Account Amount:                  -14,390.00
+
+ TOTAL this Currency                  Number of Trans:                          4
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+                                                ------------------------------------------------------------
+  OAO HALYK BANK KYRGYZSTAN                        Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM730271
+                                                   Reg #:     600200048129
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant Cash
+                                                   Cycle from 23/11/2019 to 03/12/2019
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 1
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+                                                ------------------------------------------------------------
+  OAO HALYK BANK KYRGYZSTAN                        Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM461117
+                                                   Reg #:     600200048129
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant Cash
+                                                   Cycle from 03/12/2019 to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 35560639           SIC:  6010 POS Cash          Cycle Num/Type: /
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Cash: POS KYRGYZ BANK --> Our Local 03/12/2019       3          28,270.00            0.00         28,270.00
+ Card KGS
+
+ TOTAL this Posting Date              Number of Trans:                          3
+                                      Transaction Amount:               28,270.00
+                                      Discount:                              0.00
+                                      Account Amount:                   28,270.00
+
+ TOTAL for Cycle                      Number of Trans:                           3
+                                      Transaction Amount:                28,270.00
+                                      Discount:                               0.00
+                                      Account Amount:                    28,270.00
+
+ TOTAL this Device                    Number of Trans:                          3
+                                      Transaction Amount:               28,270.00
+                                      Discount:                              0.00
+                                      Account Amount:                   28,270.00
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM461117     SIC:                         Cycle Num/Type: /
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Merchant Transit Due Special KGS    04/12/2019       0               0.00            0.00              0.00
+ Кредит Счета в БВУ: Client Account  04/12/2019       1         -28,270.00            0.00        -28,270.00
+ --> Bank Account KGS
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:              -28,270.00
+                                      Discount:                              0.00
+                                      Account Amount:                  -28,270.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:               -28,270.00
+                                      Discount:                               0.00
+                                      Account Amount:                   -28,270.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:              -28,270.00
+                                      Discount:                              0.00
+                                      Account Amount:                  -28,270.00
+
+ TOTAL this Currency                  Number of Trans:                          4
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+                                                ------------------------------------------------------------
+  OAO HALYK BANK KYRGYZSTAN                        Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM609905
+                                                   Reg #:     600200048129
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant Cash
+                                                   Cycle from 30/11/2019 to 03/12/2019
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 1
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+                                                ------------------------------------------------------------
+  OAO HALYK BANK KYRGYZSTAN                        Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM068813
+                                                   Reg #:     600200048129
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant Cash
+                                                   Cycle from 04/11/2019 to 03/12/2019
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 1
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+                                                ------------------------------------------------------------
+  OAO HALYK BANK KYRGYZSTAN                        Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM552261
+                                                   Reg #:     600200048129
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant Cash
+                                                   Cycle from 20/11/2019 to 03/12/2019
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 1
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+                                                ------------------------------------------------------------
+  OAO HALYK BANK KYRGYZSTAN                        Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM748869
+                                                   Reg #:     600200048129
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant Cash
+                                                   Cycle from 03/12/2019 to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KZT   Device: 33560622           SIC:  6010 POS Cash          Cycle Num/Type:1 / Batch Uplo
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Cash: POS KYRGYZ BANK --> Our       03/12/2019       1         171,500.00            0.00        171,500.00
+ Electron/Plus KZT
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:              171,500.00
+                                      Discount:                              0.00
+                                      Account Amount:                  171,500.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:               171,500.00
+                                      Discount:                               0.00
+                                      Account Amount:                   171,500.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:              171,500.00
+                                      Discount:                              0.00
+                                      Account Amount:                  171,500.00
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 6
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KZT   Device: 511-COMM748869     SIC:                         Cycle Num/Type: /
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Кредит Счета в БВУ: Client Account  04/12/2019       1        -171,500.00            0.00       -171,500.00
+ --> Bank Account KZT
+ Merchant Transit Due Special KZT    04/12/2019       0               0.00            0.00              0.00
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:             -171,500.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -171,500.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:              -171,500.00
+                                      Discount:                               0.00
+                                      Account Amount:                  -171,500.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:             -171,500.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -171,500.00
+
+ TOTAL this Currency                  Number of Trans:                          2
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 6
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      USD   Device: 33560622           SIC:  6010 POS Cash          Cycle Num/Type:1 / Batch Uplo
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Cash: POS KYRGYZ BANK --> ELECTRON  03/12/2019       1           2,120.00            0.00          2,120.00
+ KYRGYZ BANK USD
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:                2,120.00
+                                      Discount:                              0.00
+                                      Account Amount:                    2,120.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:                 2,120.00
+                                      Discount:                               0.00
+                                      Account Amount:                     2,120.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:                2,120.00
+                                      Discount:                              0.00
+                                      Account Amount:                    2,120.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 3 of 6
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      USD   Device: 511-COMM748869     SIC:                         Cycle Num/Type: /
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Кредит Счета в БВУ: Client Account  04/12/2019       1          -2,120.00            0.00         -2,120.00
+ --> Bank Account USD
+ Merchant Transit Due Special USD    04/12/2019       0               0.00            0.00              0.00
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:               -2,120.00
+                                      Discount:                              0.00
+                                      Account Amount:                   -2,120.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:                -2,120.00
+                                      Discount:                               0.00
+                                      Account Amount:                    -2,120.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:               -2,120.00
+                                      Discount:                              0.00
+                                      Account Amount:                   -2,120.00
+
+ TOTAL this Currency                  Number of Trans:                          2
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 4 of 6
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 33560622           SIC:  6010 POS Cash          Cycle Num/Type:1 / Batch Uplo
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Cash: POS KYRGYZ BANK --> Our Local 03/12/2019       3          32,425.00            0.00         32,425.00
+ Card KGS
+
+ TOTAL this Posting Date              Number of Trans:                          3
+                                      Transaction Amount:               32,425.00
+                                      Discount:                              0.00
+                                      Account Amount:                   32,425.00
+
+ TOTAL for Cycle                      Number of Trans:                           3
+                                      Transaction Amount:                32,425.00
+                                      Discount:                               0.00
+                                      Account Amount:                    32,425.00
+
+ TOTAL this Device                    Number of Trans:                          3
+                                      Transaction Amount:               32,425.00
+                                      Discount:                              0.00
+                                      Account Amount:                   32,425.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 5 of 6
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM748869     SIC:                         Cycle Num/Type: /
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Merchant Transit Due Special KGS    04/12/2019       0               0.00            0.00              0.00
+ Кредит Счета в БВУ: Client Account  04/12/2019       1         -32,425.00            0.00        -32,425.00
+ --> Bank Account KGS
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:              -32,425.00
+                                      Discount:                              0.00
+                                      Account Amount:                  -32,425.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:               -32,425.00
+                                      Discount:                               0.00
+                                      Account Amount:                   -32,425.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:              -32,425.00
+                                      Discount:                              0.00
+                                      Account Amount:                  -32,425.00
+
+ TOTAL this Currency                  Number of Trans:                          4
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 6 of 6
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+                                                ------------------------------------------------------------
+  OAO HALYK BANK KYRGYZSTAN                        Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM739100
+                                                   Reg #:     600200048129
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant Cash
+                                                   Cycle from 30/11/2019 to 03/12/2019
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 1
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+                                                ------------------------------------------------------------
+  OAO HALYK BANK KYRGYZSTAN                        Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM553863
+                                                   Reg #:     600200048129
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant Cash
+                                                   Cycle from 03/12/2019 to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 33560685           SIC:  6010 POS Cash          Cycle Num/Type: /
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Cash: POS KYRGYZ BANK --> Our Local 03/12/2019       1           8,120.00            0.00          8,120.00
+ Card KGS
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:                8,120.00
+                                      Discount:                              0.00
+                                      Account Amount:                    8,120.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:                 8,120.00
+                                      Discount:                               0.00
+                                      Account Amount:                     8,120.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:                8,120.00
+                                      Discount:                              0.00
+                                      Account Amount:                    8,120.00
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM553863     SIC:                         Cycle Num/Type: /
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Кредит Счета в БВУ: Client Account  04/12/2019       1          -8,120.00            0.00         -8,120.00
+ --> Bank Account KGS
+ Merchant Transit Due Special KGS    04/12/2019       0               0.00            0.00              0.00
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:               -8,120.00
+                                      Discount:                              0.00
+                                      Account Amount:                   -8,120.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:                -8,120.00
+                                      Discount:                               0.00
+                                      Account Amount:                    -8,120.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:               -8,120.00
+                                      Discount:                              0.00
+                                      Account Amount:                   -8,120.00
+
+ TOTAL this Currency                  Number of Trans:                          2
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+                                                ------------------------------------------------------------
+  OAO HALYK BANK KYRGYZSTAN                        Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM842100
+                                                   Reg #:     600200048129
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant Cash
+                                                   Cycle from 03/12/2019 to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 33560020           SIC:  6010 POS Cash          Cycle Num/Type: /
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Cash: POS KYRGYZ BANK --> Our Local 03/12/2019      18         214,650.00            0.00        214,650.00
+ Card KGS
+
+ TOTAL this Posting Date              Number of Trans:                         18
+                                      Transaction Amount:              214,650.00
+                                      Discount:                              0.00
+                                      Account Amount:                  214,650.00
+
+ TOTAL for Cycle                      Number of Trans:                          18
+                                      Transaction Amount:               214,650.00
+                                      Discount:                               0.00
+                                      Account Amount:                   214,650.00
+
+ TOTAL this Device                    Number of Trans:                         18
+                                      Transaction Amount:              214,650.00
+                                      Discount:                              0.00
+                                      Account Amount:                  214,650.00
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM842100     SIC:                         Cycle Num/Type: /
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Merchant Transit Due Special KGS    04/12/2019       0               0.00            0.00              0.00
+ Кредит Счета в БВУ: Client Account  04/12/2019       1        -214,650.00            0.00       -214,650.00
+ --> Bank Account KGS
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:             -214,650.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -214,650.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:              -214,650.00
+                                      Discount:                               0.00
+                                      Account Amount:                  -214,650.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:             -214,650.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -214,650.00
+
+ TOTAL this Currency                  Number of Trans:                         19
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+                                                ------------------------------------------------------------
+  OAO HALYK BANK KYRGYZSTAN                        Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM022711
+                                                   Reg #:     600200048129
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant Cash
+                                                   Cycle from 03/12/2019 to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 33560636           SIC:  6010 POS Cash          Cycle Num/Type: /
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Cash: POS KYRGYZ BANK --> Our Local 03/12/2019       1           8,370.00            0.00          8,370.00
+ Card KGS
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:                8,370.00
+                                      Discount:                              0.00
+                                      Account Amount:                    8,370.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:                 8,370.00
+                                      Discount:                               0.00
+                                      Account Amount:                     8,370.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:                8,370.00
+                                      Discount:                              0.00
+                                      Account Amount:                    8,370.00
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM022711     SIC:                         Cycle Num/Type: /
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Кредит Счета в БВУ: Client Account  04/12/2019       1          -8,370.00            0.00         -8,370.00
+ --> Bank Account KGS
+ Merchant Transit Due Special KGS    04/12/2019       0               0.00            0.00              0.00
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:               -8,370.00
+                                      Discount:                              0.00
+                                      Account Amount:                   -8,370.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:                -8,370.00
+                                      Discount:                               0.00
+                                      Account Amount:                    -8,370.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:               -8,370.00
+                                      Discount:                              0.00
+                                      Account Amount:                   -8,370.00
+
+ TOTAL this Currency                  Number of Trans:                          2
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 2
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+                                                ------------------------------------------------------------
+  OAO HALYK BANK KYRGYZSTAN                        Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM076170
+                                                   Reg #:     600200048129
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant Cash
+                                                   Cycle from 03/12/2019 to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KZT   Device: 35560021           SIC:  6010 POS Cash          Cycle Num/Type:1 / Batch Uplo
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Cash: POS KYRGYZ BANK --> Our VISA  03/12/2019       3         115,000.00            0.00        115,000.00
+ Cards KZT
+
+ TOTAL this Posting Date              Number of Trans:                          3
+                                      Transaction Amount:              115,000.00
+                                      Discount:                              0.00
+                                      Account Amount:                  115,000.00
+
+ TOTAL for Cycle                      Number of Trans:                           3
+                                      Transaction Amount:               115,000.00
+                                      Discount:                               0.00
+                                      Account Amount:                   115,000.00
+
+ TOTAL this Device                    Number of Trans:                          3
+                                      Transaction Amount:              115,000.00
+                                      Discount:                              0.00
+                                      Account Amount:                  115,000.00
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 4
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KZT   Device: 511-COMM076170     SIC:                         Cycle Num/Type: /
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Merchant Transit Due Special KZT    04/12/2019       0               0.00            0.00              0.00
+ Кредит Счета в БВУ: Client Account  04/12/2019       1        -115,000.00            0.00       -115,000.00
+ --> Bank Account KZT
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:             -115,000.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -115,000.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:              -115,000.00
+                                      Discount:                               0.00
+                                      Account Amount:                  -115,000.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:             -115,000.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -115,000.00
+
+ TOTAL this Currency                  Number of Trans:                          4
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 2 of 4
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 35560021           SIC:  6010 POS Cash          Cycle Num/Type:1 / Batch Uplo
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Cash: POS KYRGYZ BANK --> Our Local 03/12/2019      12         122,275.00            0.00        122,275.00
+ Card KGS
+
+ TOTAL this Posting Date              Number of Trans:                         12
+                                      Transaction Amount:              122,275.00
+                                      Discount:                              0.00
+                                      Account Amount:                  122,275.00
+
+ TOTAL for Cycle                      Number of Trans:                          12
+                                      Transaction Amount:               122,275.00
+                                      Discount:                               0.00
+                                      Account Amount:                   122,275.00
+
+ TOTAL this Device                    Number of Trans:                         12
+                                      Transaction Amount:              122,275.00
+                                      Discount:                              0.00
+                                      Account Amount:                  122,275.00
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 3 of 4
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Currency:      KGS   Device: 511-COMM076170     SIC:                         Cycle Num/Type: /
+ Device Name:   OAO HALYK BANK KYRGYZS              Posting Date:  03/12/2019     Value Date:03/12/2019
+ -----------------------------------------------------------------------------------------------------------
+ Transaction Name                    Trans Date #Trans. Transaction Amount        Discount    Account Amount
+ ----------------------------------- ---------- ------- ------------------ --------------- -----------------
+ Merchant Transit Due Special KGS    04/12/2019       0               0.00            0.00              0.00
+ Кредит Счета в БВУ: Client Account  04/12/2019       1        -122,275.00            0.00       -122,275.00
+ --> Bank Account KGS
+
+ TOTAL this Posting Date              Number of Trans:                          1
+                                      Transaction Amount:             -122,275.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -122,275.00
+
+ TOTAL for Cycle                      Number of Trans:                           1
+                                      Transaction Amount:              -122,275.00
+                                      Discount:                               0.00
+                                      Account Amount:                  -122,275.00
+
+ TOTAL this Device                    Number of Trans:                          1
+                                      Transaction Amount:             -122,275.00
+                                      Discount:                              0.00
+                                      Account Amount:                 -122,275.00
+
+ TOTAL this Currency                  Number of Trans:                         13
+                                      Transaction Amount:                    0.00
+                                      Discount:                              0.00
+                                      Account Amount:                        0.00
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 4 of 4
+
+
+                                         Merchant Contract Statement
+ Financial Institution:   0010 HALYK (KKB)                                              Period  to 03/12/2019
+                                                ------------------------------------------------------------
+  OAO HALYK BANK KYRGYZSTAN                        Office:    HALYK KYRGYZ BANK
+  390, FRUNZE STR.                                 Contract #:511-COMM169160
+                                                   Reg #:     600200048129
+                                                   511-Corporate Client Account ACQ
+  ANGELINA  DODONOVA                               511-Merchant Cash
+                                                   Cycle from 03/12/2019 to 03/12/2019
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ------------------------------------------------------------------------------------------------------------
+                                                                                                  Page 1 of 1
+
