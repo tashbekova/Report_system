@@ -62,7 +62,6 @@ namespace Report_system
 
                         int index_Transaction_Name = 0; //индекс Transaction Name
                         int index_Trans_Date = 49;
-                        int count = 0;
                         bool flag = false;
                         string line = "";
                         string string_Financial_value = "";
@@ -75,6 +74,7 @@ namespace Report_system
                         string string_SIC_value = "";
                         string string_Cycle_value = "";
                         string string_Device_Name_value = "";
+                        string string_Transaction_Name_value = "";
                         string string_Trans_value = "";
                         string string_Transaction_Amount_value = "";
                         string string_Discount_value = "";
@@ -134,7 +134,7 @@ namespace Report_system
                                     MessageBox.Show(string_Financial_value);
                                 }
                                 #endregion
-
+                                
                                 #region Date
                                 int index_Date = 0; //индекс Date
                                 //присвоение значений переменным
@@ -166,6 +166,7 @@ namespace Report_system
                                 }
                                 #endregion
 
+
                                 #region Office
                                 // MessageBox.Show("" + index_probel);
                                 int index_Office = 0;
@@ -188,6 +189,7 @@ namespace Report_system
                                     MessageBox.Show(string_Office_value);
                                 }
                                 #endregion
+
 
                                 #region Contract
                                 // MessageBox.Show("" + index_probel);
@@ -212,6 +214,7 @@ namespace Report_system
                                 }
                                 #endregion
 
+
                                 #region Region
                                 // MessageBox.Show("" + index_probel);
                                 int index_Region = 0;
@@ -234,6 +237,7 @@ namespace Report_system
                                     MessageBox.Show(string_Region_value);
                                 }
                                 #endregion
+
 
                                 #region Currency
                                 // MessageBox.Show("" + index_probel_3);
@@ -266,6 +270,7 @@ namespace Report_system
                                     MessageBox.Show(string_Currency_value);
                                 }
                                 #endregion
+
 
                                 #region Device
                                 int index_Device = 0; //индекс Device
@@ -330,6 +335,7 @@ namespace Report_system
                                 }
                                 #endregion
 
+
                                 #region Cycle Num/Type
                                 int index_Cycle = 0; //индекс Cycle Num/Type:
                                 //присвоение значений переменным
@@ -360,6 +366,7 @@ namespace Report_system
                                     MessageBox.Show(string_Cycle_value);
                                 }
                                 #endregion
+
 
                                 #region Device Name:
                                 int index_Device_Name = 0; //индекс Device Name:
@@ -424,10 +431,10 @@ namespace Report_system
                                         }
                                     }
                                     //преобразовали в строку,где хранится значение Device Name:
-                                    string_Device_Name_value = new string(list_Transaction_Name_value.ToArray());
-                                    MessageBox.Show(string_Device_Name_value);
+                                    string_Transaction_Name_value = new string(list_Transaction_Name_value.ToArray());
+                                    MessageBox.Show(string_Transaction_Name_value);
 
-
+                                    int count = 0;
                                     List<char> list_Trans_value = new List<char>();
                                     List<char> list_Transaction_Amount_value = new List<char>();
                                     List<char> list_Discount_value = new List<char>();
@@ -443,14 +450,17 @@ namespace Report_system
                                             if (count == 0)
                                             {
                                                 list_Trans_value.Add(arr_line[j]);
+                                                MessageBox.Show("" + arr_line[j]);
                                                 if (arr_line[j + 1] == ' ')
                                                 {
                                                     count++;
+                                                   // continue;
                                                 }
                                             }
                                             else if (count == 1)
                                             {
                                                 list_Transaction_Amount_value.Add(arr_line[j]);
+                                                MessageBox.Show("" + arr_line[j]);
                                                 if (arr_line[j + 1] == ' ')
                                                 {
                                                     count++;
@@ -459,6 +469,7 @@ namespace Report_system
                                             else if (count == 2)
                                             {
                                                 list_Discount_value.Add(arr_line[j]);
+                                                MessageBox.Show("" + arr_line[j]);
                                                 if (arr_line[j + 1] == ' ')
                                                 {
                                                     count++;
@@ -467,6 +478,7 @@ namespace Report_system
                                             else if (count == 3)
                                             {
                                                 list_Account_Amount_value.Add(arr_line[j]);
+                                                MessageBox.Show("" + arr_line[j]);
                                                 if (arr_line[j + 1] == ' ')
                                                 {
                                                     break;
