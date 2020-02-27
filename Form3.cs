@@ -62,6 +62,7 @@ namespace Report_system
 
                         int index_Transaction_Name = 0; //индекс Transaction Name
                         int index_Trans_Date = 49;
+                        int count = 0;
                         bool flag = false;
                         string line = "";
                         string string_Financial_value = "";
@@ -106,6 +107,7 @@ namespace Report_system
                                 int index_probel_3 = 0; //индекс пробела равный трём пробелам
                                 int end_line = 0;   //конец строки
                                 end_line = line.Length;    //значение конца строки
+
                                 index_probel = line.IndexOf("     ", 0, end_line);   //индекс нахождения пробелов
                                 index_probel_3 = line.IndexOf("   ", 0, end_line);   //индекс нахождения пробелов
                                 char[] arr_line = { };
@@ -167,7 +169,7 @@ namespace Report_system
                                 #endregion
 
 
-                                #region Office
+                               #region Office
                                 // MessageBox.Show("" + index_probel);
                                 int index_Office = 0;
                                 //присвоение значений переменным
@@ -399,10 +401,12 @@ namespace Report_system
                                 }
                                 #endregion
 
+
                                 #region Transaction Name:
 
                                 //присвоение значений переменным
                                 index_Transaction_Name = line.IndexOf("Transaction Name", 0, end_line);  //индекс нахождения Transaction Name
+
                                 if (index_Transaction_Name >= 0)
                                 {
                                     flag = true;
@@ -410,8 +414,6 @@ namespace Report_system
                                 }
                                 if (flag == true)
                                 {
-                                    // MessageBox.Show(line);
-                                    //MessageBox.Show("" + index_Transaction_Name);
                                     //создаем лист list_Transaction_Name_value для хранения значения Transaction Name:
                                     List<char> list_Transaction_Name_value = new List<char>();
                                     //Проходим по циклу начиная после слов "Transaction Name:" и до пробелов
@@ -434,13 +436,13 @@ namespace Report_system
                                     string_Transaction_Name_value = new string(list_Transaction_Name_value.ToArray());
                                     MessageBox.Show(string_Transaction_Name_value);
 
-                                    int count = 0;
                                     List<char> list_Trans_value = new List<char>();
                                     List<char> list_Transaction_Amount_value = new List<char>();
                                     List<char> list_Discount_value = new List<char>();
                                     List<char> list_Account_Amount_value = new List<char>();
-                                    for (int j = index_Trans_Date; j <= end_line; j++)
+                                    for (int j = index_Trans_Date; j <= (end_line-1); j++)
                                     {
+                                        
                                         if (arr_line[j] == ' ')
                                         {
                                             continue;
@@ -450,53 +452,45 @@ namespace Report_system
                                             if (count == 0)
                                             {
                                                 list_Trans_value.Add(arr_line[j]);
-                                                MessageBox.Show("" + arr_line[j]);
                                                 if (arr_line[j + 1] == ' ')
                                                 {
+                                                    string_Trans_value = new string(list_Trans_value.ToArray());
                                                     count++;
-                                                   // continue;
+
                                                 }
                                             }
                                             else if (count == 1)
                                             {
                                                 list_Transaction_Amount_value.Add(arr_line[j]);
-                                                MessageBox.Show("" + arr_line[j]);
                                                 if (arr_line[j + 1] == ' ')
                                                 {
+                                                    string_Transaction_Amount_value = new string(list_Transaction_Amount_value.ToArray());
                                                     count++;
                                                 }
                                             }
                                             else if (count == 2)
                                             {
                                                 list_Discount_value.Add(arr_line[j]);
-                                                MessageBox.Show("" + arr_line[j]);
                                                 if (arr_line[j + 1] == ' ')
                                                 {
+                                                    string_Discount_value = new string(list_Discount_value.ToArray());
                                                     count++;
                                                 }
                                             }
                                             else if (count == 3)
                                             {
                                                 list_Account_Amount_value.Add(arr_line[j]);
-                                                MessageBox.Show("" + arr_line[j]);
-                                                if (arr_line[j + 1] == ' ')
-                                                {
-                                                    break;
-                                                }
                                             }
 
                                         }
+
                                     }
-                                    string_Trans_value = new string(list_Trans_value.ToArray());
-                                    string_Transaction_Amount_value = new string(list_Transaction_Amount_value.ToArray());
-                                    string_Discount_value = new string(list_Discount_value.ToArray());
+
                                     string_Account_Amount_value = new string(list_Account_Amount_value.ToArray());
                                     MessageBox.Show(string_Trans_value);
                                     MessageBox.Show(string_Transaction_Amount_value);
                                     MessageBox.Show(string_Discount_value);
                                     MessageBox.Show(string_Account_Amount_value);
-
-
                                     flag = false;
                                 }
                                 #endregion
