@@ -472,9 +472,7 @@ namespace Report_system
                                                     break;
                                                 }
                                             }
-                                            else
-                                                continue;
-
+                                          
                                         }
                                     }
                                     string_Trans_value = new string(list_Trans_value.ToArray());
