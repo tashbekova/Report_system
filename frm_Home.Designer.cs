@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Home));
             this.panelAll = new System.Windows.Forms.Panel();
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.panelSubMenu = new System.Windows.Forms.Panel();
@@ -43,12 +44,15 @@
             this.panelRegular = new System.Windows.Forms.Panel();
             this.btnRegular = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panelHead = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelAll.SuspendLayout();
+            this.panelChildForm.SuspendLayout();
             this.panelSubMenu.SuspendLayout();
             this.panelRequestSubMenu.SuspendLayout();
             this.panelRequest.SuspendLayout();
             this.panelRegularSubMenu.SuspendLayout();
             this.panelRegular.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelAll
@@ -65,6 +69,7 @@
             // panelChildForm
             // 
             this.panelChildForm.BackColor = System.Drawing.Color.White;
+            this.panelChildForm.Controls.Add(this.pictureBox1);
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm.Location = new System.Drawing.Point(250, 32);
             this.panelChildForm.Name = "panelChildForm";
@@ -246,6 +251,17 @@
             this.panelHead.Size = new System.Drawing.Size(996, 32);
             this.panelHead.TabIndex = 9;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(746, 618);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // frm_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -262,12 +278,14 @@
             this.Text = "Система предоставления отчётности по банковским платёжным картам";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panelAll.ResumeLayout(false);
+            this.panelChildForm.ResumeLayout(false);
             this.panelSubMenu.ResumeLayout(false);
             this.panelSubMenu.PerformLayout();
             this.panelRequestSubMenu.ResumeLayout(false);
             this.panelRequest.ResumeLayout(false);
             this.panelRegularSubMenu.ResumeLayout(false);
             this.panelRegular.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -289,6 +307,7 @@
         private System.Windows.Forms.Panel panelRequestSubMenu;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton3;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton4;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
