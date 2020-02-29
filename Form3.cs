@@ -88,7 +88,7 @@ namespace Report_system
 
 
                         //provide the table name in which you would like to load data
-                        string TableName = "dbo.Table_A";
+                        string ableName = "dbo.Table_A";
 
                         //Create Connection to SQL Server
                         SqlConnection SQLConnection = new SqlConnection();
