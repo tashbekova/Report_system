@@ -417,6 +417,7 @@ namespace Report_system
                                 #endregion
 
 
+
                                 #region Transaction Name:
 
                                 //присвоение значений переменным
