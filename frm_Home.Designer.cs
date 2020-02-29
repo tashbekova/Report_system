@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Home));
             this.panelAll = new System.Windows.Forms.Panel();
             this.panelChildForm = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelSubMenu = new System.Windows.Forms.Panel();
             this.panelRequestSubMenu = new System.Windows.Forms.Panel();
             this.materialRaisedButton3 = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -44,22 +45,14 @@
             this.panelRegular = new System.Windows.Forms.Panel();
             this.btnRegular = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panelHead = new System.Windows.Forms.Panel();
-
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-
             this.panelAll.SuspendLayout();
             this.panelChildForm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelSubMenu.SuspendLayout();
             this.panelRequestSubMenu.SuspendLayout();
             this.panelRequest.SuspendLayout();
             this.panelRegularSubMenu.SuspendLayout();
             this.panelRegular.SuspendLayout();
-
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-
             this.SuspendLayout();
             // 
             // panelAll
@@ -76,17 +69,24 @@
             // panelChildForm
             // 
             this.panelChildForm.BackColor = System.Drawing.Color.White;
-
             this.panelChildForm.Controls.Add(this.pictureBox2);
-
-            this.panelChildForm.Controls.Add(this.pictureBox1);
-
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm.Location = new System.Drawing.Point(250, 32);
             this.panelChildForm.Name = "panelChildForm";
             this.panelChildForm.Size = new System.Drawing.Size(746, 618);
             this.panelChildForm.TabIndex = 8;
             this.panelChildForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panelChildForm_Paint);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(746, 618);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // panelSubMenu
             // 
@@ -262,30 +262,6 @@
             this.panelHead.Size = new System.Drawing.Size(996, 32);
             this.panelHead.TabIndex = 9;
             // 
-
-            // pictureBox2
-            // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(746, 618);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(746, 618);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-
-            // 
             // frm_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
@@ -295,7 +271,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(650, 650);
+            this.MinimumSize = new System.Drawing.Size(400, 400);
             this.Name = "frm_Home";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -303,17 +279,13 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panelAll.ResumeLayout(false);
             this.panelChildForm.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelSubMenu.ResumeLayout(false);
             this.panelSubMenu.PerformLayout();
             this.panelRequestSubMenu.ResumeLayout(false);
             this.panelRequest.ResumeLayout(false);
             this.panelRegularSubMenu.ResumeLayout(false);
             this.panelRegular.ResumeLayout(false);
-
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-
             this.ResumeLayout(false);
 
         }
@@ -335,11 +307,7 @@
         private System.Windows.Forms.Panel panelRequestSubMenu;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton3;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton4;
-
         private System.Windows.Forms.PictureBox pictureBox2;
-
-        private System.Windows.Forms.PictureBox pictureBox1;
-
     }
 }
 

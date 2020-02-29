@@ -42,7 +42,7 @@
             this.btnLogin.Depth = 0;
             this.btnLogin.FlatAppearance.BorderSize = 0;
             this.btnLogin.Location = new System.Drawing.Point(68, 288);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Primary = true;
@@ -57,7 +57,7 @@
             this.btnClose.BackColor = System.Drawing.Color.MediumAquamarine;
             this.btnClose.Depth = 0;
             this.btnClose.Location = new System.Drawing.Point(314, 288);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnClose.Name = "btnClose";
             this.btnClose.Primary = true;
@@ -73,7 +73,7 @@
             this.txtLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.txtLogin.Hint = "Login";
             this.txtLogin.Location = new System.Drawing.Point(126, 92);
-            this.txtLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLogin.Margin = new System.Windows.Forms.Padding(4);
             this.txtLogin.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.PasswordChar = '\0';
@@ -89,10 +89,10 @@
             this.txtPassword.Depth = 0;
             this.txtPassword.Hint = "Password";
             this.txtPassword.Location = new System.Drawing.Point(126, 190);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '\0';
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.SelectedText = "";
             this.txtPassword.SelectionLength = 0;
             this.txtPassword.SelectionStart = 0;
@@ -119,7 +119,7 @@
             this.ClientSize = new System.Drawing.Size(592, 498);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "frm_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

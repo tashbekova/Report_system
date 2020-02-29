@@ -15,7 +15,7 @@ namespace Report_system
         {
             StreamReader SourceFile = File.OpenText(path_name);
             //provide the table name in which you would like to load data
-            string table_name = "dbo.tbl_repA";
+            //string table_name = "dbo.tbl_repA";
             //Create Connection to SQL Server
             SqlConnection SQLConnection = new SqlConnection();
             SQLConnection.ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'";
