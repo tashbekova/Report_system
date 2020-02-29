@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -88,7 +88,7 @@ namespace Report_system
 
 
                         //provide the table name in which you would like to load data
-                        string ableName = "dbo.Table_A";
+                        string TableName = "dbo.Table_A";
 
                         //Create Connection to SQL Server
                         SqlConnection SQLConnection = new SqlConnection();
@@ -142,7 +142,7 @@ namespace Report_system
                                     list_Financial_value.Clear();
                                 }
                                 #endregion
-
+                                
                                 #region Date
                                 int index_Date = 0; //индекс Date
                                 //присвоение значений переменным
@@ -176,7 +176,7 @@ namespace Report_system
                                 #endregion
 
 
-                                #region Office
+                               #region Office
                                 // MessageBox.Show("" + index_probel);
                                 int index_Office = 0;
                                 //присвоение значений переменным
@@ -417,7 +417,6 @@ namespace Report_system
                                 #endregion
 
 
-
                                 #region Transaction Name:
 
                                 //присвоение значений переменным
@@ -428,7 +427,7 @@ namespace Report_system
                                     flag = true;
                                     continue;
                                 }
-                                if (flag == true && count_line == 0)
+                                if (flag == true && count_line==0)
                                 {
                                     //создаем лист list_Transaction_Name_value для хранения значения Transaction Name:
                                     List<char> list_Transaction_Name_value = new List<char>();
@@ -456,9 +455,9 @@ namespace Report_system
                                     List<char> list_Transaction_Amount_value = new List<char>();
                                     List<char> list_Discount_value = new List<char>();
                                     List<char> list_Account_Amount_value = new List<char>();
-                                    for (int j = index_Trans_Date; j <= (end_line - 1); j++)
+                                    for (int j = index_Trans_Date; j <= (end_line-1); j++)
                                     {
-
+                                        
                                         if (arr_line[j] == ' ')
                                         {
                                             continue;
@@ -509,15 +508,15 @@ namespace Report_system
                                     MessageBox.Show(string_Account_Amount_value);
                                 }
 
-                                else if (flag == true && count_line == 1)
+                                else if(flag==true && count_line==1)
                                 {
                                     //создаем лист list_Transaction_Name_value для хранения значения Transaction Name:
                                     List<char> list_Transaction_Name_value_2 = new List<char>();
-                                    for (int i = 0; i < end_line; i++)
+                                    for (int i=0;i<end_line;i++)
                                     {
                                         if (arr_line[i] == ' ')
                                         {
-                                            if (arr_line[i + 1] == ' ')
+                                            if (arr_line[i+1] == ' ')
                                                 break;
                                             else
                                                 list_Transaction_Name_value_2.Add(arr_line[i]);
@@ -533,16 +532,15 @@ namespace Report_system
                                     list_Transaction_Name_value_2.Clear();
                                     flag = false;
                                     flag_Transaction = 1;
-                                    /* string query = "Insert into " + TableName +
-                                    " Values ('" +  + "')";
-
-                                     //execute sqlcommand to insert record
-                                     SqlCommand myCommand = new SqlCommand(query, SQLConnection);
-                                     myCommand.ExecuteNonQuery();*/
+                                   /* string query = "Insert into " + TableName +
+                                   " Values ('" +  + "')";
+                                    //execute sqlcommand to insert record
+                                    SqlCommand myCommand = new SqlCommand(query, SQLConnection);
+                                    myCommand.ExecuteNonQuery();*/
                                 }
-                                if (flag_Transaction == 1 && !line.StartsWith("          "))
+                                if(flag_Transaction==1 && !line.StartsWith("          "))
                                 {
-                                    if (count_line == 0)
+                                    if(count_line==0)
                                     {
                                         //создаем лист list_Transaction_Name_value для хранения значения Transaction Name:
                                         List<char> list_Transaction_Name_value = new List<char>();
@@ -621,7 +619,7 @@ namespace Report_system
                                         MessageBox.Show(string_Discount_value);
                                         MessageBox.Show(string_Account_Amount_value);
                                     }
-                                    else if (count_line == 1)
+                                    else if(count_line==1)
                                     {
                                         //создаем лист list_Transaction_Name_value для хранения значения Transaction Name:
                                         List<char> list_Transaction_Name_value_2 = new List<char>();
@@ -647,20 +645,19 @@ namespace Report_system
                                         flag_Transaction = 1;
                                         /* string query = "Insert into " + TableName +
                                         " Values ('" +  + "')";
-
                                          //execute sqlcommand to insert record
                                          SqlCommand myCommand = new SqlCommand(query, SQLConnection);
                                          myCommand.ExecuteNonQuery();*/
                                     }
                                 }
-                                else if (flag_Transaction == 1 && line.StartsWith("             "))
+                                else if(flag_Transaction==1 && line.StartsWith("             "))
                                 {
                                     flag_Transaction = 0;
                                     continue;
                                 }
 
 
-
+                                
                                 #endregion
                             }
 
@@ -703,13 +700,9 @@ namespace Report_system
                  {
                      // 2. Вывести имя файла на форме в компоненте label1
                      lblName.Text = openFileDialog1.FileName;
-
                      // 3. Установить флажки f_open и f_save
                      f_open = true;
                      f_save = false;
-
-
-
                                }
              }
              catch (IOException Exception)
