@@ -28,7 +28,7 @@ namespace Report_system
 
         private void Form3_Load(object sender, EventArgs e)
         {
-        
+
         }
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
@@ -46,7 +46,7 @@ namespace Report_system
             openFileDialog1.Filter = "Text files(*.txt)|*.txt|All files(*.*)|*.*";
             try
             {
-                if(openFileDialog1.ShowDialog()==DialogResult.OK)
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
                     StreamReader SourceFile = File.OpenText(openFileDialog1.FileName);
                     string[] stroka = File.ReadAllLines(openFileDialog1.FileName);
@@ -55,17 +55,21 @@ namespace Report_system
                         MessageBox.Show("Файл пуст");
                         return;
                     }
-                    string file_name =(Path.GetFileNameWithoutExtension(openFileDialog1.FileName));
+                    string file_name = (Path.GetFileNameWithoutExtension(openFileDialog1.FileName));
                     if (file_name.Contains('A'))
                     {
                         MessageBox.Show("Отчёт по банкоматам");
 
                         int index_Transaction_Name = 0; //индекс Transaction Name
                         int index_Trans_Date = 49;
+
+                        int count_column = 0;
+                        int count_line = 0;
+                        int flag_Transaction = 0;
                         int count = 0;
                         bool flag = false;
                         string line = "";
-                        string string_Financial_value="";
+                        string string_Financial_value = "";
                         string string_Office_value = "";
                         string string_Contract_value = "";
                         string string_Region_value = "";
@@ -75,24 +79,32 @@ namespace Report_system
                         string string_SIC_value = "";
                         string string_Cycle_value = "";
                         string string_Device_Name_value = "";
+
+                        string string_Transaction_Name_value = "";
+
                         string string_Trans_value = "";
                         string string_Transaction_Amount_value = "";
                         string string_Discount_value = "";
                         string string_Account_Amount_value = "";
 
+                        string string_Transaction_Name_value_part_1 = "";
+                        string string_Transaction_Name_value_part_2 = "";
+
+
                         //provide the table name in which you would like to load data
-                        string TableName = "dbo.tbl_repA";
+                        string TableName = "dbo.Table_A";
 
                         //Create Connection to SQL Server
                         SqlConnection SQLConnection = new SqlConnection();
                         SQLConnection.ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'";
 
 
+                        SQLConnection.Open();
 
                         while (!SourceFile.EndOfStream)
                         {
                             line = SourceFile.ReadLine();
-                            if (line == "" || line.StartsWith(" --------"))
+                            if (line.StartsWith(" --------"))
                             {
                                 continue;
                             }
@@ -101,18 +113,21 @@ namespace Report_system
                                 //MessageBox.Show(line);
 
                                 //объявление и инициализация переменных
-                                
+
                                 int index_probel = 0;    //индекс пробела равный пяти пробелам
-                                int index_probel_3 = 0; //индекс пробела равный трём пробелам
                                 int end_line = 0;   //конец строки
                                 end_line = line.Length;    //значение конца строки
+
                                 index_probel = line.IndexOf("     ", 0, end_line);   //индекс нахождения пробелов
-                                index_probel_3 = line.IndexOf("   ", 0, end_line);   //индекс нахождения пробелов
-                                char[] arr_line= { };
-                               //переводим строку в массив ,где будет хранится эта строка
+                                char[] arr_line = { };
+                                //переводим строку в массив ,где будет хранится эта строка
                                 arr_line = line.ToCharArray();
 
-                               // -------------------------------------------------------------------
+
+                                // -------------------------------------------------------------------
+
+                                // -------------------------------------------------------------------
+
 
                                 #region Financial Institution
                                 int index_Financial = 0; //индекс Financial institution
@@ -124,7 +139,7 @@ namespace Report_system
                                     //создаем лист list_financial_value для хранения значения Financial iInstitution
                                     List<char> list_Financial_value = new List<char>();
                                     //Проходим по циклу начиная после слов "Financial Institution" и до пробелов
-                                    for (int i = index_Financial+15; i < index_probel; i++)
+                                    for (int i = index_Financial + 15; i < index_probel; i++)
                                     {
                                         //добавляем все символы в лист,чтобы получить массив и преобразовать в строку
                                         list_Financial_value.Add(arr_line[i]);
@@ -132,6 +147,7 @@ namespace Report_system
                                     //преобразовали в строку,где хранится значение Financial Institution
                                     string_Financial_value = new string(list_Financial_value.ToArray());
                                     MessageBox.Show(string_Financial_value);
+                                    list_Financial_value.Clear();
                                 }
                                 #endregion
 
@@ -162,63 +178,79 @@ namespace Report_system
                                     }
                                     //преобразовали в строку,где хранится значение Date
                                     string_Date_value = new string(list_Date_value.ToArray());
+                                    list_Date_value.Clear();
                                     MessageBox.Show(string_Date_value);
                                 }
                                 #endregion
 
+
+
+
+
+
+
                                 #region Office
+
                                 // MessageBox.Show("" + index_probel);
                                 int index_Office = 0;
                                 //присвоение значений переменным
                                 index_Office = line.IndexOf("Office:", 0, end_line);  //индекс нахождения Office
-                              //  MessageBox.Show("" + index_office);
-                                //Если это строка с Office
+                                                                                      //  MessageBox.Show("" + index_office);
+                                                                                      //Если это строка с Office
                                 if (index_Office >= 0)
                                 {
                                     //создаем лист list_office_value для хранения значения Office
                                     List<char> list_Office_value = new List<char>();
                                     //Проходим по циклу начиная после слов "Office:" и до пробелов
-                                    for (int i = index_Office+11; i < end_line; i++)
+                                    for (int i = index_Office + 11; i < end_line; i++)
                                     {
                                         //добавляем все символы в лист,чтобы получить массив и преобразовать в строку
                                         list_Office_value.Add(arr_line[i]);
                                     }
                                     //преобразовали в строку,где хранится значение Office
                                     string_Office_value = new string(list_Office_value.ToArray());
+
+                                    list_Office_value.Clear();
+
                                     MessageBox.Show(string_Office_value);
                                 }
                                 #endregion
+
 
                                 #region Contract
                                 // MessageBox.Show("" + index_probel);
                                 int index_Contract = 0;
                                 //присвоение значений переменным
                                 index_Contract = line.IndexOf("Contract #:", 0, end_line);  //индекс нахождения Contract
-                               // MessageBox.Show("" + index_contract);
-                                //Если это строка с Contract
+                                                                                            // MessageBox.Show("" + index_contract);
+                                                                                            //Если это строка с Contract
                                 if (index_Contract >= 0)
                                 {
                                     //создаем лист list_Contract_value для хранения значения Contract
                                     List<char> list_Contract_value = new List<char>();
                                     //Проходим по циклу начиная после слов "Contract:" и до пробелов
-                                    for (int i = index_Contract+11; i < end_line; i++)
+                                    for (int i = index_Contract + 11; i < end_line; i++)
                                     {
                                         //добавляем все символы в лист,чтобы получить массив и преобразовать в строку
                                         list_Contract_value.Add(arr_line[i]);
                                     }
                                     //преобразовали в строку,где хранится значение Contract
                                     string_Contract_value = new string(list_Contract_value.ToArray());
+
+                                    list_Contract_value.Clear();
+
                                     MessageBox.Show(string_Contract_value);
                                 }
                                 #endregion
+
 
                                 #region Region
                                 // MessageBox.Show("" + index_probel);
                                 int index_Region = 0;
                                 //присвоение значений переменным
-                                index_Region= line.IndexOf("Reg #:", 0, end_line);  //индекс нахождения Region
-                                 // MessageBox.Show("" + index_contract);
-                                 //Если это строка с "Reg #:"
+                                index_Region = line.IndexOf("Reg #:", 0, end_line);  //индекс нахождения Region
+                                                                                     // MessageBox.Show("" + index_contract);
+                                                                                     //Если это строка с "Reg #:"
                                 if (index_Region >= 0)
                                 {
                                     //создаем лист list_Region_value для хранения значения Region
@@ -231,9 +263,13 @@ namespace Report_system
                                     }
                                     //преобразовали в строку,где хранится значение Region
                                     string_Region_value = new string(list_Region_value.ToArray());
+
+                                    list_Region_value.Clear();
+
                                     MessageBox.Show(string_Region_value);
                                 }
                                 #endregion
+
 
                                 #region Currency
                                 // MessageBox.Show("" + index_probel_3);
@@ -263,9 +299,13 @@ namespace Report_system
                                     }
                                     //преобразовали в строку,где хранится значение Currenct
                                     string_Currency_value = new string(list_Currency_value.ToArray());
+
+                                    list_Currency_value.Clear();
+
                                     MessageBox.Show(string_Currency_value);
                                 }
                                 #endregion
+
 
                                 #region Device
                                 int index_Device = 0; //индекс Device
@@ -294,6 +334,9 @@ namespace Report_system
                                     }
                                     //преобразовали в строку,где хранится значение Device
                                     string_Device_value = new string(list_Device_value.ToArray());
+
+                                    list_Device_value.Clear();
+
                                     MessageBox.Show(string_Device_value);
                                 }
                                 #endregion
@@ -326,9 +369,13 @@ namespace Report_system
                                     }
                                     //преобразовали в строку,где хранится значение Device
                                     string_SIC_value = new string(list_SIC_value.ToArray());
+
+                                    list_SIC_value.Clear();
+
                                     MessageBox.Show(string_SIC_value);
                                 }
                                 #endregion
+
 
                                 #region Cycle Num/Type
                                 int index_Cycle = 0; //индекс Cycle Num/Type:
@@ -357,9 +404,13 @@ namespace Report_system
                                     }
                                     //преобразовали в строку,где хранится значение Cycle Num/Type:
                                     string_Cycle_value = new string(list_Cycle_value.ToArray());
+
+                                    list_Cycle_value.Clear();
+
                                     MessageBox.Show(string_Cycle_value);
                                 }
                                 #endregion
+
 
                                 #region Device Name:
                                 int index_Device_Name = 0; //индекс Device Name:
@@ -388,15 +439,18 @@ namespace Report_system
                                     }
                                     //преобразовали в строку,где хранится значение Device Name:
                                     string_Device_Name_value = new string(list_Device_Name_value.ToArray());
+
+                                    list_Device_Name_value.Clear();
                                     MessageBox.Show(string_Device_Name_value);
                                 }
                                 #endregion
 
+
                                 #region Transaction Name:
-     
+
                                 //присвоение значений переменным
                                 index_Transaction_Name = line.IndexOf("Transaction Name", 0, end_line);  //индекс нахождения Transaction Name
-                                if (index_Transaction_Name>=0)
+                                if (index_Transaction_Name >= 0)
                                 {
                                     flag = true;
                                     continue;
@@ -408,7 +462,7 @@ namespace Report_system
                                     //создаем лист list_Transaction_Name_value для хранения значения Transaction Name:
                                     List<char> list_Transaction_Name_value = new List<char>();
                                     //Проходим по циклу начиная после слов "Transaction Name:" и до пробелов
-                                    for (int i = 0 ; i < 37; i++)
+                                    for (int i = 0; i < 37; i++)
                                     {
                                         if (arr_line[i] == ' ')
                                         {
@@ -427,14 +481,14 @@ namespace Report_system
                                     string_Device_Name_value = new string(list_Transaction_Name_value.ToArray());
                                     MessageBox.Show(string_Device_Name_value);
 
-                                    
+
                                     List<char> list_Trans_value = new List<char>();
                                     List<char> list_Transaction_Amount_value = new List<char>();
                                     List<char> list_Discount_value = new List<char>();
                                     List<char> list_Account_Amount_value = new List<char>();
-                                    for (int j=index_Trans_Date;j<=end_line;j++)
+                                    for (int j = index_Trans_Date; j <= end_line; j++)
                                     {
-                                        if(arr_line[j]==' ')
+                                        if (arr_line[j] == ' ')
                                         {
                                             continue;
                                         }
@@ -472,7 +526,7 @@ namespace Report_system
                                                     break;
                                                 }
                                             }
-                                          
+
                                         }
                                     }
                                     string_Trans_value = new string(list_Trans_value.ToArray());
@@ -488,49 +542,264 @@ namespace Report_system
                                     flag = false;
                                 }
                                 #endregion
-                            }
 
 
-                        }
-                        SQLConnection.Open();
-                       /*for(int i = 0; i < stroka.Length; i++)
-                        {
-                            if (stroka[i] == null)
-                            {
-                                i++;
-                                continue;
-                            }
-                            else
-                            {
-                                stroka[i] = line;
-                                MessageBox.Show(stroka[i]);
-                                for(int j=0;j<line.Length;j++)
+
+
+                                #region Transaction Name:
+
+                                //присвоение значений переменным
+                                index_Transaction_Name = line.IndexOf("Transaction Name", 0, end_line);  //индекс нахождения Transaction Name
+
+                                if (index_Transaction_Name >= 0)
                                 {
-                                    int index = 0;
-                                    int end = 0;
-                                    end = line.Length;
-                                    index = line.IndexOf("institution", 0, end);
-                                    MessageBox.Show(""+index);
+                                    flag = true;
+                                    continue;
                                 }
-                                return;
+                                if (flag == true && count_line == 0)
+                                {
+                                    //создаем лист list_Transaction_Name_value для хранения значения Transaction Name:
+                                    List<char> list_Transaction_Name_value = new List<char>();
+                                    //Проходим по циклу начиная после слов "Transaction Name:" и до пробелов
+                                    for (int i = 0; i < 37; i++)
+                                    {
+                                        if (arr_line[i] == ' ')
+                                        {
+                                            if (arr_line[i + 1] == ' ')
+                                                break;
+                                            else
+                                                list_Transaction_Name_value.Add(arr_line[i]);
+                                        }
+                                        else
+                                        {
+                                            //добавляем все символы в лист,чтобы получить массив и преобразовать в строку
+                                            list_Transaction_Name_value.Add(arr_line[i]);
+                                        }
+                                    }
+                                    //преобразовали в строку,где хранится значение Device Name:
+                                    string_Transaction_Name_value_part_1 = new string(list_Transaction_Name_value.ToArray());
+                                    //MessageBox.Show(string_Transaction_Name_value_part_1);
+
+                                    List<char> list_Trans_value = new List<char>();
+                                    List<char> list_Transaction_Amount_value = new List<char>();
+                                    List<char> list_Discount_value = new List<char>();
+                                    List<char> list_Account_Amount_value = new List<char>();
+                                    for (int j = index_Trans_Date; j <= (end_line - 1); j++)
+                                    {
+
+                                        if (arr_line[j] == ' ')
+                                        {
+                                            continue;
+                                        }
+                                        else
+                                        {
+                                            if (count_column == 0)
+                                            {
+                                                list_Trans_value.Add(arr_line[j]);
+                                                if (arr_line[j + 1] == ' ')
+                                                {
+                                                    string_Trans_value = new string(list_Trans_value.ToArray());
+                                                    count_column++;
+                                                }
+                                            }
+                                            else if (count_column == 1)
+                                            {
+                                                list_Transaction_Amount_value.Add(arr_line[j]);
+                                                if (arr_line[j + 1] == ' ')
+                                                {
+                                                    string_Transaction_Amount_value = new string(list_Transaction_Amount_value.ToArray());
+                                                    count_column++;
+                                                }
+                                            }
+                                            else if (count_column == 2)
+                                            {
+                                                list_Discount_value.Add(arr_line[j]);
+                                                if (arr_line[j + 1] == ' ')
+                                                {
+                                                    string_Discount_value = new string(list_Discount_value.ToArray());
+                                                    count_column++;
+                                                }
+                                            }
+                                            else if (count_column == 3)
+                                            {
+                                                list_Account_Amount_value.Add(arr_line[j]);
+                                            }
+
+                                        }
+
+                                    }
+                                    count_column = 0;
+                                    count_line = 1;
+                                    string_Account_Amount_value = new string(list_Account_Amount_value.ToArray());
+                                    MessageBox.Show(string_Trans_value);
+                                    MessageBox.Show(string_Transaction_Amount_value);
+                                    MessageBox.Show(string_Discount_value);
+                                    MessageBox.Show(string_Account_Amount_value);
+                                }
+
+                                else if (flag == true && count_line == 1)
+                                {
+                                    //создаем лист list_Transaction_Name_value для хранения значения Transaction Name:
+                                    List<char> list_Transaction_Name_value_2 = new List<char>();
+                                    for (int i = 0; i < end_line; i++)
+                                    {
+                                        if (arr_line[i] == ' ')
+                                        {
+                                            if (arr_line[i + 1] == ' ')
+                                                break;
+                                            else
+                                                list_Transaction_Name_value_2.Add(arr_line[i]);
+                                        }
+                                        else
+                                            list_Transaction_Name_value_2.Add(arr_line[i]);
+                                    }
+                                    string_Transaction_Name_value_part_2 = new string(list_Transaction_Name_value_2.ToArray());
+                                    //MessageBox.Show(string_Transaction_Name_value_part_2);
+                                    string_Transaction_Name_value = string_Transaction_Name_value_part_1 + string_Transaction_Name_value_part_2;
+                                    MessageBox.Show(string_Transaction_Name_value);
+                                    count_line = 0;
+                                    list_Transaction_Name_value_2.Clear();
+                                    flag = false;
+                                    flag_Transaction = 1;
+                                    /* string query = "Insert into " + TableName +
+                                    " Values ('" +  + "')";
+
+                                     //execute sqlcommand to insert record
+                                     SqlCommand myCommand = new SqlCommand(query, SQLConnection);
+                                     myCommand.ExecuteNonQuery();*/
+                                }
+                                if (flag_Transaction == 1 && !line.StartsWith("          "))
+                                {
+                                    if (count_line == 0)
+                                    {
+                                        //создаем лист list_Transaction_Name_value для хранения значения Transaction Name:
+                                        List<char> list_Transaction_Name_value = new List<char>();
+                                        //Проходим по циклу начиная после слов "Transaction Name:" и до пробелов
+                                        for (int i = 0; i < 37; i++)
+                                        {
+                                            if (arr_line[i] == ' ')
+                                            {
+                                                if (arr_line[i + 1] == ' ')
+                                                    break;
+                                                else
+                                                    list_Transaction_Name_value.Add(arr_line[i]);
+                                            }
+                                            else
+                                            {
+                                                //добавляем все символы в лист,чтобы получить массив и преобразовать в строку
+                                                list_Transaction_Name_value.Add(arr_line[i]);
+                                            }
+                                        }
+                                        //преобразовали в строку,где хранится значение Device Name:
+                                        string_Transaction_Name_value_part_1 = new string(list_Transaction_Name_value.ToArray());
+                                        //MessageBox.Show(string_Transaction_Name_value_part_1);
+
+                                        List<char> list_Trans_value = new List<char>();
+                                        List<char> list_Transaction_Amount_value = new List<char>();
+                                        List<char> list_Discount_value = new List<char>();
+                                        List<char> list_Account_Amount_value = new List<char>();
+                                        for (int j = index_Trans_Date; j <= (end_line - 1); j++)
+                                        {
+                                            if (arr_line[j] == ' ')
+                                            {
+                                                continue;
+                                            }
+                                            else
+                                            {
+                                                if (count_column == 0)
+                                                {
+                                                    list_Trans_value.Add(arr_line[j]);
+                                                    if (arr_line[j + 1] == ' ')
+                                                    {
+                                                        string_Trans_value = new string(list_Trans_value.ToArray());
+                                                        count_column++;
+                                                    }
+                                                }
+                                                else if (count_column == 1)
+                                                {
+                                                    list_Transaction_Amount_value.Add(arr_line[j]);
+                                                    if (arr_line[j + 1] == ' ')
+                                                    {
+                                                        string_Transaction_Amount_value = new string(list_Transaction_Amount_value.ToArray());
+                                                        count_column++;
+                                                    }
+                                                }
+                                                else if (count_column == 2)
+                                                {
+                                                    list_Discount_value.Add(arr_line[j]);
+                                                    if (arr_line[j + 1] == ' ')
+                                                    {
+                                                        string_Discount_value = new string(list_Discount_value.ToArray());
+                                                        count_column++;
+                                                    }
+                                                }
+                                                else if (count_column == 3)
+                                                {
+                                                    list_Account_Amount_value.Add(arr_line[j]);
+                                                }
+
+                                            }
+
+                                        }
+                                        count_column = 0;
+                                        count_line = 1;
+                                        string_Account_Amount_value = new string(list_Account_Amount_value.ToArray());
+                                        MessageBox.Show(string_Trans_value);
+                                        MessageBox.Show(string_Transaction_Amount_value);
+                                        MessageBox.Show(string_Discount_value);
+                                        MessageBox.Show(string_Account_Amount_value);
+                                    }
+                                    else if (count_line == 1)
+                                    {
+                                        //создаем лист list_Transaction_Name_value для хранения значения Transaction Name:
+                                        List<char> list_Transaction_Name_value_2 = new List<char>();
+                                        for (int i = 0; i < end_line; i++)
+                                        {
+                                            if (arr_line[i] == ' ')
+                                            {
+                                                if (arr_line[i + 1] == ' ')
+                                                    break;
+                                                else
+                                                    list_Transaction_Name_value_2.Add(arr_line[i]);
+                                            }
+                                            else
+                                                list_Transaction_Name_value_2.Add(arr_line[i]);
+                                        }
+                                        string_Transaction_Name_value_part_2 = new string(list_Transaction_Name_value_2.ToArray());
+                                        //MessageBox.Show(string_Transaction_Name_value_part_2);
+                                        string_Transaction_Name_value = string_Transaction_Name_value_part_1 + string_Transaction_Name_value_part_2;
+                                        MessageBox.Show(string_Transaction_Name_value);
+                                        count_line = 0;
+                                        list_Transaction_Name_value_2.Clear();
+                                        flag = false;
+                                        flag_Transaction = 1;
+                                        /* string query = "Insert into " + TableName +
+                                        " Values ('" +  + "')";
+
+                                         //execute sqlcommand to insert record
+                                         SqlCommand myCommand = new SqlCommand(query, SQLConnection);
+                                         myCommand.ExecuteNonQuery();*/
+                                    }
+                                }
+                                else if (flag_Transaction == 1 && line.StartsWith("             "))
+                                {
+                                    flag_Transaction = 0;
+                                    continue;
+                                }
+
+
+
+                                #endregion
                             }
+
+
                         }
-                       */
-
-                        
-                       
-
 
                         //skip the header row
                         /* if (counter > 0)
                          {
                              //prepare insert query
-                             string query = "Insert into " + TableName +
-                                    " Values ('" + line.Replace(filedelimiter, "','") + "')";
-
-                             //execute sqlcommand to insert record
-                             SqlCommand myCommand = new SqlCommand(query, SQLConnection);
-                             myCommand.ExecuteNonQuery();
+                            
                          }
                          //counter++;
                      }*/
@@ -541,13 +810,13 @@ namespace Report_system
                     else if (file_name.Contains('R'))
                     {
                         MessageBox.Show("Отчёт по пос терминалам");
-              
+
                     }
-                     else if (file_name.Contains('H'))
+                    else if (file_name.Contains('H'))
                     {
                         MessageBox.Show("Отчёт по пос терминалам");
                     }
-                   
+
 
                 }
             }
@@ -555,29 +824,34 @@ namespace Report_system
             {
 
             }
-           /* try
-            {
-                // 1. Открытие окна и проверка, выбран ли файл
-                if (openFileDialog1.ShowDialog() == DialogResult.OK)
-                {
-                    // 2. Вывести имя файла на форме в компоненте label1
-                    lblName.Text = openFileDialog1.FileName;
+            /* try
+             {
+                 // 1. Открытие окна и проверка, выбран ли файл
+                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                 {
+                     // 2. Вывести имя файла на форме в компоненте label1
+                     lblName.Text = openFileDialog1.FileName;
 
-                    // 3. Установить флажки f_open и f_save
-                    f_open = true;
-                    f_save = false;
-                   
-                   
+                     // 3. Установить флажки f_open и f_save
+                     f_open = true;
+                     f_save = false;
 
-                              }
-            }
-            catch (IOException Exception)
-            {
-                Console.Write(Exception);
-            }*/
-    }
 
-    private void panel1_Paint(object sender, PaintEventArgs e)
+
+                               }
+             }
+             catch (IOException Exception)
+             {
+                 Console.Write(Exception);
+             }*/
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
