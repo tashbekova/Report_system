@@ -559,6 +559,7 @@ namespace Report_system
                                     list_Transaction_Name_value_2.Clear();
                                     flag = false;
                                     flag_Transaction = 1;
+
                                     string query = "Insert into " + TableName +
                                         " (Date," +
                                         " Financial_institution," +
@@ -595,6 +596,13 @@ namespace Report_system
                                     SqlCommand myCommand = new SqlCommand(query, SQLConnection);
                                     myCommand.ExecuteNonQuery();
                                     MessageBox.Show("Успешно");
+
+                                   /* string query = "Insert into " + TableName +
+                                   " Values ('" +  + "')";
+                                    //execute sqlcommand to insert record
+                                    SqlCommand myCommand = new SqlCommand(query, SQLConnection);
+                                    myCommand.ExecuteNonQuery();*/
+                                    
                                 }
                                 if(flag_Transaction==1 && !line.StartsWith("          "))
                                 {
