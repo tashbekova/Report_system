@@ -65,7 +65,7 @@ namespace Report_system
                         int count_column = 0;
                         int count_line = 0;
                         int flag_Transaction = 0;
-                        bool flag = false;
+                        bool flag_indeks_Transaction = false;
                         string line = "";
                         string string_Financial_value = "";
                         string string_Office_value = "";
@@ -80,7 +80,6 @@ namespace Report_system
                         string string_Transaction_Name_value = "";
                         string string_Trans_value = "";
                         string string_Transaction_Amount_value = "";
-                       // decimal decimal_Transaction_Amount_value = 0;
                         string string_Transaction_Name_value_part_1 = "";
                         string string_Transaction_Name_value_part_2 = "";
                         string string_Discount_value = "";
@@ -424,10 +423,17 @@ namespace Report_system
 
                                 if (index_Transaction_Name >= 0)
                                 {
-                                    flag = true;
+                                    flag_indeks_Transaction = true;
                                     continue;
                                 }
-                                if (flag == true && count_line==0)
+                                if (flag_Transaction == 1 && line.StartsWith("           ") && flag_indeks_Transaction==true)
+                                {
+                                    // Если больше нет транзакций,то обнуляем
+                                    flag_indeks_Transaction = false;
+                                    flag_Transaction = 0;
+                                    continue;
+                                }
+                                else if (flag_indeks_Transaction == true && count_line==0 && !line.StartsWith("          "))
                                 {
                                     //создаем лист list_Transaction_Name_value для хранения значения Transaction Name:
                                     List<char> list_Transaction_Name_value = new List<char>();
@@ -533,7 +539,7 @@ namespace Report_system
                                    
                                 }
 
-                                else if(flag==true && count_line==1)
+                                else if(flag_indeks_Transaction==true && count_line==1 && !line.StartsWith("          "))
                                 {
                                     //создаем лист list_Transaction_Name_value для хранения значения Transaction Name:
                                     List<char> list_Transaction_Name_value_2 = new List<char>();
@@ -562,8 +568,8 @@ namespace Report_system
                                     //Очищаем переменные для добавления новых значений
                                     list_Transaction_Name_value_2.Clear();
 
-                                    //
-                                    flag = false;
+                                    //обнуляем флаг с индексом транзакции
+                                   // flag_indeks_Transaction = false;
                                     //Если одна транзакция уже добавлена в БД,то делаем flag_transaction =1
                                     flag_Transaction = 1;
 
@@ -617,155 +623,8 @@ namespace Report_system
                                 }
                                 #endregion Transaction Name1:
 
-                                #region Transaction_Name_continue:
-                                //привет
-                                if (flag_Transaction==1 && !line.StartsWith("          "))
-                                {
-                                    if(count_line==0)
-                                    {
-                                        //создаем лист list_Transaction_Name_value для хранения значения Transaction Name:
-                                        List<char> list_Transaction_Name_value = new List<char>();
-                                        //Проходим по циклу начиная после слов "Transaction Name:" и до пробелов
-                                        for (int i = 0; i < 37; i++)
-                                        {
-                                            if (arr_line[i] == ' ')
-                                            {
-                                                if (arr_line[i + 1] == ' ')
-                                                    break;
-                                                else
-                                                    list_Transaction_Name_value.Add(arr_line[i]);
-                                            }
-                                            else
-                                            {
-                                                //добавляем все символы в лист,чтобы получить массив и преобразовать в строку
-                                                list_Transaction_Name_value.Add(arr_line[i]);
-                                            }
-                                        }
-                                        //преобразовали в строку,где хранится значение Transaction Name:
-                                        string_Transaction_Name_value_part_1 = new string(list_Transaction_Name_value.ToArray());
-                                        //MessageBox.Show(string_Transaction_Name_value_part_1);
+                               
 
-                                        List<char> list_Trans_value = new List<char>();
-                                        List<char> list_Transaction_Amount_value = new List<char>();
-                                        List<char> list_Discount_value = new List<char>();
-                                        List<char> list_Account_Amount_value = new List<char>();
-
-                                        //Добавляем значения транзакций в переменные
-                                        for (int j = index_Trans_Date; j <= (end_line - 1); j++)
-                                        {
-
-                                            if (arr_line[j] == ' ')
-                                            {
-                                                continue;
-                                            }
-                                            else
-                                            {
-                                                if (count_column == 0)
-                                                {
-                                                    if (arr_line[j] == ',')
-                                                        continue;
-                                                    else if (arr_line[j] == '.')
-                                                        list_Trans_value.Add(',');
-                                                    else
-                                                        list_Trans_value.Add(arr_line[j]);
-                                                    if (arr_line[j + 1] == ' ')
-                                                    {
-                                                        string_Trans_value = new string(list_Trans_value.ToArray());
-
-                                                        count_column++;
-                                                    }
-                                                }
-                                                else if (count_column == 1)
-                                                {
-                                                    if (arr_line[j] == ',')
-                                                        continue;
-                                                    else
-                                                        list_Transaction_Amount_value.Add(arr_line[j]);
-                                                    if (arr_line[j + 1] == ' ')
-                                                    {
-                                                        string_Transaction_Amount_value = new string(list_Transaction_Amount_value.ToArray());
-                                                        count_column++;
-                                                    }
-                                                }
-                                                else if (count_column == 2)
-                                                {
-                                                    if (arr_line[j] == ',')
-                                                        continue;
-
-                                                    else
-                                                        list_Discount_value.Add(arr_line[j]);
-                                                    if (arr_line[j + 1] == ' ')
-                                                    {
-                                                        string_Discount_value = new string(list_Discount_value.ToArray());
-                                                        count_column++;
-                                                    }
-                                                }
-                                                else if (count_column == 3)
-                                                {
-                                                    if (arr_line[j] == ',')
-                                                        continue;
-                                                    else
-                                                        list_Account_Amount_value.Add(arr_line[j]);
-                                                }
-
-                                            }
-
-                                        }
-                                        count_column = 0;
-                                        count_line = 1;
-                                        string_Account_Amount_value = new string(list_Account_Amount_value.ToArray());
-
-                                        MessageBox.Show(string_Trans_value);
-                                        MessageBox.Show("" + string_Transaction_Amount_value);
-                                        MessageBox.Show("" + string_Discount_value);
-                                        MessageBox.Show("" + string_Account_Amount_value);
-                                        MessageBox.Show("" + count_line);
-
-                                       /* MessageBox.Show(string_Trans_value);
-                                        MessageBox.Show(string_Transaction_Amount_value);
-                                        MessageBox.Show(string_Discount_value);
-                                        MessageBox.Show(string_Account_Amount_value);*/
-                                    }
-                                    else if(count_line==1)
-                                    {
-                                        //создаем лист list_Transaction_Name_value для хранения значения Transaction Name:
-                                        List<char> list_Transaction_Name_value_2 = new List<char>();
-                                        for (int i = 0; i < end_line; i++)
-                                        {
-                                            if (arr_line[i] == ' ')
-                                            {
-                                                if (arr_line[i + 1] == ' ')
-                                                    break;
-                                                else
-                                                    list_Transaction_Name_value_2.Add(arr_line[i]);
-                                            }
-                                            else
-                                                list_Transaction_Name_value_2.Add(arr_line[i]);
-                                        }
-                                        string_Transaction_Name_value_part_2 = new string(list_Transaction_Name_value_2.ToArray());
-                                        //MessageBox.Show(string_Transaction_Name_value_part_2);
-                                        string_Transaction_Name_value = string_Transaction_Name_value_part_1 + string_Transaction_Name_value_part_2;
-                                        MessageBox.Show(string_Transaction_Name_value);
-                                        count_line = 0;
-                                        list_Transaction_Name_value_2.Clear();
-                                        flag = false;
-                                        flag_Transaction = 1;
-                                        /* string query = "Insert into " + TableName +
-                                        " Values ('" +  + "')";
-                                         //execute sqlcommand to insert record
-                                         SqlCommand myCommand = new SqlCommand(query, SQLConnection);
-                                         myCommand.ExecuteNonQuery();*/
-                                    }
-                                }
-                                else if(flag_Transaction==1 && line.StartsWith("             "))
-                                {
-                                    flag_Transaction = 0;
-                                    continue;
-                                }
-
-
-                                
-                                #endregion
                             }
 
 
