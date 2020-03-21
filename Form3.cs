@@ -618,7 +618,7 @@ namespace Report_system
                                 #endregion Transaction Name1:
 
                                 #region Transaction_Name_continue:
-
+                                //привет
                                 if (flag_Transaction==1 && !line.StartsWith("          "))
                                 {
                                     if(count_line==0)
