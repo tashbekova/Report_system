@@ -46,6 +46,7 @@ namespace Report_system
             string string_Transaction_Name_value_part_1 = "";
             string string_Discount_value = "";
             string string_Account_Amount_value = "";
+            string string_Number_Of_Trans = "";
 
             //provide the table name in which you would like to load data
             string TableName = "dbo.Table_A";
@@ -604,16 +605,33 @@ namespace Report_system
                         List<char> list_Transaction_Amount_value = new List<char>();
                         List<char> list_Discount_value = new List<char>();
                         List<char> list_Account_Amount_value = new List<char>();
-                        /*//Проходим по циклу начиная после слов "Financial Institution" и до пробелов
-                        for (int i = index_Financial + 15; i < index_probel; i++)
+
+                        int index_number_of_trans = 0;
+                        index_number_of_trans = line.IndexOf("Number of Trans:", 0, end_line);
+
+                        ///Проходим по циклу начиная после слов "Number_Of_Trans" и до пробелов
+                        for (int i = index_number_of_trans + 16; i < (end_line-1); i++)
                         {
-                            //добавляем все символы в лист,чтобы получить массив и преобразовать в строку
-                            list_Financial_value.Add(arr_line[i]);
+                            while(arr_line[i]==' ')
+                            {
+                                i++;
+                            }
+                            if(arr_line[i]!=' ')
+                            {
+                                //добавляем все символы в лист,чтобы получить массив и преобразовать в строку
+                                list_Number_Of_Trans_value.Add(arr_line[i]);
+                                if(arr_line[i+1]==' ')
+                                {
+                                    break;
+                                }
+                            }
+
                         }
-                        //преобразовали в строку,где хранится значение Financial Institution
-                        string_Financial_value = new string(list_Financial_value.ToArray());
-                        MessageBox.Show(string_Financial_value);
-                        list_Financial_value.Clear();*/
+                        //преобразовали в строку,где хранится значение Number Of Trans
+                        string_Number_Of_Trans = new string(list_Number_Of_Trans_value.ToArray());
+                        MessageBox.Show(string_Number_Of_Trans);
+                        list_Number_Of_Trans_value.Clear();
+                        flag_Total_Posting_Date = false;
                     }
                     #endregion
                 }
