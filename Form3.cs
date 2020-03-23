@@ -66,6 +66,7 @@ namespace Report_system
                         int count_line = 0;
                         int flag_Transaction = 0;
                         bool flag_indeks_Transaction = false;
+                        bool flag_Total_Posting_Date = false;
                         string line = "";
                         string string_Financial_value = "";
                         string string_Office_value = "";
@@ -415,7 +416,7 @@ namespace Report_system
                                 #endregion
 
 
-                                #region Transaction Name1:
+                                #region Transaction Name:
 
                                 //присвоение значений переменным
                                 index_Transaction_Name = line.IndexOf("Transaction Name", 0, end_line);  //индекс нахождения Transaction Name
@@ -530,7 +531,13 @@ namespace Report_system
                                     count_column = 0;
                                     count_line = 1;
                                     string_Account_Amount_value = new string(list_Account_Amount_value.ToArray());
-                                   
+                                    //Очищаем листы
+                                    list_Account_Amount_value.Clear();
+                                    list_Discount_value.Clear();
+                                    list_Transaction_Amount_value.Clear();
+                                    list_Transaction_Name_value.Clear();
+                                    list_Trans_value.Clear();
+                                    
                                     MessageBox.Show(string_Trans_value);
                                     MessageBox.Show(""+string_Transaction_Amount_value);
                                     MessageBox.Show(""+ string_Discount_value);
@@ -618,6 +625,36 @@ namespace Report_system
                                 }
                                 #endregion Transaction Name1:
 
+
+                                #region Total Posting Date:
+
+                                int index_total_date = 0; //индекс Total Posting Date
+                                //присвоение значений переменным
+                                index_total_date = line.IndexOf("TOTAL this Posting Date", 0, end_line);  //индекс нахождения Total Posting Date
+                                //Если это строка с Total Posting Date
+                                if (index_total_date >= 0)
+                                {
+                                    flag_Total_Posting_Date = true;
+                                }
+                                if(flag_Total_Posting_Date==true)
+                                {
+                                    //создаем листы 
+                                    List<char> list_Number_Of_Trans_value= new List<char>();
+                                    List<char> list_Transaction_Amount_value = new List<char>();
+                                    List<char> list_Discount_value = new List<char>();
+                                    List<char> list_Account_Amount_value = new List<char>();
+                                    /*//Проходим по циклу начиная после слов "Financial Institution" и до пробелов
+                                    for (int i = index_Financial + 15; i < index_probel; i++)
+                                    {
+                                        //добавляем все символы в лист,чтобы получить массив и преобразовать в строку
+                                        list_Financial_value.Add(arr_line[i]);
+                                    }
+                                    //преобразовали в строку,где хранится значение Financial Institution
+                                    string_Financial_value = new string(list_Financial_value.ToArray());
+                                    MessageBox.Show(string_Financial_value);
+                                    list_Financial_value.Clear();*/
+                                }
+                                #endregion
                             }
 
 
