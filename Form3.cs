@@ -85,7 +85,6 @@ namespace Report_system
                         string string_Discount_value = "";
                         string string_Account_Amount_value = "";
 
-
                         //provide the table name in which you would like to load data
                         string TableName = "dbo.Table_A";
 
@@ -426,11 +425,12 @@ namespace Report_system
                                     flag_indeks_Transaction = true;
                                     continue;
                                 }
-                                if (flag_Transaction == 1 && line.StartsWith("           ") && flag_indeks_Transaction==true)
+                                if (flag_Transaction == 1 && arr_line.Length==0 && flag_indeks_Transaction==true)
                                 {
                                     // Если больше нет транзакций,то обнуляем
                                     flag_indeks_Transaction = false;
                                     flag_Transaction = 0;
+                                    MessageBox.Show("Больше нет транзакций,переходим к следующему");
                                     continue;
                                 }
                                 else if (flag_indeks_Transaction == true && count_line==0 && !line.StartsWith("          "))
@@ -535,10 +535,9 @@ namespace Report_system
                                     MessageBox.Show(""+string_Transaction_Amount_value);
                                     MessageBox.Show(""+ string_Discount_value);
                                     MessageBox.Show(""+ string_Account_Amount_value);
-                                    MessageBox.Show("" + count_line);
+                                    //MessageBox.Show("" + count_line);
                                    
                                 }
-
                                 else if(flag_indeks_Transaction==true && count_line==1 && !line.StartsWith("          "))
                                 {
                                     //создаем лист list_Transaction_Name_value для хранения значения Transaction Name:
@@ -616,14 +615,8 @@ namespace Report_system
                                     {
                                         MessageBox.Show("Во время соединения произошла ошибка" + ex);
                                     }
-                                    finally
-                                    {
-                                        SQLConnection.Close();
-                                    }
                                 }
                                 #endregion Transaction Name1:
-
-                               
 
                             }
 
