@@ -441,8 +441,6 @@ namespace Report_system
                                 {
                                     if (arr_line[j] == ',')
                                         continue;
-                                    else if (arr_line[j] == '.')
-                                        list_Trans_value.Add(',');
                                     else
                                         list_Trans_value.Add(arr_line[j]);
                                     if (arr_line[j + 1] == ' ')
@@ -606,31 +604,51 @@ namespace Report_system
                         List<char> list_Discount_value = new List<char>();
                         List<char> list_Account_Amount_value = new List<char>();
 
-                        int index_number_of_trans = 0;
-                        index_number_of_trans = line.IndexOf("Number of Trans:", 0, end_line);
-
-                        ///Проходим по циклу начиная после слов "Number_Of_Trans" и до пробелов
-                        for (int i = index_number_of_trans + 16; i < (end_line-1); i++)
-                        {
-                            while(arr_line[i]==' ')
+                        int index_number_of_trans = line.IndexOf("Number of Trans:", 0, end_line);
+                        if (index_number_of_trans >= 0)
+                        { ///Проходим по циклу начиная после слов "Number_Of_Trans" и до пробелов
+                            for (int i = index_number_of_trans + 16; i < end_line; i++)
                             {
-                                i++;
-                            }
-                            if(arr_line[i]!=' ')
-                            {
-                                //добавляем все символы в лист,чтобы получить массив и преобразовать в строку
-                                list_Number_Of_Trans_value.Add(arr_line[i]);
-                                if(arr_line[i+1]==' ')
+                                if (arr_line[i] == ' ')
                                 {
-                                    break;
+                                    continue;
                                 }
-                            }
+                                else if (arr_line[i] != ' ')
+                                {
+                                    //добавляем все символы в лист,чтобы получить массив и преобразовать в строку
+                                    list_Number_Of_Trans_value.Add(arr_line[i]);
+                                }
 
+                            }
                         }
+
+                        int index_Transaction_Amount = line.IndexOf("Transaction Amount:", 0, end_line);
+                        if (index_Transaction_Amount >= 0)
+                        {
+                            for (int i = index_Transaction_Amount + 19; i < end_line; i++)
+                            {
+                                if (arr_line[i] == ' ' || arr_line[i]==',')
+                                {
+                                    continue;
+                                }
+                                else if (arr_line[i] != ' ')
+                                {
+                                    //добавляем все символы в лист,чтобы получить массив и преобразовать в строку
+                                    list_Transaction_Amount_value.Add(arr_line[i]);
+                                }
+
+                            }
+                        }
+
+
+           
                         //преобразовали в строку,где хранится значение Number Of Trans
                         string_Number_Of_Trans = new string(list_Number_Of_Trans_value.ToArray());
+                        string_Transaction_Amount_value = new string(list_Transaction_Amount_value.ToArray());
                         MessageBox.Show(string_Number_Of_Trans);
+                        MessageBox.Show(string_Transaction_Amount_value);
                         list_Number_Of_Trans_value.Clear();
+                        list_Transaction_Amount_value.Clear();
                         flag_Total_Posting_Date = false;
                     }
                     #endregion
