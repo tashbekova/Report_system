@@ -18,7 +18,6 @@ namespace Report_system
 {
     class Class_Report_A
     {
-
         string string_Financial_value = "";
         string string_Office_value = "";
         string string_Contract_value = "";
@@ -91,7 +90,7 @@ namespace Report_system
                     // -------------------------------------------------------------------
 
                     #region Financial Institution
-                    //присвоение значений переменным
+ 
                     int index_Financial = line.IndexOf("Institution:", 0, end_line);  //индекс нахождения Financial Institution
                     //Если это строка с Financial Institution
                     if (index_Financial >= 0)
@@ -102,8 +101,7 @@ namespace Report_system
 
                     
                     #region Office
-                   
-                    //присвоение значений переменным
+
                     int index_Office = line.IndexOf("Office:", 0, end_line);  //индекс нахождения Office
                      //Если это строка с Office
                     if (index_Office >= 0)
@@ -114,7 +112,7 @@ namespace Report_system
 
 
                     #region Contract
-                    //присвоение значений переменным
+
                     int index_Contract = line.IndexOf("Contract #:", 0, end_line);  //индекс нахождения Contract
                                                                                 //Если это строка с Contract
                     if (index_Contract >= 0)
@@ -125,7 +123,7 @@ namespace Report_system
 
 
                     #region Region
-                    //присвоение значений переменным
+
                     int index_Region = line.IndexOf("Reg #:", 0, end_line);  //индекс нахождения Region
                      //Если это строка с "Reg #:"
                     if (index_Region >= 0)
@@ -136,7 +134,7 @@ namespace Report_system
 
 
                     #region Currency
-                    //присвоение значений переменным
+
                     int index_Currency = line.IndexOf("Currency:", 0, end_line);  //индекс нахождения Currency
                      //Если это строка с "Currency:"
                     if (index_Currency >= 0)
@@ -147,7 +145,7 @@ namespace Report_system
 
 
                     #region Device
-                                          //присвоение значений переменным
+
                     int index_Device = line.IndexOf("Device:", 0, end_line);  //индекс нахождения Device
                     //Если это строка с Device:
                     if (index_Device >= 0)
@@ -158,6 +156,7 @@ namespace Report_system
 
 
                     #region SIC
+                    
                     int index_SIC = line.IndexOf("SIC:", 0, end_line);  //индекс нахождения SIC
                     //Если это строка с SIC:
                     if (index_SIC >= 0)
@@ -168,9 +167,9 @@ namespace Report_system
 
 
                     #region Cycle Num/Type
-                                         //присвоение значений переменным
+
                     int index_Cycle = line.IndexOf("Cycle Num/Type:", 0, end_line);  //индекс нахождения Cycle Num/Type:
-                                                                                 //Если это строка с Cycle Num/Type:
+                    //Если это строка с Cycle Num/Type:
                     if (index_Cycle >= 0)
                     {
                         Read_Cycle(arr_line, index_Cycle);
@@ -179,9 +178,9 @@ namespace Report_system
 
 
                     #region Device Name:
-                                               //присвоение значений переменным
+
                     int index_Device_Name = line.IndexOf("Device Name:", 0, end_line);  //индекс нахождения Device Name:
-                                                                                    //Если это строка с Device Name:
+                    //Если это строка с Device Name:
                     if (index_Device_Name >= 0)
                     {
                         Read_Device_Name(arr_line, index_Device_Name);
@@ -189,10 +188,10 @@ namespace Report_system
                     #endregion
 
 
-                    #region Posting Date
-                    //присвоение значений переменным
+                    #region Posting Dates
+
                     int index_Posting_Date = line.IndexOf("Posting Date:", 0, end_line);  //индекс нахождения Posting Date
-                                                                               //Если это строка с Posting Date
+                    //Если это строка с Posting Date
                     if (index_Posting_Date >= 0)
                     {
                         Read_Posting_Date(arr_line, index_Posting_Date);
@@ -202,15 +201,16 @@ namespace Report_system
 
                     #region Transaction:
 
-                    //присвоение значений переменным
                     int index_Transaction_Name = line.IndexOf("Transaction Name", 0, end_line);
-
+                    //Если это строка с Transaction Name
                     if (index_Transaction_Name >= 0)
                     {
                         index_Trans_Date = line.IndexOf("Trans Date", 0, end_line);
                         flag_indeks_Transaction = true;
                         continue;
                     }
+
+                    //Если больше нет транзакций
                     if (flag_Transaction == 1 && arr_line.Length == 0 && flag_indeks_Transaction == true)
                     {
                         // Если больше нет транзакций,то обнуляем
@@ -219,51 +219,23 @@ namespace Report_system
                        // MessageBox.Show("Больше нет транзакций,переходим к следующему");
                         continue;
                     }
+                    //Если название Transaction Name состоит из одной строки
                     else if(flag_indeks_Transaction == true && count_Transaction_line == 1 && arr_line.Length==0)
                     {
-                        flag_indeks_Transaction = false;
-                        flag_Transaction = 0;
+                        flag_Transaction = 1;
                         count_Transaction_line = 0;
                         string_Transaction_Name_value = string_Transaction_Name_value_part_1;
+                        Add_Data();
                     }
+                    //Если еще не считывали , то считываем строку с данными о транзакции
                     else if (flag_indeks_Transaction == true && count_Transaction_line == 0 && !line.StartsWith("          "))
                     {
-                        Read_Transaction(arr_line);
-
+                        Read_Transaction_part_1(arr_line);
                     }
+                    //Если Transaction_Name состоит из двух строк
                     else if (flag_indeks_Transaction == true && count_Transaction_line == 1 && !line.StartsWith("          "))
                     {
-                        //создаем лист list_Transaction_Name_value для хранения значения Transaction Name:
-                        List<char> list_Transaction_Name_value_2 = new List<char>();
-                        for (int i = 0; i < end_line; i++)
-                        {
-                            if (arr_line[i] == ' ')
-                            {
-                                if (arr_line[i + 1] == ' ')
-                                    break;
-                                else
-                                    list_Transaction_Name_value_2.Add(arr_line[i]);
-                            }
-                            else
-                                list_Transaction_Name_value_2.Add(arr_line[i]);
-                        }
-                        //добавляем вторую часть названия транзакции в массив
-                        string string_Transaction_Name_value_part_2 = new string(list_Transaction_Name_value_2.ToArray());
-
-                        //складываем две части и получаем одно полное название транзакции
-                        string_Transaction_Name_value = string_Transaction_Name_value_part_1 + string_Transaction_Name_value_part_2;
-                        //MessageBox.Show(string_Transaction_Name_value);
-
-                        //обнуляем count_line , значит мы уже добавили одну транзакцию, то есть взяли все значения одной транзакции полностью
-                        count_Transaction_line = 0;
-
-                        //Очищаем переменные для добавления новых значений
-                        list_Transaction_Name_value_2.Clear();
-
-                        //обнуляем флаг с индексом транзакции
-                        // flag_indeks_Transaction = false;
-                        //Если одна транзакция уже добавлена в БД,то делаем flag_transaction =1
-                        flag_Transaction = 1;
+                        Read_Transaction_part_2(arr_line);
                         //Добавление данных  в БД
                         Add_Data();
                     }
@@ -654,7 +626,7 @@ namespace Report_system
             // MessageBox.Show(string_Device_Name_value);
         }
 
-        public void Read_Transaction(char[] arr_line)
+        public void Read_Transaction_part_1(char[] arr_line)
         {
             //создаем лист list_Transaction_Name_value для хранения значения Transaction Name:
             List<char> list_Transaction_Name_value = new List<char>();
@@ -765,14 +737,42 @@ namespace Report_system
             list_Transaction_Amount_value.Clear();
             list_Transaction_Name_value.Clear();
             list_Trans_value.Clear();
-
-            //MessageBox.Show(string_Trans_value);
-            //MessageBox.Show("" + string_Transaction_Amount_value);
-            //MessageBox.Show("" + string_Discount_value);
-            //MessageBox.Show("" + string_Account_Amount_value);
-            //MessageBox.Show("" + count_line);
         }
 
+        public void Read_Transaction_part_2(char[] arr_line)
+        {
+            //создаем лист list_Transaction_Name_value для хранения значения Transaction Name:
+            List<char> list_Transaction_Name_value_2 = new List<char>();
+            for (int i = 0; i < end_line; i++)
+            {
+                if (arr_line[i] == ' ')
+                {
+                    if (arr_line[i + 1] == ' ')
+                        break;
+                    else
+                        list_Transaction_Name_value_2.Add(arr_line[i]);
+                }
+                else
+                    list_Transaction_Name_value_2.Add(arr_line[i]);
+            }
+            //добавляем вторую часть названия транзакции в массив
+            string string_Transaction_Name_value_part_2 = new string(list_Transaction_Name_value_2.ToArray());
+
+            //складываем две части и получаем одно полное название транзакции
+            string_Transaction_Name_value = string_Transaction_Name_value_part_1 + string_Transaction_Name_value_part_2;
+            //MessageBox.Show(string_Transaction_Name_value);
+
+            //обнуляем count_line , значит мы уже добавили одну транзакцию, то есть взяли все значения одной транзакции полностью
+            count_Transaction_line = 0;
+
+            //Очищаем переменные для добавления новых значений
+            list_Transaction_Name_value_2.Clear();
+
+            //обнуляем флаг с индексом транзакции
+            // flag_indeks_Transaction = false;
+            //Если одна транзакция уже добавлена в БД,то делаем flag_transaction =1
+            flag_Transaction = 1;
+        }
 
         public void Read_Posting_Date(char[] arr_line, int index_Posting_Date)
         {
