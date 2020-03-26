@@ -29,8 +29,14 @@ namespace Report_system
             int count_column = 0;
             int count_line = 0;
             int flag_Transaction = 0;
+
             bool flag_indeks_Transaction = false;
             bool flag_Total_Posting_Date = false;
+            bool flag_Total_Cycle = false;
+            bool flag_Total_Device = false;
+            bool flag_Total_Currency = false;
+            bool flag_Total = false;
+
             string string_Financial_value = "";
             string string_Office_value = "";
             string string_Contract_value = "";
@@ -49,7 +55,7 @@ namespace Report_system
             string string_Number_Of_Trans = "";
 
             //provide the table name in which you would like to load data
-            string TableName = "dbo.Table_A";
+            string Table_Name = "";
 
             //Create Connection to SQL Server
             SqlConnection SQLConnection = new SqlConnection();
@@ -83,9 +89,8 @@ namespace Report_system
                     // -------------------------------------------------------------------
 
                     #region Financial Institution
-                    int index_Financial = 0; //индекс Financial institution
                                              //присвоение значений переменным
-                    index_Financial = line.IndexOf("Institution:", 0, end_line);  //индекс нахождения Financial Institution
+                    int index_Financial = line.IndexOf("Institution:", 0, end_line);  //индекс нахождения Financial Institution
                                                                                   //Если это строка с Financial Institution
                     if (index_Financial >= 0)
                     {
@@ -105,9 +110,8 @@ namespace Report_system
                     #endregion
 
                     #region Date
-                    int index_Date = 0; //индекс Date
                                         //присвоение значений переменным
-                    index_Date = line.IndexOf("Period  to", 0, end_line);  //индекс нахождения Period
+                    int index_Date = line.IndexOf("Period  to", 0, end_line);  //индекс нахождения Period
                                                                            //Если это строка с Period
                     if (index_Date >= 0)
                     {
@@ -138,10 +142,9 @@ namespace Report_system
 
 
                     #region Office
-                    // MessageBox.Show("" + index_probel);
-                    int index_Office = 0;
+                   
                     //присвоение значений переменным
-                    index_Office = line.IndexOf("Office:", 0, end_line);  //индекс нахождения Office
+                    int index_Office = line.IndexOf("Office:", 0, end_line);  //индекс нахождения Office
                                                                           //  MessageBox.Show("" + index_office);
                                                                           //Если это строка с Office
                     if (index_Office >= 0)
@@ -163,10 +166,8 @@ namespace Report_system
 
 
                     #region Contract
-                    // MessageBox.Show("" + index_probel);
-                    int index_Contract = 0;
                     //присвоение значений переменным
-                    index_Contract = line.IndexOf("Contract #:", 0, end_line);  //индекс нахождения Contract
+                    int index_Contract = line.IndexOf("Contract #:", 0, end_line);  //индекс нахождения Contract
                                                                                 // MessageBox.Show("" + index_contract);
                                                                                 //Если это строка с Contract
                     if (index_Contract >= 0)
@@ -188,10 +189,8 @@ namespace Report_system
 
 
                     #region Region
-                    // MessageBox.Show("" + index_probel);
-                    int index_Region = 0;
                     //присвоение значений переменным
-                    index_Region = line.IndexOf("Reg #:", 0, end_line);  //индекс нахождения Region
+                    int index_Region = line.IndexOf("Reg #:", 0, end_line);  //индекс нахождения Region
                                                                          // MessageBox.Show("" + index_contract);
                                                                          //Если это строка с "Reg #:"
                     if (index_Region >= 0)
@@ -213,10 +212,8 @@ namespace Report_system
 
 
                     #region Currency
-                    // MessageBox.Show("" + index_probel_3);
-                    int index_Currency = 0;
                     //присвоение значений переменным
-                    index_Currency = line.IndexOf("Currency:", 0, end_line);  //индекс нахождения Currency
+                    int index_Currency = line.IndexOf("Currency:", 0, end_line);  //индекс нахождения Currency
                                                                               // MessageBox.Show("" + index_contract);
                                                                               //Если это строка с "Currency:"
                     if (index_Currency >= 0)
@@ -247,9 +244,8 @@ namespace Report_system
 
 
                     #region Device
-                    int index_Device = 0; //индекс Device
                                           //присвоение значений переменным
-                    index_Device = line.IndexOf("Device:", 0, end_line);  //индекс нахождения Device
+                    int index_Device = line.IndexOf("Device:", 0, end_line);  //индекс нахождения Device
                                                                           //Если это строка с Device:
                     if (index_Device >= 0)
                     {
@@ -280,9 +276,9 @@ namespace Report_system
 
 
                     #region SIC
-                    int index_SIC = 0; //индекс SIC
+                    
                                        //присвоение значений переменным
-                    index_SIC = line.IndexOf("SIC:", 0, end_line);  //индекс нахождения SIC
+                    int index_SIC = line.IndexOf("SIC:", 0, end_line);  //индекс нахождения SIC
                                                                     //Если это строка с SIC:
                     if (index_SIC >= 0)
                     {
@@ -313,9 +309,8 @@ namespace Report_system
 
 
                     #region Cycle Num/Type
-                    int index_Cycle = 0; //индекс Cycle Num/Type:
                                          //присвоение значений переменным
-                    index_Cycle = line.IndexOf("Cycle Num/Type:", 0, end_line);  //индекс нахождения Cycle Num/Type:
+                    int index_Cycle = line.IndexOf("Cycle Num/Type:", 0, end_line);  //индекс нахождения Cycle Num/Type:
                                                                                  //Если это строка с Cycle Num/Type:
                     if (index_Cycle >= 0)
                     {
@@ -346,9 +341,8 @@ namespace Report_system
 
 
                     #region Device Name:
-                    int index_Device_Name = 0; //индекс Device Name:
                                                //присвоение значений переменным
-                    index_Device_Name = line.IndexOf("Device Name:", 0, end_line);  //индекс нахождения Device Name:
+                    int index_Device_Name = line.IndexOf("Device Name:", 0, end_line);  //индекс нахождения Device Name:
                                                                                     //Если это строка с Device Name:
                     if (index_Device_Name >= 0)
                     {
@@ -539,8 +533,9 @@ namespace Report_system
                         //Если одна транзакция уже добавлена в БД,то делаем flag_transaction =1
                         flag_Transaction = 1;
 
+                        Table_Name = "dbo.Table_A";
                         // запрос на добавление в SQL Server
-                        string query = "Insert into " + TableName +
+                        string query = "Insert into " + Table_Name +
                             " (Date," +
                             " Financial_institution," +
                             " Office," +
@@ -586,18 +581,52 @@ namespace Report_system
                     #endregion 
 
 
-                    #region Total Posting Date:
-
-                    int index_total_date = 0; //индекс Total Posting Date
-                                              //присвоение значений переменным
-                    index_total_date = line.IndexOf("TOTAL this Posting Date", 0, end_line);  //индекс нахождения Total Posting Date
+                    #region Total 
+                    //присвоение значений переменным
+                    int index_Total_Date = line.IndexOf("TOTAL this Posting Date", 0, end_line);  //индекс нахождения Total Posting Date
+                    int index_Total_For_Cycle = line.IndexOf("TOTAL for Cycle", 0, end_line);
+                    int index_Total_Device = line.IndexOf("TOTAL this Device", 0, end_line);
+                    int index_Total_Currency = line.IndexOf("TOTAL this Currency", 0, end_line);
                                                                                               //Если это строка с Total Posting Date
-                    if (index_total_date >= 0)
+                    if (index_Total_Date >= 0)
                     {
                         flag_Total_Posting_Date = true;
+                        flag_Total = true;
                     }
-                    if (flag_Total_Posting_Date == true)
+                    else if(index_Total_For_Cycle>=0)
                     {
+                        flag_Total_Cycle = true;
+                        flag_Total = true;
+                    }
+                    else if(index_Total_Device>=0)
+                    {
+                        flag_Total_Device = true;
+                        flag_Total = true;
+                    }
+                    else if(index_Total_Currency>=0)
+                    {
+                        flag_Total_Currency = true;
+                        flag_Total = true;
+                    }
+
+                    if(flag_Total==true)
+                    {
+                        if(flag_Total_Posting_Date==true)
+                        {
+                            Table_Name = "dbo.tbl_Total_Posting_Date_Report_A";
+                        }
+                        else if(flag_Total_Cycle==true)
+                        {
+                            Table_Name = "dbo.tbl_Total_for_Cycle_Report_A";
+                        }
+                        else if(flag_Total_Device==true)
+                        {
+                            Table_Name = "dbo.tbl_Total_Device_Report_A";
+                        }
+                        else if(flag_Total_Currency==true)
+                        {
+                            Table_Name = "dbo.tbl_Total_Currency_Report_A";
+                        }
                         //создаем листы 
                         List<char> list_Number_Of_Trans_value = new List<char>();
                         List<char> list_Transaction_Amount_value = new List<char>();
@@ -627,7 +656,7 @@ namespace Report_system
                         {
                             for (int i = index_Transaction_Amount + 19; i < end_line; i++)
                             {
-                                if (arr_line[i] == ' ' || arr_line[i]==',')
+                                if (arr_line[i] == ' ' || arr_line[i] == ',')
                                 {
                                     continue;
                                 }
@@ -640,8 +669,27 @@ namespace Report_system
                             }
                         }
 
+                        int index_Discount = line.IndexOf("Discount:", 0, end_line);
+                        if(index_Discount>=0)
+                        {
+                            for (int i = index_Discount + 9; i < end_line; i++)
+                            {
+                                if (arr_line[i] == ' ' || arr_line[i] == ',')
+                                {
+                                    continue;
+                                }
+                                else if (arr_line[i] != ' ')
+                                {
+                                    //добавляем все символы в лист,чтобы получить массив и преобразовать в строку
+                                    list_Discount_value.Add(arr_line[i]);
+                                }
 
-           
+                            }
+                        }
+
+                        int index_Account_Amount = line.IndexOf("Account Amount:", 0, end_line);
+                        if(index_Account_Amount>=)
+
                         //преобразовали в строку,где хранится значение Number Of Trans
                         string_Number_Of_Trans = new string(list_Number_Of_Trans_value.ToArray());
                         string_Transaction_Amount_value = new string(list_Transaction_Amount_value.ToArray());
@@ -649,8 +697,9 @@ namespace Report_system
                         MessageBox.Show(string_Transaction_Amount_value);
                         list_Number_Of_Trans_value.Clear();
                         list_Transaction_Amount_value.Clear();
-                        flag_Total_Posting_Date = false;
+                        // flag_Total_Posting_Date = false;
                     }
+                   
                     #endregion
                 }
 
