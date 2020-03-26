@@ -80,10 +80,12 @@ namespace Report_system
             child = panelChildForm.Controls.OfType<MiForm>().FirstOrDefault();
             if(child==null)
             {
-                child = new MiForm();
-                child.TopLevel = false;
-                child.FormBorderStyle = FormBorderStyle.None;
-                child.Dock = DockStyle.Fill;
+                child = new MiForm
+                {
+                    TopLevel = false,
+                    FormBorderStyle = FormBorderStyle.None,
+                    Dock = DockStyle.Fill
+                };
                 panelChildForm.Controls.Add(child);
                 panelChildForm.Tag = child;
                 child.Show();
