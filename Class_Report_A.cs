@@ -649,6 +649,9 @@ namespace Report_system
                                 }
 
                             }
+                            string_Number_Of_Trans = new string(list_Number_Of_Trans_value.ToArray());
+                            MessageBox.Show(string_Number_Of_Trans);
+
                         }
 
                         int index_Transaction_Amount = line.IndexOf("Transaction Amount:", 0, end_line);
@@ -667,6 +670,8 @@ namespace Report_system
                                 }
 
                             }
+                            string_Transaction_Amount_value = new string(list_Transaction_Amount_value.ToArray());
+                            MessageBox.Show(string_Transaction_Amount_value);
                         }
 
                         int index_Discount = line.IndexOf("Discount:", 0, end_line);
@@ -685,19 +690,69 @@ namespace Report_system
                                 }
 
                             }
+                            string_Discount_value = new string(list_Discount_value.ToArray());
+                            MessageBox.Show(string_Discount_value);
                         }
 
                         int index_Account_Amount = line.IndexOf("Account Amount:", 0, end_line);
-                        if(index_Account_Amount>=)
+                        if(index_Account_Amount>=0)
+                        {
+                            for (int i = index_Account_Amount + 15; i < end_line; i++)
+                            {
+                                if (arr_line[i] == ' ' || arr_line[i] == ',')
+                                {
+                                    continue;
+                                }
+                                else if (arr_line[i] != ' ')
+                                {
+                                    //добавляем все символы в лист,чтобы получить массив и преобразовать в строку
+                                    list_Account_Amount_value.Add(arr_line[i]);
+                                }
+
+                            }
+                            string_Account_Amount_value = new string(list_Account_Amount_value.ToArray());
+                            MessageBox.Show(string_Account_Amount_value);
+                            flag_Total = false;
+                            flag_Total_Currency = false;
+                            flag_Total_Cycle = false;
+                            flag_Total_Device = false;
+                            flag_Total_Posting_Date = false;
+
+                            // запрос на добавление в SQL Server
+                            string query = "Insert into " + Table_Name +
+                                " (Date," +
+                                " Device," +
+                                " Device_name," +
+                                "Number_of_trans," +
+                                "Transaction_amount," +
+                                "Discount," +
+                                "Account_amount)" +
+                                " Values ('" + string_Date_value + "','" +
+                           string_Device_value + "','" +
+                           string_Device_Name_value + "','" +
+                           string_Number_Of_Trans + "','" +
+                           string_Transaction_Amount_value + "','" +
+                           string_Discount_value + "','" +
+                           string_Account_Amount_value + "')";
+                            try
+                            {
+                                //execute sqlcommand to insert record
+                                SqlCommand myCommand = new SqlCommand(query, SQLConnection);
+                                myCommand.ExecuteNonQuery();
+                                MessageBox.Show("Добавлен Total");
+                            }
+                            catch (SqlException ex)
+                            {
+                                MessageBox.Show("Во время соединения произошла ошибка" + ex);
+                            }
+                        }
 
                         //преобразовали в строку,где хранится значение Number Of Trans
-                        string_Number_Of_Trans = new string(list_Number_Of_Trans_value.ToArray());
-                        string_Transaction_Amount_value = new string(list_Transaction_Amount_value.ToArray());
-                        MessageBox.Show(string_Number_Of_Trans);
-                        MessageBox.Show(string_Transaction_Amount_value);
+                       
                         list_Number_Of_Trans_value.Clear();
                         list_Transaction_Amount_value.Clear();
-                        // flag_Total_Posting_Date = false;
+                        list_Discount_value.Clear();
+                        list_Account_Amount_value.Clear();  
                     }
                    
                     #endregion
