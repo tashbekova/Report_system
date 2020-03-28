@@ -53,12 +53,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class_Report_A.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="frm_Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,9 +78,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Report_SystemDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frm_Home.resx">
       <DependentUpon>frm_Home.cs</DependentUpon>
     </EmbeddedResource>

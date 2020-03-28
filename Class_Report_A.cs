@@ -65,7 +65,7 @@ namespace Report_system
             bool flag_Total_Device = false;
             bool flag_Total_Currency = false;
             bool flag_Total = false;
-            bool flag_report = false;
+            bool flag_report;
 
             SQLConnection.Open();
             try
