@@ -53,7 +53,7 @@ namespace Report_system
         {
             StreamReader SourceFile = File.OpenText(path_name);
             //string[] stroka = File.ReadAllLines(path_name);
-
+            string File_name = (Path.GetFileNameWithoutExtension(path_name));
             MessageBox.Show("Отчёт по банкоматам");
 
             //provide the table name in which you would like to load data
@@ -65,6 +65,7 @@ namespace Report_system
             bool flag_Total_Device = false;
             bool flag_Total_Currency = false;
             bool flag_Total = false;
+            bool flag_report = false;
 
             SQLConnection.Open();
             try
@@ -446,20 +447,22 @@ namespace Report_system
 
 
                 }
-
-
-                MessageBox.Show("Успешно добавлено");
+                flag_report = true;
+                Add_Report(File_name,flag_report);
+                //MessageBox.Show("Успешно добавлено");
                 SourceFile.Close();
                 SQLConnection.Close();
             }
-            catch 
+            catch (Exception ex)
             {
-                //MessageBox.Show("Не закончилось успешно, где-то остановилось");
+                flag_report = false;
+                Add_Report(File_name, flag_report);
+                MessageBox.Show("Не закончилось успешно, где-то остановилось"+ex);
             }
 
         }
 
-        public void Read_Financial(char[] arr_line,int index_Financial,int index_probel)
+        private void Read_Financial(char[] arr_line,int index_Financial,int index_probel)
         {
             //создаем лист list_financial_value для хранения значения Financial iInstitution
             List<char> list_Financial_value = new List<char>();
@@ -475,7 +478,7 @@ namespace Report_system
             //MessageBox.Show(string_Financial_value);
         }
 
-        public void Read_Office(char[] arr_line,int index_Office)
+        private void Read_Office(char[] arr_line,int index_Office)
         {
             //создаем лист list_office_value для хранения значения Office
             List<char> list_Office_value = new List<char>();
@@ -491,7 +494,7 @@ namespace Report_system
             //MessageBox.Show(string_Office_value);
         }
 
-        public void Read_Contract(char[] arr_line, int index_Contract)
+        private void Read_Contract(char[] arr_line, int index_Contract)
         {
             //создаем лист list_Contract_value для хранения значения Contract
             List<char> list_Contract_value = new List<char>();
@@ -507,7 +510,7 @@ namespace Report_system
             //MessageBox.Show(string_Contract_value);
         }
 
-        public void Read_Region(char[] arr_line, int index_Region)
+        private void Read_Region(char[] arr_line, int index_Region)
         {
             //создаем лист list_Region_value для хранения значения Region
             List<char> list_Region_value = new List<char>();
@@ -530,7 +533,7 @@ namespace Report_system
             list_Region_value.Clear();
         }
 
-        public void Read_Currency(char[] arr_line,int index_Currency)
+        private void Read_Currency(char[] arr_line,int index_Currency)
         {
             //создаем лист arr_Currency_value для хранения значения Currency
             List<char> list_Currency_value = new List<char>();
@@ -557,7 +560,7 @@ namespace Report_system
         }
 
 
-        public void Read_Device(char[] arr_line,int index_Device)
+        private void Read_Device(char[] arr_line,int index_Device)
         {
             //создаем лист list_Device_value для хранения значения Device:
             List<char> list_Device_value = new List<char>();
@@ -585,7 +588,7 @@ namespace Report_system
             // MessageBox.Show(string_Device_value);
         }
 
-        public void Read_SIC(char[] arr_line,int index_SIC)
+        private void Read_SIC(char[] arr_line,int index_SIC)
         {
             //создаем лист list_SIC_value для хранения значения SIC:
             List<char> list_SIC_value = new List<char>();
@@ -612,7 +615,7 @@ namespace Report_system
         }
 
 
-        public void Read_Cycle(char[] arr_line, int index_Cycle)
+        private void Read_Cycle(char[] arr_line, int index_Cycle)
         {
             //создаем лист list_Cycle_value для хранения значения Cycle Num/Type:
             List<char> list_Cycle_value = new List<char>();
@@ -639,7 +642,7 @@ namespace Report_system
         }
 
 
-        public void Read_Device_Name(char[] arr_line,int index_Device_Name)
+        private void Read_Device_Name(char[] arr_line,int index_Device_Name)
         {
             //создаем лист list_Device_Name_value для хранения значения Device Name:
             List<char> list_Device_Name_value = new List<char>();
@@ -665,7 +668,7 @@ namespace Report_system
             // MessageBox.Show(string_Device_Name_value);
         }
 
-        public void Read_Transaction_part_1(char[] arr_line)
+        private void Read_Transaction_part_1(char[] arr_line)
         {
             //создаем лист list_Transaction_Name_value для хранения значения Transaction Name:
             List<char> list_Transaction_Name_value = new List<char>();
@@ -779,7 +782,7 @@ namespace Report_system
             list_Trans_Date_value.Clear();
         }
 
-        public void Read_Transaction_part_2(char[] arr_line)
+        private void Read_Transaction_part_2(char[] arr_line)
         {
             //создаем лист list_Transaction_Name_value для хранения значения Transaction Name:
             List<char> list_Transaction_Name_value_2 = new List<char>();
@@ -811,7 +814,7 @@ namespace Report_system
             flag_Transaction = 1;
         }
 
-        public void Read_Posting_Date(char[] arr_line, int index_Posting_Date)
+        private void Read_Posting_Date(char[] arr_line, int index_Posting_Date)
         {
             //создаем лист list_Date_value для хранения значения Date
             List<char> list_Posting_Date_value = new List<char>();
@@ -839,7 +842,7 @@ namespace Report_system
         }
 
 
-        public void Add_Data()
+        private void Add_Data()
         {
             string Table_Name = "dbo.tbl_Report_A";
             // запрос на добавление в SQL Server
@@ -884,7 +887,39 @@ namespace Report_system
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Во время соединения произошла ошибка" + ex);
+                MessageBox.Show("Произошла ошибка при добавлении данных" + ex);
+            }
+        }
+
+        private void Add_Report(string File_name,bool flag_report)
+        {
+            string result ;
+            if(flag_report==true)
+            {
+                result = "Успешно считано и добавлено";
+            }
+            else
+            {
+                result = "Отчёт добавлен с ошибками или неполностью";
+            }
+            string Table_Name = "dbo.tbl_Report";
+            // запрос на добавление в SQL Server
+            string query = "Insert into " + Table_Name +
+                " (Name_of_report," +
+                " Date_of_read," +
+                " Result)" +
+           " Values ('" + File_name + "','" +
+           DateTime.Now + "','" +
+           result + "')";
+            try
+            {
+                //execute sqlcommand to insert record
+                SqlCommand myCommand = new SqlCommand(query, SQLConnection);
+                myCommand.ExecuteNonQuery();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Произошла ошибка при добавлении названия отчёта в БД" + ex);
             }
         }
     }
