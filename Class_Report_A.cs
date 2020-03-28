@@ -449,7 +449,7 @@ namespace Report_system
                 }
                 flag_report = true;
                 Add_Report(File_name,flag_report);
-                //MessageBox.Show("Успешно добавлено");
+                MessageBox.Show("Успешно добавлено");
                 SourceFile.Close();
                 SQLConnection.Close();
             }
