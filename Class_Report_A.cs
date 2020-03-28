@@ -65,7 +65,6 @@ namespace Report_system
             bool flag_Total_Device = false;
             bool flag_Total_Currency = false;
             bool flag_Total = false;
-            bool flag_Add = false;
 
             SQLConnection.Open();
             try
@@ -97,6 +96,7 @@ namespace Report_system
                         if (index_Financial >= 0)
                         {
                             Read_Financial(arr_line, index_Financial, index_probel);
+                            continue;
                         }
                         #endregion
 
@@ -108,6 +108,7 @@ namespace Report_system
                         if (index_Office >= 0)
                         {
                             Read_Office(arr_line, index_Office);
+                            continue;
                         }
                         #endregion
 
@@ -119,6 +120,7 @@ namespace Report_system
                         if (index_Contract >= 0)
                         {
                             Read_Contract(arr_line, index_Contract);
+                            continue;
                         }
                         #endregion
 
@@ -130,6 +132,7 @@ namespace Report_system
                         if (index_Region >= 0)
                         {
                             Read_Region(arr_line, index_Region);
+                            continue;
                         }
                         #endregion
 
@@ -174,6 +177,7 @@ namespace Report_system
                         if (index_Cycle >= 0)
                         {
                             Read_Cycle(arr_line, index_Cycle);
+                            continue;
                         }
                         #endregion
 
@@ -196,6 +200,7 @@ namespace Report_system
                         if (index_Posting_Date >= 0)
                         {
                             Read_Posting_Date(arr_line, index_Posting_Date);
+                            continue;
 
                         }
                         #endregion
@@ -210,9 +215,10 @@ namespace Report_system
                             flag_indeks_Transaction = true;
                             continue;
                         }
-
+                        // ---- если есть транзакции ( если в строке есть "Transaction Name:"), то flag_indeks_transaction=true
+                        // ---- flag_transaction=1 означает что считали вторую часть 
                         //Если больше нет транзакций
-                        if (flag_Transaction == 1 && arr_line.Length == 0 && flag_indeks_Transaction == true)
+                        if (flag_Transaction == 1 && arr_line.Length == 0 && flag_indeks_Transaction == true && count_Transaction_line==0)
                         {
                             // Если больше нет транзакций,то обнуляем
                             flag_indeks_Transaction = false;
@@ -221,24 +227,41 @@ namespace Report_system
                             continue;
                         }
                         //Если название Transaction Name состоит из одной строки
-                        else if (flag_indeks_Transaction == true && count_Transaction_line == 1 && line.StartsWith("            "))
+                        else if (flag_indeks_Transaction == true && count_Transaction_line == 1 && arr_line.Length==0)
                         {
-                            flag_Transaction = 1;
+                            flag_Transaction = 0;
                             count_Transaction_line = 0;
+                            flag_indeks_Transaction = false;
                             string_Transaction_Name_value = string_Transaction_Name_value_part_1;
                             Add_Data();
+                            continue;
                         }
                         //Если еще не считывали , то считываем строку с данными о транзакции
-                        else if (flag_indeks_Transaction == true && count_Transaction_line == 0 && !line.StartsWith("          "))
+                        else if (flag_indeks_Transaction == true && count_Transaction_line == 0 && arr_line.Length!=0)
                         {
                             Read_Transaction_part_1(arr_line);
+                            continue;
                         }
                         //Если Transaction_Name состоит из двух строк
-                        else if (flag_indeks_Transaction == true && count_Transaction_line == 1 && !line.StartsWith("          "))
+                        else if (flag_indeks_Transaction == true && count_Transaction_line == 1 && arr_line.Length!=0)
                         {
-                            Read_Transaction_part_2(arr_line);
-                            //Добавление данных  в БД
-                            Add_Data();
+                            //MessageBox.Show("" + arr_line.Length);
+                            if (arr_line.Length>=38)
+                            {
+                                flag_Transaction = 1;
+                                count_Transaction_line = 0;
+                                string_Transaction_Name_value = string_Transaction_Name_value_part_1;
+                                Add_Data();
+                                Read_Transaction_part_1(arr_line);
+                                continue;
+                            }
+                            else
+                            {
+                                Read_Transaction_part_2(arr_line);
+                                //Добавление данных  в БД
+                                Add_Data();
+                                continue;
+                            }
                         }
                         #endregion
 
@@ -425,13 +448,13 @@ namespace Report_system
                 }
 
 
-
+                MessageBox.Show("Успешно добавлено");
                 SourceFile.Close();
                 SQLConnection.Close();
             }
             catch 
             {
-                MessageBox.Show("Не закончилось успешно, где-то остановилось");
+                //MessageBox.Show("Не закончилось успешно, где-то остановилось");
             }
 
         }
@@ -667,7 +690,7 @@ namespace Report_system
             //MessageBox.Show(string_Transaction_Name_value_part_1);
 
             List<char> list_Trans_Date_value = new List<char>();
-            List<char> list_Trans_value = new List<char>();
+            List<char> list_Number_Of_Trans_value = new List<char>();
             List<char> list_Transaction_Amount_value = new List<char>();
             List<char> list_Discount_value = new List<char>();
             List<char> list_Account_Amount_value = new List<char>();
@@ -697,10 +720,10 @@ namespace Report_system
                         if (arr_line[j] == ',')
                             continue;
                         else
-                            list_Trans_value.Add(arr_line[j]);
+                            list_Number_Of_Trans_value.Add(arr_line[j]);
                         if (arr_line[j + 1] == ' ')
                         {
-                            string_Number_Of_Trans_value = new string(list_Trans_value.ToArray());
+                            string_Number_Of_Trans_value = new string(list_Number_Of_Trans_value.ToArray());
 
                             count_column++;
                         }
@@ -752,7 +775,8 @@ namespace Report_system
             list_Discount_value.Clear();
             list_Transaction_Amount_value.Clear();
             list_Transaction_Name_value.Clear();
-            list_Trans_value.Clear();
+            list_Number_Of_Trans_value.Clear();
+            list_Trans_Date_value.Clear();
         }
 
         public void Read_Transaction_part_2(char[] arr_line)
@@ -776,7 +800,6 @@ namespace Report_system
 
             //складываем две части и получаем одно полное название транзакции
             string_Transaction_Name_value = string_Transaction_Name_value_part_1 + string_Transaction_Name_value_part_2;
-            //MessageBox.Show(string_Transaction_Name_value);
 
             //обнуляем count_line , значит мы уже добавили одну транзакцию, то есть взяли все значения одной транзакции полностью
             count_Transaction_line = 0;
@@ -784,8 +807,6 @@ namespace Report_system
             //Очищаем переменные для добавления новых значений
             list_Transaction_Name_value_2.Clear();
 
-            //обнуляем флаг с индексом транзакции
-            // flag_indeks_Transaction = false;
             //Если одна транзакция уже добавлена в БД,то делаем flag_transaction =1
             flag_Transaction = 1;
         }
@@ -820,7 +841,7 @@ namespace Report_system
 
         public void Add_Data()
         {
-            string Table_Name = "dbo.Table_A";
+            string Table_Name = "dbo.tbl_Report_A";
             // запрос на добавление в SQL Server
             string query = "Insert into " + Table_Name +
                 " (Posting_date," +
@@ -860,7 +881,6 @@ namespace Report_system
                 //execute sqlcommand to insert record
                 SqlCommand myCommand = new SqlCommand(query, SQLConnection);
                 myCommand.ExecuteNonQuery();
-                //MessageBox.Show("Успешно");
             }
             catch (SqlException ex)
             {
