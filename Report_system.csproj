@@ -54,11 +54,11 @@
   <ItemGroup>
     <Compile Include="Check.cs" />
     <Compile Include="Class_Report_A.cs" />
-    <Compile Include="Generation.cs">
+    <Compile Include="frm_Generation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Generation.Designer.cs">
-      <DependentUpon>Generation.cs</DependentUpon>
+    <Compile Include="frm_Generation.Designer.cs">
+      <DependentUpon>frm_Generation.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_Home.cs">
       <SubType>Form</SubType>
@@ -72,11 +72,11 @@
     <Compile Include="frm_Login.Designer.cs">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form3.cs">
+    <Compile Include="frm_Read.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form3.Designer.cs">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <Compile Include="frm_Read.Designer.cs">
+      <DependentUpon>frm_Read.cs</DependentUpon>
     </Compile>
     <Compile Include="Generation_report.cs" />
     <Compile Include="Program.cs" />
@@ -86,8 +86,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Report_SystemDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Generation.resx">
-      <DependentUpon>Generation.cs</DependentUpon>
+    <EmbeddedResource Include="frm_Generation.resx">
+      <DependentUpon>frm_Generation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_Home.resx">
       <DependentUpon>frm_Home.cs</DependentUpon>
@@ -95,8 +95,8 @@
     <EmbeddedResource Include="frm_Login.resx">
       <DependentUpon>frm_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
+    <EmbeddedResource Include="frm_Read.resx">
+      <DependentUpon>frm_Read.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

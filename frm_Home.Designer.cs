@@ -1,6 +1,6 @@
 ﻿namespace Report_system
 {
-    partial class frm_Home
+    partial class Frm_Home
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Home));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Home));
             this.panelAll = new System.Windows.Forms.Panel();
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -39,7 +39,7 @@
             this.panelRequest = new System.Windows.Forms.Panel();
             this.btnRequest = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panelRegularSubMenu = new System.Windows.Forms.Panel();
-            this.btnSchedule = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btn_Generation = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnMakeRegularReport = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnClose = new MaterialSkin.Controls.MaterialFlatButton();
             this.panelRegular = new System.Windows.Forms.Panel();
@@ -170,7 +170,7 @@
             // 
             // panelRegularSubMenu
             // 
-            this.panelRegularSubMenu.Controls.Add(this.btnSchedule);
+            this.panelRegularSubMenu.Controls.Add(this.btn_Generation);
             this.panelRegularSubMenu.Controls.Add(this.btnMakeRegularReport);
             this.panelRegularSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelRegularSubMenu.Location = new System.Drawing.Point(0, 109);
@@ -178,20 +178,21 @@
             this.panelRegularSubMenu.Size = new System.Drawing.Size(250, 92);
             this.panelRegularSubMenu.TabIndex = 4;
             // 
-            // btnSchedule
+            // btn_Generation
             // 
-            this.btnSchedule.Depth = 0;
-            this.btnSchedule.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSchedule.FlatAppearance.BorderSize = 0;
-            this.btnSchedule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSchedule.Location = new System.Drawing.Point(0, 40);
-            this.btnSchedule.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnSchedule.Name = "btnSchedule";
-            this.btnSchedule.Primary = true;
-            this.btnSchedule.Size = new System.Drawing.Size(250, 40);
-            this.btnSchedule.TabIndex = 1;
-            this.btnSchedule.Text = "Расписание";
-            this.btnSchedule.UseVisualStyleBackColor = true;
+            this.btn_Generation.Depth = 0;
+            this.btn_Generation.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_Generation.FlatAppearance.BorderSize = 0;
+            this.btn_Generation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Generation.Location = new System.Drawing.Point(0, 40);
+            this.btn_Generation.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btn_Generation.Name = "btn_Generation";
+            this.btn_Generation.Primary = true;
+            this.btn_Generation.Size = new System.Drawing.Size(250, 40);
+            this.btn_Generation.TabIndex = 1;
+            this.btn_Generation.Text = "Формирование";
+            this.btn_Generation.UseVisualStyleBackColor = true;
+            this.btn_Generation.Click += new System.EventHandler(this.btn_Generation_Click);
             // 
             // btnMakeRegularReport
             // 
@@ -205,7 +206,7 @@
             this.btnMakeRegularReport.Primary = true;
             this.btnMakeRegularReport.Size = new System.Drawing.Size(250, 40);
             this.btnMakeRegularReport.TabIndex = 0;
-            this.btnMakeRegularReport.Text = "Формирование";
+            this.btnMakeRegularReport.Text = "Считывание отчётов";
             this.btnMakeRegularReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMakeRegularReport.UseVisualStyleBackColor = true;
             this.btnMakeRegularReport.Click += new System.EventHandler(this.btnMakeRegularReport_Click);
@@ -302,7 +303,7 @@
         private System.Windows.Forms.Panel panelRequest;
         private MaterialSkin.Controls.MaterialRaisedButton btnRegular;
         private MaterialSkin.Controls.MaterialRaisedButton btnMakeRegularReport;
-        private MaterialSkin.Controls.MaterialRaisedButton btnSchedule;
+        private MaterialSkin.Controls.MaterialRaisedButton btn_Generation;
         private MaterialSkin.Controls.MaterialRaisedButton btnRequest;
         private System.Windows.Forms.Panel panelRequestSubMenu;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton3;

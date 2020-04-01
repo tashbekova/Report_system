@@ -15,9 +15,9 @@ using System.Collections;
 
 namespace Report_system
 {
-    public partial class Form3 : MaterialForm
+    public partial class frm_Read : MaterialForm
     {
-        public Form3()
+        public frm_Read()
         {
             InitializeComponent();
             var skinManager = MaterialSkinManager.Instance;

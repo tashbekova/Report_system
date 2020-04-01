@@ -43,7 +43,7 @@ namespace Report_system
             sda.Fill(dtbl);
             if(dtbl.Rows.Count==1)
             {
-                frm_Home newform = new frm_Home();
+                Frm_Home newform = new Frm_Home();
                 this.Hide();
                 newform.Show();
             }
@@ -57,7 +57,7 @@ namespace Report_system
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            frm_Home newform = new frm_Home();
+            Frm_Home newform = new Frm_Home();
             this.Hide();
             newform.Show();
             frm_Login form = new frm_Login();

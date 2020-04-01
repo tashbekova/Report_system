@@ -1,6 +1,6 @@
 ﻿namespace Report_system
 {
-    partial class Read
+    partial class frm_Generation
     {
         /// <summary>
         /// Required designer variable.
@@ -31,13 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton2 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.materialRaisedButton3 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pb_Status = new System.Windows.Forms.ProgressBar();
             this.lblName = new MaterialSkin.Controls.MaterialLabel();
             this.reportSystemDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.report_SystemDataSet = new Report_system.Report_SystemDataSet();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.pb_Status = new System.Windows.Forms.ProgressBar();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reportSystemDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.report_SystemDataSet)).BeginInit();
@@ -69,25 +68,11 @@
             this.materialRaisedButton2.UseVisualStyleBackColor = true;
             this.materialRaisedButton2.Click += new System.EventHandler(this.materialRaisedButton2_Click);
             // 
-            // materialRaisedButton3
-            // 
-            this.materialRaisedButton3.Depth = 0;
-            this.materialRaisedButton3.Location = new System.Drawing.Point(338, 125);
-            this.materialRaisedButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton3.Name = "materialRaisedButton3";
-            this.materialRaisedButton3.Primary = true;
-            this.materialRaisedButton3.Size = new System.Drawing.Size(520, 39);
-            this.materialRaisedButton3.TabIndex = 2;
-            this.materialRaisedButton3.Text = "Считать файл";
-            this.materialRaisedButton3.UseVisualStyleBackColor = true;
-            this.materialRaisedButton3.Click += new System.EventHandler(this.materialRaisedButton3_Click);
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.pb_Status);
             this.panel1.Controls.Add(this.lblName);
-            this.panel1.Controls.Add(this.materialRaisedButton3);
             this.panel1.Controls.Add(this.materialRaisedButton1);
             this.panel1.Controls.Add(this.materialRaisedButton2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -96,6 +81,15 @@
             this.panel1.Size = new System.Drawing.Size(1237, 667);
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // pb_Status
+            // 
+            this.pb_Status.ForeColor = System.Drawing.Color.Green;
+            this.pb_Status.Location = new System.Drawing.Point(245, 12);
+            this.pb_Status.Name = "pb_Status";
+            this.pb_Status.Size = new System.Drawing.Size(742, 23);
+            this.pb_Status.TabIndex = 5;
+            this.pb_Status.Visible = false;
             // 
             // lblName
             // 
@@ -124,16 +118,7 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // pb_Status
-            // 
-            this.pb_Status.ForeColor = System.Drawing.Color.Green;
-            this.pb_Status.Location = new System.Drawing.Point(245, 12);
-            this.pb_Status.Name = "pb_Status";
-            this.pb_Status.Size = new System.Drawing.Size(742, 23);
-            this.pb_Status.TabIndex = 5;
-            this.pb_Status.Visible = false;
-            // 
-            // Form3
+            // Read
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -142,7 +127,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form3";
+            this.Name = "Read";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.Form3_Load);
@@ -158,7 +143,6 @@
 
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton2;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private MaterialSkin.Controls.MaterialLabel lblName;

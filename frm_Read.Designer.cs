@@ -1,6 +1,6 @@
 ﻿namespace Report_system
 {
-    partial class Form3
+    partial class frm_Read
     {
         /// <summary>
         /// Required designer variable.
