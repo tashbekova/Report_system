@@ -111,7 +111,7 @@ namespace Report_system
         private void btnMakeRegularReport_Click(object sender, EventArgs e)
         {
             HideSubMenu();
-            OpenChildForm<Form3>();
+            OpenChildForm<Read>();
         }
     }
 }
