@@ -28,6 +28,8 @@ namespace Report_system
 
         private void Form3_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "report_SystemDataSet.tbl_Month". При необходимости она может быть перемещена или удалена.
+            this.tbl_MonthTableAdapter.Fill(this.report_SystemDataSet.tbl_Month);
 
         }
 
@@ -36,10 +38,6 @@ namespace Report_system
             this.Close();
         }
 
-        private void materialRaisedButton2_Click(object sender, EventArgs e)
-        {
-
-        }
 
        
 
@@ -49,6 +47,11 @@ namespace Report_system
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button_Generation_Click(object sender, EventArgs e)
         {
 
         }
