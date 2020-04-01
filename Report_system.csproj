@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Check.cs" />
     <Compile Include="Class_Report_A.cs" />
     <Compile Include="frm_Home.cs">
       <SubType>Form</SubType>

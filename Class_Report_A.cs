@@ -1,17 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using MaterialSkin;
-using MaterialSkin.Controls;
 using System.IO;
 using System.Data.SqlClient;
-using System.Collections;
+
 
 
 namespace Report_system
@@ -234,7 +226,7 @@ namespace Report_system
                             count_Transaction_line = 0;
                             flag_indeks_Transaction = false;
                             string_Transaction_Name_value = string_Transaction_Name_value_part_1;
-                            Add_Data();
+                            Add_Data(File_name);
                             continue;
                         }
                         //Если еще не считывали , то считываем строку с данными о транзакции
@@ -252,7 +244,7 @@ namespace Report_system
                                 flag_Transaction = 1;
                                 count_Transaction_line = 0;
                                 string_Transaction_Name_value = string_Transaction_Name_value_part_1;
-                                Add_Data();
+                                Add_Data(File_name);
                                 Read_Transaction_part_1(arr_line);
                                 continue;
                             }
@@ -260,7 +252,7 @@ namespace Report_system
                             {
                                 Read_Transaction_part_2(arr_line);
                                 //Добавление данных  в БД
-                                Add_Data();
+                                Add_Data(File_name);
                                 continue;
                             }
                         }
@@ -410,6 +402,7 @@ namespace Report_system
                                     " (Date," +
                                     " Device," +
                                     " Device_name," +
+                                    " Currency," +
                                     "Number_of_trans," +
                                     "Transaction_amount," +
                                     "Discount," +
@@ -417,6 +410,7 @@ namespace Report_system
                                     " Values ('" + string_Posting_Date_value + "','" +
                                string_Device_value + "','" +
                                string_Device_Name_value + "','" +
+                               string_Currency_value + "','" +
                                string_Number_Of_Trans_value + "','" +
                                string_Transaction_Amount_value + "','" +
                                string_Discount_value + "','" +
@@ -842,12 +836,13 @@ namespace Report_system
         }
 
 
-        private void Add_Data()
+        private void Add_Data(string File_name)
         {
             string Table_Name = "dbo.tbl_Report_A";
             // запрос на добавление в SQL Server
             string query = "Insert into " + Table_Name +
-                " (Posting_date," +
+                " (Name_of_report," +
+                " Posting_date," +
                 " Financial_institution," +
                 " Office," +
                 "Contract#," +
@@ -863,7 +858,9 @@ namespace Report_system
            "Transaction_amount," +
            "Discount," +
            "Account_amount)" +
-           " Values ('" + string_Posting_Date_value + "','" +
+           " Values ('" +
+           File_name + "','" +
+           string_Posting_Date_value + "','" +
            string_Financial_value + "','" +
            string_Office_value + "','" +
            string_Contract_value + "','" +
@@ -902,7 +899,7 @@ namespace Report_system
             {
                 result = "Отчёт добавлен с ошибками или неполностью";
             }
-            string Table_Name = "dbo.tbl_Report";
+            string Table_Name = "dbo.tbl_Result_Report_A";
             // запрос на добавление в SQL Server
             string query = "Insert into " + Table_Name +
                 " (Name_of_report," +
