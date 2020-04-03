@@ -39,6 +39,7 @@
             this.panelRequest = new System.Windows.Forms.Panel();
             this.btnRequest = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panelRegularSubMenu = new System.Windows.Forms.Panel();
+            this.button_Show_List_Reports = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btn_Generation = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnMakeRegularReport = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnClose = new MaterialSkin.Controls.MaterialFlatButton();
@@ -108,10 +109,11 @@
             this.panelRequestSubMenu.Controls.Add(this.materialRaisedButton3);
             this.panelRequestSubMenu.Controls.Add(this.materialRaisedButton4);
             this.panelRequestSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelRequestSubMenu.Location = new System.Drawing.Point(0, 266);
+            this.panelRequestSubMenu.Location = new System.Drawing.Point(0, 322);
             this.panelRequestSubMenu.Name = "panelRequestSubMenu";
             this.panelRequestSubMenu.Size = new System.Drawing.Size(250, 90);
             this.panelRequestSubMenu.TabIndex = 6;
+            this.panelRequestSubMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelRequestSubMenu_Paint);
             // 
             // materialRaisedButton3
             // 
@@ -148,7 +150,7 @@
             // 
             this.panelRequest.Controls.Add(this.btnRequest);
             this.panelRequest.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelRequest.Location = new System.Drawing.Point(0, 201);
+            this.panelRequest.Location = new System.Drawing.Point(0, 257);
             this.panelRequest.Name = "panelRequest";
             this.panelRequest.Size = new System.Drawing.Size(250, 65);
             this.panelRequest.TabIndex = 5;
@@ -170,13 +172,30 @@
             // 
             // panelRegularSubMenu
             // 
+            this.panelRegularSubMenu.Controls.Add(this.button_Show_List_Reports);
             this.panelRegularSubMenu.Controls.Add(this.btn_Generation);
             this.panelRegularSubMenu.Controls.Add(this.btnMakeRegularReport);
             this.panelRegularSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelRegularSubMenu.Location = new System.Drawing.Point(0, 109);
             this.panelRegularSubMenu.Name = "panelRegularSubMenu";
-            this.panelRegularSubMenu.Size = new System.Drawing.Size(250, 92);
+            this.panelRegularSubMenu.Size = new System.Drawing.Size(250, 148);
             this.panelRegularSubMenu.TabIndex = 4;
+            // 
+            // button_Show_List_Reports
+            // 
+            this.button_Show_List_Reports.Depth = 0;
+            this.button_Show_List_Reports.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button_Show_List_Reports.FlatAppearance.BorderSize = 0;
+            this.button_Show_List_Reports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Show_List_Reports.Location = new System.Drawing.Point(0, 80);
+            this.button_Show_List_Reports.MouseState = MaterialSkin.MouseState.HOVER;
+            this.button_Show_List_Reports.Name = "button_Show_List_Reports";
+            this.button_Show_List_Reports.Primary = true;
+            this.button_Show_List_Reports.Size = new System.Drawing.Size(250, 39);
+            this.button_Show_List_Reports.TabIndex = 2;
+            this.button_Show_List_Reports.Text = "Просмотр списка отчетов";
+            this.button_Show_List_Reports.UseVisualStyleBackColor = true;
+            this.button_Show_List_Reports.Click += new System.EventHandler(this.button_Show_List_Reports_Click);
             // 
             // btn_Generation
             // 
@@ -263,7 +282,7 @@
             this.panelHead.Size = new System.Drawing.Size(996, 32);
             this.panelHead.TabIndex = 9;
             // 
-            // frm_Home
+            // Frm_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -273,7 +292,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(400, 400);
-            this.Name = "frm_Home";
+            this.Name = "Frm_Home";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Система предоставления отчётности по банковским платёжным картам";
@@ -309,6 +328,7 @@
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton3;
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton4;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private MaterialSkin.Controls.MaterialRaisedButton button_Show_List_Reports;
     }
 }
 

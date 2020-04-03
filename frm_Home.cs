@@ -119,5 +119,16 @@ namespace Report_system
             HideSubMenu();
             OpenChildForm<frm_Generation>();
         }
+
+        private void panelRequestSubMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button_Show_List_Reports_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+            OpenChildForm<frm_List_Report>();
+        }
     }
 }
