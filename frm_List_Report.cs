@@ -60,8 +60,42 @@ namespace Report_system
         {
             if(comboBox_month.SelectedItem!=null && comboBox_year.SelectedItem!=null && comboBox_type_report.SelectedItem!=null)
             {
-                string Table_name= "tbl_Result_Report_A";
-                Load_Data(Table_name);
+                string Table_name="";
+                string month = comboBox_month.SelectedValue.ToString();
+                string year1 = "2020";
+                int check;
+                int year = Convert.ToInt32(year1);
+                if(year>=2000)
+                {
+                    if (comboBox_type_report.SelectedIndex==0)
+                    {
+                        Table_name= "tbl_Result_Report_A";
+                    }
+                    else if(comboBox_type_report.SelectedIndex==2)
+                    {
+                        Table_name = "";
+                    }
+                    check=Check_Data(Table_name,month, year);
+                    if(check==0)
+                    {
+                        MessageBox.Show("Нет добавленных отчетов на этот месяц");
+                    }
+                    else if(check>=1)
+                    {
+                        Load_Data(Table_name,month,year);
+                    }
+                    else if(check==2)
+                    {
+                        MessageBox.Show("Произошла ошибка");
+                    }
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Введите правильный год");
+                }
+                
+                //if(comboBox_month)
             }
             else if(comboBox_type_report.SelectedItem==null)
             {
@@ -77,14 +111,17 @@ namespace Report_system
             }
         }
 
-        private void Load_Data(string Table_name)
+        private void Load_Data(string Table_name,string month,int year)
         {
             try
             {
                 string ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'";
                 SqlConnection myConnection = new SqlConnection(ConnectionString);
                 myConnection.Open();
-                string query = "Select * From " + Table_name + " Order by Name_of_report";
+                string query = "Select * From " + Table_name +
+                     " WHERE " +
+                " Month(Date_of_read)='" + month + "' and YEAR(Date_of_read)='" + year + "'"+
+                " Order by Name_of_report";
                 SqlCommand command = new SqlCommand(query, myConnection);
                 SqlDataReader reader = command.ExecuteReader();
                 List<string[]> data = new List<string[]>();
@@ -105,6 +142,30 @@ namespace Report_system
             {
                 MessageBox.Show(""+ex);
             }
+        }
+        private int Check_Data(string Table_Name,string month,int year)
+        {
+            try
+            {
+                string ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'";
+                SqlConnection myConnection = new SqlConnection(ConnectionString);
+                myConnection.Open();
+                string query =
+                "SELECT COUNT(*) FROM " +
+                Table_Name +
+                " WHERE " +
+                " Month(Date_of_read)='" + month + "' and YEAR(Date_of_read)= '" + year + "'";
+                SqlCommand command = new SqlCommand(query, myConnection);
+                int rowcount = (int)command.ExecuteScalar();
+                myConnection.Close();
+                    return rowcount;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex);
+                return 2;
+            }
+
         }
 
         private void dataGridView_List_Reports_CellContentClick(object sender, DataGridViewCellEventArgs e)
