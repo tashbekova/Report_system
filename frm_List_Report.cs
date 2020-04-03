@@ -60,22 +60,19 @@ namespace Report_system
         {
             if(comboBox_month.SelectedItem!=null && comboBox_year.SelectedItem!=null && comboBox_type_report.SelectedItem!=null)
             {
-                string Table_name="";
-                string month = comboBox_month.SelectedValue.ToString();
-                string year1 = "2020";
-                int check;
-                int year = Convert.ToInt32(year1);
+                string Table_name= "";
+                string report = comboBox_type_report.SelectedValue.ToString();
+                string string_month = comboBox_month.SelectedValue.ToString();
+                string string_year = comboBox_year.SelectedValue.ToString();
+                int month = Convert.ToInt32(string_month)+1;
+                int year = Convert.ToInt32(string_year);
                 if(year>=2000)
                 {
-                    if (comboBox_type_report.SelectedIndex==0)
+                    if (report=="Report A")
                     {
                         Table_name= "tbl_Result_Report_A";
                     }
-                    else if(comboBox_type_report.SelectedIndex==2)
-                    {
-                        Table_name = "";
-                    }
-                    check=Check_Data(Table_name,month, year);
+                    int check=Check_Data(Table_name,month, year);
                     if(check==0)
                     {
                         MessageBox.Show("Нет добавленных отчетов на этот месяц");
@@ -88,7 +85,6 @@ namespace Report_system
                     {
                         MessageBox.Show("Произошла ошибка");
                     }
-                    
                 }
                 else
                 {
@@ -111,7 +107,7 @@ namespace Report_system
             }
         }
 
-        private void Load_Data(string Table_name,string month,int year)
+        private void Load_Data(string Table_name,int month,int year)
         {
             try
             {
@@ -143,7 +139,7 @@ namespace Report_system
                 MessageBox.Show(""+ex);
             }
         }
-        private int Check_Data(string Table_Name,string month,int year)
+        private int Check_Data(string Table_Name,int month,int year)
         {
             try
             {
