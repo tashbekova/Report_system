@@ -15,9 +15,9 @@ using System.Collections;
 
 namespace Report_system
 {
-    public partial class Form3 : MaterialForm
+    public partial class frm_Read : MaterialForm
     {
-        public Form3()
+        public frm_Read()
         {
             InitializeComponent();
             var skinManager = MaterialSkinManager.Instance;
@@ -50,16 +50,30 @@ namespace Report_system
                 {
                     StreamReader SourceFile = File.OpenText(openFileDialog1.FileName);
                     string[] stroka = File.ReadAllLines(openFileDialog1.FileName);
+                    string file_name = (Path.GetFileNameWithoutExtension(openFileDialog1.FileName));
+                    lblName.Text = file_name;
                     if (stroka.Length == 0)
                     {
                         MessageBox.Show("Файл пуст");
                         return;
                     }
-                    string file_name = (Path.GetFileNameWithoutExtension(openFileDialog1.FileName));
-                    if (file_name.Contains('A'))
+                    else if (file_name.Contains('A'))
                     {
-                        Class_Report_A report_A = new Class_Report_A();
-                        report_A.Read_file(openFileDialog1.FileName);
+                        Check check = new Check();
+                        int check_result=check.Check_Report(file_name);
+                        if (check_result == 0)
+                        {
+                            Class_Report_A report_A = new Class_Report_A();
+                            report_A.Read_file(openFileDialog1.FileName);
+                        }
+                        else if(check_result==1)
+                        {
+                            MessageBox.Show("Этот отчёт уже считан и добавлен в БД");
+                        }
+                        else if(check_result==2)
+                        {
+                            MessageBox.Show("Отчёт добавлен с ошибками или не полностью"); 
+                        }
                        
                     }
                     else if (file_name.Contains('R'))

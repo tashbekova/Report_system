@@ -12,9 +12,9 @@ using MaterialSkin.Controls;
 
 namespace Report_system
 {
-    public partial class frm_Home : MaterialForm
+    public partial class Frm_Home : MaterialForm
     {
-        public frm_Home()
+        public Frm_Home()
         {
             InitializeComponent();
            
@@ -111,7 +111,24 @@ namespace Report_system
         private void btnMakeRegularReport_Click(object sender, EventArgs e)
         {
             HideSubMenu();
-            OpenChildForm<Form3>();
+            OpenChildForm<frm_Read>();
+        }
+
+        private void btn_Generation_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+            OpenChildForm<frm_Generation>();
+        }
+
+        private void panelRequestSubMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button_Show_List_Reports_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+            OpenChildForm<frm_List_Report>();
         }
     }
 }
