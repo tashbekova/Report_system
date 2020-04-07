@@ -247,6 +247,7 @@
             this.btnClose.TabIndex = 3;
             this.btnClose.Text = "Выход";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // panelRegular
             // 
@@ -315,7 +316,6 @@
         private System.Windows.Forms.Panel panelAll;
         private System.Windows.Forms.Panel panelSubMenu;
         private MaterialSkin.Controls.MaterialFlatButton btnClose;
-        private System.Windows.Forms.Panel panelHead;
         private System.Windows.Forms.Panel panelChildForm;
         private System.Windows.Forms.Panel panelRegularSubMenu;
         private System.Windows.Forms.Panel panelRegular;
@@ -329,6 +329,7 @@
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton4;
         private System.Windows.Forms.PictureBox pictureBox2;
         private MaterialSkin.Controls.MaterialRaisedButton button_Show_List_Reports;
+        private System.Windows.Forms.Panel panelHead;
     }
 }
 

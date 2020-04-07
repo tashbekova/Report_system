@@ -1,17 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
-using System.IO;
 using System.Data.SqlClient;
-using System.Collections;
 
 namespace Report_system
 {
@@ -60,12 +52,11 @@ namespace Report_system
         {
             if(comboBox_month.SelectedItem!=null && comboBox_year.SelectedItem!=null && comboBox_type_report.SelectedItem!=null)
             {
+                dataGridView_List_Reports.Rows.Clear();
                 string Table_name= "";
                 string report = comboBox_type_report.SelectedValue.ToString();
-                string string_month = comboBox_month.SelectedValue.ToString();
-                string string_year = comboBox_year.SelectedValue.ToString();
-                int month = Convert.ToInt32(string_month)+1;
-                int year = Convert.ToInt32(string_year);
+                int month = Convert.ToInt32(comboBox_month.SelectedValue.ToString());
+                int year = Convert.ToInt32(comboBox_year.SelectedItem.ToString());
                 if(year>=2000)
                 {
                     if (report=="Report A")

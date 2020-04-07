@@ -36,8 +36,8 @@ namespace Report_system
                 int rowcount = (int)myCommand.ExecuteScalar();
                 if (rowcount>=1)
                 {
-                    SqlCommand myCommand2 = new SqlCommand(query2, SQLConnection);
-                    rowcount = (int)myCommand2.ExecuteScalar();
+                    myCommand = new SqlCommand(query2, SQLConnection);
+                    rowcount = (int)myCommand.ExecuteScalar();
                     if(rowcount>=1)
                     {
                         SQLConnection.Close();
