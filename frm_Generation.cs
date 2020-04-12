@@ -5,7 +5,7 @@ using MaterialSkin;
 using MaterialSkin.Controls;
 using System.IO;
 using System.Data.SqlClient;
-using Excel = Microsoft.Office.Interop.Excel;
+
 
 namespace Report_system
 {
@@ -66,7 +66,8 @@ namespace Report_system
                             path = path_directory + @"\" + year.ToString() + @"\" + report;
                             if (Directory.Exists(path))
                             {
-                                path = path_directory + @"\" + year.ToString() + @"\" + report+@"\"+month.ToString()+"."+year.ToString()+"_"+report;
+                                path = path_directory + @"\" + year.ToString() + @"\" + report+@"\"+month.ToString()+"_"+year.ToString()+"_"+report+".xlsx";
+                                string path2 = path_directory + @"\" + year.ToString() + @"\" + report + @"\" + month.ToString() + "_" + year.ToString() + "_" + report + ".xls";
                                 if (System.IO.File.Exists(path))
                                 { 
                                     MessageBox.Show("Отчёт уже сформирован");
@@ -86,6 +87,8 @@ namespace Report_system
                                 {
 
                                     MessageBox.Show("File is not found");
+                                    Generation_intermediate_report create = new Generation_intermediate_report();
+                                    create.Generation(path);
                                 }
                             }
                         }
@@ -169,11 +172,6 @@ namespace Report_system
             myConnection.Close();
         }
 
-
-        private void Create_report(string path)
-        {
-
-        }
     }
    
 }
