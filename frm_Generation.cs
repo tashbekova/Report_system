@@ -88,7 +88,7 @@ namespace Report_system
 
                                     MessageBox.Show("File is not found");
                                     Generation_intermediate_report create = new Generation_intermediate_report();
-                                    create.Generation(path);
+                                    create.Generation(path,report,month,year);
                                 }
                             }
                         }

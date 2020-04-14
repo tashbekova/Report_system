@@ -37,9 +37,12 @@ namespace Report_system
             sda.Fill(dtbl);
             if(dtbl.Rows.Count==1)
             {
+                frm_Login form = new frm_Login();
+                form.Close();
+                //form.Hide();
                 Frm_Home newform = new Frm_Home();
-                this.Hide();
                 newform.Show();
+                //this.Close();
             }
             else
             {

@@ -31,12 +31,12 @@
             this.components = new System.ComponentModel.Container();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pb_Status = new System.Windows.Forms.ProgressBar();
             this.lblName = new MaterialSkin.Controls.MaterialLabel();
+            this.materialRaisedButton3 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.reportSystemDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.report_SystemDataSet = new Report_system.Report_SystemDataSet();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.materialRaisedButton3 = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.pb_Status = new System.Windows.Forms.ProgressBar();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.reportSystemDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.report_SystemDataSet)).BeginInit();
@@ -69,6 +69,15 @@
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // pb_Status
+            // 
+            this.pb_Status.ForeColor = System.Drawing.Color.Green;
+            this.pb_Status.Location = new System.Drawing.Point(209, 28);
+            this.pb_Status.Name = "pb_Status";
+            this.pb_Status.Size = new System.Drawing.Size(742, 23);
+            this.pb_Status.TabIndex = 6;
+            this.pb_Status.Visible = false;
+            // 
             // lblName
             // 
             this.lblName.AutoSize = true;
@@ -81,6 +90,19 @@
             this.lblName.Size = new System.Drawing.Size(158, 24);
             this.lblName.TabIndex = 4;
             this.lblName.Text = "Название файла";
+            // 
+            // materialRaisedButton3
+            // 
+            this.materialRaisedButton3.Depth = 0;
+            this.materialRaisedButton3.Location = new System.Drawing.Point(209, 171);
+            this.materialRaisedButton3.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton3.Name = "materialRaisedButton3";
+            this.materialRaisedButton3.Primary = true;
+            this.materialRaisedButton3.Size = new System.Drawing.Size(520, 39);
+            this.materialRaisedButton3.TabIndex = 2;
+            this.materialRaisedButton3.Text = "Считать файл";
+            this.materialRaisedButton3.UseVisualStyleBackColor = true;
+            this.materialRaisedButton3.Click += new System.EventHandler(this.materialRaisedButton3_Click);
             // 
             // reportSystemDataSetBindingSource
             // 
@@ -95,28 +117,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // materialRaisedButton3
-            // 
-            this.materialRaisedButton3.Depth = 0;
-            this.materialRaisedButton3.Location = new System.Drawing.Point(303, 230);
-            this.materialRaisedButton3.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton3.Name = "materialRaisedButton3";
-            this.materialRaisedButton3.Primary = true;
-            this.materialRaisedButton3.Size = new System.Drawing.Size(520, 39);
-            this.materialRaisedButton3.TabIndex = 2;
-            this.materialRaisedButton3.Text = "Считать файл";
-            this.materialRaisedButton3.UseVisualStyleBackColor = true;
-            this.materialRaisedButton3.Click += new System.EventHandler(this.materialRaisedButton3_Click);
-            // 
-            // pb_Status
-            // 
-            this.pb_Status.ForeColor = System.Drawing.Color.Green;
-            this.pb_Status.Location = new System.Drawing.Point(209, 28);
-            this.pb_Status.Name = "pb_Status";
-            this.pb_Status.Size = new System.Drawing.Size(742, 23);
-            this.pb_Status.TabIndex = 6;
-            this.pb_Status.Visible = false;
             // 
             // frm_Read
             // 

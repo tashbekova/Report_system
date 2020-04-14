@@ -94,7 +94,7 @@ namespace Report_system
 
         private void panelSubMenu_Paint(object sender, PaintEventArgs e)
         {
-
+            
         }
 
         private void panelChildForm_Paint(object sender, PaintEventArgs e)
@@ -128,6 +128,11 @@ namespace Report_system
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button_Prognoz_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
