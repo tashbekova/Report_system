@@ -1,4 +1,5 @@
-﻿using System.Data.SqlClient;
+﻿using System;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace Report_system
@@ -62,6 +63,42 @@ namespace Report_system
                 MessageBox.Show("Произошла ошибка при проверке" + ex);
                 return 3;
             }
+        }
+
+
+        public int Check_Data(string Table_Name, int month, int year)
+        {
+            string column = "";
+            if(Table_Name.StartsWith("tbl_Report"))
+            {
+                 column = "Posting_date";
+            }
+            else if (Table_Name.StartsWith("tbl_Result"))
+            {
+                column = "Date_of_read";
+            }
+                try
+            {
+
+                string ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'";
+                SqlConnection myConnection = new SqlConnection(ConnectionString);
+                myConnection.Open();
+                string query =
+                "SELECT COUNT(*) FROM " +
+                Table_Name +
+                " WHERE " +
+                " Month("+column+")='" + month + "' and YEAR("+column+")= '" + year + "'";
+                SqlCommand command = new SqlCommand(query, myConnection);
+                int rowcount = (int)command.ExecuteScalar();
+                myConnection.Close();
+                return rowcount;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex);
+                return 2;
+            }
+
         }
     }
 }

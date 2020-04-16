@@ -63,7 +63,8 @@ namespace Report_system
                     {
                         Table_name= "tbl_Result_Report_A";
                     }
-                    int check=Check_Data(Table_name,month, year);
+                    Check check_data = new Check();
+                    int check=check_data.Check_Data(Table_name,month, year);
                     if(check==0)
                     {
                         MessageBox.Show("Нет добавленных отчетов на этот месяц");
@@ -129,30 +130,6 @@ namespace Report_system
             {
                 MessageBox.Show(""+ex);
             }
-        }
-        private int Check_Data(string Table_Name,int month,int year)
-        {
-            try
-            {
-                string ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'";
-                SqlConnection myConnection = new SqlConnection(ConnectionString);
-                myConnection.Open();
-                string query =
-                "SELECT COUNT(*) FROM " +
-                Table_Name +
-                " WHERE " +
-                " Month(Date_of_read)='" + month + "' and YEAR(Date_of_read)= '" + year + "'";
-                SqlCommand command = new SqlCommand(query, myConnection);
-                int rowcount = (int)command.ExecuteScalar();
-                myConnection.Close();
-                    return rowcount;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("" + ex);
-                return 2;
-            }
-
         }
 
         private void dataGridView_List_Reports_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Data.SqlClient;
+using System.Drawing;
 
 namespace Report_system
 {
@@ -17,8 +18,9 @@ namespace Report_system
         private Excel.Workbook excelworkbook;
         //private Excel.Sheets excelsheets;
         private Excel.Worksheet excelworksheet;
-        private Excel.Range excelcells;
-       
+        private Excel.Range excelrange;
+        frm_Generation pb = new frm_Generation();
+        public event Action<int> ProgressBarIncrement;  //прогресс барр
 
         public void Generation(string path,string report,int month,int year)
         {
@@ -28,12 +30,12 @@ namespace Report_system
                 Table_name ="tbl_Report_A";
             }
             create_excel_doc(path,Table_name,month,year);
-            
-
+            GC.Collect();
         }
 
         public void create_excel_doc(string path,string Table_name,int month,int year)
         {
+           
             try
             {
                 excelapp = new Excel.Application();
@@ -48,44 +50,51 @@ namespace Report_system
                 excelworksheet = (Excel.Worksheet)excelapp.Sheets[1];
                 //Название листа
                 excelworksheet.Name = "Банкоматы";
+                
 
                 //Выгрузка данных
                 DataTable dt = GetData(Table_name, month, year);
-
                 int collInd = 0;
                 int rowInd = 0;
                 string data = "";
 
+                //excelworksheet.get_Range("D2:D"+ dt.Rows.Count).NumberFormat = "0,00";
+                ////excelworksheet.get_Range("A2:A"+ dt.Rows.Count).NumberFormat = "m/d/yyyy";
+                //excelworksheet.get_Range("A2").NumberFormat= "mm/dd/yyyy";
                 //называем колонки
-                for(int i=0;i<dt.Columns.Count;i++)
+                for (int i=0;i<dt.Columns.Count;i++)
                 {
                     data = dt.Columns[i].ColumnName.ToString();
                     excelworksheet.Cells[1, i + 1] = data;
 
                     //выделяем первую строку
-                    excelcells = excelworksheet.get_Range("A1:Z1", Type.Missing);
+                    excelrange = excelworksheet.get_Range("A1:Z1", Type.Missing);
 
                     //делаем полужирный текст и перенос слов
-                    excelcells.WrapText = true;
-                    excelcells.Font.Bold = true;
+                    excelrange.WrapText = true;
+                    excelrange.Font.Bold = true;
+                    ProgressBarIncrement?.Invoke(i); //прогресс бар двигается вместе со строками
                 }
-
+                
                 //заполняем строки
-                for(rowInd=0;rowInd<dt.Rows.Count;rowInd++)
+                for (rowInd=0;rowInd<dt.Rows.Count;rowInd++)
                 {
                     for(collInd=0;collInd<dt.Columns.Count;collInd++)
                     {
+                        //(excelrange.Cells[rowInd+2, 1] ).NumberFormat = "Д ММММ, ГГГГ";
+                        //(excelworksheet.Cells[rowInd, 4] as Excel.Range).NumberFormat = "### ##0,00";
                         data = dt.Rows[rowInd].ItemArray[collInd].ToString();
                         excelworksheet.Cells[rowInd + 2, collInd + 1] = data;
+                        ProgressBarIncrement?.Invoke(rowInd); //прогресс бар двигается вместе со строками
                     }
                 }
 
                 //выбираем всю область данных
-                excelcells = excelworksheet.UsedRange;
+                excelrange = excelworksheet.UsedRange;
 
                 //выравниваем строки и колонки по их содержимому
-                excelcells.Columns.AutoFit();
-                excelcells.Rows.AutoFit();
+                excelrange.Columns.AutoFit();
+                excelrange.Rows.AutoFit();
 
 
             }
@@ -95,6 +104,7 @@ namespace Report_system
             }
             finally
             {
+                
                 //Показываем ексель
                 excelapp.Visible = true;
 
@@ -102,14 +112,16 @@ namespace Report_system
                 excelapp.ScreenUpdating = true;
                 excelapp.UserControl = true;
 
+                Make_calculations();
                 //excelapp.DefaultFilePath = path;
-                //excelworkbook.Saved = true;
+                // excelworkbook.Saved = true;
                 //excelworkbook.SaveAs(path);
 
-                //Отсоединяемся от Excel
-                releaseObject(excelcells);
-                releaseObject(excelworksheet);
-                releaseObject(excelapp);
+                ////Отсоединяемся от Excel
+                ReleaseObject(excelrange);
+                ReleaseObject(excelworksheet);
+                ReleaseObject(excelapp);
+
                 MessageBox.Show("Успешно сформирован отчет");
 
 
@@ -118,6 +130,7 @@ namespace Report_system
 
         private DataTable GetData(string Table_name,int month,int year)
         {
+
             //строка соединения
             string ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'";
 
@@ -126,19 +139,19 @@ namespace Report_system
             DataTable dt = new DataTable();
 
             try
-            { 
+            {
                 con.Open();
-               
                 string query = "SELECT " +
                     Table_name + ".Posting_date, " +
                     Table_name + ".Number_of_trans, " +
                     Table_name + ".Device, " +
-                    Table_name+".Transaction_amount,"+
+                    Table_name+".Account_amount,"+
                     //"REPLACE(convert(varchar(50),"+ Table_name+".Transaction_amount), '.', ','),"+
                     Table_name + ".Transaction_name, " +
                     Table_name + ".Currency " +
                     " FROM " + Table_name +
-                    " WHERE MONTH(" + Table_name + ".Posting_date)=" + month + " and YEAR(" + Table_name + ".Posting_date)=" + year;
+                    " WHERE MONTH(" + Table_name + ".Posting_date)=" + month + " and YEAR(" + Table_name + ".Posting_date)=" + year+
+                    " ORDER BY "+Table_name+".ID";
                // MessageBox.Show(query);
                SqlCommand comm = new SqlCommand(query, con);
                 SqlDataAdapter da = new SqlDataAdapter(comm);
@@ -159,7 +172,7 @@ namespace Report_system
         }
 
         //Освобождаем ресуры (закрываем Excel)
-        void releaseObject(object obj)
+        void ReleaseObject(object obj)
         {
             try
             {
@@ -176,6 +189,67 @@ namespace Report_system
                 GC.Collect();
             }
         }
+
+
+        private void Make_calculations()
+        {
+            try
+            {
+                // Откройте рабочую книгу только для чтения.
+                //excelworkbook = excelapp.Workbooks.Open(path);
+
+                // Получить первый рабочий лист.
+                excelworksheet = (Excel.Worksheet)excelworkbook.Sheets[1];
+                int rowInd;
+                int row_end = 0;//строка окончания даты
+                int row_start = 2;//строка с новой датой
+                string date = excelworksheet.Cells[2, 1].Text;//дата взятая с ячейки excel
+                int usedRowsNum = excelworksheet.UsedRange.Rows.Count; //все используемые строки excel
+                for (rowInd = 1; rowInd < usedRowsNum; rowInd++)
+                {
+                    int collInd;
+                    for (collInd = 1; collInd <= 1; collInd++)
+                    {
+                        ProgressBarIncrement?.Invoke(rowInd); //прогресс бар двигается вместе с итерациями
+                        if ((excelworksheet.Cells[rowInd + 1, 1]).Text != date)
+                        {
+                            row_end = rowInd + 1;
+                            usedRowsNum = usedRowsNum + 3;
+                            InsertRow(row_end);
+                            InsertRow(row_end + 1);
+                            InsertRow(row_end + 2);
+                            string formula = "=СУММ(D" + row_start + ":D" + (row_end-1) + ")";
+                            string formula2 = "=СУММ(B" + row_start + ":B" + (row_end - 1) + ")";
+                            excelworksheet.Cells[row_end, 4].FormulaLocal = formula;
+                            excelworksheet.Cells[row_end, 2].FormulaLocal = formula2;
+                            excelworksheet.Cells[row_end, 2].Interior.Color = Color.Red;
+                            excelworksheet.Cells[row_end, 4].Interior.Color = Color.Red;
+                            date = excelworksheet.Cells[row_end + 3, 1].Text;
+                            row_start = row_end + 3;
+                            rowInd += 2;
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("" + ex);
+            }
+            finally
+            {
+                GC.Collect();
+            }
+
+
+        }
+
+        public void InsertRow(int rowNum)
+        {
+            Excel.Range cellRange = (Excel.Range)excelworksheet.Cells[rowNum, 1];
+            Excel.Range rowRange = cellRange.EntireRow;
+            rowRange.Insert(Excel.XlInsertShiftDirection.xlShiftDown, false);
+        }
+
 
 
     }

@@ -78,7 +78,7 @@
             this.button_Generation.TabIndex = 1;
             this.button_Generation.Text = "Формирование отчёта";
             this.button_Generation.UseVisualStyleBackColor = true;
-            this.button_Generation.Click += new System.EventHandler(this.button_Generation_Click);
+            this.button_Generation.Click += new System.EventHandler(this.button_Generation_ClickAsync);
             // 
             // panel1
             // 
@@ -258,7 +258,6 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.BindingSource reportSystemDataSetBindingSource;
         private Report_SystemDataSet report_SystemDataSet;
-        private System.Windows.Forms.ProgressBar pb_Status;
         private System.Windows.Forms.ComboBox comboBox_year;
         private System.Windows.Forms.ComboBox comboBox_month;
         private System.Windows.Forms.BindingSource tblMonthBindingSource;
@@ -270,5 +269,6 @@
         private MaterialSkin.Controls.MaterialLabel label_path_directory;
         private MaterialSkin.Controls.MaterialLabel label_path_name;
         private System.Windows.Forms.Label label_Name_of_form;
+        public System.Windows.Forms.ProgressBar pb_Status;
     }
 }
