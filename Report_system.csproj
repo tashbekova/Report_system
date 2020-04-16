@@ -38,6 +38,10 @@
     <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
@@ -53,7 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Check.cs" />
-    <Compile Include="Class_Report_A.cs" />
+    <Compile Include="Read_Report_A.cs" />
     <Compile Include="frm_Generation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +88,7 @@
     <Compile Include="frm_Read.Designer.cs">
       <DependentUpon>frm_Read.cs</DependentUpon>
     </Compile>
+    <Compile Include="Generation_intermediate_report.cs" />
     <Compile Include="Generation_report.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

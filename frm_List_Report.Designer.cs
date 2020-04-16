@@ -72,11 +72,11 @@
             // button_Show_List_Report
             // 
             this.button_Show_List_Report.Depth = 0;
-            this.button_Show_List_Report.Location = new System.Drawing.Point(470, 192);
+            this.button_Show_List_Report.Location = new System.Drawing.Point(443, 195);
             this.button_Show_List_Report.MouseState = MaterialSkin.MouseState.HOVER;
             this.button_Show_List_Report.Name = "button_Show_List_Report";
             this.button_Show_List_Report.Primary = true;
-            this.button_Show_List_Report.Size = new System.Drawing.Size(324, 39);
+            this.button_Show_List_Report.Size = new System.Drawing.Size(362, 39);
             this.button_Show_List_Report.TabIndex = 1;
             this.button_Show_List_Report.Text = "Показать отчеты";
             this.button_Show_List_Report.UseVisualStyleBackColor = true;
@@ -147,7 +147,7 @@
             "2024",
             "2025",
             "2026"});
-            this.comboBox_year.Location = new System.Drawing.Point(823, 104);
+            this.comboBox_year.Location = new System.Drawing.Point(776, 112);
             this.comboBox_year.Name = "comboBox_year";
             this.comboBox_year.Size = new System.Drawing.Size(238, 28);
             this.comboBox_year.TabIndex = 8;
@@ -158,7 +158,7 @@
             this.comboBox_month.DataSource = this.tblMonthBindingSource;
             this.comboBox_month.DisplayMember = "Month_name";
             this.comboBox_month.FormattingEnabled = true;
-            this.comboBox_month.Location = new System.Drawing.Point(489, 104);
+            this.comboBox_month.Location = new System.Drawing.Point(469, 112);
             this.comboBox_month.Name = "comboBox_month";
             this.comboBox_month.Size = new System.Drawing.Size(238, 28);
             this.comboBox_month.TabIndex = 7;
@@ -184,7 +184,7 @@
             this.comboBox_type_report.DataSource = this.tblTypeofreportBindingSource;
             this.comboBox_type_report.DisplayMember = "Type_of_report";
             this.comboBox_type_report.FormattingEnabled = true;
-            this.comboBox_type_report.Location = new System.Drawing.Point(161, 104);
+            this.comboBox_type_report.Location = new System.Drawing.Point(156, 112);
             this.comboBox_type_report.Name = "comboBox_type_report";
             this.comboBox_type_report.Size = new System.Drawing.Size(238, 28);
             this.comboBox_type_report.TabIndex = 6;

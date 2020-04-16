@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace Report_system
 {
-    class Class_Report_A
+    class Read_Report_A
     {
         string string_Financial_value = "";
         string string_Office_value = "";

@@ -33,6 +33,10 @@
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelSubMenu = new System.Windows.Forms.Panel();
+            this.panel_Prognoz = new System.Windows.Forms.Panel();
+            this.button_Prognoz = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.panelStatistika = new System.Windows.Forms.Panel();
+            this.button_Statistika = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panelRequestSubMenu = new System.Windows.Forms.Panel();
             this.materialRaisedButton3 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.materialRaisedButton4 = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -50,6 +54,8 @@
             this.panelChildForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelSubMenu.SuspendLayout();
+            this.panel_Prognoz.SuspendLayout();
+            this.panelStatistika.SuspendLayout();
             this.panelRequestSubMenu.SuspendLayout();
             this.panelRequest.SuspendLayout();
             this.panelRegularSubMenu.SuspendLayout();
@@ -92,6 +98,8 @@
             // panelSubMenu
             // 
             this.panelSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(137)))), ((int)(((byte)(123)))));
+            this.panelSubMenu.Controls.Add(this.panel_Prognoz);
+            this.panelSubMenu.Controls.Add(this.panelStatistika);
             this.panelSubMenu.Controls.Add(this.panelRequestSubMenu);
             this.panelSubMenu.Controls.Add(this.panelRequest);
             this.panelSubMenu.Controls.Add(this.panelRegularSubMenu);
@@ -104,12 +112,59 @@
             this.panelSubMenu.TabIndex = 7;
             this.panelSubMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSubMenu_Paint);
             // 
+            // panel_Prognoz
+            // 
+            this.panel_Prognoz.Controls.Add(this.button_Prognoz);
+            this.panel_Prognoz.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_Prognoz.Location = new System.Drawing.Point(0, 465);
+            this.panel_Prognoz.Name = "panel_Prognoz";
+            this.panel_Prognoz.Size = new System.Drawing.Size(250, 65);
+            this.panel_Prognoz.TabIndex = 8;
+            // 
+            // button_Prognoz
+            // 
+            this.button_Prognoz.Depth = 0;
+            this.button_Prognoz.FlatAppearance.BorderSize = 0;
+            this.button_Prognoz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Prognoz.Location = new System.Drawing.Point(0, 3);
+            this.button_Prognoz.MouseState = MaterialSkin.MouseState.HOVER;
+            this.button_Prognoz.Name = "button_Prognoz";
+            this.button_Prognoz.Primary = true;
+            this.button_Prognoz.Size = new System.Drawing.Size(250, 56);
+            this.button_Prognoz.TabIndex = 6;
+            this.button_Prognoz.Text = "Прогнозирование";
+            this.button_Prognoz.UseVisualStyleBackColor = true;
+            this.button_Prognoz.Click += new System.EventHandler(this.button_Prognoz_Click);
+            // 
+            // panelStatistika
+            // 
+            this.panelStatistika.Controls.Add(this.button_Statistika);
+            this.panelStatistika.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelStatistika.Location = new System.Drawing.Point(0, 400);
+            this.panelStatistika.Name = "panelStatistika";
+            this.panelStatistika.Size = new System.Drawing.Size(250, 65);
+            this.panelStatistika.TabIndex = 7;
+            // 
+            // button_Statistika
+            // 
+            this.button_Statistika.Depth = 0;
+            this.button_Statistika.FlatAppearance.BorderSize = 0;
+            this.button_Statistika.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Statistika.Location = new System.Drawing.Point(0, 3);
+            this.button_Statistika.MouseState = MaterialSkin.MouseState.HOVER;
+            this.button_Statistika.Name = "button_Statistika";
+            this.button_Statistika.Primary = true;
+            this.button_Statistika.Size = new System.Drawing.Size(250, 56);
+            this.button_Statistika.TabIndex = 5;
+            this.button_Statistika.Text = "Статистика";
+            this.button_Statistika.UseVisualStyleBackColor = true;
+            // 
             // panelRequestSubMenu
             // 
             this.panelRequestSubMenu.Controls.Add(this.materialRaisedButton3);
             this.panelRequestSubMenu.Controls.Add(this.materialRaisedButton4);
             this.panelRequestSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelRequestSubMenu.Location = new System.Drawing.Point(0, 322);
+            this.panelRequestSubMenu.Location = new System.Drawing.Point(0, 310);
             this.panelRequestSubMenu.Name = "panelRequestSubMenu";
             this.panelRequestSubMenu.Size = new System.Drawing.Size(250, 90);
             this.panelRequestSubMenu.TabIndex = 6;
@@ -150,7 +205,7 @@
             // 
             this.panelRequest.Controls.Add(this.btnRequest);
             this.panelRequest.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelRequest.Location = new System.Drawing.Point(0, 257);
+            this.panelRequest.Location = new System.Drawing.Point(0, 245);
             this.panelRequest.Name = "panelRequest";
             this.panelRequest.Size = new System.Drawing.Size(250, 65);
             this.panelRequest.TabIndex = 5;
@@ -160,7 +215,7 @@
             this.btnRequest.Depth = 0;
             this.btnRequest.FlatAppearance.BorderSize = 0;
             this.btnRequest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRequest.Location = new System.Drawing.Point(0, 0);
+            this.btnRequest.Location = new System.Drawing.Point(0, 3);
             this.btnRequest.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnRequest.Name = "btnRequest";
             this.btnRequest.Primary = true;
@@ -176,9 +231,9 @@
             this.panelRegularSubMenu.Controls.Add(this.btn_Generation);
             this.panelRegularSubMenu.Controls.Add(this.btnMakeRegularReport);
             this.panelRegularSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelRegularSubMenu.Location = new System.Drawing.Point(0, 109);
+            this.panelRegularSubMenu.Location = new System.Drawing.Point(0, 103);
             this.panelRegularSubMenu.Name = "panelRegularSubMenu";
-            this.panelRegularSubMenu.Size = new System.Drawing.Size(250, 148);
+            this.panelRegularSubMenu.Size = new System.Drawing.Size(250, 142);
             this.panelRegularSubMenu.TabIndex = 4;
             // 
             // button_Show_List_Reports
@@ -247,6 +302,7 @@
             this.btnClose.TabIndex = 3;
             this.btnClose.Text = "Выход";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // panelRegular
             // 
@@ -254,7 +310,7 @@
             this.panelRegular.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelRegular.Location = new System.Drawing.Point(0, 0);
             this.panelRegular.Name = "panelRegular";
-            this.panelRegular.Size = new System.Drawing.Size(250, 109);
+            this.panelRegular.Size = new System.Drawing.Size(250, 103);
             this.panelRegular.TabIndex = 1;
             // 
             // btnRegular
@@ -302,6 +358,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelSubMenu.ResumeLayout(false);
             this.panelSubMenu.PerformLayout();
+            this.panel_Prognoz.ResumeLayout(false);
+            this.panelStatistika.ResumeLayout(false);
             this.panelRequestSubMenu.ResumeLayout(false);
             this.panelRequest.ResumeLayout(false);
             this.panelRegularSubMenu.ResumeLayout(false);
@@ -315,7 +373,6 @@
         private System.Windows.Forms.Panel panelAll;
         private System.Windows.Forms.Panel panelSubMenu;
         private MaterialSkin.Controls.MaterialFlatButton btnClose;
-        private System.Windows.Forms.Panel panelHead;
         private System.Windows.Forms.Panel panelChildForm;
         private System.Windows.Forms.Panel panelRegularSubMenu;
         private System.Windows.Forms.Panel panelRegular;
@@ -329,6 +386,11 @@
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton4;
         private System.Windows.Forms.PictureBox pictureBox2;
         private MaterialSkin.Controls.MaterialRaisedButton button_Show_List_Reports;
+        private System.Windows.Forms.Panel panelHead;
+        private System.Windows.Forms.Panel panelStatistika;
+        private MaterialSkin.Controls.MaterialRaisedButton button_Statistika;
+        private System.Windows.Forms.Panel panel_Prognoz;
+        private MaterialSkin.Controls.MaterialRaisedButton button_Prognoz;
     }
 }
 

@@ -1,17 +1,9 @@
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System.IO;
-using System.Data.SqlClient;
-using System.Collections;
 
 namespace Report_system
 {
@@ -63,7 +55,7 @@ namespace Report_system
                         int check_result=check.Check_Report(file_name);
                         if (check_result == 0)
                         {
-                            Class_Report_A report_A = new Class_Report_A();
+                            Read_Report_A report_A = new Read_Report_A();
                             report_A.Read_file(openFileDialog1.FileName);
                         }
                         else if(check_result==1)

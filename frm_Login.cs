@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
@@ -43,9 +37,12 @@ namespace Report_system
             sda.Fill(dtbl);
             if(dtbl.Rows.Count==1)
             {
+                frm_Login form = new frm_Login();
+                form.Close();
+                //form.Hide();
                 Frm_Home newform = new Frm_Home();
-                this.Hide();
                 newform.Show();
+                //this.Close();
             }
             else
             {
@@ -57,11 +54,12 @@ namespace Report_system
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Frm_Home newform = new Frm_Home();
-            this.Hide();
-            newform.Show();
+            
             frm_Login form = new frm_Login();
             form.Close();
+            //form.Hide();
+            Frm_Home newform = new Frm_Home();
+            newform.Show();
             //this.Close();
         }
     }

@@ -1,17 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
-using System.IO;
 using System.Data.SqlClient;
-using System.Collections;
 
 namespace Report_system
 {
@@ -60,8 +52,38 @@ namespace Report_system
         {
             if(comboBox_month.SelectedItem!=null && comboBox_year.SelectedItem!=null && comboBox_type_report.SelectedItem!=null)
             {
-                string Table_name= "tbl_Result_Report_A";
-                Load_Data(Table_name);
+                dataGridView_List_Reports.Rows.Clear();
+                string Table_name= "";
+                string report = comboBox_type_report.SelectedValue.ToString();
+                int month = Convert.ToInt32(comboBox_month.SelectedValue.ToString());
+                int year = Convert.ToInt32(comboBox_year.SelectedItem.ToString());
+                if(year>=2000)
+                {
+                    if (report=="Report A")
+                    {
+                        Table_name= "tbl_Result_Report_A";
+                    }
+                    Check check_data = new Check();
+                    int check=check_data.Check_Data(Table_name,month, year);
+                    if(check==0)
+                    {
+                        MessageBox.Show("Нет добавленных отчетов на этот месяц");
+                    }
+                    else if(check>=1)
+                    {
+                        Load_Data(Table_name,month,year);
+                    }
+                    else if(check==2)
+                    {
+                        MessageBox.Show("Произошла ошибка");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Введите правильный год");
+                }
+                
+                //if(comboBox_month)
             }
             else if(comboBox_type_report.SelectedItem==null)
             {
@@ -77,14 +99,17 @@ namespace Report_system
             }
         }
 
-        private void Load_Data(string Table_name)
+        private void Load_Data(string Table_name,int month,int year)
         {
             try
             {
                 string ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'";
                 SqlConnection myConnection = new SqlConnection(ConnectionString);
                 myConnection.Open();
-                string query = "Select * From " + Table_name + " Order by Name_of_report";
+                string query = "Select * From " + Table_name +
+                     " WHERE " +
+                " Month(Date_of_read)='" + month + "' and YEAR(Date_of_read)='" + year + "'"+
+                " Order by Name_of_report";
                 SqlCommand command = new SqlCommand(query, myConnection);
                 SqlDataReader reader = command.ExecuteReader();
                 List<string[]> data = new List<string[]>();
