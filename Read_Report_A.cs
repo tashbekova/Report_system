@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.IO;
 using System.Data.SqlClient;
-
-
+using System.Linq;
 
 namespace Report_system
 {
@@ -27,6 +26,7 @@ namespace Report_system
         string string_Transaction_Name_value_part_1 = "";
         string string_Discount_value = "";
         string string_Account_Amount_value = "";
+        string string_Type_of_card = "";
 
         int count_column = 0;
         int index_Trans_Date = 0;
@@ -226,6 +226,7 @@ namespace Report_system
                             count_Transaction_line = 0;
                             flag_indeks_Transaction = false;
                             string_Transaction_Name_value = string_Transaction_Name_value_part_1;
+                            Read_Type_of_card(string_Transaction_Name_value);
                             Add_Data(File_name);
                             continue;
                         }
@@ -244,6 +245,7 @@ namespace Report_system
                                 flag_Transaction = 1;
                                 count_Transaction_line = 0;
                                 string_Transaction_Name_value = string_Transaction_Name_value_part_1;
+                                Read_Type_of_card(string_Transaction_Name_value);
                                 Add_Data(File_name);
                                 Read_Transaction_part_1(arr_line);
                                 continue;
@@ -251,6 +253,7 @@ namespace Report_system
                             else
                             {
                                 Read_Transaction_part_2(arr_line);
+                                Read_Type_of_card(string_Transaction_Name_value);
                                 //Добавление данных  в БД
                                 Add_Data(File_name);
                                 continue;
@@ -836,9 +839,44 @@ namespace Report_system
         }
 
 
+        private void Read_Type_of_card(string transaction_name)
+        {
+            int end_transaction = transaction_name.Length;    //значение конца строки
+            char[] arr_transaction = transaction_name.ToCharArray();
+            int indexOfStart = transaction_name.IndexOf("-->"); // равно 4
+            List<char> list_Type_of_card= new List<char>();
+            if(indexOfStart<0)
+            {
+                indexOfStart = 0;
+            }
+            else
+            {
+                indexOfStart += 4;
+            }
+            for (int i = indexOfStart; i < end_transaction-4; i++)
+            {
+                list_Type_of_card.Add(arr_transaction[i]);
+            }
+            //добавляем вторую часть названия транзакции в массив
+            string_Type_of_card = new string(list_Type_of_card.ToArray());
+            string_Type_of_card= string_Type_of_card.ToUpper();
+        }
         private void Add_Data(string File_name)
         {
-            string Table_Name = "dbo.tbl_Report_A";
+            string Table_Name = "";
+            if (File_name.Contains('A'))
+            { 
+                Table_Name = "dbo.tbl_Report_A"; 
+            }
+            else if(File_name.Contains('H'))
+            {
+                Table_Name = "dbo.tbl_Report_H";
+            }
+            else if (File_name.Contains('R'))
+            {
+                Table_Name = "dbo.tbl_Report_R";
+            }
+
             // запрос на добавление в SQL Server
             string query = "Insert into " + Table_Name +
                 " (Name_of_report," +
@@ -857,7 +895,8 @@ namespace Report_system
             "Number_of_trans," +
            "Transaction_amount," +
            "Discount," +
-           "Account_amount)" +
+           "Account_amount," +
+           "Type_of_card)" +
            " Values ('" +
            File_name + "','" +
            string_Posting_Date_value + "','" +
@@ -875,7 +914,8 @@ namespace Report_system
            string_Number_Of_Trans_value + "','" +
            string_Transaction_Amount_value + "','" +
            string_Discount_value + "','" +
-           string_Account_Amount_value + "')";
+           string_Account_Amount_value + "','"+
+           string_Type_of_card + "')";
             try
             {
                 //execute sqlcommand to insert record
@@ -899,7 +939,19 @@ namespace Report_system
             {
                 result = "Отчёт добавлен с ошибками или неполностью";
             }
-            string Table_Name = "dbo.tbl_Result_Report_A";
+            string Table_Name = "";
+            if (File_name.Contains('A'))
+            {
+                Table_Name = "dbo.tbl_Result_Report_A";
+            }
+            else if (File_name.Contains('H'))
+            {
+                Table_Name = "dbo.tbl_Result_Report_H";
+            }
+            else if (File_name.Contains('R'))
+            {
+                Table_Name = "dbo.tbl_Result_Report_R";
+            }
             // запрос на добавление в SQL Server
             string query = "Insert into " + Table_Name +
                 " (Name_of_report," +

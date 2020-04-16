@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Report_system
@@ -13,8 +14,20 @@ namespace Report_system
             {
                 ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'"
             };
+            string Table_Name = "";
+            if (File_name.Contains('A'))
+            {
+                Table_Name = "dbo.tbl_Result_Report_A";
+            }
+            else if (File_name.Contains('H'))
+            {
+                Table_Name = "dbo.tbl_Result_Report_H";
+            }
+            else if (File_name.Contains('R'))
+            {
+                Table_Name = "dbo.tbl_Result_Report_R";
+            }
             SQLConnection.Open();
-            string Table_Name = "dbo.tbl_Result_Report_A";
             string query =
                 "SELECT COUNT(*) FROM " +
                 Table_Name +

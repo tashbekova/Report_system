@@ -147,7 +147,7 @@ namespace Report_system
                     Table_name + ".Device, " +
                     Table_name+".Account_amount,"+
                     //"REPLACE(convert(varchar(50),"+ Table_name+".Transaction_amount), '.', ','),"+
-                    Table_name + ".Transaction_name, " +
+                    Table_name + ".Type_of_card, " +
                     Table_name + ".Currency " +
                     " FROM " + Table_name +
                     " WHERE MONTH(" + Table_name + ".Posting_date)=" + month + " and YEAR(" + Table_name + ".Posting_date)=" + year+
@@ -205,7 +205,7 @@ namespace Report_system
                 int row_start = 2;//строка с новой датой
                 string date = excelworksheet.Cells[2, 1].Text;//дата взятая с ячейки excel
                 int usedRowsNum = excelworksheet.UsedRange.Rows.Count; //все используемые строки excel
-                for (rowInd = 1; rowInd < usedRowsNum; rowInd++)
+                for (rowInd = 1; rowInd < (usedRowsNum+1); rowInd++)
                 {
                     int collInd;
                     for (collInd = 1; collInd <= 1; collInd++)

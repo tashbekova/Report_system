@@ -49,7 +49,6 @@ namespace Report_system
                         MessageBox.Show("Файл пуст");
                         return;
                     }
-                    else if (file_name.Contains('A'))
                     {
                         Check check = new Check();
                         int check_result=check.Check_Report(file_name);
@@ -68,17 +67,6 @@ namespace Report_system
                         }
                        
                     }
-                    else if (file_name.Contains('R'))
-                    {
-                        MessageBox.Show("Отчёт по пос терминалам");
-
-                    }
-                    else if (file_name.Contains('H'))
-                    {
-                        MessageBox.Show("Отчёт по пос терминалам");
-                    }
-
-
                 }
             }
             catch
