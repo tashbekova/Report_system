@@ -4,35 +4,37 @@ using System.Windows.Forms;
 using System.IO;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Numerics;
 
 namespace Report_system
 {
     class Read_Report_A
     {
-        string string_Financial_value = "";
-        string string_Office_value = "";
-        string string_Contract_value = "";
-        string string_Region_value = "";
-        string string_Currency_value = "";
-        string string_Posting_Date_value = "";
-        string string_Device_value = "";
-        string string_SIC_value = "";
-        string string_Cycle_value = "";
-        string string_Device_Name_value = "";
-        string string_Transaction_Name_value = "";
-        string string_Trans_Date_value = "";
-        string string_Number_Of_Trans_value = "";
-        string string_Transaction_Amount_value = "";
-        string string_Transaction_Name_value_part_1 = "";
-        string string_Discount_value = "";
-        string string_Account_Amount_value = "";
-        string string_Type_of_card = "";
+        private string string_Financial_value = "";
+        private string string_Office_value = "";
+        private string string_Contract_value = "";
+        private string string_Region_value = "";
+        private string string_Currency_value = "";
+        private string string_Posting_Date_value = "";
+        private string string_Device_value = "";
+        private string string_SIC_value = "";
+        private string string_Cycle_value = "";
+        private string string_Device_Name_value = "";
+        private string string_Transaction_Name_value = "";
+        private string string_Trans_Date_value = "";
+        private string string_Number_Of_Trans_value = "";
+        private string string_Transaction_Amount_value = "";
+        private string string_Transaction_Name_value_part_1 = "";
+        private string string_Discount_value = "";
+        private string string_Account_Amount_value = "";
+        private string string_Type_of_card = "";
+        private BigInteger int_Report;
 
-        int count_column = 0;
-        int index_Trans_Date = 0;
-        int end_line = 0;
-        int count_Transaction_line = 0;
-        int flag_Transaction = 0;
+        private int count_column = 0;
+        private int index_Trans_Date = 0;
+        private int end_line = 0;
+        private int count_Transaction_line = 0;
+        private int flag_Transaction = 0;
 
         //Create Connection to SQL Server
         SqlConnection SQLConnection = new SqlConnection
@@ -46,8 +48,9 @@ namespace Report_system
             StreamReader SourceFile = File.OpenText(path_name);
             //string[] stroka = File.ReadAllLines(path_name);
             string File_name = (Path.GetFileNameWithoutExtension(path_name));
-            MessageBox.Show("Отчёт по банкоматам");
-
+            MessageBox.Show("Распознаем и считываем данные");
+            
+            MessageBox.Show(""+int_Report);
             //provide the table name in which you would like to load data
             string Table_Name = "";
 
@@ -62,6 +65,7 @@ namespace Report_system
             SQLConnection.Open();
             try
             {
+                Find_Report(File_name);
                 while (!SourceFile.EndOfStream)
                 {
                     string line = SourceFile.ReadLine();
@@ -295,19 +299,63 @@ namespace Report_system
                         {
                             if (flag_Total_Posting_Date == true)
                             {
-                                Table_Name = "dbo.tbl_Total_Posting_Date_Report_A";
+                                if (File_name.Contains('A'))
+                                {
+                                    Table_Name = "dbo.tbl_Total_Posting_Date_Report_A";
+                                }
+                                else if (File_name.Contains('H'))
+                                {
+                                    Table_Name = "dbo.tbl_Total_Posting_Date_Report_H";
+                                }
+                                else if (File_name.Contains('R'))
+                                {
+                                    Table_Name = "dbo.tbl_Total_Posting_Date_Report_R";
+                                }
                             }
                             else if (flag_Total_Cycle == true)
                             {
-                                Table_Name = "dbo.tbl_Total_for_Cycle_Report_A";
+                                if (File_name.Contains('A'))
+                                {
+                                    Table_Name = "dbo.tbl_Total_for_Cycle_Report_A";
+                                }
+                                else if (File_name.Contains('H'))
+                                {
+                                    Table_Name = "dbo.tbl_Total_for_Cycle_Report_H";
+                                }
+                                else if (File_name.Contains('R'))
+                                {
+                                    Table_Name = "dbo.tbl_Total_for_Cycle_Report_R";
+                                } 
                             }
                             else if (flag_Total_Device == true)
                             {
-                                Table_Name = "dbo.tbl_Total_Device_Report_A";
+                                if (File_name.Contains('A'))
+                                {
+                                    Table_Name = "dbo.tbl_Total_Device_Report_A";
+                                }
+                                else if (File_name.Contains('H'))
+                                {
+                                    Table_Name = "dbo.tbl_Total_Device_Report_H";
+                                }
+                                else if (File_name.Contains('R'))
+                                {
+                                    Table_Name = "dbo.tbl_Total_Device_Report_R";
+                                }
                             }
                             else if (flag_Total_Currency == true)
                             {
-                                Table_Name = "dbo.tbl_Total_Currency_Report_A";
+                                if (File_name.Contains('A'))
+                                {
+                                    Table_Name = "dbo.tbl_Total_Currency_Report_A";
+                                }
+                                else if (File_name.Contains('H'))
+                                {
+                                    Table_Name = "dbo.tbl_Total_Currency_Report_H";
+                                }
+                                else if (File_name.Contains('R'))
+                                {
+                                    Table_Name = "dbo.tbl_Total_Currency_Report_R";
+                                }
                             }
                             //создаем листы 
                             List<char> list_Number_Of_Trans_value = new List<char>();
@@ -409,7 +457,8 @@ namespace Report_system
                                     "Number_of_trans," +
                                     "Transaction_amount," +
                                     "Discount," +
-                                    "Account_amount)" +
+                                    "Account_amount," +
+                                    "Name_of_report)" +
                                     " Values ('" + string_Posting_Date_value + "','" +
                                string_Device_value + "','" +
                                string_Device_Name_value + "','" +
@@ -417,7 +466,8 @@ namespace Report_system
                                string_Number_Of_Trans_value + "','" +
                                string_Transaction_Amount_value + "','" +
                                string_Discount_value + "','" +
-                               string_Account_Amount_value + "')";
+                               string_Account_Amount_value + "','"+
+                               int_Report + "')";
                                 try
                                 {
                                     //execute sqlcommand to insert record
@@ -445,7 +495,7 @@ namespace Report_system
 
                 }
                 flag_report = true;
-                Add_Report(File_name,flag_report);
+                Update_Report(File_name,flag_report,1);
                 MessageBox.Show("Успешно добавлено");
                 SourceFile.Close();
                 SQLConnection.Close();
@@ -453,7 +503,7 @@ namespace Report_system
             catch (Exception ex)
             {
                 flag_report = false;
-                Add_Report(File_name, flag_report);
+                Update_Report(File_name, flag_report,2);
                 MessageBox.Show("Не закончилось успешно, где-то остановилось"+ex);
             }
 
@@ -879,8 +929,7 @@ namespace Report_system
 
             // запрос на добавление в SQL Server
             string query = "Insert into " + Table_Name +
-                " (Name_of_report," +
-                " Posting_date," +
+                " (Posting_date," +
                 " Financial_institution," +
                 " Office," +
                 "Contract#," +
@@ -889,16 +938,16 @@ namespace Report_system
                 "Device," +
                 "SIC," +
                 "Cycle_num_type," +
-            "Device_name," +
-            "Transaction_name," +
-            "Trans_date," +
-            "Number_of_trans," +
-           "Transaction_amount," +
-           "Discount," +
-           "Account_amount," +
-           "Type_of_card)" +
+                "Device_name," +
+                "Transaction_name," +
+                "Trans_date," +
+                "Number_of_trans," +
+                "Transaction_amount," +
+                "Discount," +
+                "Account_amount," +
+                "Type_of_card," +
+                "Name_of_report)" +
            " Values ('" +
-           File_name + "','" +
            string_Posting_Date_value + "','" +
            string_Financial_value + "','" +
            string_Office_value + "','" +
@@ -914,8 +963,9 @@ namespace Report_system
            string_Number_Of_Trans_value + "','" +
            string_Transaction_Amount_value + "','" +
            string_Discount_value + "','" +
-           string_Account_Amount_value + "','"+
-           string_Type_of_card + "')";
+           string_Account_Amount_value + "','" +
+           string_Type_of_card + "','" +
+           int_Report + "')";
             try
             {
                 //execute sqlcommand to insert record
@@ -928,7 +978,7 @@ namespace Report_system
             }
         }
 
-        private void Add_Report(string File_name,bool flag_report)
+        private void Update_Report(string File_name,bool flag_report,int finish)
         {
             string result ;
             if(flag_report==true)
@@ -953,24 +1003,60 @@ namespace Report_system
                 Table_Name = "dbo.tbl_Result_Report_R";
             }
             // запрос на добавление в SQL Server
-            string query = "Insert into " + Table_Name +
-                " (Name_of_report," +
-                " Date_of_read," +
-                " Result)" +
-           " Values ('" + File_name + "','" +
-           DateTime.Now + "','" +
-           result + "')";
+            string query = "Update " + Table_Name +
+                " Set Result='" + result + "'," +
+                "Date_of_read='" + DateTime.Now + "'," +
+                "Finish='" + finish + "'" +
+                " Where " + Table_Name + ".ID='" + int_Report + "'";
             try
             {
                 //execute sqlcommand to insert record
-                SqlCommand myCommand = new SqlCommand(query, SQLConnection);
-                myCommand.ExecuteNonQuery();
+                SqlCommand command = new SqlCommand(query, SQLConnection);
+                command.ExecuteNonQuery();
             }
             catch (SqlException ex)
             {
                 MessageBox.Show("Произошла ошибка при добавлении названия отчёта в БД" + ex);
             }
         }
+
+
+        private void Find_Report(string File_name)
+        {
+            string Table_Name = "";
+            if (File_name.Contains('A'))
+            {
+                Table_Name = "dbo.tbl_Result_Report_A";
+            }
+            else if (File_name.Contains('H'))
+            {
+                Table_Name = "dbo.tbl_Result_Report_H";
+            }
+            else if (File_name.Contains('R'))
+            {
+                Table_Name = "tbl_Result_Report_R";
+            }
+            // запрос на добавление в SQL Server
+            string query = "SELECT " + Table_Name + ".ID FROM  " + Table_Name +
+                            "  WHERE " + Table_Name + ".Name_of_report='" + File_name + "'";
+            try
+            {
+                //execute sqlcommand to insert record
+                SqlCommand myCommand = new SqlCommand(query, SQLConnection);
+                BigInteger.TryParse((myCommand.ExecuteScalar().ToString()), out BigInteger ID_Report);
+                int_Report = ID_Report;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Произошла ошибка при добавлении названия отчёта в БД" + ex);
+            }
+            finally
+            {
+
+            }
+        }
+
+
     }
 
 }
