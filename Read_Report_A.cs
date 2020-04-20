@@ -28,7 +28,7 @@ namespace Report_system
         private string string_Discount_value = "";
         private string string_Account_Amount_value = "";
         private string string_Type_of_card = "";
-        private BigInteger int_Report;
+        private BigInteger int_Report=0;
 
         private int count_column = 0;
         private int index_Trans_Date = 0;
@@ -50,7 +50,7 @@ namespace Report_system
             string File_name = (Path.GetFileNameWithoutExtension(path_name));
             MessageBox.Show("Распознаем и считываем данные");
             
-            MessageBox.Show(""+int_Report);
+            
             //provide the table name in which you would like to load data
             string Table_Name = "";
 
@@ -66,6 +66,7 @@ namespace Report_system
             try
             {
                 Find_Report(File_name);
+                MessageBox.Show("" + int_Report);
                 while (!SourceFile.EndOfStream)
                 {
                     string line = SourceFile.ReadLine();
@@ -559,6 +560,7 @@ namespace Report_system
 
         private void Read_Region(char[] arr_line, int index_Region)
         {
+            bool flag_empty=false;
             //создаем лист list_Region_value для хранения значения Region
             List<char> list_Region_value = new List<char>();
             //Проходим по циклу начиная после слов "Reg #:" и до конца
@@ -566,12 +568,14 @@ namespace Report_system
             {
                 if (arr_line[i] == ' ')
                 {
-                    continue;
+                    if (flag_empty == false)
+                    { continue; }
                 }
                 else if(arr_line[i]!=' ')
                 {
                     //добавляем все символы в лист,чтобы получить массив и преобразовать в строку
                     list_Region_value.Add(arr_line[i]);
+                    flag_empty = true;
                 }
 
             }
@@ -968,6 +972,7 @@ namespace Report_system
            int_Report + "')";
             try
             {
+                MessageBox.Show(string_Region_value);
                 //execute sqlcommand to insert record
                 SqlCommand myCommand = new SqlCommand(query, SQLConnection);
                 myCommand.ExecuteNonQuery();
