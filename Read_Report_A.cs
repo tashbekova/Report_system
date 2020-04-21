@@ -66,7 +66,6 @@ namespace Report_system
             try
             {
                 Find_Report(File_name);
-                MessageBox.Show("" + int_Report);
                 while (!SourceFile.EndOfStream)
                 {
                     string line = SourceFile.ReadLine();
@@ -231,7 +230,6 @@ namespace Report_system
                             count_Transaction_line = 0;
                             flag_indeks_Transaction = false;
                             string_Transaction_Name_value = string_Transaction_Name_value_part_1;
-                            Read_Type_of_card(string_Transaction_Name_value);
                             Add_Data(File_name);
                             continue;
                         }
@@ -250,7 +248,6 @@ namespace Report_system
                                 flag_Transaction = 1;
                                 count_Transaction_line = 0;
                                 string_Transaction_Name_value = string_Transaction_Name_value_part_1;
-                                Read_Type_of_card(string_Transaction_Name_value);
                                 Add_Data(File_name);
                                 Read_Transaction_part_1(arr_line);
                                 continue;
@@ -258,7 +255,6 @@ namespace Report_system
                             else
                             {
                                 Read_Transaction_part_2(arr_line);
-                                Read_Type_of_card(string_Transaction_Name_value);
                                 //Добавление данных  в БД
                                 Add_Data(File_name);
                                 continue;
@@ -492,20 +488,22 @@ namespace Report_system
 
                         #endregion
                     }
-
-
                 }
-                flag_report = true;
-                Update_Report(File_name,flag_report,1);
-                MessageBox.Show("Успешно добавлено");
-                SourceFile.Close();
-                SQLConnection.Close();
+               
             }
             catch (Exception ex)
             {
                 flag_report = false;
                 Update_Report(File_name, flag_report,2);
                 MessageBox.Show("Не закончилось успешно, где-то остановилось"+ex);
+            }
+            finally
+            {
+                flag_report = true;
+                Update_Report(File_name, flag_report, 1);
+                MessageBox.Show("Успешно добавлено");
+                SourceFile.Close();
+                SQLConnection.Close();
             }
 
         }
@@ -570,6 +568,10 @@ namespace Report_system
                 {
                     if (flag_empty == false)
                     { continue; }
+                    else
+                    {
+                        list_Region_value.Add(arr_line[i]);
+                    }
                 }
                 else if(arr_line[i]!=' ')
                 {
@@ -651,10 +653,21 @@ namespace Report_system
                     if (arr_line[i + 1] == ' ')
                         break;
                     else
+                    {
+                        if (arr_line[i] == '\'')
+                        {
+                            arr_line[i] = '`';
+                        }
                         list_SIC_value.Add(arr_line[i]);
+                    }
+                        
                 }
                 else
                 {
+                    if (arr_line[i] == '\'')
+                    {
+                        arr_line[i] = '`';
+                    }
                     //добавляем все символы в лист,чтобы получить массив и преобразовать в строку
                     list_SIC_value.Add(arr_line[i]);
                 }
@@ -705,10 +718,20 @@ namespace Report_system
                     if (arr_line[i + 1] == ' ')
                         break;
                     else
+                    {
+                        if (arr_line[i] == '\'')
+                        {
+                            arr_line[i] = '`';
+                        }
                         list_Device_Name_value.Add(arr_line[i]);
+                    }
                 }
                 else
                 {
+                    if(arr_line[i]=='\'')
+                    {
+                        arr_line[i] = '`';
+                    }
                     //добавляем все символы в лист,чтобы получить массив и преобразовать в строку
                     list_Device_Name_value.Add(arr_line[i]);
                 }
@@ -729,6 +752,8 @@ namespace Report_system
                 if (arr_line[i] == ' ')
                 {
                     if (arr_line[i + 1] == ' ')
+                        break; 
+                    else if ((i + 1) == index_Trans_Date)
                         break;
                     else
                         list_Transaction_Name_value.Add(arr_line[i]);
@@ -901,7 +926,13 @@ namespace Report_system
             List<char> list_Type_of_card= new List<char>();
             if(indexOfStart<0)
             {
-                indexOfStart = 0;
+                indexOfStart = transaction_name.IndexOf("-- >"); // равно 4
+                if (indexOfStart < 0)
+                    indexOfStart = 0;
+                else if(indexOfStart >= 0)
+                {
+                    indexOfStart += 5;
+                }
             }
             else
             {
@@ -917,6 +948,7 @@ namespace Report_system
         }
         private void Add_Data(string File_name)
         {
+            Read_Type_of_card(string_Transaction_Name_value);
             string Table_Name = "";
             if (File_name.Contains('A'))
             { 
@@ -972,7 +1004,7 @@ namespace Report_system
            int_Report + "')";
             try
             {
-                MessageBox.Show(string_Region_value);
+                //MessageBox.Show(string_Region_value);
                 //execute sqlcommand to insert record
                 SqlCommand myCommand = new SqlCommand(query, SQLConnection);
                 myCommand.ExecuteNonQuery();
