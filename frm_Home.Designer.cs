@@ -158,6 +158,7 @@
             this.button_Statistika.TabIndex = 5;
             this.button_Statistika.Text = "Статистика";
             this.button_Statistika.UseVisualStyleBackColor = true;
+            this.button_Statistika.Click += new System.EventHandler(this.button_Statistika_Click);
             // 
             // panelRequestSubMenu
             // 

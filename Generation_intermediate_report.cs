@@ -57,25 +57,30 @@ namespace Report_system
                 int collInd = 0;
                 int rowInd = 0;
                 string data = "";
+                decimal data2;
 
-                //excelworksheet.get_Range("D2:D"+ dt.Rows.Count).NumberFormat = "0,00";
-                ////excelworksheet.get_Range("A2:A"+ dt.Rows.Count).NumberFormat = "m/d/yyyy";
-                //excelworksheet.get_Range("A2").NumberFormat= "mm/dd/yyyy";
                 //называем колонки
-                for (int i=0;i<dt.Columns.Count;i++)
-                {
-                    data = dt.Columns[i].ColumnName.ToString();
-                    excelworksheet.Cells[1, i + 1] = data;
+                //for (int i=0;i<dt.Columns.Count;i++)
+                //{
+                //    data = dt.Columns[i].ColumnName.ToString();
+                //    excelworksheet.Cells[1, i + 1] = data;
 
-                    //выделяем первую строку
-                    excelrange = excelworksheet.get_Range("A1:Z1", Type.Missing);
+                    
+                //    ProgressBarIncrement?.Invoke(i); //прогресс бар двигается вместе со строками
+                //}
+                excelworksheet.Cells[1, 1] = "Дата";
+                excelworksheet.Cells[1, 2] = "кол-во карт";
+                excelworksheet.Cells[1, 3] = "Место операции";
+                excelworksheet.Cells[1, 4] = "Сумма";
+                excelworksheet.Cells[1, 5] = "Вид карты";
+                excelworksheet.Cells[1, 6] = "Валюта";
+                //выделяем первую строку
+                excelrange = excelworksheet.get_Range("A1:F1", Type.Missing);
 
-                    //делаем полужирный текст и перенос слов
-                    excelrange.WrapText = true;
-                    excelrange.Font.Bold = true;
-                    ProgressBarIncrement?.Invoke(i); //прогресс бар двигается вместе со строками
-                }
-                
+                //делаем полужирный текст и перенос слов
+                excelrange.WrapText = true;
+                excelrange.Font.Bold = true;
+
                 //заполняем строки
                 for (rowInd=0;rowInd<dt.Rows.Count;rowInd++)
                 {
@@ -83,8 +88,21 @@ namespace Report_system
                     {
                         //(excelrange.Cells[rowInd+2, 1] ).NumberFormat = "Д ММММ, ГГГГ";
                         //(excelworksheet.Cells[rowInd, 4] as Excel.Range).NumberFormat = "### ##0,00";
-                        data = dt.Rows[rowInd].ItemArray[collInd].ToString();
-                        excelworksheet.Cells[rowInd + 2, collInd + 1] = data;
+                        if(collInd==0)
+                        {
+                            data = DateTime.Parse(dt.Rows[rowInd].ItemArray[collInd].ToString()).ToShortDateString();
+                            excelworksheet.Cells[rowInd + 2, collInd + 1] = data;
+                        }
+                        else if (collInd == 3)
+                        {
+                            data2 = Convert.ToDecimal(dt.Rows[rowInd].ItemArray[collInd]);
+                            excelworksheet.Cells[rowInd + 2, collInd + 1] = data2;
+                        }
+                        else
+                        { data = dt.Rows[rowInd].ItemArray[collInd].ToString();
+                          excelworksheet.Cells[rowInd + 2, collInd + 1] = data;
+                        }
+                       
                         ProgressBarIncrement?.Invoke(rowInd); //прогресс бар двигается вместе со строками
                     }
                 }
@@ -95,6 +113,12 @@ namespace Report_system
                 //выравниваем строки и колонки по их содержимому
                 excelrange.Columns.AutoFit();
                 excelrange.Rows.AutoFit();
+                excelrange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+                excelrange.Borders.get_Item(Excel.XlBordersIndex.xlEdgeBottom).LineStyle = Excel.XlLineStyle.xlContinuous;
+                excelrange.Borders.get_Item(Excel.XlBordersIndex.xlEdgeRight).LineStyle = Excel.XlLineStyle.xlContinuous;
+                excelrange.Borders.get_Item(Excel.XlBordersIndex.xlInsideHorizontal).LineStyle = Excel.XlLineStyle.xlContinuous;
+                excelrange.Borders.get_Item(Excel.XlBordersIndex.xlInsideVertical).LineStyle = Excel.XlLineStyle.xlContinuous;
+                excelrange.Borders.get_Item(Excel.XlBordersIndex.xlEdgeTop).LineStyle = Excel.XlLineStyle.xlContinuous;
 
 
             }
@@ -151,7 +175,7 @@ namespace Report_system
                     Table_name + ".Currency " +
                     " FROM " + Table_name +
                     " WHERE MONTH(" + Table_name + ".Posting_date)=" + month + " and YEAR(" + Table_name + ".Posting_date)=" + year+
-                    " ORDER BY "+Table_name+".ID";
+                    " ORDER BY "+Table_name+".Posting_date";
                // MessageBox.Show(query);
                SqlCommand comm = new SqlCommand(query, con);
                 SqlDataAdapter da = new SqlDataAdapter(comm);

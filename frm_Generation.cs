@@ -77,7 +77,15 @@ namespace Report_system
                         {
                             Table_name = "tbl_Report_A";
                         }
-                       // pb_Status.PerformStep();
+                        else if (report == "Report H")
+                        {
+                            Table_name = "tbl_Report_H";
+                        }
+                        else if (report == "Report R")
+                        {
+                            Table_name = "tbl_Report_R";
+                        }
+                        // pb_Status.PerformStep();
                         Check check_data = new Check();
                         int check = check_data.Check_Data(Table_name, month, year);
                         if (check == 0)
