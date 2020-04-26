@@ -1002,6 +1002,7 @@ namespace Report_system
            string_Account_Amount_value + "','" +
            string_Type_of_card + "','" +
            int_Report + "')";
+           
             try
             {
                 //MessageBox.Show(string_Region_value);

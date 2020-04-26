@@ -32,6 +32,7 @@ namespace Report_system
         {
             panelRegularSubMenu.Visible = false;
             panelRequestSubMenu.Visible = false;
+            panel_Statisitic_SubMenu.Visible = false;
         }
         private void HideSubMenu()
         {
@@ -39,6 +40,8 @@ namespace Report_system
                 panelRequestSubMenu.Visible = false;
             if (panelRequestSubMenu.Visible == true)
                 panelRequestSubMenu.Visible = false;
+            if (panel_Statisitic_SubMenu.Visible == true)
+                panel_Statisitic_SubMenu.Visible = false;
         }
        private void ShowSubMenu(Panel subMenu)
         {
@@ -136,6 +139,12 @@ namespace Report_system
         }
 
         private void button_Statistika_Click(object sender, EventArgs e)
+        {
+            ShowSubMenu(panel_Statisitic_SubMenu) ;
+        }
+
+
+        private void button_Make_statistics_Click(object sender, EventArgs e)
         {
             HideSubMenu();
             OpenChildForm<frm_Statistic>();

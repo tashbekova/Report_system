@@ -33,7 +33,7 @@
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panelSubMenu = new System.Windows.Forms.Panel();
-            this.panel_Prognoz = new System.Windows.Forms.Panel();
+            this.panel_Statisitic_SubMenu = new System.Windows.Forms.Panel();
             this.button_Prognoz = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panelStatistika = new System.Windows.Forms.Panel();
             this.button_Statistika = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -50,16 +50,20 @@
             this.panelRegular = new System.Windows.Forms.Panel();
             this.btnRegular = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panelHead = new System.Windows.Forms.Panel();
+            this.panel_Prognoz = new System.Windows.Forms.Panel();
+            this.button_Make_statistics = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.button_Show_Type_of_card = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panelAll.SuspendLayout();
             this.panelChildForm.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panelSubMenu.SuspendLayout();
-            this.panel_Prognoz.SuspendLayout();
+            this.panel_Statisitic_SubMenu.SuspendLayout();
             this.panelStatistika.SuspendLayout();
             this.panelRequestSubMenu.SuspendLayout();
             this.panelRequest.SuspendLayout();
             this.panelRegularSubMenu.SuspendLayout();
             this.panelRegular.SuspendLayout();
+            this.panel_Prognoz.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelAll
@@ -70,7 +74,7 @@
             this.panelAll.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelAll.Location = new System.Drawing.Point(0, 0);
             this.panelAll.Name = "panelAll";
-            this.panelAll.Size = new System.Drawing.Size(996, 650);
+            this.panelAll.Size = new System.Drawing.Size(1005, 760);
             this.panelAll.TabIndex = 0;
             // 
             // panelChildForm
@@ -80,7 +84,7 @@
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm.Location = new System.Drawing.Point(250, 32);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(746, 618);
+            this.panelChildForm.Size = new System.Drawing.Size(755, 728);
             this.panelChildForm.TabIndex = 8;
             this.panelChildForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panelChildForm_Paint);
             // 
@@ -90,7 +94,7 @@
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(746, 618);
+            this.pictureBox2.Size = new System.Drawing.Size(755, 728);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
@@ -99,6 +103,7 @@
             // 
             this.panelSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(137)))), ((int)(((byte)(123)))));
             this.panelSubMenu.Controls.Add(this.panel_Prognoz);
+            this.panelSubMenu.Controls.Add(this.panel_Statisitic_SubMenu);
             this.panelSubMenu.Controls.Add(this.panelStatistika);
             this.panelSubMenu.Controls.Add(this.panelRequestSubMenu);
             this.panelSubMenu.Controls.Add(this.panelRequest);
@@ -108,25 +113,26 @@
             this.panelSubMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelSubMenu.Location = new System.Drawing.Point(0, 32);
             this.panelSubMenu.Name = "panelSubMenu";
-            this.panelSubMenu.Size = new System.Drawing.Size(250, 618);
+            this.panelSubMenu.Size = new System.Drawing.Size(250, 728);
             this.panelSubMenu.TabIndex = 7;
             this.panelSubMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSubMenu_Paint);
             // 
-            // panel_Prognoz
+            // panel_Statisitic_SubMenu
             // 
-            this.panel_Prognoz.Controls.Add(this.button_Prognoz);
-            this.panel_Prognoz.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_Prognoz.Location = new System.Drawing.Point(0, 465);
-            this.panel_Prognoz.Name = "panel_Prognoz";
-            this.panel_Prognoz.Size = new System.Drawing.Size(250, 65);
-            this.panel_Prognoz.TabIndex = 8;
+            this.panel_Statisitic_SubMenu.Controls.Add(this.button_Show_Type_of_card);
+            this.panel_Statisitic_SubMenu.Controls.Add(this.button_Make_statistics);
+            this.panel_Statisitic_SubMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_Statisitic_SubMenu.Location = new System.Drawing.Point(0, 465);
+            this.panel_Statisitic_SubMenu.Name = "panel_Statisitic_SubMenu";
+            this.panel_Statisitic_SubMenu.Size = new System.Drawing.Size(250, 86);
+            this.panel_Statisitic_SubMenu.TabIndex = 8;
             // 
             // button_Prognoz
             // 
             this.button_Prognoz.Depth = 0;
             this.button_Prognoz.FlatAppearance.BorderSize = 0;
             this.button_Prognoz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Prognoz.Location = new System.Drawing.Point(0, 3);
+            this.button_Prognoz.Location = new System.Drawing.Point(0, 6);
             this.button_Prognoz.MouseState = MaterialSkin.MouseState.HOVER;
             this.button_Prognoz.Name = "button_Prognoz";
             this.button_Prognoz.Primary = true;
@@ -294,7 +300,7 @@
             this.btnClose.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(0, 582);
+            this.btnClose.Location = new System.Drawing.Point(0, 692);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnClose.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnClose.Name = "btnClose";
@@ -336,14 +342,56 @@
             this.panelHead.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHead.Location = new System.Drawing.Point(0, 0);
             this.panelHead.Name = "panelHead";
-            this.panelHead.Size = new System.Drawing.Size(996, 32);
+            this.panelHead.Size = new System.Drawing.Size(1005, 32);
             this.panelHead.TabIndex = 9;
+            // 
+            // panel_Prognoz
+            // 
+            this.panel_Prognoz.Controls.Add(this.button_Prognoz);
+            this.panel_Prognoz.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_Prognoz.Location = new System.Drawing.Point(0, 551);
+            this.panel_Prognoz.Name = "panel_Prognoz";
+            this.panel_Prognoz.Size = new System.Drawing.Size(250, 68);
+            this.panel_Prognoz.TabIndex = 9;
+            // 
+            // button_Make_statistics
+            // 
+            this.button_Make_statistics.Depth = 0;
+            this.button_Make_statistics.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button_Make_statistics.FlatAppearance.BorderSize = 0;
+            this.button_Make_statistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Make_statistics.Location = new System.Drawing.Point(0, 0);
+            this.button_Make_statistics.MouseState = MaterialSkin.MouseState.HOVER;
+            this.button_Make_statistics.Name = "button_Make_statistics";
+            this.button_Make_statistics.Primary = true;
+            this.button_Make_statistics.Size = new System.Drawing.Size(250, 40);
+            this.button_Make_statistics.TabIndex = 1;
+            this.button_Make_statistics.Text = "Формирование";
+            this.button_Make_statistics.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Make_statistics.UseVisualStyleBackColor = true;
+            this.button_Make_statistics.Click += new System.EventHandler(this.button_Make_statistics_Click);
+            // 
+            // button_Show_Type_of_card
+            // 
+            this.button_Show_Type_of_card.Depth = 0;
+            this.button_Show_Type_of_card.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button_Show_Type_of_card.FlatAppearance.BorderSize = 0;
+            this.button_Show_Type_of_card.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Show_Type_of_card.Location = new System.Drawing.Point(0, 40);
+            this.button_Show_Type_of_card.MouseState = MaterialSkin.MouseState.HOVER;
+            this.button_Show_Type_of_card.Name = "button_Show_Type_of_card";
+            this.button_Show_Type_of_card.Primary = true;
+            this.button_Show_Type_of_card.Size = new System.Drawing.Size(250, 40);
+            this.button_Show_Type_of_card.TabIndex = 2;
+            this.button_Show_Type_of_card.Text = "Типы кард";
+            this.button_Show_Type_of_card.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Show_Type_of_card.UseVisualStyleBackColor = true;
             // 
             // Frm_Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(996, 650);
+            this.ClientSize = new System.Drawing.Size(1005, 760);
             this.Controls.Add(this.panelAll);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
@@ -359,12 +407,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panelSubMenu.ResumeLayout(false);
             this.panelSubMenu.PerformLayout();
-            this.panel_Prognoz.ResumeLayout(false);
+            this.panel_Statisitic_SubMenu.ResumeLayout(false);
             this.panelStatistika.ResumeLayout(false);
             this.panelRequestSubMenu.ResumeLayout(false);
             this.panelRequest.ResumeLayout(false);
             this.panelRegularSubMenu.ResumeLayout(false);
             this.panelRegular.ResumeLayout(false);
+            this.panel_Prognoz.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -390,8 +439,11 @@
         private System.Windows.Forms.Panel panelHead;
         private System.Windows.Forms.Panel panelStatistika;
         private MaterialSkin.Controls.MaterialRaisedButton button_Statistika;
-        private System.Windows.Forms.Panel panel_Prognoz;
+        private System.Windows.Forms.Panel panel_Statisitic_SubMenu;
         private MaterialSkin.Controls.MaterialRaisedButton button_Prognoz;
+        private System.Windows.Forms.Panel panel_Prognoz;
+        private MaterialSkin.Controls.MaterialRaisedButton button_Show_Type_of_card;
+        private MaterialSkin.Controls.MaterialRaisedButton button_Make_statistics;
     }
 }
 

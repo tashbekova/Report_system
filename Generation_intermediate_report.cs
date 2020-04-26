@@ -29,6 +29,14 @@ namespace Report_system
             {
                 Table_name ="tbl_Report_A";
             }
+            else if (report == "Report H")
+            {
+                Table_name = "tbl_Report_H";
+            }
+            else if (report == "Report R")
+            {
+                Table_name = "tbl_Report_R";
+            }
             create_excel_doc(path,Table_name,month,year);
             GC.Collect();
         }
@@ -183,7 +191,7 @@ namespace Report_system
                 da.Fill(ds);
                 dt = ds.Tables[0];
             }
-            catch(Exception ex)
+            catch(SqlException ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

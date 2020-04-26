@@ -41,6 +41,8 @@ namespace Report_system
             {
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
+                    System.Diagnostics.Stopwatch swatch = new System.Diagnostics.Stopwatch();
+                    swatch.Start();
                     StreamReader SourceFile = File.OpenText(openFileDialog1.FileName);
                     string[] stroka = File.ReadAllLines(openFileDialog1.FileName);
                     string file_name = (Path.GetFileNameWithoutExtension(openFileDialog1.FileName));
@@ -72,6 +74,10 @@ namespace Report_system
                         }
                        
                     }
+                    // Тут ваш код, время выполнения которого нужно измерить
+                    swatch.Stop();
+                    MessageBox.Show("" + swatch.Elapsed);
+
                 }
             }
             catch

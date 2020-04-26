@@ -63,6 +63,15 @@ namespace Report_system
                     {
                         Table_name= "tbl_Result_Report_A";
                     }
+                    else if (report == "Report H")
+                    {
+                        Table_name = "tbl_Result_Report_H";
+                    }
+                    else if (report == "Report R")
+                    {
+                        Table_name = "tbl_Result_Report_R";
+                    }
+
                     Check check_data = new Check();
                     int check=check_data.Check_Data(Table_name,month, year);
                     if(check==0)

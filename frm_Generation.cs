@@ -134,6 +134,18 @@ namespace Report_system
                                         create.ProgressBarIncrement += update_progressBar;
                                     }
                                 }
+                                else
+                                {
+                                    //pb_Status.PerformStep();
+                                    DirectoryInfo di = Directory.CreateDirectory(path);
+                                    path = path_directory + @"\" + year.ToString() + @"\" + report + @"\" + month.ToString() + "_" + year.ToString() + "_" + report + ".xlsx";
+                                    // pb_Status.PerformStep();
+                                    MessageBox.Show("File is not found");
+                                    //pb_Status.PerformStep();
+                                    Generation_intermediate_report create = new Generation_intermediate_report();
+                                    await Task.Run(() => create.Generation(path, report, month, year));
+                                    create.ProgressBarIncrement += update_progressBar;
+                                }
                             }
                             else
                             {
@@ -143,6 +155,7 @@ namespace Report_system
                                 //pb_Status.PerformStep();
                                 di = Directory.CreateDirectory(path);
                             }
+
 
                         }
                         else if (check == 2)
