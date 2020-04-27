@@ -76,7 +76,7 @@ namespace Report_system
                     int check=check_data.Check_Data(Table_name,month, year);
                     if(check==0)
                     {
-                        MessageBox.Show("Нет добавленных отчетов на этот месяц");
+                        MessageBox.Show("Нет добавленных отчетов на этот месяц", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else if(check>=1)
                     {
@@ -84,27 +84,27 @@ namespace Report_system
                     }
                     else if(check==2)
                     {
-                        MessageBox.Show("Произошла ошибка");
+                        MessageBox.Show("Произошла ошибка", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Введите правильный год");
+                    MessageBox.Show("Введите правильный год", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 
                 //if(comboBox_month)
             }
             else if(comboBox_type_report.SelectedItem==null)
             {
-                MessageBox.Show("Выберите вид отчета");
+                MessageBox.Show("Выберите вид отчета", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if(comboBox_month.SelectedItem==null)
             {
-                MessageBox.Show("Выберите месяц");
+                MessageBox.Show("Выберите месяц", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if(comboBox_year.SelectedItem==null)
             {
-                MessageBox.Show("Выберите год");
+                MessageBox.Show("Выберите год", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -137,7 +137,7 @@ namespace Report_system
             }
             catch(Exception ex)
             {
-                MessageBox.Show(""+ex);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -46,7 +46,7 @@ namespace Report_system
             }
             else
             {
-                MessageBox.Show("Проверьте логин или пароль");
+                MessageBox.Show("Проверьте логин или пароль", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
           

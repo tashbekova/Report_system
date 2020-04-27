@@ -474,7 +474,7 @@ namespace Report_system
                                 }
                                 catch (SqlException ex)
                                 {
-                                    MessageBox.Show("Во время соединения произошла ошибка" + ex);
+                                    MessageBox.Show("Во время соединения произошла ошибка  " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 }
                             }
 
@@ -495,7 +495,7 @@ namespace Report_system
             {
                 flag_report = false;
                 Update_Report(File_name, flag_report,2);
-                MessageBox.Show("Не закончилось успешно, где-то остановилось"+ex);
+                MessageBox.Show("Не закончилось успешно, где-то остановилось  "+ ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -1012,7 +1012,7 @@ namespace Report_system
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Произошла ошибка при добавлении данных" + ex);
+                MessageBox.Show("Произошла ошибка при добавлении данных   " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1054,7 +1054,7 @@ namespace Report_system
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Произошла ошибка при добавлении названия отчёта в БД" + ex);
+                MessageBox.Show("Произошла ошибка при добавлении названия отчёта в БД   " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -1086,7 +1086,7 @@ namespace Report_system
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Произошла ошибка при добавлении названия отчёта в БД" + ex);
+                MessageBox.Show("Произошла ошибка при добавлении названия отчёта в БД   " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {

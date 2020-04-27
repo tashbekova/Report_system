@@ -31,12 +31,16 @@
             this.components = new System.ComponentModel.Container();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label_path_name = new MaterialSkin.Controls.MaterialLabel();
+            this.button_Edit_path_directory = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.label_path_directory = new MaterialSkin.Controls.MaterialLabel();
+            this.button_Make_statistic = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox_type_of_statistic = new System.Windows.Forms.GroupBox();
-            this.rbutton_currency = new MaterialSkin.Controls.MaterialRadioButton();
-            this.rbutton_type_of_card = new MaterialSkin.Controls.MaterialRadioButton();
+            this.rbutton_Currency = new MaterialSkin.Controls.MaterialRadioButton();
+            this.rbutton_Type_of_card = new MaterialSkin.Controls.MaterialRadioButton();
             this.label_description_for_time = new MaterialSkin.Controls.MaterialLabel();
             this.label_description_for_year = new MaterialSkin.Controls.MaterialLabel();
-            this.combobox_month2 = new System.Windows.Forms.ComboBox();
+            this.comboBox_month2 = new System.Windows.Forms.ComboBox();
             this.tblMonthBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportSystemDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.report_SystemDataSet = new Report_system.Report_SystemDataSet();
@@ -44,6 +48,7 @@
             this.rbutton_Time = new MaterialSkin.Controls.MaterialRadioButton();
             this.rbutton_Year = new MaterialSkin.Controls.MaterialRadioButton();
             this.comboBox_year = new System.Windows.Forms.ComboBox();
+            this.tblYearBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox_month = new System.Windows.Forms.ComboBox();
             this.comboBox_type_report = new System.Windows.Forms.ComboBox();
             this.tblTypeofreportBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -52,13 +57,15 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tbl_MonthTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_MonthTableAdapter();
             this.tbl_Type_of_reportTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_Type_of_reportTableAdapter();
-            this.button_Make_statistic = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.tbl_YearTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_YearTableAdapter();
+            this.rbutton_Device = new MaterialSkin.Controls.MaterialRadioButton();
             this.panel1.SuspendLayout();
             this.groupBox_type_of_statistic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblMonthBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportSystemDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.report_SystemDataSet)).BeginInit();
             this.groupBox_Type_of_time.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblYearBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblTypeofreportBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,11 +85,14 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label_path_name);
+            this.panel1.Controls.Add(this.button_Edit_path_directory);
+            this.panel1.Controls.Add(this.label_path_directory);
             this.panel1.Controls.Add(this.button_Make_statistic);
             this.panel1.Controls.Add(this.groupBox_type_of_statistic);
             this.panel1.Controls.Add(this.label_description_for_time);
             this.panel1.Controls.Add(this.label_description_for_year);
-            this.panel1.Controls.Add(this.combobox_month2);
+            this.panel1.Controls.Add(this.comboBox_month2);
             this.panel1.Controls.Add(this.groupBox_Type_of_time);
             this.panel1.Controls.Add(this.comboBox_year);
             this.panel1.Controls.Add(this.comboBox_month);
@@ -97,50 +107,103 @@
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // label_path_name
+            // 
+            this.label_path_name.AutoSize = true;
+            this.label_path_name.Depth = 0;
+            this.label_path_name.Font = new System.Drawing.Font("Roboto", 11F);
+            this.label_path_name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label_path_name.Location = new System.Drawing.Point(28, 78);
+            this.label_path_name.MouseState = MaterialSkin.MouseState.HOVER;
+            this.label_path_name.Name = "label_path_name";
+            this.label_path_name.Size = new System.Drawing.Size(321, 24);
+            this.label_path_name.TabIndex = 19;
+            this.label_path_name.Text = "Папка для сохранения  статистики";
+            // 
+            // button_Edit_path_directory
+            // 
+            this.button_Edit_path_directory.Depth = 0;
+            this.button_Edit_path_directory.Location = new System.Drawing.Point(994, 108);
+            this.button_Edit_path_directory.MouseState = MaterialSkin.MouseState.HOVER;
+            this.button_Edit_path_directory.Name = "button_Edit_path_directory";
+            this.button_Edit_path_directory.Primary = true;
+            this.button_Edit_path_directory.Size = new System.Drawing.Size(233, 30);
+            this.button_Edit_path_directory.TabIndex = 18;
+            this.button_Edit_path_directory.Text = "Изменить папку ";
+            this.button_Edit_path_directory.UseVisualStyleBackColor = true;
+            this.button_Edit_path_directory.Click += new System.EventHandler(this.button_Edit_path_directory_Click);
+            // 
+            // label_path_directory
+            // 
+            this.label_path_directory.AutoSize = true;
+            this.label_path_directory.Depth = 0;
+            this.label_path_directory.Font = new System.Drawing.Font("Roboto", 11F);
+            this.label_path_directory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label_path_directory.Location = new System.Drawing.Point(78, 114);
+            this.label_path_directory.MouseState = MaterialSkin.MouseState.HOVER;
+            this.label_path_directory.Name = "label_path_directory";
+            this.label_path_directory.Size = new System.Drawing.Size(178, 24);
+            this.label_path_directory.TabIndex = 17;
+            this.label_path_directory.Text = "Путь к директории";
+            // 
+            // button_Make_statistic
+            // 
+            this.button_Make_statistic.Depth = 0;
+            this.button_Make_statistic.Location = new System.Drawing.Point(504, 468);
+            this.button_Make_statistic.MouseState = MaterialSkin.MouseState.HOVER;
+            this.button_Make_statistic.Name = "button_Make_statistic";
+            this.button_Make_statistic.Primary = true;
+            this.button_Make_statistic.Size = new System.Drawing.Size(327, 37);
+            this.button_Make_statistic.TabIndex = 16;
+            this.button_Make_statistic.Text = "Сформировать статистику";
+            this.button_Make_statistic.UseVisualStyleBackColor = true;
+            this.button_Make_statistic.Click += new System.EventHandler(this.button_Make_statistic_ClickAsync);
+            // 
             // groupBox_type_of_statistic
             // 
-            this.groupBox_type_of_statistic.Controls.Add(this.rbutton_currency);
-            this.groupBox_type_of_statistic.Controls.Add(this.rbutton_type_of_card);
+            this.groupBox_type_of_statistic.Controls.Add(this.rbutton_Device);
+            this.groupBox_type_of_statistic.Controls.Add(this.rbutton_Currency);
+            this.groupBox_type_of_statistic.Controls.Add(this.rbutton_Type_of_card);
             this.groupBox_type_of_statistic.Location = new System.Drawing.Point(104, 311);
             this.groupBox_type_of_statistic.Name = "groupBox_type_of_statistic";
-            this.groupBox_type_of_statistic.Size = new System.Drawing.Size(267, 112);
+            this.groupBox_type_of_statistic.Size = new System.Drawing.Size(272, 149);
             this.groupBox_type_of_statistic.TabIndex = 15;
             this.groupBox_type_of_statistic.TabStop = false;
             this.groupBox_type_of_statistic.Text = "Тип статистики";
             // 
-            // rbutton_currency
+            // rbutton_Currency
             // 
-            this.rbutton_currency.AutoSize = true;
-            this.rbutton_currency.Depth = 0;
-            this.rbutton_currency.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rbutton_currency.Location = new System.Drawing.Point(3, 66);
-            this.rbutton_currency.Margin = new System.Windows.Forms.Padding(0);
-            this.rbutton_currency.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.rbutton_currency.MouseState = MaterialSkin.MouseState.HOVER;
-            this.rbutton_currency.Name = "rbutton_currency";
-            this.rbutton_currency.Ripple = true;
-            this.rbutton_currency.Size = new System.Drawing.Size(92, 30);
-            this.rbutton_currency.TabIndex = 12;
-            this.rbutton_currency.Text = "Валюта";
-            this.rbutton_currency.UseVisualStyleBackColor = true;
+            this.rbutton_Currency.AutoSize = true;
+            this.rbutton_Currency.Depth = 0;
+            this.rbutton_Currency.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbutton_Currency.Location = new System.Drawing.Point(3, 66);
+            this.rbutton_Currency.Margin = new System.Windows.Forms.Padding(0);
+            this.rbutton_Currency.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbutton_Currency.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbutton_Currency.Name = "rbutton_Currency";
+            this.rbutton_Currency.Ripple = true;
+            this.rbutton_Currency.Size = new System.Drawing.Size(92, 30);
+            this.rbutton_Currency.TabIndex = 12;
+            this.rbutton_Currency.Text = "Валюта";
+            this.rbutton_Currency.UseVisualStyleBackColor = true;
             // 
-            // rbutton_type_of_card
+            // rbutton_Type_of_card
             // 
-            this.rbutton_type_of_card.AutoSize = true;
-            this.rbutton_type_of_card.Checked = true;
-            this.rbutton_type_of_card.Depth = 0;
-            this.rbutton_type_of_card.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rbutton_type_of_card.Location = new System.Drawing.Point(3, 23);
-            this.rbutton_type_of_card.Margin = new System.Windows.Forms.Padding(0);
-            this.rbutton_type_of_card.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.rbutton_type_of_card.MouseState = MaterialSkin.MouseState.HOVER;
-            this.rbutton_type_of_card.Name = "rbutton_type_of_card";
-            this.rbutton_type_of_card.Ripple = true;
-            this.rbutton_type_of_card.Size = new System.Drawing.Size(115, 30);
-            this.rbutton_type_of_card.TabIndex = 11;
-            this.rbutton_type_of_card.TabStop = true;
-            this.rbutton_type_of_card.Text = "Тип карты";
-            this.rbutton_type_of_card.UseVisualStyleBackColor = true;
+            this.rbutton_Type_of_card.AutoSize = true;
+            this.rbutton_Type_of_card.Checked = true;
+            this.rbutton_Type_of_card.Depth = 0;
+            this.rbutton_Type_of_card.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbutton_Type_of_card.Location = new System.Drawing.Point(3, 23);
+            this.rbutton_Type_of_card.Margin = new System.Windows.Forms.Padding(0);
+            this.rbutton_Type_of_card.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbutton_Type_of_card.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbutton_Type_of_card.Name = "rbutton_Type_of_card";
+            this.rbutton_Type_of_card.Ripple = true;
+            this.rbutton_Type_of_card.Size = new System.Drawing.Size(116, 30);
+            this.rbutton_Type_of_card.TabIndex = 11;
+            this.rbutton_Type_of_card.TabStop = true;
+            this.rbutton_Type_of_card.Text = "Вид карты";
+            this.rbutton_Type_of_card.UseVisualStyleBackColor = true;
             // 
             // label_description_for_time
             // 
@@ -169,17 +232,17 @@
             this.label_description_for_year.TabIndex = 13;
             this.label_description_for_year.Text = "Выберите тип отчета и год для формирования статистики";
             // 
-            // combobox_month2
+            // comboBox_month2
             // 
-            this.combobox_month2.DataSource = this.tblMonthBindingSource;
-            this.combobox_month2.DisplayMember = "Month_name";
-            this.combobox_month2.FormattingEnabled = true;
-            this.combobox_month2.Location = new System.Drawing.Point(824, 340);
-            this.combobox_month2.Name = "combobox_month2";
-            this.combobox_month2.Size = new System.Drawing.Size(238, 28);
-            this.combobox_month2.TabIndex = 12;
-            this.combobox_month2.ValueMember = "ID";
-            this.combobox_month2.Visible = false;
+            this.comboBox_month2.DataSource = this.tblMonthBindingSource;
+            this.comboBox_month2.DisplayMember = "Month_name";
+            this.comboBox_month2.FormattingEnabled = true;
+            this.comboBox_month2.Location = new System.Drawing.Point(824, 340);
+            this.comboBox_month2.Name = "comboBox_month2";
+            this.comboBox_month2.Size = new System.Drawing.Size(238, 28);
+            this.comboBox_month2.TabIndex = 12;
+            this.comboBox_month2.ValueMember = "ID";
+            this.comboBox_month2.Visible = false;
             // 
             // tblMonthBindingSource
             // 
@@ -202,7 +265,7 @@
             this.groupBox_Type_of_time.Controls.Add(this.rbutton_Year);
             this.groupBox_Type_of_time.Location = new System.Drawing.Point(104, 170);
             this.groupBox_Type_of_time.Name = "groupBox_Type_of_time";
-            this.groupBox_Type_of_time.Size = new System.Drawing.Size(267, 112);
+            this.groupBox_Type_of_time.Size = new System.Drawing.Size(272, 112);
             this.groupBox_Type_of_time.TabIndex = 10;
             this.groupBox_Type_of_time.TabStop = false;
             this.groupBox_Type_of_time.Text = "Статистика";
@@ -245,20 +308,19 @@
             // 
             // comboBox_year
             // 
+            this.comboBox_year.DataSource = this.tblYearBindingSource;
+            this.comboBox_year.DisplayMember = "Name_of_year";
             this.comboBox_year.FormattingEnabled = true;
-            this.comboBox_year.Items.AddRange(new object[] {
-            "2020",
-            "2021",
-            "2022",
-            "2023",
-            "2024",
-            "2025",
-            "2026"});
             this.comboBox_year.Location = new System.Drawing.Point(824, 238);
             this.comboBox_year.Name = "comboBox_year";
             this.comboBox_year.Size = new System.Drawing.Size(238, 28);
             this.comboBox_year.TabIndex = 8;
-            this.comboBox_year.Text = "Год";
+            this.comboBox_year.ValueMember = "Name_of_year";
+            // 
+            // tblYearBindingSource
+            // 
+            this.tblYearBindingSource.DataMember = "tbl_Year";
+            this.tblYearBindingSource.DataSource = this.reportSystemDataSetBindingSource;
             // 
             // comboBox_month
             // 
@@ -322,17 +384,25 @@
             // 
             this.tbl_Type_of_reportTableAdapter.ClearBeforeFill = true;
             // 
-            // button_Make_statistic
+            // tbl_YearTableAdapter
             // 
-            this.button_Make_statistic.Depth = 0;
-            this.button_Make_statistic.Location = new System.Drawing.Point(504, 468);
-            this.button_Make_statistic.MouseState = MaterialSkin.MouseState.HOVER;
-            this.button_Make_statistic.Name = "button_Make_statistic";
-            this.button_Make_statistic.Primary = true;
-            this.button_Make_statistic.Size = new System.Drawing.Size(327, 37);
-            this.button_Make_statistic.TabIndex = 16;
-            this.button_Make_statistic.Text = "Сформировать статистику";
-            this.button_Make_statistic.UseVisualStyleBackColor = true;
+            this.tbl_YearTableAdapter.ClearBeforeFill = true;
+            // 
+            // rbutton_Device
+            // 
+            this.rbutton_Device.AutoSize = true;
+            this.rbutton_Device.Depth = 0;
+            this.rbutton_Device.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbutton_Device.Location = new System.Drawing.Point(3, 106);
+            this.rbutton_Device.Margin = new System.Windows.Forms.Padding(0);
+            this.rbutton_Device.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbutton_Device.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbutton_Device.Name = "rbutton_Device";
+            this.rbutton_Device.Ripple = true;
+            this.rbutton_Device.Size = new System.Drawing.Size(262, 30);
+            this.rbutton_Device.TabIndex = 13;
+            this.rbutton_Device.Text = "Банкоматы/POS-терминалы";
+            this.rbutton_Device.UseVisualStyleBackColor = true;
             // 
             // frm_Statistic
             // 
@@ -356,6 +426,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.report_SystemDataSet)).EndInit();
             this.groupBox_Type_of_time.ResumeLayout(false);
             this.groupBox_Type_of_time.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblYearBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblTypeofreportBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -382,10 +453,16 @@
         private MaterialSkin.Controls.MaterialRadioButton rbutton_Year;
         private MaterialSkin.Controls.MaterialLabel label_description_for_time;
         private MaterialSkin.Controls.MaterialLabel label_description_for_year;
-        private System.Windows.Forms.ComboBox combobox_month2;
+        private System.Windows.Forms.ComboBox comboBox_month2;
         private System.Windows.Forms.GroupBox groupBox_type_of_statistic;
-        private MaterialSkin.Controls.MaterialRadioButton rbutton_currency;
-        private MaterialSkin.Controls.MaterialRadioButton rbutton_type_of_card;
+        private MaterialSkin.Controls.MaterialRadioButton rbutton_Currency;
+        private MaterialSkin.Controls.MaterialRadioButton rbutton_Type_of_card;
         private MaterialSkin.Controls.MaterialRaisedButton button_Make_statistic;
+        private MaterialSkin.Controls.MaterialLabel label_path_name;
+        private MaterialSkin.Controls.MaterialRaisedButton button_Edit_path_directory;
+        private MaterialSkin.Controls.MaterialLabel label_path_directory;
+        private System.Windows.Forms.BindingSource tblYearBindingSource;
+        private Report_SystemDataSetTableAdapters.tbl_YearTableAdapter tbl_YearTableAdapter;
+        private MaterialSkin.Controls.MaterialRadioButton rbutton_Device;
     }
 }

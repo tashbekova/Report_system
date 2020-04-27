@@ -6,12 +6,13 @@ using MaterialSkin.Controls;
 using System.IO;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace Report_system
 {
-    public partial class frm_Generation : MaterialForm
+    public partial class frm_Generation_report : MaterialForm
     {
-        public frm_Generation()
+        public frm_Generation_report()
         {
             InitializeComponent();
             var skinManager = MaterialSkinManager.Instance;
@@ -22,6 +23,8 @@ namespace Report_system
 
         private void Form3_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "report_SystemDataSet1.tbl_Year". При необходимости она может быть перемещена или удалена.
+            this.tbl_YearTableAdapter.Fill(this.report_SystemDataSet1.tbl_Year);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "report_SystemDataSet.tbl_Type_of_report". При необходимости она может быть перемещена или удалена.
             this.tbl_Type_of_reportTableAdapter.Fill(this.report_SystemDataSet.tbl_Type_of_report);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "report_SystemDataSet.tbl_Month". При необходимости она может быть перемещена или удалена.
@@ -61,7 +64,8 @@ namespace Report_system
                     string Table_name = "";
                     string report = comboBox_type_report.SelectedValue.ToString();
                     int month = Convert.ToInt32(comboBox_month.SelectedValue.ToString()) ;
-                    int year = Convert.ToInt32(comboBox_year.SelectedItem.ToString());
+                    //int year = Convert.ToInt32(comboBox_year.SelectedItem.ToString());
+                    int year= (int)((DataRowView)comboBox_year.SelectedItem)[comboBox_year.DisplayMember];
                     string path_directory = label_path_directory.Text.ToString();
                     int year_now =  Convert.ToInt32(DateTime.Now.ToString("yyyy"));
 
@@ -91,7 +95,7 @@ namespace Report_system
                         if (check == 0)
                         {
                             //pb_Status.PerformStep();
-                            MessageBox.Show("Нет данных за этот месяц и год");
+                            MessageBox.Show("Нет данных за этот месяц и год", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             pb_Status.Value = 50 ;
                             pb_Status.Visible = false;
                         }
@@ -162,21 +166,21 @@ namespace Report_system
                         {
                             pb_Status.Value = 50;
                             pb_Status.Visible = false;
-                            MessageBox.Show("Произошла ошибка");
+                            MessageBox.Show("Произошла ошибка", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     else
                     {
                         pb_Status.Value = 50;
                         pb_Status.Visible = false;
-                        MessageBox.Show("Выберите корректный год");
+                        MessageBox.Show("Выберите корректный год", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)
                 {
                     pb_Status.Value = 50;
                     pb_Status.Visible = false;
-                    MessageBox.Show("" + ex);
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 finally
                 {
@@ -239,7 +243,7 @@ namespace Report_system
             }
             catch(Exception ex)
             {
-                MessageBox.Show("" + ex);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void Show_path()
@@ -262,6 +266,15 @@ namespace Report_system
             myConnection.Close();
         }
 
+        private void label_path_name_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_path_directory_Click(object sender, EventArgs e)
+        {
+
+        }
     }
    
 }

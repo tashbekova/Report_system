@@ -19,15 +19,15 @@ namespace Report_system
         //private Excel.Sheets excelsheets;
         private Excel.Worksheet excelworksheet;
         private Excel.Range excelrange;
-        frm_Generation pb = new frm_Generation();
+        frm_Generation_report pb = new frm_Generation_report();
         public event Action<int> ProgressBarIncrement;  //прогресс барр
 
         public void Generation(string path,string report,int month,int year)
         {
             string Table_name = "";
-            if (report=="Report A")
+            if (report == "Report A")
             {
-                Table_name ="tbl_Report_A";
+                Table_name = "tbl_Report_A";
             }
             else if (report == "Report H")
             {
@@ -37,13 +37,6 @@ namespace Report_system
             {
                 Table_name = "tbl_Report_R";
             }
-            create_excel_doc(path,Table_name,month,year);
-            GC.Collect();
-        }
-
-        public void create_excel_doc(string path,string Table_name,int month,int year)
-        {
-           
             try
             {
                 excelapp = new Excel.Application();
@@ -68,20 +61,11 @@ namespace Report_system
                 decimal data2;
 
                 //называем колонки
-                //for (int i=0;i<dt.Columns.Count;i++)
-                //{
-                //    data = dt.Columns[i].ColumnName.ToString();
-                //    excelworksheet.Cells[1, i + 1] = data;
-
-                    
-                //    ProgressBarIncrement?.Invoke(i); //прогресс бар двигается вместе со строками
-                //}
-                excelworksheet.Cells[1, 1] = "Дата";
-                excelworksheet.Cells[1, 2] = "кол-во карт";
-                excelworksheet.Cells[1, 3] = "Место операции";
-                excelworksheet.Cells[1, 4] = "Сумма";
-                excelworksheet.Cells[1, 5] = "Вид карты";
-                excelworksheet.Cells[1, 6] = "Валюта";
+                for (int i = 0; i < dt.Columns.Count; i++)
+                {
+                    data = dt.Columns[i].ColumnName.ToString();
+                    excelworksheet.Cells[1, i + 1] = data;
+                }
                 //выделяем первую строку
                 excelrange = excelworksheet.get_Range("A1:F1", Type.Missing);
 
@@ -152,10 +136,10 @@ namespace Report_system
                 ////Отсоединяемся от Excel
                 ReleaseObject(excelrange);
                 ReleaseObject(excelworksheet);
+                ReleaseObject(excelworkbook);
                 ReleaseObject(excelapp);
-
                 MessageBox.Show("Успешно сформирован отчет");
-
+                GC.Collect();
 
             }
         }
@@ -174,13 +158,12 @@ namespace Report_system
             {
                 con.Open();
                 string query = "SELECT " +
-                    Table_name + ".Posting_date, " +
-                    Table_name + ".Number_of_trans, " +
-                    Table_name + ".Device, " +
-                    Table_name+".Account_amount,"+
-                    //"REPLACE(convert(varchar(50),"+ Table_name+".Transaction_amount), '.', ','),"+
-                    Table_name + ".Type_of_card, " +
-                    Table_name + ".Currency " +
+                    Table_name + ".Posting_date AS \"Дата\", " +
+                    Table_name + ".Number_of_trans AS \"Кол-во карт\", " +
+                    Table_name + ".Device AS \"Место операции\", " +
+                    Table_name+ ".Account_amount AS \"Сумма\"," +
+                    Table_name + ".Type_of_card AS \"Вид карты\", " +
+                    Table_name + ".Currency AS \"Валюта\"" +
                     " FROM " + Table_name +
                     " WHERE MONTH(" + Table_name + ".Posting_date)=" + month + " and YEAR(" + Table_name + ".Posting_date)=" + year+
                     " ORDER BY "+Table_name+".Posting_date";
@@ -227,8 +210,6 @@ namespace Report_system
         {
             try
             {
-                // Откройте рабочую книгу только для чтения.
-                //excelworkbook = excelapp.Workbooks.Open(path);
 
                 // Получить первый рабочий лист.
                 excelworksheet = (Excel.Worksheet)excelworkbook.Sheets[1];
@@ -265,7 +246,7 @@ namespace Report_system
             }
             catch(Exception ex)
             {
-                MessageBox.Show("" + ex);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {

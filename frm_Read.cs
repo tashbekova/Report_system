@@ -49,7 +49,7 @@ namespace Report_system
                     lblName.Text = file_name;
                     if (stroka.Length == 0)
                     {
-                        MessageBox.Show("Файл пуст");
+                        MessageBox.Show("Файл пуст", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                     {
@@ -116,7 +116,7 @@ namespace Report_system
             }
             catch (SqlException ex)
             {
-                MessageBox.Show("Произошла ошибка при добавлении названия отчёта в БД" + ex);
+                MessageBox.Show("Произошла ошибка при добавлении названия отчёта в БД " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
