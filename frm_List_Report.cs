@@ -24,6 +24,8 @@ namespace Report_system
 
         private void Form3_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "report_SystemDataSet.tbl_Name_of_report". При необходимости она может быть перемещена или удалена.
+            this.tbl_Name_of_reportTableAdapter.Fill(this.report_SystemDataSet.tbl_Name_of_report);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "report_SystemDataSet.tbl_Year". При необходимости она может быть перемещена или удалена.
             this.tbl_YearTableAdapter.Fill(this.report_SystemDataSet.tbl_Year);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "report_SystemDataSet.tbl_Type_of_report". При необходимости она может быть перемещена или удалена.
@@ -62,7 +64,7 @@ namespace Report_system
                 int year = (int)((DataRowView)comboBox_year.SelectedItem)[comboBox_year.DisplayMember];
                 if (year>=2000)
                 {
-                    if (report=="Report A")
+                    if (report== "Report A")
                     {
                         Table_name= "tbl_Result_Report_A";
                     }

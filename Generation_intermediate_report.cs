@@ -42,8 +42,15 @@ namespace Report_system
                 excelworksheet.Activate();
                 //Название листа
                 excelworksheet.Name = "Банкоматы";
-                ((Excel.Worksheet)excelapp.Sheets[2]).Name = "POS-терминал";
-                ((Excel.Worksheet)excelapp.Sheets[3]).Name = "POS-терминалы";
+
+                excelworksheet = (Excel.Worksheet)excelsheets.get_Item(2);
+                //Название листа
+                excelworksheet.Name = "POS-терминал";
+
+                excelworksheet = (Excel.Worksheet)excelsheets.get_Item(3);
+                //Название листа
+                excelworksheet.Name = "POS-терминалы";
+
 
                 Check check_data = new Check();
                 int check_A = check_data.Check_Data("tbl_Report_A", month, year);
@@ -61,9 +68,9 @@ namespace Report_system
                     Make_calculations(2);
                     Draw_line(2);
                 }
-                if (check_H > 0)
+                if (check_R > 0)
                 {
-                    Add_data("tbl_Report_R", 3, month, year);
+                    Add_data("tbl_Report_R",3, month, year);
                     Make_calculations(3);
                     Draw_line(3);
                 }

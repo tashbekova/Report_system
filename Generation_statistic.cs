@@ -53,7 +53,7 @@ namespace Report_system
 
                 //Название листа
                 excelworksheet.Name = "Лист 1";
-                excelsheets = excelapp.Worksheets;
+               // excelsheets = excelapp.Worksheets;
 
 
                 //Выгрузка данных
@@ -73,7 +73,8 @@ namespace Report_system
                 excelrange = excelworksheet.get_Range("A1:C1", Type.Missing);
                 excelrange.Merge(Type.Missing);
                 excelworksheet.Cells[1,1] = "Статистика по совершенным операциям в " + device + " по " + name + " за " + year + " год.";
-              
+                
+
                 //заполняем строки
                 for (rowInd = 0; rowInd < dt.Rows.Count; rowInd++)
                 {
@@ -197,8 +198,9 @@ namespace Report_system
 
                 excelrange = excelworksheet.get_Range("A1:C1", Type.Missing);
                 excelrange.Merge(Type.Missing);
-                excelworksheet.Cells[1,1] ="Статистика по совершенным операциям в "+device+" по "+name +" за период времени с "+
-                    month+"."+year+" по "+month2+"."+year;
+                excelworksheet.Cells[1, 1] = "Статистика по совершенным операциям"+ " в " + device + " по " + name + " за период времени с " +
+                    month + "." + year + " по " + month2 + "." + year; ;
+
                 //Выгрузка данных
                 DataTable dt = GetData(Table_name, month,month2, year,column,false);
                 int collInd = 0;
@@ -456,7 +458,7 @@ namespace Report_system
               (Excel.ChartObjects)excelworksheet.ChartObjects(Type.Missing);
             //Добавляем одну диаграмму  в Excel.ChartObjects - диаграмма пока 
             //не выбрана, но место для нее выделено в методе Add
-            Excel.ChartObject chartsobjrct = chartsobjrcts.Add(300, 20, 500, 350);
+            Excel.ChartObject chartsobjrct = chartsobjrcts.Add(400, 20, 500, 350);
             chartsobjrct.Chart.ChartWizard(chartRange, Excel.XlChartType.xlColumnClustered
             ,2, Excel.XlRowCol.xlColumns, Type.Missing,
               0, true, "Статистика " + column, column, "Статистика", Type.Missing);
@@ -476,10 +478,15 @@ namespace Report_system
             excelworksheet.Activate();
             //выделяем первую строку
             excelrange = excelworksheet.get_Range("A1:C2", Type.Missing);
-
             //делаем полужирный текст и перенос слов
             excelrange.WrapText = true;
             excelrange.Font.Bold = true;
+
+            excelrange = excelworksheet.get_Range("A1:C1", Type.Missing);
+            //размер шрифта
+            excelrange.Font.Size = 16;
+            //название шрифта
+            excelrange.Font.Name = "Times New Roman";
             //выбираем всю область данных
             excelrange = excelworksheet.UsedRange;
 
@@ -492,6 +499,8 @@ namespace Report_system
             excelrange.Borders.get_Item(Excel.XlBordersIndex.xlInsideHorizontal).LineStyle = Excel.XlLineStyle.xlContinuous;
             excelrange.Borders.get_Item(Excel.XlBordersIndex.xlInsideVertical).LineStyle = Excel.XlLineStyle.xlContinuous;
             excelrange.Borders.get_Item(Excel.XlBordersIndex.xlEdgeTop).LineStyle = Excel.XlLineStyle.xlContinuous;
+
+            excelworksheet.Cells[1,1].Rows.RowHeight = 70;
         }
 
         private void Find_Table_name(string report,string column)

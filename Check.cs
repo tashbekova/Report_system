@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace Report_system
 {
-    class Check
+    public class Check
     {
         
         public int Check_Report(string File_name)
