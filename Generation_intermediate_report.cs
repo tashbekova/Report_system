@@ -28,7 +28,7 @@ namespace Report_system
             {
                 excelapp = new Excel.Application();
                 //добавляем книгу
-                excelworkbook=excelapp.Workbooks.Add(Type.Missing);
+                excelworkbook = excelapp.Workbooks.Add(Type.Missing);
 
                 //делаем временно неактивным документ
                 excelapp.Interactive = false;
@@ -42,24 +42,35 @@ namespace Report_system
                 excelworksheet.Activate();
                 //Название листа
                 excelworksheet.Name = "Банкоматы";
-                excelworksheet = (Excel.Worksheet)excelsheets.get_Item(2);
-                excelworksheet.Activate();
-                //Название листа
-                excelworksheet.Name = "POS-терминал";
-                excelworksheet = (Excel.Worksheet)excelsheets.get_Item(3);
-                excelworksheet.Activate();
-                //Название листа
-                excelworksheet.Name = "POS-терминалы";
-                Add_data("tbl_Report_A", 1, month, year);
-                Draw_line(1);
-                Add_data("tbl_Report_H", 2, month, year);
-                Draw_line(2);
-                Add_data("tbl_Report_R", 3, month, year);
-                Draw_line(3);
+                ((Excel.Worksheet)excelapp.Sheets[2]).Name = "POS-терминал";
+                ((Excel.Worksheet)excelapp.Sheets[3]).Name = "POS-терминалы";
+
+                Check check_data = new Check();
+                int check_A = check_data.Check_Data("tbl_Report_A", month, year);
+                int check_H = check_data.Check_Data("tbl_Report_H", month, year);
+                int check_R = check_data.Check_Data("tbl_Report_R", month, year);
+                if (check_A > 0)
+                {
+                    Add_data("tbl_Report_A", 1, month, year);
+                    Make_calculations(1);
+                    Draw_line(1);
+                }
+                if (check_H > 0)
+                {
+                    Add_data("tbl_Report_H", 2, month, year);
+                    Make_calculations(2);
+                    Draw_line(2);
+                }
+                if (check_H > 0)
+                {
+                    Add_data("tbl_Report_R", 3, month, year);
+                    Make_calculations(3);
+                    Draw_line(3);
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -71,9 +82,6 @@ namespace Report_system
                 excelapp.ScreenUpdating = true;
                 excelapp.UserControl = true;
 
-                Make_calculations(1);
-                Make_calculations(2);
-                Make_calculations(3);
                 //excelapp.DefaultFilePath = path;
                 // excelworkbook.Saved = true;
                 //excelworkbook.SaveAs(path);
@@ -81,6 +89,7 @@ namespace Report_system
                 ////Отсоединяемся от Excel
                 ReleaseObject(excelrange);
                 ReleaseObject(excelworksheet);
+                ReleaseObject(excelsheets);
                 ReleaseObject(excelworkbook);
                 ReleaseObject(excelapp);
                 MessageBox.Show("Успешно сформирован отчет");

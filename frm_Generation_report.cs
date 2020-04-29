@@ -63,7 +63,6 @@ namespace Report_system
                     string path;
                     string report = comboBox_type_report.SelectedValue.ToString();
                     int month = Convert.ToInt32(comboBox_month.SelectedValue.ToString()) ;
-                    //int year = Convert.ToInt32(comboBox_year.SelectedItem.ToString());
                     int year= (int)((DataRowView)comboBox_year.SelectedItem)[comboBox_year.DisplayMember];
                     string path_directory = label_path_directory.Text.ToString();
                     int year_now =  Convert.ToInt32(DateTime.Now.ToString("yyyy"));
@@ -76,7 +75,7 @@ namespace Report_system
                     //string Table_name = "";
                     if (year >= 2000 && year<=year_now)
                     {
-                        if (report == "Report A")
+                        if (report == "Промежуточный отчет")
                         {
                            
                         }
@@ -92,11 +91,19 @@ namespace Report_system
                             pb_Status.Value = 50;
                             pb_Status.Visible = false;
                         }
-                        else if(check_A >= 0 || check_H >= 0 || check_R >= 0)
+                        else if(check_A > 0 || check_H > 0 || check_R > 0)
                         {
-                             if (check_A <= 0 && check_H >= 0 && check_R >= 0)
+                             if (check_A <= 0 && check_H > 0 && check_R > 0)
                             {
-                                MessageBox.Show("Нет данных за этот месяц и год", "Error", MessageBoxButtons.OK);
+                                MessageBox.Show("Нет данных по отчету A, данные по банкоматам будут пусты", "Error", MessageBoxButtons.OK);
+                            }
+                            else if (check_A > 0 && check_H <= 0 && check_R > 0)
+                            {
+                                MessageBox.Show("Нет данных по отчету H, данные по POS-терминалам будут пусты", "Error", MessageBoxButtons.OK);
+                            }
+                            else if (check_A > 0 && check_H > 0 && check_R <= 0)
+                            {
+                                MessageBox.Show("Нет данных по отчету R, данные по POS-терминалам будут пусты", "Error", MessageBoxButtons.OK);
                             }
                             //pb_Status.PerformStep();
                             path = path_directory + @"\" + year.ToString();
@@ -129,7 +136,7 @@ namespace Report_system
                                     else
                                     {
                                         // pb_Status.PerformStep();
-                                        MessageBox.Show("File is not found");
+                                        //MessageBox.Show("Отчет еще не сформирован");
                                         //pb_Status.PerformStep();
                                         Generation_intermediate_report create = new Generation_intermediate_report();
                                         await Task.Run(() => create.Generation(path, month, year));
@@ -142,7 +149,7 @@ namespace Report_system
                                     DirectoryInfo di = Directory.CreateDirectory(path);
                                     path = path_directory + @"\" + year.ToString() + @"\" + report + @"\" + month.ToString() + "_" + year.ToString() + "_" + report + ".xlsx";
                                     // pb_Status.PerformStep();
-                                    MessageBox.Show("File is not found");
+                                    //MessageBox.Show("Отчет еще не сформирован");
                                     //pb_Status.PerformStep();
                                     Generation_intermediate_report create = new Generation_intermediate_report();
                                     await Task.Run(() => create.Generation(path, month, year));
@@ -158,7 +165,7 @@ namespace Report_system
                                 di = Directory.CreateDirectory(path);
                                 path = path_directory + @"\" + year.ToString() + @"\" + report + @"\" + month.ToString() + "_" + year.ToString() + "_" + report + ".xlsx";
                                 // pb_Status.PerformStep();
-                                MessageBox.Show("File is not found");
+                                //MessageBox.Show("Отчет еще не сформирован");
                                 //pb_Status.PerformStep();
                                 Generation_intermediate_report create = new Generation_intermediate_report();
                                 await Task.Run(() => create.Generation(path, month, year));
@@ -191,15 +198,15 @@ namespace Report_system
             }
             else if (comboBox_type_report.SelectedItem == null)
             {
-                MessageBox.Show("Выберите вид отчета");
+                MessageBox.Show("Выберите вид отчета","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (comboBox_month.SelectedItem == null)
             {
-                MessageBox.Show("Выберите месяц");
+                MessageBox.Show("Выберите месяц", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (comboBox_year.SelectedItem == null)
             {
-                MessageBox.Show("Выберите год");
+                MessageBox.Show("Выберите год", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             GC.Collect();
         }

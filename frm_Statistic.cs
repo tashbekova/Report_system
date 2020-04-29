@@ -24,6 +24,8 @@ namespace Report_system
 
         private void frm_Statistic_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "report_SystemDataSet1.tbl_Name_of_report". При необходимости она может быть перемещена или удалена.
+            this.tbl_Name_of_reportTableAdapter.Fill(this.report_SystemDataSet1.tbl_Name_of_report);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "report_SystemDataSet.tbl_Year". При необходимости она может быть перемещена или удалена.
             this.tbl_YearTableAdapter.Fill(this.report_SystemDataSet.tbl_Year);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "report_SystemDataSet.tbl_Type_of_report". При необходимости она может быть перемещена или удалена.
@@ -139,7 +141,7 @@ namespace Report_system
                                     }
                                     else
                                     {
-                                        MessageBox.Show("File is not found");
+                                        MessageBox.Show("Статистика еще не сформирована");
                                         await Task.Run(() => statistic.Generation(path, report, year,column));
                                     }
                                 }
@@ -147,7 +149,7 @@ namespace Report_system
                                 {
                                     DirectoryInfo di = Directory.CreateDirectory(path);
                                     path = path_directory + @"\" + year.ToString() + @"\" + report + @"\" + column.ToString() + "_" + year.ToString() + "_" + report + ".xlsx";
-                                    MessageBox.Show("File is not found");
+                                    MessageBox.Show("Статистика еще не сформирована");
                                     await Task.Run(() => statistic.Generation(path, report, year,column));
                                 }
                             }
@@ -208,7 +210,7 @@ namespace Report_system
                                         else
                                         {
                                             // pb_Status.PerformStep();
-                                            MessageBox.Show("File is not found");
+                                            MessageBox.Show("Статистика еще не сформирована");
                                             await Task.Run(() => statistic.Generation(path, report, month, month2, year, column));
                                         }
                                     }
@@ -219,7 +221,7 @@ namespace Report_system
                                         path = path_directory + @"\" + year.ToString() + @"\" + report + @"\" +
                                         month.ToString() + "/" + year.ToString() + "-" + month2.ToString() + "/" + year.ToString() + "_" + report + ".xlsx";
                                         // pb_Status.PerformStep();
-                                        MessageBox.Show("File is not found");
+                                        MessageBox.Show("Статистика еще не сформирована");
                                         //pb_Status.PerformStep();
                                         await Task.Run(() => statistic.Generation(path, report, month, month2, year, column));
                                     }
@@ -232,7 +234,7 @@ namespace Report_system
                                     path = path_directory + @"\" + year.ToString() + @"\" + report + @"\" +
                                        month.ToString() + "/" + year.ToString() + "-" + month2.ToString() + "/" + year.ToString() + "_" + report + ".xlsx";
                                     // pb_Status.PerformStep();
-                                    MessageBox.Show("File is not found");
+                                    MessageBox.Show("Статистика еще не сформирована");
                                     //pb_Status.PerformStep();
                                     await Task.Run(() => statistic.Generation(path, report, month, month2, year, column));
 
@@ -336,6 +338,11 @@ namespace Report_system
             {
                 GC.Collect();
             }
+        }
+
+        private void comboBox_type_report_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

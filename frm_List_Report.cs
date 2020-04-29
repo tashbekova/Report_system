@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace Report_system
 {
@@ -23,6 +24,8 @@ namespace Report_system
 
         private void Form3_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "report_SystemDataSet.tbl_Year". При необходимости она может быть перемещена или удалена.
+            this.tbl_YearTableAdapter.Fill(this.report_SystemDataSet.tbl_Year);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "report_SystemDataSet.tbl_Type_of_report". При необходимости она может быть перемещена или удалена.
             this.tbl_Type_of_reportTableAdapter.Fill(this.report_SystemDataSet.tbl_Type_of_report);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "report_SystemDataSet.tbl_Month". При необходимости она может быть перемещена или удалена.
@@ -56,8 +59,8 @@ namespace Report_system
                 string Table_name= "";
                 string report = comboBox_type_report.SelectedValue.ToString();
                 int month = Convert.ToInt32(comboBox_month.SelectedValue.ToString());
-                int year = Convert.ToInt32(comboBox_year.SelectedItem.ToString());
-                if(year>=2000)
+                int year = (int)((DataRowView)comboBox_year.SelectedItem)[comboBox_year.DisplayMember];
+                if (year>=2000)
                 {
                     if (report=="Report A")
                     {
@@ -80,6 +83,7 @@ namespace Report_system
                     }
                     else if(check>=1)
                     {
+                        dataGridView_List_Reports.Visible = true;
                         Load_Data(Table_name,month,year);
                     }
                     else if(check==2)
@@ -92,7 +96,6 @@ namespace Report_system
                     MessageBox.Show("Введите правильный год", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 
-                //if(comboBox_month)
             }
             else if(comboBox_type_report.SelectedItem==null)
             {

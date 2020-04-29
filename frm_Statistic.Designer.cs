@@ -59,6 +59,9 @@
             this.tbl_MonthTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_MonthTableAdapter();
             this.tbl_Type_of_reportTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_Type_of_reportTableAdapter();
             this.tbl_YearTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_YearTableAdapter();
+            this.report_SystemDataSet1 = new Report_system.Report_SystemDataSet();
+            this.tblNameofreportBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tbl_Name_of_reportTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_Name_of_reportTableAdapter();
             this.panel1.SuspendLayout();
             this.groupBox_type_of_statistic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblMonthBindingSource)).BeginInit();
@@ -67,6 +70,8 @@
             this.groupBox_Type_of_time.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblYearBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblTypeofreportBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report_SystemDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblNameofreportBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // materialRaisedButton1
@@ -149,7 +154,7 @@
             // button_Make_statistic
             // 
             this.button_Make_statistic.Depth = 0;
-            this.button_Make_statistic.Location = new System.Drawing.Point(459, 530);
+            this.button_Make_statistic.Location = new System.Drawing.Point(472, 480);
             this.button_Make_statistic.MouseState = MaterialSkin.MouseState.HOVER;
             this.button_Make_statistic.Name = "button_Make_statistic";
             this.button_Make_statistic.Primary = true;
@@ -352,7 +357,7 @@
             // 
             // comboBox_type_report
             // 
-            this.comboBox_type_report.DataSource = this.tblTypeofreportBindingSource;
+            this.comboBox_type_report.DataSource = this.tblNameofreportBindingSource;
             this.comboBox_type_report.DisplayMember = "Type_of_report";
             this.comboBox_type_report.FormattingEnabled = true;
             this.comboBox_type_report.Location = new System.Drawing.Point(472, 238);
@@ -360,6 +365,7 @@
             this.comboBox_type_report.Size = new System.Drawing.Size(238, 28);
             this.comboBox_type_report.TabIndex = 6;
             this.comboBox_type_report.ValueMember = "Type_of_report";
+            this.comboBox_type_report.SelectedIndexChanged += new System.EventHandler(this.comboBox_type_report_SelectedIndexChanged);
             // 
             // tblTypeofreportBindingSource
             // 
@@ -404,6 +410,20 @@
             // 
             this.tbl_YearTableAdapter.ClearBeforeFill = true;
             // 
+            // report_SystemDataSet1
+            // 
+            this.report_SystemDataSet1.DataSetName = "Report_SystemDataSet";
+            this.report_SystemDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tblNameofreportBindingSource
+            // 
+            this.tblNameofreportBindingSource.DataMember = "tbl_Name_of_report";
+            this.tblNameofreportBindingSource.DataSource = this.report_SystemDataSet1;
+            // 
+            // tbl_Name_of_reportTableAdapter
+            // 
+            this.tbl_Name_of_reportTableAdapter.ClearBeforeFill = true;
+            // 
             // frm_Statistic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -428,6 +448,8 @@
             this.groupBox_Type_of_time.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblYearBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblTypeofreportBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report_SystemDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblNameofreportBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -464,5 +486,8 @@
         private System.Windows.Forms.BindingSource tblYearBindingSource;
         private Report_SystemDataSetTableAdapters.tbl_YearTableAdapter tbl_YearTableAdapter;
         private MaterialSkin.Controls.MaterialRadioButton rbutton_Device;
+        private Report_SystemDataSet report_SystemDataSet1;
+        private System.Windows.Forms.BindingSource tblNameofreportBindingSource;
+        private Report_SystemDataSetTableAdapters.tbl_Name_of_reportTableAdapter tbl_Name_of_reportTableAdapter;
     }
 }
