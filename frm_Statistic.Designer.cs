@@ -36,6 +36,7 @@
             this.label_path_directory = new MaterialSkin.Controls.MaterialLabel();
             this.button_Make_statistic = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox_type_of_statistic = new System.Windows.Forms.GroupBox();
+            this.rbutton_Device = new MaterialSkin.Controls.MaterialRadioButton();
             this.rbutton_Currency = new MaterialSkin.Controls.MaterialRadioButton();
             this.rbutton_Type_of_card = new MaterialSkin.Controls.MaterialRadioButton();
             this.label_description_for_time = new MaterialSkin.Controls.MaterialLabel();
@@ -58,7 +59,6 @@
             this.tbl_MonthTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_MonthTableAdapter();
             this.tbl_Type_of_reportTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_Type_of_reportTableAdapter();
             this.tbl_YearTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_YearTableAdapter();
-            this.rbutton_Device = new MaterialSkin.Controls.MaterialRadioButton();
             this.panel1.SuspendLayout();
             this.groupBox_type_of_statistic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblMonthBindingSource)).BeginInit();
@@ -149,7 +149,7 @@
             // button_Make_statistic
             // 
             this.button_Make_statistic.Depth = 0;
-            this.button_Make_statistic.Location = new System.Drawing.Point(504, 468);
+            this.button_Make_statistic.Location = new System.Drawing.Point(459, 530);
             this.button_Make_statistic.MouseState = MaterialSkin.MouseState.HOVER;
             this.button_Make_statistic.Name = "button_Make_statistic";
             this.button_Make_statistic.Primary = true;
@@ -170,6 +170,22 @@
             this.groupBox_type_of_statistic.TabIndex = 15;
             this.groupBox_type_of_statistic.TabStop = false;
             this.groupBox_type_of_statistic.Text = "Тип статистики";
+            // 
+            // rbutton_Device
+            // 
+            this.rbutton_Device.AutoSize = true;
+            this.rbutton_Device.Depth = 0;
+            this.rbutton_Device.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbutton_Device.Location = new System.Drawing.Point(3, 106);
+            this.rbutton_Device.Margin = new System.Windows.Forms.Padding(0);
+            this.rbutton_Device.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbutton_Device.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbutton_Device.Name = "rbutton_Device";
+            this.rbutton_Device.Ripple = true;
+            this.rbutton_Device.Size = new System.Drawing.Size(262, 30);
+            this.rbutton_Device.TabIndex = 13;
+            this.rbutton_Device.Text = "Банкоматы/POS-терминалы";
+            this.rbutton_Device.UseVisualStyleBackColor = true;
             // 
             // rbutton_Currency
             // 
@@ -387,22 +403,6 @@
             // tbl_YearTableAdapter
             // 
             this.tbl_YearTableAdapter.ClearBeforeFill = true;
-            // 
-            // rbutton_Device
-            // 
-            this.rbutton_Device.AutoSize = true;
-            this.rbutton_Device.Depth = 0;
-            this.rbutton_Device.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rbutton_Device.Location = new System.Drawing.Point(3, 106);
-            this.rbutton_Device.Margin = new System.Windows.Forms.Padding(0);
-            this.rbutton_Device.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.rbutton_Device.MouseState = MaterialSkin.MouseState.HOVER;
-            this.rbutton_Device.Name = "rbutton_Device";
-            this.rbutton_Device.Ripple = true;
-            this.rbutton_Device.Size = new System.Drawing.Size(262, 30);
-            this.rbutton_Device.TabIndex = 13;
-            this.rbutton_Device.Text = "Банкоматы/POS-терминалы";
-            this.rbutton_Device.UseVisualStyleBackColor = true;
             // 
             // frm_Statistic
             // 

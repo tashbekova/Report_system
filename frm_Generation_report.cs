@@ -61,7 +61,6 @@ namespace Report_system
                 try
                 {
                     string path;
-                    string Table_name = "";
                     string report = comboBox_type_report.SelectedValue.ToString();
                     int month = Convert.ToInt32(comboBox_month.SelectedValue.ToString()) ;
                     //int year = Convert.ToInt32(comboBox_year.SelectedItem.ToString());
@@ -79,28 +78,26 @@ namespace Report_system
                     {
                         if (report == "Report A")
                         {
-                            Table_name = "tbl_Report_A";
-                        }
-                        else if (report == "Report H")
-                        {
-                            Table_name = "tbl_Report_H";
-                        }
-                        else if (report == "Report R")
-                        {
-                            Table_name = "tbl_Report_R";
+                           
                         }
                         // pb_Status.PerformStep();
                         Check check_data = new Check();
-                        int check = check_data.Check_Data(Table_name, month, year);
-                        if (check == 0)
+                        int check_A = check_data.Check_Data("tbl_Report_A", month, year);
+                        int check_H= check_data.Check_Data("tbl_Report_H", month, year);
+                        int check_R= check_data.Check_Data("tbl_Report_R", month, year);
+                        if(check_A<=0 && check_H<=0 && check_R<=0)
                         {
                             //pb_Status.PerformStep();
                             MessageBox.Show("Нет данных за этот месяц и год", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            pb_Status.Value = 50 ;
+                            pb_Status.Value = 50;
                             pb_Status.Visible = false;
                         }
-                        else if (check >= 1)
+                        else if(check_A >= 0 || check_H >= 0 || check_R >= 0)
                         {
+                             if (check_A <= 0 && check_H >= 0 && check_R >= 0)
+                            {
+                                MessageBox.Show("Нет данных за этот месяц и год", "Error", MessageBoxButtons.OK);
+                            }
                             //pb_Status.PerformStep();
                             path = path_directory + @"\" + year.ToString();
                             if (Directory.Exists(path))
@@ -114,7 +111,7 @@ namespace Report_system
                                     string path2 = path_directory + @"\" + year.ToString() + @"\" + report + @"\" + month.ToString() + "_" + year.ToString() + "_" + report + ".xls";
                                     if (System.IO.File.Exists(path))
                                     {
-                                       // pb_Status.PerformStep();
+                                        // pb_Status.PerformStep();
                                         MessageBox.Show("Отчёт уже сформирован");
                                         string message = "Отчёт уже сформирован. Хотите ли вы сформировать ещё раз?";
                                         string caption = "Error Detected in Input";
@@ -125,16 +122,17 @@ namespace Report_system
                                         result = MessageBox.Show(message, caption, buttons);
                                         if (result == System.Windows.Forms.DialogResult.Yes)
                                         {
-                                            //pb_Status.PerformStep();
+                                            Generation_intermediate_report create = new Generation_intermediate_report();
+                                            await Task.Run(() => create.Generation(path, month, year));
                                         }
                                     }
                                     else
                                     {
-                                       // pb_Status.PerformStep();
+                                        // pb_Status.PerformStep();
                                         MessageBox.Show("File is not found");
                                         //pb_Status.PerformStep();
                                         Generation_intermediate_report create = new Generation_intermediate_report();
-                                        await Task.Run(() => create.Generation(path, report, month, year));
+                                        await Task.Run(() => create.Generation(path, month, year));
                                         create.ProgressBarIncrement += update_progressBar;
                                     }
                                 }
@@ -147,7 +145,7 @@ namespace Report_system
                                     MessageBox.Show("File is not found");
                                     //pb_Status.PerformStep();
                                     Generation_intermediate_report create = new Generation_intermediate_report();
-                                    await Task.Run(() => create.Generation(path, report, month, year));
+                                    await Task.Run(() => create.Generation(path, month, year));
                                     create.ProgressBarIncrement += update_progressBar;
                                 }
                             }
@@ -158,14 +156,16 @@ namespace Report_system
                                 path = path_directory + @"\" + year.ToString() + @"\" + report;
                                 //pb_Status.PerformStep();
                                 di = Directory.CreateDirectory(path);
+                                path = path_directory + @"\" + year.ToString() + @"\" + report + @"\" + month.ToString() + "_" + year.ToString() + "_" + report + ".xlsx";
+                                // pb_Status.PerformStep();
+                                MessageBox.Show("File is not found");
+                                //pb_Status.PerformStep();
+                                Generation_intermediate_report create = new Generation_intermediate_report();
+                                await Task.Run(() => create.Generation(path, month, year));
                             }
-
-
                         }
-                        else if (check == 2)
+                        else if(check_A == -2 && check_H == -2 && check_R == -2)
                         {
-                            pb_Status.Value = 50;
-                            pb_Status.Visible = false;
                             MessageBox.Show("Произошла ошибка", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
@@ -244,6 +244,11 @@ namespace Report_system
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                GC.Collect();
+            }
+            finally
+            {
+                GC.Collect();
             }
         }
         private void Show_path()
@@ -264,6 +269,7 @@ namespace Report_system
             }
             reader.Close();
             myConnection.Close();
+            GC.Collect();
         }
 
         private void label_path_name_Click(object sender, EventArgs e)

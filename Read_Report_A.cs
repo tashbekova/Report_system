@@ -447,7 +447,7 @@ namespace Report_system
 
                                 // запрос на добавление в SQL Server
                                 string query = "Insert into " + Table_Name +
-                                    " (Date," +
+                                    " (Posting_date," +
                                     " Device," +
                                     " Device_name," +
                                     " Currency," +

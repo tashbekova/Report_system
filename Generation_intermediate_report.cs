@@ -16,27 +16,14 @@ namespace Report_system
     {
         private Excel.Application excelapp;
         private Excel.Workbook excelworkbook;
-        //private Excel.Sheets excelsheets;
         private Excel.Worksheet excelworksheet;
         private Excel.Range excelrange;
+        private Excel.Sheets excelsheets;
         frm_Generation_report pb = new frm_Generation_report();
         public event Action<int> ProgressBarIncrement;  //прогресс барр
 
-        public void Generation(string path,string report,int month,int year)
+        public void Generation(string path,int month,int year)
         {
-            string Table_name = "";
-            if (report == "Report A")
-            {
-                Table_name = "tbl_Report_A";
-            }
-            else if (report == "Report H")
-            {
-                Table_name = "tbl_Report_H";
-            }
-            else if (report == "Report R")
-            {
-                Table_name = "tbl_Report_R";
-            }
             try
             {
                 excelapp = new Excel.Application();
@@ -47,72 +34,28 @@ namespace Report_system
                 excelapp.Interactive = false;
                 excelapp.EnableEvents = false;
 
+                excelapp.SheetsInNewWorkbook = 3;
                 //выбираем лист на котором будем работать (Лист 1)
                 excelworksheet = (Excel.Worksheet)excelapp.Sheets[1];
+                excelsheets = excelworkbook.Worksheets;
+                excelworksheet = (Excel.Worksheet)excelsheets.get_Item(1);
+                excelworksheet.Activate();
                 //Название листа
                 excelworksheet.Name = "Банкоматы";
-                
-
-                //Выгрузка данных
-                DataTable dt = GetData(Table_name, month, year);
-                int collInd = 0;
-                int rowInd = 0;
-                string data = "";
-                decimal data2;
-
-                //называем колонки
-                for (int i = 0; i < dt.Columns.Count; i++)
-                {
-                    data = dt.Columns[i].ColumnName.ToString();
-                    excelworksheet.Cells[1, i + 1] = data;
-                }
-                //выделяем первую строку
-                excelrange = excelworksheet.get_Range("A1:F1", Type.Missing);
-
-                //делаем полужирный текст и перенос слов
-                excelrange.WrapText = true;
-                excelrange.Font.Bold = true;
-
-                //заполняем строки
-                for (rowInd=0;rowInd<dt.Rows.Count;rowInd++)
-                {
-                    for(collInd=0;collInd<dt.Columns.Count;collInd++)
-                    {
-                        //(excelrange.Cells[rowInd+2, 1] ).NumberFormat = "Д ММММ, ГГГГ";
-                        //(excelworksheet.Cells[rowInd, 4] as Excel.Range).NumberFormat = "### ##0,00";
-                        if(collInd==0)
-                        {
-                            data = DateTime.Parse(dt.Rows[rowInd].ItemArray[collInd].ToString()).ToShortDateString();
-                            excelworksheet.Cells[rowInd + 2, collInd + 1] = data;
-                        }
-                        else if (collInd == 3)
-                        {
-                            data2 = Convert.ToDecimal(dt.Rows[rowInd].ItemArray[collInd]);
-                            excelworksheet.Cells[rowInd + 2, collInd + 1] = data2;
-                        }
-                        else
-                        { data = dt.Rows[rowInd].ItemArray[collInd].ToString();
-                          excelworksheet.Cells[rowInd + 2, collInd + 1] = data;
-                        }
-                       
-                        ProgressBarIncrement?.Invoke(rowInd); //прогресс бар двигается вместе со строками
-                    }
-                }
-
-                //выбираем всю область данных
-                excelrange = excelworksheet.UsedRange;
-
-                //выравниваем строки и колонки по их содержимому
-                excelrange.Columns.AutoFit();
-                excelrange.Rows.AutoFit();
-                excelrange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
-                excelrange.Borders.get_Item(Excel.XlBordersIndex.xlEdgeBottom).LineStyle = Excel.XlLineStyle.xlContinuous;
-                excelrange.Borders.get_Item(Excel.XlBordersIndex.xlEdgeRight).LineStyle = Excel.XlLineStyle.xlContinuous;
-                excelrange.Borders.get_Item(Excel.XlBordersIndex.xlInsideHorizontal).LineStyle = Excel.XlLineStyle.xlContinuous;
-                excelrange.Borders.get_Item(Excel.XlBordersIndex.xlInsideVertical).LineStyle = Excel.XlLineStyle.xlContinuous;
-                excelrange.Borders.get_Item(Excel.XlBordersIndex.xlEdgeTop).LineStyle = Excel.XlLineStyle.xlContinuous;
-
-
+                excelworksheet = (Excel.Worksheet)excelsheets.get_Item(2);
+                excelworksheet.Activate();
+                //Название листа
+                excelworksheet.Name = "POS-терминал";
+                excelworksheet = (Excel.Worksheet)excelsheets.get_Item(3);
+                excelworksheet.Activate();
+                //Название листа
+                excelworksheet.Name = "POS-терминалы";
+                Add_data("tbl_Report_A", 1, month, year);
+                Draw_line(1);
+                Add_data("tbl_Report_H", 2, month, year);
+                Draw_line(2);
+                Add_data("tbl_Report_R", 3, month, year);
+                Draw_line(3);
             }
             catch (Exception ex)
             {
@@ -128,7 +71,9 @@ namespace Report_system
                 excelapp.ScreenUpdating = true;
                 excelapp.UserControl = true;
 
-                Make_calculations();
+                Make_calculations(1);
+                Make_calculations(2);
+                Make_calculations(3);
                 //excelapp.DefaultFilePath = path;
                 // excelworkbook.Saved = true;
                 //excelworkbook.SaveAs(path);
@@ -142,6 +87,84 @@ namespace Report_system
                 GC.Collect();
 
             }
+        }
+
+        private void Draw_line(int number_of_page)
+        {
+            excelworksheet = (Excel.Worksheet)excelsheets.get_Item(number_of_page);
+            excelworksheet.Activate();
+            //выделяем первую строку
+            excelrange = excelworksheet.get_Range("A1:F1", Type.Missing);
+
+            //делаем полужирный текст и перенос слов
+            excelrange.WrapText = true;
+            excelrange.Font.Bold = true;
+            //выбираем всю область данных
+            excelrange = excelworksheet.UsedRange;
+
+            //выравниваем строки и колонки по их содержимому
+            excelrange.Columns.AutoFit();
+            excelrange.Rows.AutoFit();
+            excelrange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+            excelrange.Borders.get_Item(Excel.XlBordersIndex.xlEdgeBottom).LineStyle = Excel.XlLineStyle.xlContinuous;
+            excelrange.Borders.get_Item(Excel.XlBordersIndex.xlEdgeRight).LineStyle = Excel.XlLineStyle.xlContinuous;
+            excelrange.Borders.get_Item(Excel.XlBordersIndex.xlInsideHorizontal).LineStyle = Excel.XlLineStyle.xlContinuous;
+            excelrange.Borders.get_Item(Excel.XlBordersIndex.xlInsideVertical).LineStyle = Excel.XlLineStyle.xlContinuous;
+            excelrange.Borders.get_Item(Excel.XlBordersIndex.xlEdgeTop).LineStyle = Excel.XlLineStyle.xlContinuous;
+        }
+
+        private void Add_data(string Table_name,int number_of_page,int month,int year)
+        {
+            try
+            {
+                excelworksheet = (Excel.Worksheet)excelsheets.get_Item(number_of_page);
+                excelworksheet.Activate();
+
+                //Выгрузка данных
+                DataTable dt = GetData(Table_name, month, year);
+                int collInd = 0;
+                int rowInd = 0;
+                string data = "";
+                decimal data2;
+
+                //называем колонки
+                for (int i = 0; i < dt.Columns.Count; i++)
+                {
+                    data = dt.Columns[i].ColumnName.ToString();
+                    excelworksheet.Cells[1, i + 1] = data;
+                }
+                //заполняем строки
+                for (rowInd = 0; rowInd < dt.Rows.Count; rowInd++)
+                {
+                    for (collInd = 0; collInd < dt.Columns.Count; collInd++)
+                    {
+                        //(excelrange.Cells[rowInd+2, 1] ).NumberFormat = "Д ММММ, ГГГГ";
+                        //(excelworksheet.Cells[rowInd, 4] as Excel.Range).NumberFormat = "### ##0,00";
+                        if (collInd == 0)
+                        {
+                            data = DateTime.Parse(dt.Rows[rowInd].ItemArray[collInd].ToString()).ToShortDateString();
+                            excelworksheet.Cells[rowInd + 2, collInd + 1] = data;
+                        }
+                        else if (collInd == 3)
+                        {
+                            data2 = Convert.ToDecimal(dt.Rows[rowInd].ItemArray[collInd]);
+                            excelworksheet.Cells[rowInd + 2, collInd + 1] = data2;
+                        }
+                        else
+                        {
+                            data = dt.Rows[rowInd].ItemArray[collInd].ToString();
+                            excelworksheet.Cells[rowInd + 2, collInd + 1] = data;
+                        }
+
+                        ProgressBarIncrement?.Invoke(rowInd); //прогресс бар двигается вместе со строками
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private DataTable GetData(string Table_name,int month,int year)
@@ -206,13 +229,13 @@ namespace Report_system
         }
 
 
-        private void Make_calculations()
+        private void Make_calculations(int number_of_page)
         {
             try
             {
+                excelworksheet = (Excel.Worksheet)excelsheets.get_Item(number_of_page);
+                excelworksheet.Activate();
 
-                // Получить первый рабочий лист.
-                excelworksheet = (Excel.Worksheet)excelworkbook.Sheets[1];
                 int rowInd;
                 int row_end = 0;//строка окончания даты
                 int row_start = 2;//строка с новой датой

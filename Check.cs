@@ -109,7 +109,7 @@ namespace Report_system
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return 2;
+                return -2;
             }
 
         }
