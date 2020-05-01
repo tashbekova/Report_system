@@ -28,11 +28,19 @@ namespace Report_system
             this.tbl_Name_of_reportTableAdapter.Fill(this.report_SystemDataSet.tbl_Name_of_report);
             // TODO: данна€ строка кода позвол€ет загрузить данные в таблицу "report_SystemDataSet.tbl_Year". ѕри необходимости она может быть перемещена или удалена.
             this.tbl_YearTableAdapter.Fill(this.report_SystemDataSet.tbl_Year);
-            // TODO: данна€ строка кода позвол€ет загрузить данные в таблицу "report_SystemDataSet.tbl_Type_of_report". ѕри необходимости она может быть перемещена или удалена.
-            this.tbl_Type_of_reportTableAdapter.Fill(this.report_SystemDataSet.tbl_Type_of_report);
             // TODO: данна€ строка кода позвол€ет загрузить данные в таблицу "report_SystemDataSet.tbl_Month". ѕри необходимости она может быть перемещена или удалена.
             this.tbl_MonthTableAdapter.Fill(this.report_SystemDataSet.tbl_Month);
 
+            comboBox_month.SelectedIndex = DateTime.Now.Month - 1;
+            int index = comboBox_year.FindString((System.DateTime.Now.Year).ToString());
+            if (index < 0)
+            {
+                MessageBox.Show("Ќынешнего года нет в Ѕазе данных");
+            }
+            else
+            {
+                comboBox_year.SelectedIndex = index;
+            }
         }
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)

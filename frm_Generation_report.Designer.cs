@@ -41,32 +41,32 @@
             this.reportSystemDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.report_SystemDataSet = new Report_system.Report_SystemDataSet();
             this.comboBox_year = new System.Windows.Forms.ComboBox();
+            this.tblYearBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.report_SystemDataSet1 = new Report_system.Report_SystemDataSet();
             this.comboBox_month = new System.Windows.Forms.ComboBox();
             this.tblMonthBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pb_Status = new System.Windows.Forms.ProgressBar();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tbl_MonthTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_MonthTableAdapter();
             this.tbl_Type_of_reportTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_Type_of_reportTableAdapter();
-            this.report_SystemDataSet1 = new Report_system.Report_SystemDataSet();
-            this.tblYearBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbl_YearTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_YearTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblTypeofreportBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportSystemDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.report_SystemDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblMonthBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.report_SystemDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblYearBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report_SystemDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblMonthBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // materialRaisedButton1
             // 
             this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(1083, 3);
+            this.materialRaisedButton1.Location = new System.Drawing.Point(1080, 12);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(154, 23);
+            this.materialRaisedButton1.Size = new System.Drawing.Size(154, 39);
             this.materialRaisedButton1.TabIndex = 0;
             this.materialRaisedButton1.Text = "Закрыть";
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
@@ -192,6 +192,16 @@
             this.comboBox_year.TabIndex = 7;
             this.comboBox_year.ValueMember = "Name_of_year";
             // 
+            // tblYearBindingSource
+            // 
+            this.tblYearBindingSource.DataMember = "tbl_Year";
+            this.tblYearBindingSource.DataSource = this.report_SystemDataSet1;
+            // 
+            // report_SystemDataSet1
+            // 
+            this.report_SystemDataSet1.DataSetName = "Report_SystemDataSet";
+            this.report_SystemDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // comboBox_month
             // 
             this.comboBox_month.DataSource = this.tblMonthBindingSource;
@@ -229,16 +239,6 @@
             // 
             this.tbl_Type_of_reportTableAdapter.ClearBeforeFill = true;
             // 
-            // report_SystemDataSet1
-            // 
-            this.report_SystemDataSet1.DataSetName = "Report_SystemDataSet";
-            this.report_SystemDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tblYearBindingSource
-            // 
-            this.tblYearBindingSource.DataMember = "tbl_Year";
-            this.tblYearBindingSource.DataSource = this.report_SystemDataSet1;
-            // 
             // tbl_YearTableAdapter
             // 
             this.tbl_YearTableAdapter.ClearBeforeFill = true;
@@ -261,9 +261,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblTypeofreportBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportSystemDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.report_SystemDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblMonthBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.report_SystemDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblYearBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report_SystemDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblMonthBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

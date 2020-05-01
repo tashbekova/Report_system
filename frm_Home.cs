@@ -140,5 +140,11 @@ namespace Report_system
             HideSubMenu();
             OpenChildForm<frm_Statistic>();
         }
+
+        private void button_Settings_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+            OpenChildForm<frm_Settings>();
+        }
     }
 }

@@ -42,36 +42,38 @@
             this.label_description_for_time = new MaterialSkin.Controls.MaterialLabel();
             this.label_description_for_year = new MaterialSkin.Controls.MaterialLabel();
             this.comboBox_month2 = new System.Windows.Forms.ComboBox();
-            this.tblMonthBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.reportSystemDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tblMonthBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.report_SystemDataSet = new Report_system.Report_SystemDataSet();
             this.groupBox_Type_of_time = new System.Windows.Forms.GroupBox();
             this.rbutton_Time = new MaterialSkin.Controls.MaterialRadioButton();
             this.rbutton_Year = new MaterialSkin.Controls.MaterialRadioButton();
             this.comboBox_year = new System.Windows.Forms.ComboBox();
             this.tblYearBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportSystemDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox_month = new System.Windows.Forms.ComboBox();
+            this.tblMonthBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox_type_report = new System.Windows.Forms.ComboBox();
-            this.tblTypeofreportBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tblNameofreportBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.report_SystemDataSet1 = new Report_system.Report_SystemDataSet();
             this.pb_Status = new System.Windows.Forms.ProgressBar();
             this.lblName = new MaterialSkin.Controls.MaterialLabel();
+            this.tblTypeofreportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tbl_MonthTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_MonthTableAdapter();
             this.tbl_Type_of_reportTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_Type_of_reportTableAdapter();
             this.tbl_YearTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_YearTableAdapter();
-            this.report_SystemDataSet1 = new Report_system.Report_SystemDataSet();
-            this.tblNameofreportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbl_Name_of_reportTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_Name_of_reportTableAdapter();
             this.panel1.SuspendLayout();
             this.groupBox_type_of_statistic.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblMonthBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reportSystemDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblMonthBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.report_SystemDataSet)).BeginInit();
             this.groupBox_Type_of_time.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblYearBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblTypeofreportBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.report_SystemDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportSystemDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblMonthBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblNameofreportBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report_SystemDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblTypeofreportBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // materialRaisedButton1
@@ -255,7 +257,7 @@
             // 
             // comboBox_month2
             // 
-            this.comboBox_month2.DataSource = this.tblMonthBindingSource;
+            this.comboBox_month2.DataSource = this.tblMonthBindingSource1;
             this.comboBox_month2.DisplayMember = "Month_name";
             this.comboBox_month2.FormattingEnabled = true;
             this.comboBox_month2.Location = new System.Drawing.Point(824, 340);
@@ -265,15 +267,10 @@
             this.comboBox_month2.ValueMember = "ID";
             this.comboBox_month2.Visible = false;
             // 
-            // tblMonthBindingSource
+            // tblMonthBindingSource1
             // 
-            this.tblMonthBindingSource.DataMember = "tbl_Month";
-            this.tblMonthBindingSource.DataSource = this.reportSystemDataSetBindingSource;
-            // 
-            // reportSystemDataSetBindingSource
-            // 
-            this.reportSystemDataSetBindingSource.DataSource = this.report_SystemDataSet;
-            this.reportSystemDataSetBindingSource.Position = 0;
+            this.tblMonthBindingSource1.DataMember = "tbl_Month";
+            this.tblMonthBindingSource1.DataSource = this.report_SystemDataSet;
             // 
             // report_SystemDataSet
             // 
@@ -343,6 +340,11 @@
             this.tblYearBindingSource.DataMember = "tbl_Year";
             this.tblYearBindingSource.DataSource = this.reportSystemDataSetBindingSource;
             // 
+            // reportSystemDataSetBindingSource
+            // 
+            this.reportSystemDataSetBindingSource.DataSource = this.report_SystemDataSet;
+            this.reportSystemDataSetBindingSource.Position = 0;
+            // 
             // comboBox_month
             // 
             this.comboBox_month.DataSource = this.tblMonthBindingSource;
@@ -354,6 +356,11 @@
             this.comboBox_month.TabIndex = 7;
             this.comboBox_month.ValueMember = "ID";
             this.comboBox_month.Visible = false;
+            // 
+            // tblMonthBindingSource
+            // 
+            this.tblMonthBindingSource.DataMember = "tbl_Month";
+            this.tblMonthBindingSource.DataSource = this.reportSystemDataSetBindingSource;
             // 
             // comboBox_type_report
             // 
@@ -367,10 +374,15 @@
             this.comboBox_type_report.ValueMember = "Type_of_report";
             this.comboBox_type_report.SelectedIndexChanged += new System.EventHandler(this.comboBox_type_report_SelectedIndexChanged);
             // 
-            // tblTypeofreportBindingSource
+            // tblNameofreportBindingSource
             // 
-            this.tblTypeofreportBindingSource.DataMember = "tbl_Type_of_report";
-            this.tblTypeofreportBindingSource.DataSource = this.reportSystemDataSetBindingSource;
+            this.tblNameofreportBindingSource.DataMember = "tbl_Name_of_report";
+            this.tblNameofreportBindingSource.DataSource = this.report_SystemDataSet1;
+            // 
+            // report_SystemDataSet1
+            // 
+            this.report_SystemDataSet1.DataSetName = "Report_SystemDataSet";
+            this.report_SystemDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pb_Status
             // 
@@ -393,6 +405,12 @@
             this.lblName.Size = new System.Drawing.Size(158, 24);
             this.lblName.TabIndex = 4;
             this.lblName.Text = "Название файла";
+            this.lblName.Visible = false;
+            // 
+            // tblTypeofreportBindingSource
+            // 
+            this.tblTypeofreportBindingSource.DataMember = "tbl_Type_of_report";
+            this.tblTypeofreportBindingSource.DataSource = this.reportSystemDataSetBindingSource;
             // 
             // openFileDialog1
             // 
@@ -409,16 +427,6 @@
             // tbl_YearTableAdapter
             // 
             this.tbl_YearTableAdapter.ClearBeforeFill = true;
-            // 
-            // report_SystemDataSet1
-            // 
-            this.report_SystemDataSet1.DataSetName = "Report_SystemDataSet";
-            this.report_SystemDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tblNameofreportBindingSource
-            // 
-            this.tblNameofreportBindingSource.DataMember = "tbl_Name_of_report";
-            this.tblNameofreportBindingSource.DataSource = this.report_SystemDataSet1;
             // 
             // tbl_Name_of_reportTableAdapter
             // 
@@ -441,15 +449,16 @@
             this.panel1.PerformLayout();
             this.groupBox_type_of_statistic.ResumeLayout(false);
             this.groupBox_type_of_statistic.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblMonthBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.reportSystemDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblMonthBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.report_SystemDataSet)).EndInit();
             this.groupBox_Type_of_time.ResumeLayout(false);
             this.groupBox_Type_of_time.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblYearBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblTypeofreportBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.report_SystemDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportSystemDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblMonthBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblNameofreportBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report_SystemDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblTypeofreportBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -489,5 +498,6 @@
         private Report_SystemDataSet report_SystemDataSet1;
         private System.Windows.Forms.BindingSource tblNameofreportBindingSource;
         private Report_SystemDataSetTableAdapters.tbl_Name_of_reportTableAdapter tbl_Name_of_reportTableAdapter;
+        private System.Windows.Forms.BindingSource tblMonthBindingSource1;
     }
 }

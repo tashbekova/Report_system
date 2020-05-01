@@ -27,6 +27,7 @@ namespace Report_system
             try
             {
                 excelapp = new Excel.Application();
+                excelapp.SheetsInNewWorkbook = 3;
                 //добавляем книгу
                 excelworkbook = excelapp.Workbooks.Add(Type.Missing);
 
@@ -34,23 +35,14 @@ namespace Report_system
                 excelapp.Interactive = false;
                 excelapp.EnableEvents = false;
 
-                excelapp.SheetsInNewWorkbook = 3;
+                
                 //выбираем лист на котором будем работать (Лист 1)
-                excelworksheet = (Excel.Worksheet)excelapp.Sheets[1];
+                //excelworksheet = (Excel.Worksheet)excelapp.Sheets[1];
                 excelsheets = excelworkbook.Worksheets;
-                excelworksheet = (Excel.Worksheet)excelsheets.get_Item(1);
-                excelworksheet.Activate();
+                //excelworksheet = (Excel.Worksheet)excelsheets.get_Item(1);
+                //excelworksheet.Activate();
                 //Название листа
-                excelworksheet.Name = "Банкоматы";
-
-                excelworksheet = (Excel.Worksheet)excelsheets.get_Item(2);
-                //Название листа
-                excelworksheet.Name = "POS-терминал";
-
-                excelworksheet = (Excel.Worksheet)excelsheets.get_Item(3);
-                //Название листа
-                excelworksheet.Name = "POS-терминалы";
-
+                //excelworksheet.Name = "Банкоматы";
 
                 Check check_data = new Check();
                 int check_A = check_data.Check_Data("tbl_Report_A", month, year);
@@ -70,7 +62,7 @@ namespace Report_system
                 }
                 if (check_R > 0)
                 {
-                    Add_data("tbl_Report_R",3, month, year);
+                    Add_data("tbl_Report_R", 3, month, year);
                     Make_calculations(3);
                     Draw_line(3);
                 }
@@ -107,8 +99,23 @@ namespace Report_system
 
         private void Draw_line(int number_of_page)
         {
+            string title = "";
+            if (number_of_page == 2)
+            {
+                title = "POS-терминал";
+            }
+            else if (number_of_page == 3)
+            {
+                title = "POS-терминалы";
+            }
+            else if(number_of_page==1)
+            {
+                title = "Банкоматы";
+            }
             excelworksheet = (Excel.Worksheet)excelsheets.get_Item(number_of_page);
             excelworksheet.Activate();
+            ////Название листа
+            excelworksheet.Name = title;
             //выделяем первую строку
             excelrange = excelworksheet.get_Range("A1:F1", Type.Missing);
 

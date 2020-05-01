@@ -21,30 +21,20 @@ namespace Report_system
         private Excel.Sheets excelsheets;
         private string device = "";
         private string Table_name = "";
-
+        private string name = "";
         public void Generation(string path, string report, int year,string column)
         {
             try
             {
                 Find_Table_name(report, column);
-               
-                string name = "";
-                if (column == "Currency")
-                    name = "валюте";
-                else if (column == "Type_of_card")
-                    name = "видам карт";
-                else if (column == "Device")
-                    name = "месту операции";
-
                 excelapp = new Excel.Application();
+                excelapp.SheetsInNewWorkbook = 2;
                 //добавляем книгу
                 excelworkbook = excelapp.Workbooks.Add(Type.Missing);
 
                 //делаем временно неактивным документ
                 excelapp.Interactive = false;
                 excelapp.EnableEvents = false;
-
-                excelapp.SheetsInNewWorkbook = 2;
                 //выбираем лист на котором будем работать (Лист 1)
                 excelworksheet = (Excel.Worksheet)excelapp.Sheets[1];
                 excelsheets = excelworkbook.Worksheets;
@@ -94,6 +84,7 @@ namespace Report_system
                 }
                 Make_calculations(dt.Rows.Count,1);
                 Draw_line(1);
+                excelworksheet.Cells[1, 1].Rows.RowHeight = 70;
 
                 excelworksheet = (Excel.Worksheet)excelsheets.get_Item(2);
                 excelworksheet.Activate();
@@ -193,6 +184,7 @@ namespace Report_system
                 excelsheets = excelworkbook.Worksheets;
                 excelworksheet = (Excel.Worksheet)excelsheets.get_Item(1);
                 excelworksheet.Activate();
+
                 //Название листа
                 excelworksheet.Name = "Лист 1";
 
@@ -234,6 +226,39 @@ namespace Report_system
                 }
                 Make_calculations(dt.Rows.Count,1);
                 Draw_line(1);
+                excelworksheet.Cells[1, 1].Rows.RowHeight = 100;
+
+                excelworksheet = (Excel.Worksheet)excelsheets.get_Item(2);
+                excelworksheet.Activate();
+
+                DataTable dt2 = GetData(Table_name, month, month2, year, column, true);
+
+                //называем колонки
+                for (int i = 0; i < dt2.Columns.Count; i++)
+                {
+                    data = dt2.Columns[i].ColumnName.ToString();
+                    excelworksheet.Cells[2, i + 1] = data;
+                }
+
+                //заполняем строки
+                for (rowInd = 0; rowInd < dt2.Rows.Count; rowInd++)
+                {
+                    for (collInd = 0; collInd < dt2.Columns.Count; collInd++)
+                    {
+                        if (collInd == 1)
+                        {
+                            data2 = Convert.ToDecimal(dt2.Rows[rowInd].ItemArray[collInd]);
+                            excelworksheet.Cells[rowInd + 3, collInd + 1] = data2;
+                        }
+                        else
+                        {
+                            data = dt2.Rows[rowInd].ItemArray[collInd].ToString();
+                            excelworksheet.Cells[rowInd + 3, collInd + 1] = data;
+                        }
+                    }
+                }
+                Make_calculations(dt2.Rows.Count, 2);
+                Draw_line(2);
 
             }
             catch (Exception ex)
@@ -255,7 +280,7 @@ namespace Report_system
                 excelapp.ScreenUpdating = true;
                 excelapp.UserControl = true;
 
-                
+                Draw_Chart(column);
                 //excelapp.DefaultFilePath = path;
                 // excelworkbook.Saved = true;
                 //excelworkbook.SaveAs(path);
@@ -271,15 +296,17 @@ namespace Report_system
 
             }
         }
+
+       
         private DataTable GetData(string Table_name, int year,string column,bool flag_full_data)
         {
-            string name = "";
+            string title = "";
             if (column == "Currency")
-                name = "Валюта";
+                title = "Валюта";
             else if (column == "Type_of_card")
-                name = "Вид карты";
+                title = "Вид карты";
             else if (column == "Device")
-                name = "Место операции";
+                title = "Место операции";
             //строка соединения
             string ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'";
 
@@ -293,7 +320,7 @@ namespace Report_system
                 if (flag_full_data == false)
                 {
                     query = "SELECT " +
-                      Table_name + "." + column + " AS \"" + name + "\", " +
+                      Table_name + "." + column + " AS \"" + title + "\", " +
                      "SUM(" + Table_name + ".Account_amount) AS \"Сумма\"," +
                       "SUM(" + Table_name + ".Number_of_trans) AS \"Количество совершенных операций\" " +
                       " FROM " + Table_name +
@@ -304,7 +331,7 @@ namespace Report_system
                 else if(flag_full_data==true)
                 {
                     query = "SELECT " +
-                       Table_name + "." + column + " AS \"" + name + "\", " +
+                       Table_name + "." + column + " AS \"" + title + "\", " +
                        Table_name + ".Account_amount AS \"Сумма\"," +
                        Table_name + ".Number_of_trans AS \"Количество совершенных операций\" " +
                        " FROM " + Table_name +
@@ -331,13 +358,13 @@ namespace Report_system
 
         private DataTable GetData(string Table_name, int month,int month2, int year,string column,bool flag_full_data)
         {
-            string name = "";
+            string title = "";
             if (column == "Currency")
-                name = "Валюта";
+                title = "Валюта";
             else if (column == "Type_of_card")
-                name = "Вид карты";
+                title = "Вид карты";
             else if (column == "Device")
-                name = "Место операции";
+                title = "Место операции";
             //строка соединения
             string ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'";
 
@@ -351,7 +378,7 @@ namespace Report_system
                 if (flag_full_data == false)
                 {
                         query = "SELECT " +
-                       Table_name + "." + column + " AS \"" + name + "\", " +
+                       Table_name + "." + column + " AS \"" + title + "\", " +
                        "SUM(" + Table_name + ".Account_amount) AS \"Сумма\"," +
                        "SUM(" + Table_name + ".Number_of_trans) AS \"Количество совершенных операций\" " +
                        " FROM " + Table_name +
@@ -364,7 +391,7 @@ namespace Report_system
                 else
                 {
                     query = "SELECT " +
-                       Table_name + "." + column + " AS \"" + name + "\", " +
+                       Table_name + "." + column + " AS \"" + title + "\", " +
                        Table_name + ".Account_amount AS \"Сумма\"," +
                        Table_name + ".Number_of_trans AS \"Количество совершенных операций\" " +
                        " FROM " + Table_name +
@@ -439,31 +466,44 @@ namespace Report_system
 
         private void InsertRow(int rowNum)
         {
-            Excel.Range cellRange = (Excel.Range)excelworksheet.Cells[rowNum, 1];
-            Excel.Range rowRange = cellRange.EntireRow;
-            rowRange.Insert(Excel.XlInsertShiftDirection.xlShiftDown, false);
+            try
+            {
+                Excel.Range cellRange = (Excel.Range)excelworksheet.Cells[rowNum, 1];
+                Excel.Range rowRange = cellRange.EntireRow;
+                rowRange.Insert(Excel.XlInsertShiftDirection.xlShiftDown, false);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void Draw_Chart(string column)
         {
-            object misValue = System.Reflection.Missing.Value;
-            excelsheets = excelworkbook.Worksheets;
-             excelworksheet = (Excel.Worksheet)excelsheets.get_Item(1);
-             excelworksheet.Activate();
+            try
+            {
+                object misValue = System.Reflection.Missing.Value;
+                excelsheets = excelworkbook.Worksheets;
+                excelworksheet = (Excel.Worksheet)excelsheets.get_Item(1);
+                excelworksheet.Activate();
 
-            Excel.Range chartRange;
-            chartRange =excelworksheet.get_Range("A3", "B" + Convert.ToString(excelworksheet.UsedRange.Rows.Count-1));
-            // Определяем диаграммы как объекты Excel.ChartObjects
-            Excel.ChartObjects chartsobjrcts =
-              (Excel.ChartObjects)excelworksheet.ChartObjects(Type.Missing);
-            //Добавляем одну диаграмму  в Excel.ChartObjects - диаграмма пока 
-            //не выбрана, но место для нее выделено в методе Add
-            Excel.ChartObject chartsobjrct = chartsobjrcts.Add(400, 20, 500, 350);
-            chartsobjrct.Chart.ChartWizard(chartRange, Excel.XlChartType.xlColumnClustered
-            ,2, Excel.XlRowCol.xlColumns, Type.Missing,
-              0, true, "Статистика " + column, column, "Статистика", Type.Missing);
+                Excel.Range chartRange;
+                chartRange = excelworksheet.get_Range("A3", "B" + Convert.ToString(excelworksheet.UsedRange.Rows.Count - 1));
+                // Определяем диаграммы как объекты Excel.ChartObjects
+                Excel.ChartObjects chartsobjrcts =
+                  (Excel.ChartObjects)excelworksheet.ChartObjects(Type.Missing);
+                //Добавляем одну диаграмму  в Excel.ChartObjects - диаграмма пока 
+                //не выбрана, но место для нее выделено в методе Add
+                Excel.ChartObject chartsobjrct = chartsobjrcts.Add(400, 20, 500, 350);
+                chartsobjrct.Chart.ChartWizard(chartRange, Excel.XlChartType.xlColumnClustered
+                , 2, Excel.XlRowCol.xlColumns, Type.Missing,
+                  0, true, "Статистика по " + name, column, "Сумма", Type.Missing);
 
-            
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
             //xlWorkBook.SaveAs("csharp.net-informations.xls", Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
             //xlWorkBook.Close(true, misValue, misValue);
@@ -474,33 +514,38 @@ namespace Report_system
         }
         private void Draw_line(int number_of_page)
         {
-            excelworksheet = (Excel.Worksheet)excelsheets.get_Item(number_of_page);
-            excelworksheet.Activate();
-            //выделяем первую строку
-            excelrange = excelworksheet.get_Range("A1:C2", Type.Missing);
-            //делаем полужирный текст и перенос слов
-            excelrange.WrapText = true;
-            excelrange.Font.Bold = true;
+            try
+            {
+                excelworksheet = (Excel.Worksheet)excelsheets.get_Item(number_of_page);
+                excelworksheet.Activate();
+                //выделяем первую строку
+                excelrange = excelworksheet.get_Range("A1:C2", Type.Missing);
+                //делаем полужирный текст и перенос слов
+                excelrange.WrapText = true;
+                excelrange.Font.Bold = true;
 
-            excelrange = excelworksheet.get_Range("A1:C1", Type.Missing);
-            //размер шрифта
-            excelrange.Font.Size = 16;
-            //название шрифта
-            excelrange.Font.Name = "Times New Roman";
-            //выбираем всю область данных
-            excelrange = excelworksheet.UsedRange;
+                excelrange = excelworksheet.get_Range("A1:C1", Type.Missing);
+                //размер шрифта
+                excelrange.Font.Size = 16;
+                //название шрифта
+                excelrange.Font.Name = "Times New Roman";
+                //выбираем всю область данных
+                excelrange = excelworksheet.UsedRange;
 
-            //выравниваем строки и колонки по их содержимому
-            excelrange.Columns.AutoFit();
-            excelrange.Rows.AutoFit();
-            excelrange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
-            excelrange.Borders.get_Item(Excel.XlBordersIndex.xlEdgeBottom).LineStyle = Excel.XlLineStyle.xlContinuous;
-            excelrange.Borders.get_Item(Excel.XlBordersIndex.xlEdgeRight).LineStyle = Excel.XlLineStyle.xlContinuous;
-            excelrange.Borders.get_Item(Excel.XlBordersIndex.xlInsideHorizontal).LineStyle = Excel.XlLineStyle.xlContinuous;
-            excelrange.Borders.get_Item(Excel.XlBordersIndex.xlInsideVertical).LineStyle = Excel.XlLineStyle.xlContinuous;
-            excelrange.Borders.get_Item(Excel.XlBordersIndex.xlEdgeTop).LineStyle = Excel.XlLineStyle.xlContinuous;
-
-            excelworksheet.Cells[1,1].Rows.RowHeight = 70;
+                //выравниваем строки и колонки по их содержимому
+                excelrange.Columns.AutoFit();
+                excelrange.Rows.AutoFit();
+                excelrange.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;
+                excelrange.Borders.get_Item(Excel.XlBordersIndex.xlEdgeBottom).LineStyle = Excel.XlLineStyle.xlContinuous;
+                excelrange.Borders.get_Item(Excel.XlBordersIndex.xlEdgeRight).LineStyle = Excel.XlLineStyle.xlContinuous;
+                excelrange.Borders.get_Item(Excel.XlBordersIndex.xlInsideHorizontal).LineStyle = Excel.XlLineStyle.xlContinuous;
+                excelrange.Borders.get_Item(Excel.XlBordersIndex.xlInsideVertical).LineStyle = Excel.XlLineStyle.xlContinuous;
+                excelrange.Borders.get_Item(Excel.XlBordersIndex.xlEdgeTop).LineStyle = Excel.XlLineStyle.xlContinuous;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void Find_Table_name(string report,string column)
@@ -535,7 +580,12 @@ namespace Report_system
                 else if (column == "Device")
                     Table_name = "tbl_Total_Device_Report_R";
             }
-
+            if (column == "Currency")
+                name = "валюте";
+            else if (column == "Type_of_card")
+                name = "видам карт";
+            else if (column == "Device")
+                name = "месту операции";
         }
     }
 }

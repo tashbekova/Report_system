@@ -78,7 +78,7 @@
             // button_Show_List_Report
             // 
             this.button_Show_List_Report.Depth = 0;
-            this.button_Show_List_Report.Location = new System.Drawing.Point(443, 240);
+            this.button_Show_List_Report.Location = new System.Drawing.Point(441, 249);
             this.button_Show_List_Report.MouseState = MaterialSkin.MouseState.HOVER;
             this.button_Show_List_Report.Name = "button_Show_List_Report";
             this.button_Show_List_Report.Primary = true;
@@ -147,6 +147,7 @@
             // 
             this.comboBox_year.DataSource = this.tblYearBindingSource;
             this.comboBox_year.DisplayMember = "Name_of_year";
+            this.comboBox_year.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_year.FormattingEnabled = true;
             this.comboBox_year.Location = new System.Drawing.Point(776, 157);
             this.comboBox_year.Name = "comboBox_year";
@@ -173,6 +174,7 @@
             // 
             this.comboBox_month.DataSource = this.tblMonthBindingSource;
             this.comboBox_month.DisplayMember = "Month_name";
+            this.comboBox_month.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_month.FormattingEnabled = true;
             this.comboBox_month.Location = new System.Drawing.Point(469, 157);
             this.comboBox_month.Name = "comboBox_month";
@@ -189,6 +191,7 @@
             // 
             this.comboBox_type_report.DataSource = this.tblNameofreportBindingSource;
             this.comboBox_type_report.DisplayMember = "Type_of_report";
+            this.comboBox_type_report.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_type_report.FormattingEnabled = true;
             this.comboBox_type_report.Location = new System.Drawing.Point(156, 157);
             this.comboBox_type_report.Name = "comboBox_type_report";
@@ -222,6 +225,7 @@
             this.lblName.Size = new System.Drawing.Size(158, 24);
             this.lblName.TabIndex = 4;
             this.lblName.Text = "Название файла";
+            this.lblName.Visible = false;
             // 
             // tblTypeofreportBindingSource
             // 
@@ -280,7 +284,6 @@
         private MaterialSkin.Controls.MaterialRaisedButton button_Show_List_Report;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private MaterialSkin.Controls.MaterialLabel lblName;
         private System.Windows.Forms.BindingSource reportSystemDataSetBindingSource;
         private Report_SystemDataSet report_SystemDataSet;
         private System.Windows.Forms.ProgressBar pb_Status;
@@ -299,5 +302,6 @@
         private Report_SystemDataSetTableAdapters.tbl_YearTableAdapter tbl_YearTableAdapter;
         private System.Windows.Forms.BindingSource tblNameofreportBindingSource;
         private Report_SystemDataSetTableAdapters.tbl_Name_of_reportTableAdapter tbl_Name_of_reportTableAdapter;
+        private MaterialSkin.Controls.MaterialLabel lblName;
     }
 }

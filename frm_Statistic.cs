@@ -33,6 +33,18 @@ namespace Report_system
             // TODO: данная строка кода позволяет загрузить данные в таблицу "report_SystemDataSet.tbl_Month". При необходимости она может быть перемещена или удалена.
             this.tbl_MonthTableAdapter.Fill(this.report_SystemDataSet.tbl_Month);
 
+            comboBox_month.SelectedIndex = DateTime.Now.Month - 1;
+            comboBox_month2.SelectedIndex = DateTime.Now.Month - 1;
+            int index = comboBox_year.FindString((System.DateTime.Now.Year).ToString());
+            if (index < 0)
+            {
+                MessageBox.Show("Нынешнего года нет в Базе данных");
+            }
+            else
+            {
+                comboBox_year.SelectedIndex = index;
+            }
+
         }
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)

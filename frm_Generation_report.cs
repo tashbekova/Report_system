@@ -29,6 +29,18 @@ namespace Report_system
             this.tbl_Type_of_reportTableAdapter.Fill(this.report_SystemDataSet.tbl_Type_of_report);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "report_SystemDataSet.tbl_Month". При необходимости она может быть перемещена или удалена.
             this.tbl_MonthTableAdapter.Fill(this.report_SystemDataSet.tbl_Month);
+
+            comboBox_month.SelectedIndex = DateTime.Now.Month - 1;
+            int index = comboBox_year.FindString((System.DateTime.Now.Year).ToString());
+            if (index < 0)
+            {
+                MessageBox.Show("Нынешнего года нет в Базе данных");
+            }
+            else
+            {
+                comboBox_year.SelectedIndex = index;
+            }
+
             Show_path();
 
         }
@@ -60,6 +72,8 @@ namespace Report_system
                 pb_Status.Maximum = 50;
                 try
                 {
+                    System.Diagnostics.Stopwatch swatch = new System.Diagnostics.Stopwatch();
+                    swatch.Start();
                     string path;
                     string report = comboBox_type_report.SelectedValue.ToString();
                     int month = Convert.ToInt32(comboBox_month.SelectedValue.ToString()) ;
@@ -170,6 +184,9 @@ namespace Report_system
                                 Generation_intermediate_report create = new Generation_intermediate_report();
                                 await Task.Run(() => create.Generation(path, month, year));
                             }
+                            // Тут ваш код, время выполнения которого нужно измерить
+                            swatch.Stop();
+                            MessageBox.Show("" + swatch.Elapsed);
                         }
                         else if(check_A == -2 && check_H == -2 && check_R == -2)
                         {
