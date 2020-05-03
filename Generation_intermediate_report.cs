@@ -163,8 +163,6 @@ namespace Report_system
                 {
                     for (collInd = 0; collInd < dt.Columns.Count; collInd++)
                     {
-                        //(excelrange.Cells[rowInd+2, 1] ).NumberFormat = "Д ММММ, ГГГГ";
-                        //(excelworksheet.Cells[rowInd, 4] as Excel.Range).NumberFormat = "### ##0,00";
                         if (collInd == 0)
                         {
                             data = DateTime.Parse(dt.Rows[rowInd].ItemArray[collInd].ToString()).ToShortDateString();

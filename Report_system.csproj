@@ -154,6 +154,7 @@
       <DependentUpon>frm_Read.cs</DependentUpon>
     </Compile>
     <Compile Include="Generation_intermediate_report.cs" />
+    <Compile Include="Generation_Prognoz.cs" />
     <Compile Include="Generation_report.cs" />
     <Compile Include="Generation_statistic.cs" />
     <Compile Include="Program.cs" />

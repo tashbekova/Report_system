@@ -130,9 +130,6 @@ namespace Report_system
                         }
                         else if (check >= 1)
                         {
-                            path = path_directory + @"\" + year.ToString();
-                            if (Directory.Exists(path))
-                            {
                                 path = path_directory + @"\" + year.ToString() + @"\" + report;
                                 if (Directory.Exists(path))
                                 {
@@ -165,15 +162,6 @@ namespace Report_system
                                     MessageBox.Show("Статистика еще не сформирована");
                                     await Task.Run(() => statistic.Generation(path, report, year,column));
                                 }
-                            }
-                            else
-                            {
-                                //pb_Status.PerformStep();
-                                DirectoryInfo di = Directory.CreateDirectory(path);
-                                path = path_directory + @"\" + year.ToString() + @"\" + report;
-                                //pb_Status.PerformStep();
-                                di = Directory.CreateDirectory(path);
-                            }
                         }
                         else if (check == 2)
                         {
@@ -192,9 +180,6 @@ namespace Report_system
                                 MessageBox.Show("Нет данных за этот период времени", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                                 else if (check >= 1)
-                                {
-                                    path = path_directory + @"\" + year.ToString();
-                                if (Directory.Exists(path))
                                 {
                                     path = path_directory + @"\" + year.ToString() + @"\" + report;
                                     if (Directory.Exists(path))
@@ -238,20 +223,7 @@ namespace Report_system
                                         //pb_Status.PerformStep();
                                         await Task.Run(() => statistic.Generation(path, report, month, month2, year, column));
                                     }
-                                }
-                                else
-                                {
-                                    DirectoryInfo di = Directory.CreateDirectory(path);
-                                    path = path_directory + @"\" + year.ToString() + @"\" + report;
-                                    di = Directory.CreateDirectory(path);
-                                    path = path_directory + @"\" + year.ToString() + @"\" + report + @"\" +
-                                       month.ToString() + "/" + year.ToString() + "-" + month2.ToString() + "/" + year.ToString() + "_" + report + ".xlsx";
-                                    // pb_Status.PerformStep();
-                                    MessageBox.Show("Статистика еще не сформирована");
-                                    //pb_Status.PerformStep();
-                                    await Task.Run(() => statistic.Generation(path, report, month, month2, year, column));
 
-                                }
                             }
                             else if (check == 2)
                             {

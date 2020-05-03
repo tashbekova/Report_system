@@ -132,7 +132,8 @@ namespace Report_system
 
         private void button_Prognoz_Click(object sender, EventArgs e)
         {
-
+            HideSubMenu();
+            OpenChildForm<frm_Prognoz>();
         }
 
         private void button_Statistika_Click(object sender, EventArgs e)

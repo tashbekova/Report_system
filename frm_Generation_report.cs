@@ -46,21 +46,11 @@ namespace Report_system
 
             Show_path();
         }
-        // Set up the BackgroundWorker object by 
-        // attaching event handlers. 
-       
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private async void button_Generation_ClickAsync(object sender, EventArgs e)
         {
             if (comboBox_month.SelectedItem != null && comboBox_year.SelectedItem != null && comboBox_type_report.SelectedItem != null)
@@ -110,9 +100,7 @@ namespace Report_system
                             {
                                 MessageBox.Show("Нет данных по отчету R, данные по POS-терминалам будут пусты", "Error", MessageBoxButtons.OK);
                             }
-                            path = path_directory + @"\" + year.ToString();
-                            if (Directory.Exists(path))
-                            {
+                            
                                 path = path_directory + @"\" + year.ToString() + @"\" + report;
                                 if (Directory.Exists(path))
                                 {
@@ -152,16 +140,6 @@ namespace Report_system
                                     Generation_intermediate_report create = new Generation_intermediate_report();
                                     await Task.Run(() => create.Generation(path, month, year));
                                 }
-                            }
-                            else
-                            {
-                                DirectoryInfo di = Directory.CreateDirectory(path);
-                                path = path_directory + @"\" + year.ToString() + @"\" + report;
-                                di = Directory.CreateDirectory(path);
-                                path = path_directory + @"\" + year.ToString() + @"\" + report + @"\" + month.ToString() + "_" + year.ToString() + "_" + report + ".xlsx";
-                                Generation_intermediate_report create = new Generation_intermediate_report();
-                                await Task.Run(() => create.Generation(path, month, year));
-                            }
                             pb_Status.Visible = false;
                             // Тут ваш код, время выполнения которого нужно измерить
                             swatch.Stop();

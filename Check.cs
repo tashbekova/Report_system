@@ -7,7 +7,8 @@ namespace Report_system
 {
     public class Check
     {
-        
+        private string ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'";
+
         public int Check_Report(string File_name)
         {
            SqlConnection SQLConnection = new SqlConnection
@@ -92,8 +93,6 @@ namespace Report_system
             }
                 try
             {
-
-                string ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'";
                 SqlConnection myConnection = new SqlConnection(ConnectionString);
                 myConnection.Open();
                 string query =
@@ -101,6 +100,27 @@ namespace Report_system
                 Table_Name +
                 " WHERE " +
                 " Month("+column+")='" + month + "' and YEAR("+column+")= '" + year + "'";
+                SqlCommand command = new SqlCommand(query, myConnection);
+                int rowcount = (int)command.ExecuteScalar();
+                myConnection.Close();
+                return rowcount;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -2;
+            }
+
+        }
+
+        public int Check_Data(string Table_Name)
+        {
+            try
+            {
+                SqlConnection myConnection = new SqlConnection(ConnectionString);
+                myConnection.Open();
+                string query =
+                "SELECT COUNT(*) FROM " + Table_Name;
                 SqlCommand command = new SqlCommand(query, myConnection);
                 int rowcount = (int)command.ExecuteScalar();
                 myConnection.Close();
@@ -127,8 +147,6 @@ namespace Report_system
             }
             try
             {
-
-                string ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'";
                 SqlConnection myConnection = new SqlConnection(ConnectionString);
                 myConnection.Open();
                 string query =
@@ -164,14 +182,13 @@ namespace Report_system
             try
             {
 
-                string ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'";
                 SqlConnection myConnection = new SqlConnection(ConnectionString);
                 myConnection.Open();
                 string query =
                 "SELECT COUNT(*) FROM " +
                 Table_Name +
                 " WHERE " +
-                "YEAR(" + column + ")= '" + year + "'";
+                "YEAR(" + column + ")= '" + year + "' and Month("+column+")>="+month+" and Month("+column+")<="+month2 ;
                 SqlCommand command = new SqlCommand(query, myConnection);
                 int rowcount = (int)command.ExecuteScalar();
                 myConnection.Close();

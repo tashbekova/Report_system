@@ -24,27 +24,6 @@ namespace Report_system
 
         private void frm_Statistic_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "report_SystemDataSet1.tbl_Name_of_report". При необходимости она может быть перемещена или удалена.
-            this.tbl_Name_of_reportTableAdapter.Fill(this.report_SystemDataSet1.tbl_Name_of_report);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "report_SystemDataSet.tbl_Year". При необходимости она может быть перемещена или удалена.
-            this.tbl_YearTableAdapter.Fill(this.report_SystemDataSet.tbl_Year);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "report_SystemDataSet.tbl_Type_of_report". При необходимости она может быть перемещена или удалена.
-            this.tbl_Type_of_reportTableAdapter.Fill(this.report_SystemDataSet.tbl_Type_of_report);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "report_SystemDataSet.tbl_Month". При необходимости она может быть перемещена или удалена.
-            this.tbl_MonthTableAdapter.Fill(this.report_SystemDataSet.tbl_Month);
-
-            comboBox_month.SelectedIndex = DateTime.Now.Month - 1;
-            comboBox_month2.SelectedIndex = DateTime.Now.Month - 1;
-            int index = comboBox_year.FindString((System.DateTime.Now.Year).ToString());
-            if (index < 0)
-            {
-                MessageBox.Show("Нынешнего года нет в Базе данных");
-            }
-            else
-            {
-                comboBox_year.SelectedIndex = index;
-            }
-
         }
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
@@ -53,94 +32,33 @@ namespace Report_system
         }
 
 
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void rbutton_Year_CheckedChanged(object sender, EventArgs e)
-        {
-            comboBox_type_report.Visible = true;
-            comboBox_year.Visible = true;
-            comboBox_month.Visible = false;
-            comboBox_month2.Visible = false;
-            label_description_for_year.Visible = true;
-            label_description_for_time.Visible = false;
-        }
-
-        private void rbutton_Time_CheckedChanged(object sender, EventArgs e)
-        {
-            comboBox_type_report.Visible = true;
-            comboBox_year.Visible = true;
-            comboBox_month.Visible = true;
-            comboBox_month2.Visible = true;
-            label_description_for_year.Visible = true;
-            label_description_for_time.Visible = true;
-        }
-
         private async void button_Make_statistic_ClickAsync(object sender, EventArgs e)
         {
             try
             {
-                if (comboBox_year.SelectedItem != null && comboBox_type_report.SelectedItem != null)
-                {
                     string path;
-                    string Table_name = "";
-                    string report = comboBox_type_report.SelectedValue.ToString();
-                    int year = (int)((DataRowView)comboBox_year.SelectedItem)[comboBox_year.DisplayMember];
+                    string Table_name = "[dbo].[tbl_Total_Device_Report_A]";
                     string path_directory = label_path_directory.Text.ToString();
                     Generation_statistic statistic = new Generation_statistic();
-                    string column = "";
-
-                    if (rbutton_Currency.Checked == true)
-                    { 
-                        column = "Currency";
-                    }
-                    else if (rbutton_Type_of_card.Checked == true)
-                    { 
-                        column = "Type_of_card";
-                    }
-                    else if (rbutton_Device.Checked == true)
-                    { 
-                        column = "Device"; 
-                    }
-
-                    if (report == "Report A")
-                    {
-                        Table_name = "tbl_Report_A";
-                    }
-                    else if (report == "Report H")
-                    {
-                        Table_name = "tbl_Report_H";
-                    }
-                    else if (report == "Report R")
-                    {
-                        Table_name = "tbl_Report_R";
-                    }
+                    int year = System.DateTime.Now.Year;
                     Check check_data = new Check();
                     int check = 0;
                     if (rbutton_Year.Checked == true)
                     {
-                        check = check_data.Check_Data(Table_name,year);
+                        check = check_data.Check_Data(Table_name);
                         if (check == 0)
                         {
-                            MessageBox.Show("Нет данных за этот год", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Нет данных по банкоматам", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         else if (check >= 1)
                         {
-                            path = path_directory + @"\" + year.ToString();
+                            path = path_directory + @"\" + year.ToString()+@"\Годовой";
                             if (Directory.Exists(path))
                             {
-                                path = path_directory + @"\" + year.ToString() + @"\" + report;
-                                if (Directory.Exists(path))
-                                {
-                                    path = path_directory + @"\" + year.ToString() + @"\" + report + @"\" +column.ToString()+"_"+  year.ToString() + "_" + report + ".xlsx";
-                                    string path2 = path_directory + @"\" + year.ToString() + @"\" + report + @"\" + column.ToString() + "_" + year.ToString() + "_" + report + ".xls";
-                                    if (System.IO.File.Exists(path))
+                            path = path_directory + @"\" + year.ToString()+@"\Годовой" +@"\" + DateTime.Now.ToShortDateString() + ".xlsx";
+                            if (System.IO.File.Exists(path))
                                     {
-                                        MessageBox.Show("Отчёт уже сформирован");
-                                        string message = "Отчёт уже сформирован. Хотите ли вы сформировать ещё раз?";
+                                        string message = "Прогноз уже сделан за сегодня. Хотите ли вы сформировать ещё раз?";
                                         string caption = "Error Detected in Input";
                                         MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                                         DialogResult result;
@@ -148,31 +66,22 @@ namespace Report_system
                                         result = MessageBox.Show(message, caption, buttons);
                                         if (result == System.Windows.Forms.DialogResult.Yes)
                                         {
-                                            await Task.Run(() => statistic.Generation(path, report,year,column));
+                                            //await Task.Run(() => statistic.Generation(path, report,year,column));
                                         }
                                     }
                                     else
                                     {
                                         MessageBox.Show("Статистика еще не сформирована");
-                                        await Task.Run(() => statistic.Generation(path, report, year,column));
+                                        //await Task.Run(() => statistic.Generation(path, report, year,column));
                                     }
-                                }
+                            }
                                 else
                                 {
                                     DirectoryInfo di = Directory.CreateDirectory(path);
-                                    path = path_directory + @"\" + year.ToString() + @"\" + report + @"\" + column.ToString() + "_" + year.ToString() + "_" + report + ".xlsx";
+                                    path = path_directory + @"\" + year.ToString() + @"\Годовой" + @"\" + DateTime.Now.ToShortDateString()+ ".xlsx";
                                     MessageBox.Show("Статистика еще не сформирована");
-                                    await Task.Run(() => statistic.Generation(path, report, year,column));
-                                }
-                            }
-                            else
-                            {
-                                //pb_Status.PerformStep();
-                                DirectoryInfo di = Directory.CreateDirectory(path);
-                                path = path_directory + @"\" + year.ToString() + @"\" + report;
-                                //pb_Status.PerformStep();
-                                di = Directory.CreateDirectory(path);
-                            }
+                                    //await Task.Run(() => statistic.Generation(path, report, year,column));
+                                } 
                         }
                         else if (check == 2)
                         {
@@ -181,98 +90,51 @@ namespace Report_system
                     }
                     else if (rbutton_Time.Checked == true)
                     {
-                        if (comboBox_month.SelectedItem != null && comboBox_month2.SelectedItem != null)
-                        {
-                            int month = Convert.ToInt32(comboBox_month.SelectedValue.ToString());
-                            int month2 = Convert.ToInt32(comboBox_month2.SelectedValue.ToString());
-                            check = check_data.Check_Data(Table_name,month,month2, year);
+                       
+                            check = check_data.Check_Data(Table_name);
                             if (check == 0)
                             {
                                 MessageBox.Show("Нет данных за этот период времени", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                                 else if (check >= 1)
                                 {
-                                    path = path_directory + @"\" + year.ToString();
+                                    path = path_directory + @"\" + year.ToString() + @"\По месяцам";
                                 if (Directory.Exists(path))
                                 {
-                                    path = path_directory + @"\" + year.ToString() + @"\" + report;
-                                    if (Directory.Exists(path))
-                                    {
-                                        path = path_directory + @"\" + year.ToString() + @"\" + report + @"\" + column.ToString() + "_" + month.ToString() + "/" +
-                                        year.ToString() + "-" + month2.ToString() + "/" + year.ToString() + "_" + report + ".xlsx";
-
-                                        string path2 = path_directory + @"\" + year.ToString() + @"\" + report + @"\" + column.ToString() + "_" + month.ToString() +
-                                        "/" + year.ToString() + "-" + month2.ToString() + "/" + year.ToString() + "_" + report + ".xls";
+                                 path = path_directory + @"\" + year.ToString() + @"\По месяцам" + @"\" + DateTime.Now.ToShortDateString() + ".xlsx";
                                         if (System.IO.File.Exists(path))
                                         {
-                                            // pb_Status.PerformStep();
-                                            MessageBox.Show("Отчёт уже сформирован");
-                                            string message = "Отчёт уже сформирован. Хотите ли вы сформировать ещё раз?";
+                                            string message = "Прогноз уже сформирован за сегодня. Хотите ли вы сформировать ещё раз?";
                                             string caption = "Error Detected in Input";
                                             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                                             DialogResult result;
-                                            //pb_Status.PerformStep();
                                             // Displays the MessageBox.
                                             result = MessageBox.Show(message, caption, buttons);
                                             if (result == System.Windows.Forms.DialogResult.Yes)
                                             {
-                                                await Task.Run(() => statistic.Generation(path, report, month, month2, year, column));
+                                                //await Task.Run(() => statistic.Generation(path, report, month, month2, year, column));
                                             }
                                         }
                                         else
                                         {
-                                            // pb_Status.PerformStep();
-                                            MessageBox.Show("Статистика еще не сформирована");
-                                            await Task.Run(() => statistic.Generation(path, report, month, month2, year, column));
+                                            MessageBox.Show("Прогноз еще не сформирован");
+                                            //await Task.Run(() => statistic.Generation(path, report, month, month2, year, column));
                                         }
                                     }
                                     else
                                     {
-                                        //pb_Status.PerformStep();
                                         DirectoryInfo di = Directory.CreateDirectory(path);
-                                        path = path_directory + @"\" + year.ToString() + @"\" + report + @"\" +
-                                        month.ToString() + "/" + year.ToString() + "-" + month2.ToString() + "/" + year.ToString() + "_" + report + ".xlsx";
-                                        // pb_Status.PerformStep();
-                                        MessageBox.Show("Статистика еще не сформирована");
-                                        //pb_Status.PerformStep();
-                                        await Task.Run(() => statistic.Generation(path, report, month, month2, year, column));
+                                        path = path_directory + @"\" + year.ToString() + @"\По месяцам" + @"\" + DateTime.Now.ToShortDateString() + ".xlsx";
+                                        MessageBox.Show("Прогноз еще не сформирован");
+                                        
+                                        //await Task.Run(() => statistic.Generation(path, report, month, month2, year, column));
                                     }
                                 }
-                                else
-                                {
-                                    DirectoryInfo di = Directory.CreateDirectory(path);
-                                    path = path_directory + @"\" + year.ToString() + @"\" + report;
-                                    di = Directory.CreateDirectory(path);
-                                    path = path_directory + @"\" + year.ToString() + @"\" + report + @"\" +
-                                       month.ToString() + "/" + year.ToString() + "-" + month2.ToString() + "/" + year.ToString() + "_" + report + ".xlsx";
-                                    // pb_Status.PerformStep();
-                                    MessageBox.Show("Статистика еще не сформирована");
-                                    //pb_Status.PerformStep();
-                                    await Task.Run(() => statistic.Generation(path, report, month, month2, year, column));
-
-                                }
-                            }
                             else if (check == 2)
                             {
-                                pb_Status.Value = 50;
-                                pb_Status.Visible = false;
                                 MessageBox.Show("Произошла ошибка", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
-                        else
-                        {
-                            MessageBox.Show("Выберите месяц", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                }
-                else if (comboBox_year.SelectedItem == null)
-                {
-                    MessageBox.Show("Выберите год", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else if (comboBox_type_report.SelectedItem == null)
-                {
-                    MessageBox.Show("Выберите тип отчета", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
             }
             catch(Exception ex)
             {
@@ -301,7 +163,7 @@ namespace Report_system
                     string query = "Update " + Table_name +
                                 "Set Path ='" + path_directory + "'" +
                                 " WHERE " +
-                                " ID='" + 2 + "'";
+                                " ID='" + 3 + "'";
                     SqlCommand command = new SqlCommand(query, myConnection);
                     command.ExecuteNonQuery();
                     myConnection.Close();
@@ -330,7 +192,7 @@ namespace Report_system
                 myConnection.Open();
                 string query = "Select * From " + Table_name +
                      " WHERE " +
-                " ID='" + 2 + "'";
+                " ID='" + 3 + "'";
                 SqlCommand command = new SqlCommand(query, myConnection);
                 SqlDataReader reader = command.ExecuteReader();
                 List<string[]> data = new List<string[]>();
