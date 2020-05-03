@@ -44,7 +44,6 @@
             this.tblMonthBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox_type_report = new System.Windows.Forms.ComboBox();
             this.tblNameofreportBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pb_Status = new System.Windows.Forms.ProgressBar();
             this.lblName = new MaterialSkin.Controls.MaterialLabel();
             this.tblTypeofreportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -52,6 +51,7 @@
             this.tbl_Type_of_reportTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_Type_of_reportTableAdapter();
             this.tbl_YearTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_YearTableAdapter();
             this.tbl_Name_of_reportTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_Name_of_reportTableAdapter();
+            this.pb_Status = new System.Windows.Forms.ProgressBar();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_List_Reports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblYearBindingSource)).BeginInit();
@@ -91,11 +91,11 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.pb_Status);
             this.panel1.Controls.Add(this.dataGridView_List_Reports);
             this.panel1.Controls.Add(this.comboBox_year);
             this.panel1.Controls.Add(this.comboBox_month);
             this.panel1.Controls.Add(this.comboBox_type_report);
-            this.panel1.Controls.Add(this.pb_Status);
             this.panel1.Controls.Add(this.lblName);
             this.panel1.Controls.Add(this.materialRaisedButton1);
             this.panel1.Controls.Add(this.button_Show_List_Report);
@@ -204,22 +204,13 @@
             this.tblNameofreportBindingSource.DataMember = "tbl_Name_of_report";
             this.tblNameofreportBindingSource.DataSource = this.reportSystemDataSetBindingSource;
             // 
-            // pb_Status
-            // 
-            this.pb_Status.ForeColor = System.Drawing.Color.Green;
-            this.pb_Status.Location = new System.Drawing.Point(245, 12);
-            this.pb_Status.Name = "pb_Status";
-            this.pb_Status.Size = new System.Drawing.Size(742, 23);
-            this.pb_Status.TabIndex = 5;
-            this.pb_Status.Visible = false;
-            // 
             // lblName
             // 
             this.lblName.AutoSize = true;
             this.lblName.Depth = 0;
             this.lblName.Font = new System.Drawing.Font("Roboto", 11F);
             this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblName.Location = new System.Drawing.Point(28, 9);
+            this.lblName.Location = new System.Drawing.Point(28, 12);
             this.lblName.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(158, 24);
@@ -251,6 +242,16 @@
             // tbl_Name_of_reportTableAdapter
             // 
             this.tbl_Name_of_reportTableAdapter.ClearBeforeFill = true;
+            // 
+            // pb_Status
+            // 
+            this.pb_Status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(137)))), ((int)(((byte)(123)))));
+            this.pb_Status.Location = new System.Drawing.Point(441, 13);
+            this.pb_Status.Name = "pb_Status";
+            this.pb_Status.Size = new System.Drawing.Size(360, 23);
+            this.pb_Status.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.pb_Status.TabIndex = 10;
+            this.pb_Status.Visible = false;
             // 
             // frm_List_Report
             // 
@@ -286,7 +287,6 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.BindingSource reportSystemDataSetBindingSource;
         private Report_SystemDataSet report_SystemDataSet;
-        private System.Windows.Forms.ProgressBar pb_Status;
         private System.Windows.Forms.BindingSource tblMonthBindingSource;
         private Report_SystemDataSetTableAdapters.tbl_MonthTableAdapter tbl_MonthTableAdapter;
         private System.Windows.Forms.ComboBox comboBox_type_report;
@@ -303,5 +303,6 @@
         private System.Windows.Forms.BindingSource tblNameofreportBindingSource;
         private Report_SystemDataSetTableAdapters.tbl_Name_of_reportTableAdapter tbl_Name_of_reportTableAdapter;
         private MaterialSkin.Controls.MaterialLabel lblName;
+        public System.Windows.Forms.ProgressBar pb_Status;
     }
 }

@@ -7,11 +7,14 @@ using System.IO;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
 using System.Data;
+using System.Threading;
+using System.ComponentModel;
 
 namespace Report_system
 {
     public partial class frm_Generation_report : MaterialForm
     {
+
         public frm_Generation_report()
         {
             InitializeComponent();
@@ -34,7 +37,7 @@ namespace Report_system
             int index = comboBox_year.FindString((System.DateTime.Now.Year).ToString());
             if (index < 0)
             {
-                MessageBox.Show("Нынешнего года нет в Базе данных");
+                MessageBox.Show("Нынешнего года нет в Базе данных,добавьте через настройки");
             }
             else
             {
@@ -42,18 +45,16 @@ namespace Report_system
             }
 
             Show_path();
-
         }
+        // Set up the BackgroundWorker object by 
+        // attaching event handlers. 
+       
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-
-       
-
-       
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -64,27 +65,21 @@ namespace Report_system
         {
             if (comboBox_month.SelectedItem != null && comboBox_year.SelectedItem != null && comboBox_type_report.SelectedItem != null)
             {
-                // Display the ProgressBar control.
-                pb_Status.Visible = true;
-                // Set Minimum to 1 to represent the first file being copied.
-                pb_Status.Minimum = 1;
-                // Set Maximum to the total number of files to copy.
-                pb_Status.Maximum = 50;
+                button_Generation.Enabled = false;
                 try
                 {
+                    pb_Status.Visible = true;
+                    int month = 0;
+                    int year = 0;
+                    string path = "";
                     System.Diagnostics.Stopwatch swatch = new System.Diagnostics.Stopwatch();
                     swatch.Start();
-                    string path;
+                    //string path;
                     string report = comboBox_type_report.SelectedValue.ToString();
-                    int month = Convert.ToInt32(comboBox_month.SelectedValue.ToString()) ;
-                    int year= (int)((DataRowView)comboBox_year.SelectedItem)[comboBox_year.DisplayMember];
+                    month = Convert.ToInt32(comboBox_month.SelectedValue.ToString()) ;
+                    year= (int)((DataRowView)comboBox_year.SelectedItem)[comboBox_year.DisplayMember];
                     string path_directory = label_path_directory.Text.ToString();
                     int year_now =  Convert.ToInt32(DateTime.Now.ToString("yyyy"));
-
-                    // Set the initial value of the ProgressBar.
-                    pb_Status.Value = 1;
-                    // Set the Step property to a value of 1 to represent each file being copied.
-                    pb_Status.Step = 1;
                     
                     //string Table_name = "";
                     if (year >= 2000 && year<=year_now)
@@ -93,17 +88,13 @@ namespace Report_system
                         {
                            
                         }
-                        // pb_Status.PerformStep();
                         Check check_data = new Check();
                         int check_A = check_data.Check_Data("tbl_Report_A", month, year);
                         int check_H= check_data.Check_Data("tbl_Report_H", month, year);
                         int check_R= check_data.Check_Data("tbl_Report_R", month, year);
                         if(check_A<=0 && check_H<=0 && check_R<=0)
                         {
-                            //pb_Status.PerformStep();
                             MessageBox.Show("Нет данных за этот месяц и год", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            pb_Status.Value = 50;
-                            pb_Status.Visible = false;
                         }
                         else if(check_A > 0 || check_H > 0 || check_R > 0)
                         {
@@ -119,74 +110,63 @@ namespace Report_system
                             {
                                 MessageBox.Show("Нет данных по отчету R, данные по POS-терминалам будут пусты", "Error", MessageBoxButtons.OK);
                             }
-                            //pb_Status.PerformStep();
                             path = path_directory + @"\" + year.ToString();
                             if (Directory.Exists(path))
                             {
-                                //pb_Status.PerformStep();
                                 path = path_directory + @"\" + year.ToString() + @"\" + report;
                                 if (Directory.Exists(path))
                                 {
-                                    //pb_Status.PerformStep();
                                     path = path_directory + @"\" + year.ToString() + @"\" + report + @"\" + month.ToString() + "_" + year.ToString() + "_" + report + ".xlsx";
                                     string path2 = path_directory + @"\" + year.ToString() + @"\" + report + @"\" + month.ToString() + "_" + year.ToString() + "_" + report + ".xls";
                                     if (System.IO.File.Exists(path))
                                     {
-                                        // pb_Status.PerformStep();
                                         MessageBox.Show("Отчёт уже сформирован");
                                         string message = "Отчёт уже сформирован. Хотите ли вы сформировать ещё раз?";
                                         string caption = "Error Detected in Input";
                                         MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                                         DialogResult result;
-                                        //pb_Status.PerformStep();
                                         // Displays the MessageBox.
                                         result = MessageBox.Show(message, caption, buttons);
                                         if (result == System.Windows.Forms.DialogResult.Yes)
                                         {
-                                            Generation_intermediate_report create = new Generation_intermediate_report();
-                                            await Task.Run(() => create.Generation(path, month, year));
+                                            // Start the asynchronous operation.
+                                         Generation_intermediate_report create = new Generation_intermediate_report();
+                                            await Task.Run(() => create.Generation(path, month, year)); 
+                                         
                                         }
                                     }
                                     else
                                     {
-                                        // pb_Status.PerformStep();
-                                        //MessageBox.Show("Отчет еще не сформирован");
-                                        //pb_Status.PerformStep();
+                                        
                                         Generation_intermediate_report create = new Generation_intermediate_report();
                                         await Task.Run(() => create.Generation(path, month, year));
-                                        create.ProgressBarIncrement += update_progressBar;
+                                        //SetProgress(100);
+
                                     }
                                 }
                                 else
                                 {
-                                    //pb_Status.PerformStep();
                                     DirectoryInfo di = Directory.CreateDirectory(path);
                                     path = path_directory + @"\" + year.ToString() + @"\" + report + @"\" + month.ToString() + "_" + year.ToString() + "_" + report + ".xlsx";
-                                    // pb_Status.PerformStep();
                                     //MessageBox.Show("Отчет еще не сформирован");
-                                    //pb_Status.PerformStep();
                                     Generation_intermediate_report create = new Generation_intermediate_report();
                                     await Task.Run(() => create.Generation(path, month, year));
-                                    create.ProgressBarIncrement += update_progressBar;
                                 }
                             }
                             else
                             {
-                                //pb_Status.PerformStep();
                                 DirectoryInfo di = Directory.CreateDirectory(path);
                                 path = path_directory + @"\" + year.ToString() + @"\" + report;
-                                //pb_Status.PerformStep();
                                 di = Directory.CreateDirectory(path);
                                 path = path_directory + @"\" + year.ToString() + @"\" + report + @"\" + month.ToString() + "_" + year.ToString() + "_" + report + ".xlsx";
-                                // pb_Status.PerformStep();
-                                //MessageBox.Show("Отчет еще не сформирован");
-                                //pb_Status.PerformStep();
                                 Generation_intermediate_report create = new Generation_intermediate_report();
                                 await Task.Run(() => create.Generation(path, month, year));
                             }
+                            pb_Status.Visible = false;
                             // Тут ваш код, время выполнения которого нужно измерить
                             swatch.Stop();
                             MessageBox.Show("" + swatch.Elapsed);
+                            button_Generation.Enabled = true;
                         }
                         else if(check_A == -2 && check_H == -2 && check_R == -2)
                         {
@@ -195,21 +175,19 @@ namespace Report_system
                     }
                     else
                     {
-                        pb_Status.Value = 50;
-                        pb_Status.Visible = false;
                         MessageBox.Show("Выберите корректный год", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 catch (Exception ex)
                 {
-                    pb_Status.Value = 50;
                     pb_Status.Visible = false;
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    button_Generation.Enabled = true;
                 }
                 finally
                 {
-                    pb_Status.Value = 50;
                     pb_Status.Visible = false;
+                    button_Generation.Enabled = true;
                     GC.Collect();
                 }
             }
@@ -227,20 +205,7 @@ namespace Report_system
             }
             GC.Collect();
         }
-        private void update_progressBar(int iteration)
-        {
-            Action action = GetAction(iteration);
-            Invoke(action);
-        }
 
-        private Action GetAction(int iteration)
-        {
-            return () =>
-            {
-                pb_Status.Maximum = iteration;
-                pb_Status.Value += 1;
-            };
-        }
 
         private void button_Edit_path_directory_Click(object sender, EventArgs e)
         {
@@ -295,15 +260,10 @@ namespace Report_system
             myConnection.Close();
             GC.Collect();
         }
-
-        private void label_path_name_Click(object sender, EventArgs e)
+      
+        public void MEssage()
         {
-
-        }
-
-        private void label_path_directory_Click(object sender, EventArgs e)
-        {
-
+            MessageBox.Show("Hello");
         }
     }
    

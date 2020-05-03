@@ -1,6 +1,6 @@
 ﻿namespace Report_system
 {
-    partial class frm_Statistic
+    partial class frm_Prognoz
     {
         /// <summary>
         /// Required designer variable.
@@ -55,6 +55,7 @@
             this.comboBox_type_report = new System.Windows.Forms.ComboBox();
             this.tblNameofreportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.report_SystemDataSet1 = new Report_system.Report_SystemDataSet();
+            this.lblName = new MaterialSkin.Controls.MaterialLabel();
             this.tblTypeofreportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tbl_MonthTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_MonthTableAdapter();
@@ -104,6 +105,7 @@
             this.panel1.Controls.Add(this.comboBox_year);
             this.panel1.Controls.Add(this.comboBox_month);
             this.panel1.Controls.Add(this.comboBox_type_report);
+            this.panel1.Controls.Add(this.lblName);
             this.panel1.Controls.Add(this.materialRaisedButton1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -382,6 +384,20 @@
             this.report_SystemDataSet1.DataSetName = "Report_SystemDataSet";
             this.report_SystemDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Depth = 0;
+            this.lblName.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblName.Location = new System.Drawing.Point(28, 9);
+            this.lblName.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(158, 24);
+            this.lblName.TabIndex = 4;
+            this.lblName.Text = "Название файла";
+            this.lblName.Visible = false;
+            // 
             // tblTypeofreportBindingSource
             // 
             this.tblTypeofreportBindingSource.DataMember = "tbl_Type_of_report";
@@ -410,14 +426,14 @@
             // pb_Status
             // 
             this.pb_Status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(137)))), ((int)(((byte)(123)))));
-            this.pb_Status.Location = new System.Drawing.Point(439, 12);
+            this.pb_Status.Location = new System.Drawing.Point(428, 12);
             this.pb_Status.Name = "pb_Status";
             this.pb_Status.Size = new System.Drawing.Size(360, 23);
             this.pb_Status.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.pb_Status.TabIndex = 20;
             this.pb_Status.Visible = false;
             // 
-            // frm_Statistic
+            // frm_Prognoz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -426,7 +442,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frm_Statistic";
+            this.Name = "frm_Prognoz";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form3";
             this.Load += new System.EventHandler(this.frm_Statistic_Load);
@@ -453,6 +469,7 @@
         private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private MaterialSkin.Controls.MaterialLabel lblName;
         private System.Windows.Forms.BindingSource reportSystemDataSetBindingSource;
         private Report_SystemDataSet report_SystemDataSet;
         private System.Windows.Forms.BindingSource tblMonthBindingSource;

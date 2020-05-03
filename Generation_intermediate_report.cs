@@ -19,10 +19,9 @@ namespace Report_system
         private Excel.Worksheet excelworksheet;
         private Excel.Range excelrange;
         private Excel.Sheets excelsheets;
-        frm_Generation_report pb = new frm_Generation_report();
         public event Action<int> ProgressBarIncrement;  //прогресс барр
-
-        public void Generation(string path,int month,int year)
+        frm_Generation_report forma = new frm_Generation_report();
+        public void Generation (string path,int month,int year)
         {
             try
             {
@@ -48,11 +47,13 @@ namespace Report_system
                 int check_A = check_data.Check_Data("tbl_Report_A", month, year);
                 int check_H = check_data.Check_Data("tbl_Report_H", month, year);
                 int check_R = check_data.Check_Data("tbl_Report_R", month, year);
+
                 if (check_A > 0)
                 {
                     Add_data("tbl_Report_A", 1, month, year);
                     Make_calculations(1);
                     Draw_line(1);
+
                 }
                 if (check_H > 0)
                 {
@@ -66,6 +67,7 @@ namespace Report_system
                     Make_calculations(3);
                     Draw_line(3);
                 }
+               
             }
             catch (Exception ex)
             {
@@ -73,7 +75,7 @@ namespace Report_system
             }
             finally
             {
-                
+              
                 //Показываем ексель
                 excelapp.Visible = true;
 
@@ -179,8 +181,18 @@ namespace Report_system
                             excelworksheet.Cells[rowInd + 2, collInd + 1] = data;
                         }
 
-                        ProgressBarIncrement?.Invoke(rowInd); //прогресс бар двигается вместе со строками
                     }
+                  
+                    //ProgressBarIncrement?.Invoke(percents); 
+                    //прогресс бар двигается вместе с итерациями
+                    //    System.Threading.Thread.Sleep(100);
+                    //    int percents = (rowInd * 100) / (dt.Rows.Count);
+                    //forma.backgroundWorker1.WorkerReportsProgress = true;
+                    //forma.backgroundWorker1.ReportProgress(percents);
+
+                    //2 arguments:
+                    //1. procenteges (from 0 t0 100) - i do a calcumation 
+                    //2. some current value!
                 }
             }
             catch(Exception ex)
@@ -269,7 +281,6 @@ namespace Report_system
                     int collInd;
                     for (collInd = 1; collInd <= 1; collInd++)
                     {
-                        ProgressBarIncrement?.Invoke(rowInd); //прогресс бар двигается вместе с итерациями
                         if ((excelworksheet.Cells[rowInd + 1, 1]).Text != date)
                         {
                             row_end = rowInd + 1;

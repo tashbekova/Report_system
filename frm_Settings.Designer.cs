@@ -32,13 +32,13 @@
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.button_Edit_Settings = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button_Update = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbutton_Name_of_report = new MaterialSkin.Controls.MaterialRadioButton();
             this.rbutton_Type_of_report = new MaterialSkin.Controls.MaterialRadioButton();
             this.rbutton_Year = new MaterialSkin.Controls.MaterialRadioButton();
             this.rbutton_User = new MaterialSkin.Controls.MaterialRadioButton();
             this.dataGridView_List_Settings = new System.Windows.Forms.DataGridView();
-            this.pb_Status = new System.Windows.Forms.ProgressBar();
             this.lblName = new MaterialSkin.Controls.MaterialLabel();
             this.tblYearBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportSystemDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -51,7 +51,6 @@
             this.tbl_Type_of_reportTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_Type_of_reportTableAdapter();
             this.tbl_YearTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_YearTableAdapter();
             this.tbl_Name_of_reportTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_Name_of_reportTableAdapter();
-            this.button_Update = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_List_Settings)).BeginInit();
@@ -95,7 +94,6 @@
             this.panel1.Controls.Add(this.button_Update);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.dataGridView_List_Settings);
-            this.panel1.Controls.Add(this.pb_Status);
             this.panel1.Controls.Add(this.lblName);
             this.panel1.Controls.Add(this.materialRaisedButton1);
             this.panel1.Controls.Add(this.button_Edit_Settings);
@@ -104,6 +102,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1237, 667);
             this.panel1.TabIndex = 3;
+            // 
+            // button_Update
+            // 
+            this.button_Update.Depth = 0;
+            this.button_Update.Location = new System.Drawing.Point(625, 294);
+            this.button_Update.MouseState = MaterialSkin.MouseState.HOVER;
+            this.button_Update.Name = "button_Update";
+            this.button_Update.Primary = true;
+            this.button_Update.Size = new System.Drawing.Size(214, 35);
+            this.button_Update.TabIndex = 12;
+            this.button_Update.Text = "Обновить данные";
+            this.button_Update.UseVisualStyleBackColor = true;
+            this.button_Update.Visible = false;
+            this.button_Update.Click += new System.EventHandler(this.button_Update_Click_1);
             // 
             // groupBox1
             // 
@@ -198,15 +210,6 @@
             this.dataGridView_List_Settings.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_List_Settings_CellValueChanged);
             this.dataGridView_List_Settings.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridView_List_Settings_UserAddedRow);
             // 
-            // pb_Status
-            // 
-            this.pb_Status.ForeColor = System.Drawing.Color.Green;
-            this.pb_Status.Location = new System.Drawing.Point(245, 12);
-            this.pb_Status.Name = "pb_Status";
-            this.pb_Status.Size = new System.Drawing.Size(742, 23);
-            this.pb_Status.TabIndex = 5;
-            this.pb_Status.Visible = false;
-            // 
             // lblName
             // 
             this.lblName.AutoSize = true;
@@ -271,20 +274,6 @@
             // 
             this.tbl_Name_of_reportTableAdapter.ClearBeforeFill = true;
             // 
-            // button_Update
-            // 
-            this.button_Update.Depth = 0;
-            this.button_Update.Location = new System.Drawing.Point(625, 294);
-            this.button_Update.MouseState = MaterialSkin.MouseState.HOVER;
-            this.button_Update.Name = "button_Update";
-            this.button_Update.Primary = true;
-            this.button_Update.Size = new System.Drawing.Size(214, 35);
-            this.button_Update.TabIndex = 12;
-            this.button_Update.Text = "Обновить данные";
-            this.button_Update.UseVisualStyleBackColor = true;
-            this.button_Update.Visible = false;
-            this.button_Update.Click += new System.EventHandler(this.button_Update_Click_1);
-            // 
             // frm_Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -321,7 +310,6 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.BindingSource reportSystemDataSetBindingSource;
         private Report_SystemDataSet report_SystemDataSet;
-        private System.Windows.Forms.ProgressBar pb_Status;
         private System.Windows.Forms.BindingSource tblMonthBindingSource;
         private Report_SystemDataSetTableAdapters.tbl_MonthTableAdapter tbl_MonthTableAdapter;
         private System.Windows.Forms.BindingSource tblTypeofreportBindingSource;

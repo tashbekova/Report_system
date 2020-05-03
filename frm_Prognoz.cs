@@ -10,9 +10,9 @@ using System.Data;
 
 namespace Report_system
 {
-    public partial class frm_Statistic : MaterialForm
+    public partial class frm_Prognoz : MaterialForm
     {
-        public frm_Statistic()
+        public frm_Prognoz()
         {
             InitializeComponent();
             var skinManager = MaterialSkinManager.Instance;
@@ -83,7 +83,6 @@ namespace Report_system
         {
             try
             {
-                pb_Status.Visible = true;
                 if (comboBox_year.SelectedItem != null && comboBox_type_report.SelectedItem != null)
                 {
                     string path;
@@ -277,13 +276,11 @@ namespace Report_system
             }
             catch(Exception ex)
             {
-                pb_Status.Visible = false;
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 GC.Collect();
             }
             finally
             {
-                pb_Status.Visible = false;
                 GC.Collect();
             }
 

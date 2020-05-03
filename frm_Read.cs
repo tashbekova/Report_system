@@ -39,6 +39,7 @@ namespace Report_system
             openFileDialog1.Filter = "Text files(*.txt)|*.txt|All files(*.*)|*.*";
             try
             {
+                pb_Status.Visible = true;
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
                     System.Diagnostics.Stopwatch swatch = new System.Diagnostics.Stopwatch();
@@ -74,15 +75,21 @@ namespace Report_system
                         }
                        
                     }
+                    pb_Status.Visible = false;
                     // Тут ваш код, время выполнения которого нужно измерить
                     swatch.Stop();
                     MessageBox.Show("" + swatch.Elapsed);
 
                 }
             }
-            catch
+            catch(Exception ex)
             {
-
+                pb_Status.Visible = false;
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                pb_Status.Visible = false;
             }
            
         }

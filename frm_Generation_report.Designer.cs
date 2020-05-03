@@ -75,11 +75,11 @@
             // button_Generation
             // 
             this.button_Generation.Depth = 0;
-            this.button_Generation.Location = new System.Drawing.Point(400, 352);
+            this.button_Generation.Location = new System.Drawing.Point(440, 363);
             this.button_Generation.MouseState = MaterialSkin.MouseState.HOVER;
             this.button_Generation.Name = "button_Generation";
             this.button_Generation.Primary = true;
-            this.button_Generation.Size = new System.Drawing.Size(477, 39);
+            this.button_Generation.Size = new System.Drawing.Size(438, 39);
             this.button_Generation.TabIndex = 1;
             this.button_Generation.Text = "Формирование отчёта";
             this.button_Generation.UseVisualStyleBackColor = true;
@@ -126,7 +126,6 @@
             this.label_path_name.Size = new System.Drawing.Size(287, 24);
             this.label_path_name.TabIndex = 11;
             this.label_path_name.Text = "Папка для сохранения отчётов";
-            this.label_path_name.Click += new System.EventHandler(this.label_path_name_Click);
             // 
             // button_Edit_path_directory
             // 
@@ -153,7 +152,6 @@
             this.label_path_directory.Size = new System.Drawing.Size(178, 24);
             this.label_path_directory.TabIndex = 9;
             this.label_path_directory.Text = "Путь к директории";
-            this.label_path_directory.Click += new System.EventHandler(this.label_path_directory_Click);
             // 
             // comboBox_type_report
             // 
@@ -220,10 +218,11 @@
             // 
             // pb_Status
             // 
-            this.pb_Status.ForeColor = System.Drawing.Color.Green;
-            this.pb_Status.Location = new System.Drawing.Point(268, 71);
+            this.pb_Status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(137)))), ((int)(((byte)(123)))));
+            this.pb_Status.Location = new System.Drawing.Point(461, 71);
             this.pb_Status.Name = "pb_Status";
-            this.pb_Status.Size = new System.Drawing.Size(742, 23);
+            this.pb_Status.Size = new System.Drawing.Size(360, 23);
+            this.pb_Status.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.pb_Status.TabIndex = 5;
             this.pb_Status.Visible = false;
             // 
