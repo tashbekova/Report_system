@@ -239,10 +239,6 @@ namespace Report_system
             GC.Collect();
         }
       
-        public void MEssage()
-        {
-            MessageBox.Show("Hello");
-        }
     }
    
 }

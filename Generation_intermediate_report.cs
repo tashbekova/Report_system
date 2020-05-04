@@ -19,9 +19,8 @@ namespace Report_system
         private Excel.Worksheet excelworksheet;
         private Excel.Range excelrange;
         private Excel.Sheets excelsheets;
-        public event Action<int> ProgressBarIncrement;  //прогресс барр
-        frm_Generation_report forma = new frm_Generation_report();
-        public void Generation (string path,int month,int year)
+
+        public void Generation(string path, int month, int year)
         {
             try
             {
@@ -33,15 +32,7 @@ namespace Report_system
                 //делаем временно неактивным документ
                 excelapp.Interactive = false;
                 excelapp.EnableEvents = false;
-
-                
-                //выбираем лист на котором будем работать (Лист 1)
-                //excelworksheet = (Excel.Worksheet)excelapp.Sheets[1];
                 excelsheets = excelworkbook.Worksheets;
-                //excelworksheet = (Excel.Worksheet)excelsheets.get_Item(1);
-                //excelworksheet.Activate();
-                //Название листа
-                //excelworksheet.Name = "Банкоматы";
 
                 Check check_data = new Check();
                 int check_A = check_data.Check_Data("tbl_Report_A", month, year);
@@ -180,17 +171,6 @@ namespace Report_system
                         }
 
                     }
-                  
-                    //ProgressBarIncrement?.Invoke(percents); 
-                    //прогресс бар двигается вместе с итерациями
-                    //    System.Threading.Thread.Sleep(100);
-                    //    int percents = (rowInd * 100) / (dt.Rows.Count);
-                    //forma.backgroundWorker1.WorkerReportsProgress = true;
-                    //forma.backgroundWorker1.ReportProgress(percents);
-
-                    //2 arguments:
-                    //1. procenteges (from 0 t0 100) - i do a calcumation 
-                    //2. some current value!
                 }
             }
             catch(Exception ex)

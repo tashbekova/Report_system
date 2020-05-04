@@ -39,7 +39,7 @@ namespace Report_system
                     string path;
                     string Table_name = "[dbo].[tbl_Total_Device_Report_A]";
                     string path_directory = label_path_directory.Text.ToString();
-                    Generation_statistic statistic = new Generation_statistic();
+                    Generation_Prognoz prognoz = new Generation_Prognoz();
                     int year = System.DateTime.Now.Year;
                     Check check_data = new Check();
                     int check = 0;
@@ -72,7 +72,7 @@ namespace Report_system
                                     else
                                     {
                                         MessageBox.Show("Статистика еще не сформирована");
-                                        //await Task.Run(() => statistic.Generation(path, report, year,column));
+                                        await Task.Run(() => prognoz.Generation(path));
                                     }
                             }
                                 else

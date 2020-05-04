@@ -22,6 +22,7 @@ namespace Report_system
         private string device = "";
         private string Table_name = "";
         private string name = "";
+        string ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'";
         public void Generation(string path, string report, int year,string column)
         {
             try
@@ -308,8 +309,6 @@ namespace Report_system
             else if (column == "Device")
                 title = "Место операции";
             //строка соединения
-            string ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'";
-
             SqlConnection con = new SqlConnection(ConnectionString);
 
             DataTable dt = new DataTable();
@@ -319,7 +318,7 @@ namespace Report_system
                 con.Open();
                 if (flag_full_data == false)
                 {
-                    query = "SELECT " +
+                      query = "SELECT " +
                       Table_name + "." + column + " AS \"" + title + "\", " +
                      "SUM(" + Table_name + ".Account_amount) AS \"Сумма\"," +
                       "SUM(" + Table_name + ".Number_of_trans) AS \"Количество совершенных операций\" " +
@@ -366,7 +365,6 @@ namespace Report_system
             else if (column == "Device")
                 title = "Место операции";
             //строка соединения
-            string ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'";
 
             SqlConnection con = new SqlConnection(ConnectionString);
 
