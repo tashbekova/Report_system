@@ -32,6 +32,7 @@
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.button_Show_List_Report = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pb_Status = new System.Windows.Forms.ProgressBar();
             this.dataGridView_List_Reports = new System.Windows.Forms.DataGridView();
             this.Report_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,14 +45,13 @@
             this.tblMonthBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBox_type_report = new System.Windows.Forms.ComboBox();
             this.tblNameofreportBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lblName = new MaterialSkin.Controls.MaterialLabel();
             this.tblTypeofreportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tbl_MonthTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_MonthTableAdapter();
             this.tbl_Type_of_reportTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_Type_of_reportTableAdapter();
             this.tbl_YearTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_YearTableAdapter();
             this.tbl_Name_of_reportTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_Name_of_reportTableAdapter();
-            this.pb_Status = new System.Windows.Forms.ProgressBar();
+            this.label_Name_of_form = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_List_Reports)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblYearBindingSource)).BeginInit();
@@ -91,12 +91,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label_Name_of_form);
             this.panel1.Controls.Add(this.pb_Status);
             this.panel1.Controls.Add(this.dataGridView_List_Reports);
             this.panel1.Controls.Add(this.comboBox_year);
             this.panel1.Controls.Add(this.comboBox_month);
             this.panel1.Controls.Add(this.comboBox_type_report);
-            this.panel1.Controls.Add(this.lblName);
             this.panel1.Controls.Add(this.materialRaisedButton1);
             this.panel1.Controls.Add(this.button_Show_List_Report);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -105,6 +105,16 @@
             this.panel1.Size = new System.Drawing.Size(1237, 667);
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // pb_Status
+            // 
+            this.pb_Status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(137)))), ((int)(((byte)(123)))));
+            this.pb_Status.Location = new System.Drawing.Point(441, 63);
+            this.pb_Status.Name = "pb_Status";
+            this.pb_Status.Size = new System.Drawing.Size(360, 23);
+            this.pb_Status.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.pb_Status.TabIndex = 10;
+            this.pb_Status.Visible = false;
             // 
             // dataGridView_List_Reports
             // 
@@ -204,20 +214,6 @@
             this.tblNameofreportBindingSource.DataMember = "tbl_Name_of_report";
             this.tblNameofreportBindingSource.DataSource = this.reportSystemDataSetBindingSource;
             // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Depth = 0;
-            this.lblName.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblName.Location = new System.Drawing.Point(28, 12);
-            this.lblName.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(158, 24);
-            this.lblName.TabIndex = 4;
-            this.lblName.Text = "Название файла";
-            this.lblName.Visible = false;
-            // 
             // tblTypeofreportBindingSource
             // 
             this.tblTypeofreportBindingSource.DataMember = "tbl_Type_of_report";
@@ -243,15 +239,15 @@
             // 
             this.tbl_Name_of_reportTableAdapter.ClearBeforeFill = true;
             // 
-            // pb_Status
+            // label_Name_of_form
             // 
-            this.pb_Status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(137)))), ((int)(((byte)(123)))));
-            this.pb_Status.Location = new System.Drawing.Point(441, 13);
-            this.pb_Status.Name = "pb_Status";
-            this.pb_Status.Size = new System.Drawing.Size(360, 23);
-            this.pb_Status.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
-            this.pb_Status.TabIndex = 10;
-            this.pb_Status.Visible = false;
+            this.label_Name_of_form.AutoSize = true;
+            this.label_Name_of_form.Font = new System.Drawing.Font("Georgia", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_Name_of_form.Location = new System.Drawing.Point(424, 8);
+            this.label_Name_of_form.Name = "label_Name_of_form";
+            this.label_Name_of_form.Size = new System.Drawing.Size(536, 43);
+            this.label_Name_of_form.TabIndex = 13;
+            this.label_Name_of_form.Text = "Список добавленных отчетов";
             // 
             // frm_List_Report
             // 
@@ -302,7 +298,7 @@
         private Report_SystemDataSetTableAdapters.tbl_YearTableAdapter tbl_YearTableAdapter;
         private System.Windows.Forms.BindingSource tblNameofreportBindingSource;
         private Report_SystemDataSetTableAdapters.tbl_Name_of_reportTableAdapter tbl_Name_of_reportTableAdapter;
-        private MaterialSkin.Controls.MaterialLabel lblName;
         public System.Windows.Forms.ProgressBar pb_Status;
+        private System.Windows.Forms.Label label_Name_of_form;
     }
 }

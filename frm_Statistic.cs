@@ -83,7 +83,11 @@ namespace Report_system
         {
             try
             {
+                
                 pb_Status.Visible = true;
+                //Блокировка кнопки до окончания формирования статистики
+                button_Make_statistic.Enabled = false;
+                //Если выбран год и тип отчета
                 if (comboBox_year.SelectedItem != null && comboBox_type_report.SelectedItem != null)
                 {
                     string path;
@@ -250,12 +254,14 @@ namespace Report_system
             catch(Exception ex)
             {
                 pb_Status.Visible = false;
+                button_Make_statistic.Enabled = true;
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 GC.Collect();
             }
             finally
             {
                 pb_Status.Visible = false;
+                button_Make_statistic.Enabled = true;
                 GC.Collect();
             }
 

@@ -29,34 +29,34 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.button_Close = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pb_Status = new System.Windows.Forms.ProgressBar();
             this.label_path_name = new MaterialSkin.Controls.MaterialLabel();
             this.button_Edit_path_directory = new MaterialSkin.Controls.MaterialRaisedButton();
             this.label_path_directory = new MaterialSkin.Controls.MaterialLabel();
-            this.button_Make_statistic = new MaterialSkin.Controls.MaterialRaisedButton();
-            this.tblMonthBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.report_SystemDataSet = new Report_system.Report_SystemDataSet();
+            this.button_Make_prognoz = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox_Type_of_time = new System.Windows.Forms.GroupBox();
             this.rbutton_Time = new MaterialSkin.Controls.MaterialRadioButton();
             this.rbutton_Year = new MaterialSkin.Controls.MaterialRadioButton();
+            this.tblMonthBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.report_SystemDataSet = new Report_system.Report_SystemDataSet();
             this.tblYearBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportSystemDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tblMonthBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tblNameofreportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.report_SystemDataSet1 = new Report_system.Report_SystemDataSet();
-            this.lblName = new MaterialSkin.Controls.MaterialLabel();
             this.tblTypeofreportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tbl_MonthTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_MonthTableAdapter();
             this.tbl_Type_of_reportTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_Type_of_reportTableAdapter();
             this.tbl_YearTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_YearTableAdapter();
             this.tbl_Name_of_reportTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_Name_of_reportTableAdapter();
-            this.pb_Status = new System.Windows.Forms.ProgressBar();
+            this.label_Name_of_form = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.groupBox_Type_of_time.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblMonthBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.report_SystemDataSet)).BeginInit();
-            this.groupBox_Type_of_time.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblYearBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportSystemDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblMonthBindingSource)).BeginInit();
@@ -65,35 +65,45 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblTypeofreportBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // materialRaisedButton1
+            // button_Close
             // 
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(1071, 12);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(154, 39);
-            this.materialRaisedButton1.TabIndex = 0;
-            this.materialRaisedButton1.Text = "Закрыть";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
-            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
+            this.button_Close.Depth = 0;
+            this.button_Close.Location = new System.Drawing.Point(1071, 12);
+            this.button_Close.MouseState = MaterialSkin.MouseState.HOVER;
+            this.button_Close.Name = "button_Close";
+            this.button_Close.Primary = true;
+            this.button_Close.Size = new System.Drawing.Size(154, 39);
+            this.button_Close.TabIndex = 0;
+            this.button_Close.Text = "Закрыть";
+            this.button_Close.UseVisualStyleBackColor = true;
+            this.button_Close.Click += new System.EventHandler(this.materialRaisedButton1_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label_Name_of_form);
             this.panel1.Controls.Add(this.pb_Status);
             this.panel1.Controls.Add(this.label_path_name);
             this.panel1.Controls.Add(this.button_Edit_path_directory);
             this.panel1.Controls.Add(this.label_path_directory);
-            this.panel1.Controls.Add(this.button_Make_statistic);
+            this.panel1.Controls.Add(this.button_Make_prognoz);
             this.panel1.Controls.Add(this.groupBox_Type_of_time);
-            this.panel1.Controls.Add(this.lblName);
-            this.panel1.Controls.Add(this.materialRaisedButton1);
+            this.panel1.Controls.Add(this.button_Close);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1237, 667);
             this.panel1.TabIndex = 3;
+            // 
+            // pb_Status
+            // 
+            this.pb_Status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(137)))), ((int)(((byte)(123)))));
+            this.pb_Status.Location = new System.Drawing.Point(457, 48);
+            this.pb_Status.Name = "pb_Status";
+            this.pb_Status.Size = new System.Drawing.Size(360, 23);
+            this.pb_Status.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.pb_Status.TabIndex = 20;
+            this.pb_Status.Visible = false;
             // 
             // label_path_name
             // 
@@ -101,7 +111,7 @@
             this.label_path_name.Depth = 0;
             this.label_path_name.Font = new System.Drawing.Font("Roboto", 11F);
             this.label_path_name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label_path_name.Location = new System.Drawing.Point(28, 78);
+            this.label_path_name.Location = new System.Drawing.Point(35, 125);
             this.label_path_name.MouseState = MaterialSkin.MouseState.HOVER;
             this.label_path_name.Name = "label_path_name";
             this.label_path_name.Size = new System.Drawing.Size(321, 24);
@@ -111,7 +121,7 @@
             // button_Edit_path_directory
             // 
             this.button_Edit_path_directory.Depth = 0;
-            this.button_Edit_path_directory.Location = new System.Drawing.Point(994, 108);
+            this.button_Edit_path_directory.Location = new System.Drawing.Point(1001, 155);
             this.button_Edit_path_directory.MouseState = MaterialSkin.MouseState.HOVER;
             this.button_Edit_path_directory.Name = "button_Edit_path_directory";
             this.button_Edit_path_directory.Primary = true;
@@ -126,41 +136,31 @@
             this.label_path_directory.Depth = 0;
             this.label_path_directory.Font = new System.Drawing.Font("Roboto", 11F);
             this.label_path_directory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label_path_directory.Location = new System.Drawing.Point(78, 114);
+            this.label_path_directory.Location = new System.Drawing.Point(85, 161);
             this.label_path_directory.MouseState = MaterialSkin.MouseState.HOVER;
             this.label_path_directory.Name = "label_path_directory";
             this.label_path_directory.Size = new System.Drawing.Size(178, 24);
             this.label_path_directory.TabIndex = 17;
             this.label_path_directory.Text = "Путь к директории";
             // 
-            // button_Make_statistic
+            // button_Make_prognoz
             // 
-            this.button_Make_statistic.Depth = 0;
-            this.button_Make_statistic.Location = new System.Drawing.Point(450, 336);
-            this.button_Make_statistic.MouseState = MaterialSkin.MouseState.HOVER;
-            this.button_Make_statistic.Name = "button_Make_statistic";
-            this.button_Make_statistic.Primary = true;
-            this.button_Make_statistic.Size = new System.Drawing.Size(327, 37);
-            this.button_Make_statistic.TabIndex = 16;
-            this.button_Make_statistic.Text = "Сформировать прогноз";
-            this.button_Make_statistic.UseVisualStyleBackColor = true;
-            this.button_Make_statistic.Click += new System.EventHandler(this.button_Make_statistic_ClickAsync);
-            // 
-            // tblMonthBindingSource1
-            // 
-            this.tblMonthBindingSource1.DataMember = "tbl_Month";
-            this.tblMonthBindingSource1.DataSource = this.report_SystemDataSet;
-            // 
-            // report_SystemDataSet
-            // 
-            this.report_SystemDataSet.DataSetName = "Report_SystemDataSet";
-            this.report_SystemDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.button_Make_prognoz.Depth = 0;
+            this.button_Make_prognoz.Location = new System.Drawing.Point(457, 383);
+            this.button_Make_prognoz.MouseState = MaterialSkin.MouseState.HOVER;
+            this.button_Make_prognoz.Name = "button_Make_prognoz";
+            this.button_Make_prognoz.Primary = true;
+            this.button_Make_prognoz.Size = new System.Drawing.Size(327, 37);
+            this.button_Make_prognoz.TabIndex = 16;
+            this.button_Make_prognoz.Text = "Сформировать прогноз";
+            this.button_Make_prognoz.UseVisualStyleBackColor = true;
+            this.button_Make_prognoz.Click += new System.EventHandler(this.button_Make_prognoz_ClickAsync);
             // 
             // groupBox_Type_of_time
             // 
             this.groupBox_Type_of_time.Controls.Add(this.rbutton_Time);
             this.groupBox_Type_of_time.Controls.Add(this.rbutton_Year);
-            this.groupBox_Type_of_time.Location = new System.Drawing.Point(443, 162);
+            this.groupBox_Type_of_time.Location = new System.Drawing.Point(457, 200);
             this.groupBox_Type_of_time.Name = "groupBox_Type_of_time";
             this.groupBox_Type_of_time.Size = new System.Drawing.Size(334, 75);
             this.groupBox_Type_of_time.TabIndex = 10;
@@ -201,6 +201,16 @@
             this.rbutton_Year.Text = "Годовая";
             this.rbutton_Year.UseVisualStyleBackColor = true;
             // 
+            // tblMonthBindingSource1
+            // 
+            this.tblMonthBindingSource1.DataMember = "tbl_Month";
+            this.tblMonthBindingSource1.DataSource = this.report_SystemDataSet;
+            // 
+            // report_SystemDataSet
+            // 
+            this.report_SystemDataSet.DataSetName = "Report_SystemDataSet";
+            this.report_SystemDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // tblYearBindingSource
             // 
             this.tblYearBindingSource.DataMember = "tbl_Year";
@@ -225,20 +235,6 @@
             // 
             this.report_SystemDataSet1.DataSetName = "Report_SystemDataSet";
             this.report_SystemDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Depth = 0;
-            this.lblName.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblName.Location = new System.Drawing.Point(28, 9);
-            this.lblName.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(158, 24);
-            this.lblName.TabIndex = 4;
-            this.lblName.Text = "Название файла";
-            this.lblName.Visible = false;
             // 
             // tblTypeofreportBindingSource
             // 
@@ -265,15 +261,15 @@
             // 
             this.tbl_Name_of_reportTableAdapter.ClearBeforeFill = true;
             // 
-            // pb_Status
+            // label_Name_of_form
             // 
-            this.pb_Status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(137)))), ((int)(((byte)(123)))));
-            this.pb_Status.Location = new System.Drawing.Point(428, 12);
-            this.pb_Status.Name = "pb_Status";
-            this.pb_Status.Size = new System.Drawing.Size(360, 23);
-            this.pb_Status.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
-            this.pb_Status.TabIndex = 20;
-            this.pb_Status.Visible = false;
+            this.label_Name_of_form.AutoSize = true;
+            this.label_Name_of_form.Font = new System.Drawing.Font("Georgia", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_Name_of_form.Location = new System.Drawing.Point(438, 2);
+            this.label_Name_of_form.Name = "label_Name_of_form";
+            this.label_Name_of_form.Size = new System.Drawing.Size(456, 43);
+            this.label_Name_of_form.TabIndex = 21;
+            this.label_Name_of_form.Text = "Формирование прогноза";
             // 
             // frm_Prognoz
             // 
@@ -290,10 +286,10 @@
             this.Load += new System.EventHandler(this.frm_Statistic_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblMonthBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.report_SystemDataSet)).EndInit();
             this.groupBox_Type_of_time.ResumeLayout(false);
             this.groupBox_Type_of_time.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblMonthBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report_SystemDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblYearBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportSystemDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblMonthBindingSource)).EndInit();
@@ -306,10 +302,9 @@
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
+        private MaterialSkin.Controls.MaterialRaisedButton button_Close;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private MaterialSkin.Controls.MaterialLabel lblName;
         private System.Windows.Forms.BindingSource reportSystemDataSetBindingSource;
         private Report_SystemDataSet report_SystemDataSet;
         private System.Windows.Forms.BindingSource tblMonthBindingSource;
@@ -319,7 +314,7 @@
         private System.Windows.Forms.GroupBox groupBox_Type_of_time;
         private MaterialSkin.Controls.MaterialRadioButton rbutton_Time;
         private MaterialSkin.Controls.MaterialRadioButton rbutton_Year;
-        private MaterialSkin.Controls.MaterialRaisedButton button_Make_statistic;
+        private MaterialSkin.Controls.MaterialRaisedButton button_Make_prognoz;
         private MaterialSkin.Controls.MaterialLabel label_path_name;
         private MaterialSkin.Controls.MaterialRaisedButton button_Edit_path_directory;
         private MaterialSkin.Controls.MaterialLabel label_path_directory;
@@ -330,5 +325,6 @@
         private Report_SystemDataSetTableAdapters.tbl_Name_of_reportTableAdapter tbl_Name_of_reportTableAdapter;
         private System.Windows.Forms.BindingSource tblMonthBindingSource1;
         public System.Windows.Forms.ProgressBar pb_Status;
+        private System.Windows.Forms.Label label_Name_of_form;
     }
 }

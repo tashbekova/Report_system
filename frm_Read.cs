@@ -5,6 +5,7 @@ using MaterialSkin;
 using MaterialSkin.Controls;
 using System.IO;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
 
 namespace Report_system
 {
@@ -34,34 +35,44 @@ namespace Report_system
 
         }
 
-        private void materialRaisedButton3_Click(object sender, EventArgs e)
+        private async void button_Read_Click(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "Text files(*.txt)|*.txt|All files(*.*)|*.*";
             try
             {
+                //Виден прогресс бар
                 pb_Status.Visible = true;
+                //Кнопка считывания блокируется до окончания считывания
+                button_Read.Enabled = false;
+                //Если файл выбран
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    System.Diagnostics.Stopwatch swatch = new System.Diagnostics.Stopwatch();
-                    swatch.Start();
                     StreamReader SourceFile = File.OpenText(openFileDialog1.FileName);
                     string[] stroka = File.ReadAllLines(openFileDialog1.FileName);
+                    //Название файла
                     string file_name = (Path.GetFileNameWithoutExtension(openFileDialog1.FileName));
+                    //Показываем на форме названия считываемого файла
                     lblName.Text = file_name;
+                    //Если файл пустой
                     if (stroka.Length == 0)
                     {
                         MessageBox.Show("Файл пуст", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
+                    else
                     {
+                        //Проверяем не добавлен ли этой отчет уже в БД
                         Check check = new Check();
                         int check_result=check.Check_Report(file_name);
+                        //Если отчет еще не добавлен,то добавляем в БД
                         if (check_result == 0)
                         {
                             MessageBox.Show("Отчет не добавлен");
+                            //Добавляем в таблицу название считываемого файла
                             Add_Report(file_name);
+                            //Распознаем и считываем данные файла
                             Read_Report_A report_A = new Read_Report_A();
-                            report_A.Read_file(openFileDialog1.FileName);
+                            await Task.Run(() => report_A.Read_file(openFileDialog1.FileName));
                         }
                         else if(check_result==1)
                         {
@@ -71,25 +82,25 @@ namespace Report_system
                         {
                             MessageBox.Show("Отчёт добавлен с ошибками или не полностью");
                             Read_Report_A report_A = new Read_Report_A();
-                            report_A.Read_file(openFileDialog1.FileName);
+                            await Task.Run(() => report_A.Read_file(openFileDialog1.FileName));
                         }
                        
                     }
-                    pb_Status.Visible = false;
-                    // Тут ваш код, время выполнения которого нужно измерить
-                    swatch.Stop();
-                    MessageBox.Show("" + swatch.Elapsed);
-
                 }
             }
             catch(Exception ex)
             {
                 pb_Status.Visible = false;
+                button_Read.Enabled = true;
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
+                //Разблокируем кнопку считывания
+                button_Read.Enabled = true;
+                //Убираем прогресс бар
                 pb_Status.Visible = false;
+                GC.Collect();
             }
            
         }
@@ -98,6 +109,7 @@ namespace Report_system
             string ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'";
             SqlConnection SQLConnection = new SqlConnection(ConnectionString);
             string Table_Name = "";
+            //Определяем по названию файла в какую таблицу добавлять данные
             if (File_name.Contains('A'))
             {
                 Table_Name = "dbo.tbl_Result_Report_A";
@@ -128,6 +140,7 @@ namespace Report_system
             finally
             {
                 SQLConnection.Close();
+                GC.Collect();
             }
         }
 

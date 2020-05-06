@@ -108,7 +108,7 @@
             // 
             this.label_Name_of_form.AutoSize = true;
             this.label_Name_of_form.Font = new System.Drawing.Font("Georgia", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_Name_of_form.Location = new System.Drawing.Point(444, 12);
+            this.label_Name_of_form.Location = new System.Drawing.Point(490, 2);
             this.label_Name_of_form.Name = "label_Name_of_form";
             this.label_Name_of_form.Size = new System.Drawing.Size(409, 43);
             this.label_Name_of_form.TabIndex = 12;

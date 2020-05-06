@@ -46,7 +46,6 @@ namespace Report_system
         public void Read_file(string path_name)
         {
             StreamReader SourceFile = File.OpenText(path_name);
-            //string[] stroka = File.ReadAllLines(path_name);
             string File_name = (Path.GetFileNameWithoutExtension(path_name));
             MessageBox.Show("Распознаем и считываем данные");
             
@@ -291,7 +290,7 @@ namespace Report_system
                             flag_Total_Currency = true;
                             flag_Total = true;
                         }
-
+                        //Определяем в какую таблицу добавлять данные
                         if (flag_Total == true)
                         {
                             if (flag_Total_Posting_Date == true)
@@ -917,7 +916,7 @@ namespace Report_system
             //MessageBox.Show(string_Posting_Date_value);
         }
 
-
+        //Определение типа карты из названия транзакции
         private void Read_Type_of_card(string transaction_name)
         {
             int end_transaction = transaction_name.Length;    //значение конца строки
@@ -946,6 +945,8 @@ namespace Report_system
             string_Type_of_card = new string(list_Type_of_card.ToArray());
             string_Type_of_card= string_Type_of_card.ToUpper();
         }
+
+        //Добавление считанных данных
         private void Add_Data(string File_name)
         {
             Read_Type_of_card(string_Transaction_Name_value);
@@ -1016,6 +1017,7 @@ namespace Report_system
             }
         }
 
+        //Обновление данных о считывании отчета,успешно ли считано или с ошибками
         private void Update_Report(string File_name,bool flag_report,int finish)
         {
             string result ;
@@ -1058,7 +1060,7 @@ namespace Report_system
             }
         }
 
-
+        //Поиск ID отчета,чтобы добавить в столбец Report_id,потому что там стоит связь
         private void Find_Report(string File_name)
         {
             string Table_Name = "";

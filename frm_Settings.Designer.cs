@@ -39,7 +39,6 @@
             this.rbutton_Year = new MaterialSkin.Controls.MaterialRadioButton();
             this.rbutton_User = new MaterialSkin.Controls.MaterialRadioButton();
             this.dataGridView_List_Settings = new System.Windows.Forms.DataGridView();
-            this.lblName = new MaterialSkin.Controls.MaterialLabel();
             this.tblYearBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportSystemDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.report_SystemDataSet = new Report_system.Report_SystemDataSet();
@@ -51,6 +50,7 @@
             this.tbl_Type_of_reportTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_Type_of_reportTableAdapter();
             this.tbl_YearTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_YearTableAdapter();
             this.tbl_Name_of_reportTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_Name_of_reportTableAdapter();
+            this.label_Name_of_form = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_List_Settings)).BeginInit();
@@ -91,10 +91,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label_Name_of_form);
             this.panel1.Controls.Add(this.button_Update);
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.dataGridView_List_Settings);
-            this.panel1.Controls.Add(this.lblName);
             this.panel1.Controls.Add(this.materialRaisedButton1);
             this.panel1.Controls.Add(this.button_Edit_Settings);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -210,20 +210,6 @@
             this.dataGridView_List_Settings.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_List_Settings_CellValueChanged);
             this.dataGridView_List_Settings.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dataGridView_List_Settings_UserAddedRow);
             // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Depth = 0;
-            this.lblName.Font = new System.Drawing.Font("Roboto", 11F);
-            this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lblName.Location = new System.Drawing.Point(28, 9);
-            this.lblName.MouseState = MaterialSkin.MouseState.HOVER;
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(158, 24);
-            this.lblName.TabIndex = 4;
-            this.lblName.Text = "Название файла";
-            this.lblName.Visible = false;
-            // 
             // tblYearBindingSource
             // 
             this.tblYearBindingSource.DataMember = "tbl_Year";
@@ -274,6 +260,16 @@
             // 
             this.tbl_Name_of_reportTableAdapter.ClearBeforeFill = true;
             // 
+            // label_Name_of_form
+            // 
+            this.label_Name_of_form.AutoSize = true;
+            this.label_Name_of_form.Font = new System.Drawing.Font("Georgia", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_Name_of_form.Location = new System.Drawing.Point(547, 2);
+            this.label_Name_of_form.Name = "label_Name_of_form";
+            this.label_Name_of_form.Size = new System.Drawing.Size(213, 43);
+            this.label_Name_of_form.TabIndex = 13;
+            this.label_Name_of_form.Text = "Настройки";
+            // 
             // frm_Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -319,12 +315,12 @@
         private Report_SystemDataSetTableAdapters.tbl_YearTableAdapter tbl_YearTableAdapter;
         private System.Windows.Forms.BindingSource tblNameofreportBindingSource;
         private Report_SystemDataSetTableAdapters.tbl_Name_of_reportTableAdapter tbl_Name_of_reportTableAdapter;
-        private MaterialSkin.Controls.MaterialLabel lblName;
         private System.Windows.Forms.GroupBox groupBox1;
         private MaterialSkin.Controls.MaterialRadioButton rbutton_Name_of_report;
         private MaterialSkin.Controls.MaterialRadioButton rbutton_Type_of_report;
         private MaterialSkin.Controls.MaterialRadioButton rbutton_Year;
         private MaterialSkin.Controls.MaterialRadioButton rbutton_User;
         private MaterialSkin.Controls.MaterialRaisedButton button_Update;
+        private System.Windows.Forms.Label label_Name_of_form;
     }
 }

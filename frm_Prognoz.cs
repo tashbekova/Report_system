@@ -32,10 +32,12 @@ namespace Report_system
         }
 
 
-        private async void button_Make_statistic_ClickAsync(object sender, EventArgs e)
+        private async void button_Make_prognoz_ClickAsync(object sender, EventArgs e)
         {
             try
             {
+                    button_Make_prognoz.Enabled = false;
+                    pb_Status.Visible = true;
                     string path;
                     string Table_name = "[dbo].[tbl_Total_Device_Report_A]";
                     string path_directory = label_path_directory.Text.ToString();
@@ -66,12 +68,12 @@ namespace Report_system
                                         result = MessageBox.Show(message, caption, buttons);
                                         if (result == System.Windows.Forms.DialogResult.Yes)
                                         {
-                                            //await Task.Run(() => statistic.Generation(path, report,year,column));
-                                        }
+                                            await Task.Run(() => prognoz.Generation(path));
+                                    }
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Статистика еще не сформирована");
+                                        MessageBox.Show("Прогноз еще не сформирован");
                                         await Task.Run(() => prognoz.Generation(path));
                                     }
                             }
@@ -79,9 +81,9 @@ namespace Report_system
                                 {
                                     DirectoryInfo di = Directory.CreateDirectory(path);
                                     path = path_directory + @"\" + year.ToString() + @"\Годовой" + @"\" + DateTime.Now.ToShortDateString()+ ".xlsx";
-                                    MessageBox.Show("Статистика еще не сформирована");
-                                    //await Task.Run(() => statistic.Generation(path, report, year,column));
-                                } 
+                                    MessageBox.Show("Прогноз еще не сформирован");
+                                    await Task.Run(() => prognoz.Generation(path));
+                        } 
                         }
                         else if (check == 2)
                         {
@@ -138,11 +140,15 @@ namespace Report_system
             }
             catch(Exception ex)
             {
+                pb_Status.Visible = false;
+                button_Make_prognoz.Enabled = false;
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 GC.Collect();
             }
             finally
             {
+                button_Make_prognoz.Enabled = false;
+                pb_Status.Visible = false;
                 GC.Collect();
             }
 

@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pb_Status = new System.Windows.Forms.ProgressBar();
             this.label_path_name = new MaterialSkin.Controls.MaterialLabel();
             this.button_Edit_path_directory = new MaterialSkin.Controls.MaterialRaisedButton();
             this.label_path_directory = new MaterialSkin.Controls.MaterialLabel();
@@ -61,7 +62,7 @@
             this.tbl_Type_of_reportTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_Type_of_reportTableAdapter();
             this.tbl_YearTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_YearTableAdapter();
             this.tbl_Name_of_reportTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_Name_of_reportTableAdapter();
-            this.pb_Status = new System.Windows.Forms.ProgressBar();
+            this.label_Name_of_form = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox_type_of_statistic.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblMonthBindingSource1)).BeginInit();
@@ -91,6 +92,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label_Name_of_form);
             this.panel1.Controls.Add(this.pb_Status);
             this.panel1.Controls.Add(this.label_path_name);
             this.panel1.Controls.Add(this.button_Edit_path_directory);
@@ -112,13 +114,23 @@
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // pb_Status
+            // 
+            this.pb_Status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(137)))), ((int)(((byte)(123)))));
+            this.pb_Status.Location = new System.Drawing.Point(439, 48);
+            this.pb_Status.Name = "pb_Status";
+            this.pb_Status.Size = new System.Drawing.Size(360, 23);
+            this.pb_Status.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.pb_Status.TabIndex = 20;
+            this.pb_Status.Visible = false;
+            // 
             // label_path_name
             // 
             this.label_path_name.AutoSize = true;
             this.label_path_name.Depth = 0;
             this.label_path_name.Font = new System.Drawing.Font("Roboto", 11F);
             this.label_path_name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label_path_name.Location = new System.Drawing.Point(28, 78);
+            this.label_path_name.Location = new System.Drawing.Point(26, 118);
             this.label_path_name.MouseState = MaterialSkin.MouseState.HOVER;
             this.label_path_name.Name = "label_path_name";
             this.label_path_name.Size = new System.Drawing.Size(321, 24);
@@ -128,7 +140,7 @@
             // button_Edit_path_directory
             // 
             this.button_Edit_path_directory.Depth = 0;
-            this.button_Edit_path_directory.Location = new System.Drawing.Point(994, 108);
+            this.button_Edit_path_directory.Location = new System.Drawing.Point(992, 148);
             this.button_Edit_path_directory.MouseState = MaterialSkin.MouseState.HOVER;
             this.button_Edit_path_directory.Name = "button_Edit_path_directory";
             this.button_Edit_path_directory.Primary = true;
@@ -144,7 +156,7 @@
             this.label_path_directory.Depth = 0;
             this.label_path_directory.Font = new System.Drawing.Font("Roboto", 11F);
             this.label_path_directory.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label_path_directory.Location = new System.Drawing.Point(78, 114);
+            this.label_path_directory.Location = new System.Drawing.Point(76, 154);
             this.label_path_directory.MouseState = MaterialSkin.MouseState.HOVER;
             this.label_path_directory.Name = "label_path_directory";
             this.label_path_directory.Size = new System.Drawing.Size(178, 24);
@@ -154,7 +166,7 @@
             // button_Make_statistic
             // 
             this.button_Make_statistic.Depth = 0;
-            this.button_Make_statistic.Location = new System.Drawing.Point(472, 480);
+            this.button_Make_statistic.Location = new System.Drawing.Point(470, 548);
             this.button_Make_statistic.MouseState = MaterialSkin.MouseState.HOVER;
             this.button_Make_statistic.Name = "button_Make_statistic";
             this.button_Make_statistic.Primary = true;
@@ -169,7 +181,7 @@
             this.groupBox_type_of_statistic.Controls.Add(this.rbutton_Device);
             this.groupBox_type_of_statistic.Controls.Add(this.rbutton_Currency);
             this.groupBox_type_of_statistic.Controls.Add(this.rbutton_Type_of_card);
-            this.groupBox_type_of_statistic.Location = new System.Drawing.Point(104, 311);
+            this.groupBox_type_of_statistic.Location = new System.Drawing.Point(102, 351);
             this.groupBox_type_of_statistic.Name = "groupBox_type_of_statistic";
             this.groupBox_type_of_statistic.Size = new System.Drawing.Size(272, 149);
             this.groupBox_type_of_statistic.TabIndex = 15;
@@ -232,7 +244,7 @@
             this.label_description_for_time.Depth = 0;
             this.label_description_for_time.Font = new System.Drawing.Font("Roboto", 11F);
             this.label_description_for_time.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label_description_for_time.Location = new System.Drawing.Point(500, 306);
+            this.label_description_for_time.Location = new System.Drawing.Point(498, 346);
             this.label_description_for_time.MouseState = MaterialSkin.MouseState.HOVER;
             this.label_description_for_time.Name = "label_description_for_time";
             this.label_description_for_time.Size = new System.Drawing.Size(398, 24);
@@ -246,7 +258,7 @@
             this.label_description_for_year.Depth = 0;
             this.label_description_for_year.Font = new System.Drawing.Font("Roboto", 11F);
             this.label_description_for_year.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label_description_for_year.Location = new System.Drawing.Point(500, 202);
+            this.label_description_for_year.Location = new System.Drawing.Point(498, 242);
             this.label_description_for_year.MouseState = MaterialSkin.MouseState.HOVER;
             this.label_description_for_year.Name = "label_description_for_year";
             this.label_description_for_year.Size = new System.Drawing.Size(533, 24);
@@ -258,7 +270,7 @@
             this.comboBox_month2.DataSource = this.tblMonthBindingSource1;
             this.comboBox_month2.DisplayMember = "Month_name";
             this.comboBox_month2.FormattingEnabled = true;
-            this.comboBox_month2.Location = new System.Drawing.Point(824, 340);
+            this.comboBox_month2.Location = new System.Drawing.Point(822, 380);
             this.comboBox_month2.Name = "comboBox_month2";
             this.comboBox_month2.Size = new System.Drawing.Size(238, 28);
             this.comboBox_month2.TabIndex = 12;
@@ -279,7 +291,7 @@
             // 
             this.groupBox_Type_of_time.Controls.Add(this.rbutton_Time);
             this.groupBox_Type_of_time.Controls.Add(this.rbutton_Year);
-            this.groupBox_Type_of_time.Location = new System.Drawing.Point(104, 170);
+            this.groupBox_Type_of_time.Location = new System.Drawing.Point(102, 210);
             this.groupBox_Type_of_time.Name = "groupBox_Type_of_time";
             this.groupBox_Type_of_time.Size = new System.Drawing.Size(272, 112);
             this.groupBox_Type_of_time.TabIndex = 10;
@@ -327,7 +339,7 @@
             this.comboBox_year.DataSource = this.tblYearBindingSource;
             this.comboBox_year.DisplayMember = "Name_of_year";
             this.comboBox_year.FormattingEnabled = true;
-            this.comboBox_year.Location = new System.Drawing.Point(824, 238);
+            this.comboBox_year.Location = new System.Drawing.Point(822, 278);
             this.comboBox_year.Name = "comboBox_year";
             this.comboBox_year.Size = new System.Drawing.Size(238, 28);
             this.comboBox_year.TabIndex = 8;
@@ -348,7 +360,7 @@
             this.comboBox_month.DataSource = this.tblMonthBindingSource;
             this.comboBox_month.DisplayMember = "Month_name";
             this.comboBox_month.FormattingEnabled = true;
-            this.comboBox_month.Location = new System.Drawing.Point(472, 340);
+            this.comboBox_month.Location = new System.Drawing.Point(470, 380);
             this.comboBox_month.Name = "comboBox_month";
             this.comboBox_month.Size = new System.Drawing.Size(238, 28);
             this.comboBox_month.TabIndex = 7;
@@ -365,7 +377,7 @@
             this.comboBox_type_report.DataSource = this.tblNameofreportBindingSource;
             this.comboBox_type_report.DisplayMember = "Type_of_report";
             this.comboBox_type_report.FormattingEnabled = true;
-            this.comboBox_type_report.Location = new System.Drawing.Point(472, 238);
+            this.comboBox_type_report.Location = new System.Drawing.Point(470, 278);
             this.comboBox_type_report.Name = "comboBox_type_report";
             this.comboBox_type_report.Size = new System.Drawing.Size(238, 28);
             this.comboBox_type_report.TabIndex = 6;
@@ -407,15 +419,15 @@
             // 
             this.tbl_Name_of_reportTableAdapter.ClearBeforeFill = true;
             // 
-            // pb_Status
+            // label_Name_of_form
             // 
-            this.pb_Status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(137)))), ((int)(((byte)(123)))));
-            this.pb_Status.Location = new System.Drawing.Point(439, 12);
-            this.pb_Status.Name = "pb_Status";
-            this.pb_Status.Size = new System.Drawing.Size(360, 23);
-            this.pb_Status.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
-            this.pb_Status.TabIndex = 20;
-            this.pb_Status.Visible = false;
+            this.label_Name_of_form.AutoSize = true;
+            this.label_Name_of_form.Font = new System.Drawing.Font("Georgia", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_Name_of_form.Location = new System.Drawing.Point(443, 0);
+            this.label_Name_of_form.Name = "label_Name_of_form";
+            this.label_Name_of_form.Size = new System.Drawing.Size(491, 43);
+            this.label_Name_of_form.TabIndex = 21;
+            this.label_Name_of_form.Text = "Формирование статистики";
             // 
             // frm_Statistic
             // 
@@ -483,5 +495,6 @@
         private Report_SystemDataSetTableAdapters.tbl_Name_of_reportTableAdapter tbl_Name_of_reportTableAdapter;
         private System.Windows.Forms.BindingSource tblMonthBindingSource1;
         public System.Windows.Forms.ProgressBar pb_Status;
+        private System.Windows.Forms.Label label_Name_of_form;
     }
 }

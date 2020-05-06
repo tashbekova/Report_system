@@ -55,9 +55,9 @@ namespace Report_system
         {
             if (comboBox_month.SelectedItem != null && comboBox_year.SelectedItem != null && comboBox_type_report.SelectedItem != null)
             {
-                button_Generation.Enabled = false;
                 try
                 {
+                    button_Generation.Enabled = false;
                     pb_Status.Visible = true;
                     int month = 0;
                     int year = 0;
