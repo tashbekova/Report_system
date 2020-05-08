@@ -67,12 +67,12 @@ namespace Report_system
                         //Если отчет еще не добавлен,то добавляем в БД
                         if (check_result == 0)
                         {
-                            MessageBox.Show("Отчет не добавлен");
                             //Добавляем в таблицу название считываемого файла
                             Add_Report(file_name);
                             //Распознаем и считываем данные файла
                             Read_Report_A report_A = new Read_Report_A();
                             await Task.Run(() => report_A.Read_file(openFileDialog1.FileName));
+                            MessageBox.Show("Добавлено");
                         }
                         else if(check_result==1)
                         {
@@ -80,9 +80,10 @@ namespace Report_system
                         }
                         else if(check_result==2)
                         {
-                            MessageBox.Show("Отчёт добавлен с ошибками или не полностью");
+                            //MessageBox.Show("Отчёт добавлен с ошибками или не полностью");
                             Read_Report_A report_A = new Read_Report_A();
                             await Task.Run(() => report_A.Read_file(openFileDialog1.FileName));
+                            MessageBox.Show("Добавлено");
                         }
                        
                     }
@@ -100,6 +101,7 @@ namespace Report_system
                 button_Read.Enabled = true;
                 //Убираем прогресс бар
                 pb_Status.Visible = false;
+                lblName.Text = "";
                 GC.Collect();
             }
            
@@ -154,9 +156,78 @@ namespace Report_system
 
         }
 
-        private void button_Read_Directory_Click(object sender, EventArgs e)
+        private async void button_Read_Directory_Click(object sender, EventArgs e)
         {
+            try
+            {
+                //Виден прогресс бар
+                pb_Status.Visible = true;
+                //Кнопка считывания блокируется до окончания считывания
+                button_Read.Enabled = false;
+                //Если папка выбрана
+                FolderBrowserDialog FBD = new FolderBrowserDialog();
+                if (FBD.ShowDialog() == DialogResult.OK)
+                {
+                    string path_directory = FBD.SelectedPath;
+                    string[] fileEntries = Directory.GetFiles(path_directory);
+                    foreach (string fileName in fileEntries)
+                    {
+                        string[] stroka = File.ReadAllLines(fileName);
+                        //Название файла
+                        string short_file_name = (Path.GetFileNameWithoutExtension(fileName));
+                        //Показываем на форме названия считываемого файла
+                        lblName.Text = short_file_name;
+                        //Если файл пустой
+                        if (stroka.Length == 0)
+                        {
+                            MessageBox.Show(short_file_name+ " пуст", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                        else
+                        {
+                            //Проверяем не добавлен ли этой отчет уже в БД
+                            Check check = new Check();
+                            int check_result = check.Check_Report(short_file_name);
+                            //Если отчет еще не добавлен,то добавляем в БД
+                            if (check_result == 0)
+                            {
+                                //Добавляем в таблицу название считываемого файла
+                                Add_Report(short_file_name);
+                                //Распознаем и считываем данные файла
+                                Read_Report_A report = new Read_Report_A();
+                                await Task.Run(() => report.Read_file(fileName));
+                            }
+                            else if (check_result == 1)
+                            {
+                                MessageBox.Show(short_file_name+ " отчёт уже считан и добавлен в БД");
+                                continue;
+                            }
+                            else if (check_result == 2)
+                            {
+                                Read_Report_A report = new Read_Report_A();
+                                await Task.Run(() => report.Read_file(fileName));
+                            }
 
+                        }
+                    }
+                }
+                MessageBox.Show("Добавлено");
+            }
+            catch (Exception ex)
+            {
+                pb_Status.Visible = false;
+                button_Read.Enabled = true;
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                //Разблокируем кнопку считывания
+                button_Read.Enabled = true;
+                //Убираем прогресс бар
+                pb_Status.Visible = false;
+                lblName.Text = "";
+                GC.Collect();
+            }
         }
     }
 }

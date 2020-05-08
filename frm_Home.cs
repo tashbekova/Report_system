@@ -31,14 +31,11 @@ namespace Report_system
         private void CustomizeDesign()
         {
             panelRegularSubMenu.Visible = false;
-            panelRequestSubMenu.Visible = false;
         }
         private void HideSubMenu()
         {
-            if (panelRequestSubMenu.Visible == true)
-                panelRequestSubMenu.Visible = false;
-            if (panelRequestSubMenu.Visible == true)
-                panelRequestSubMenu.Visible = false;
+            if (panelRegularSubMenu.Visible == true)
+                panelRegularSubMenu.Visible = false;
         }
        private void ShowSubMenu(Panel subMenu)
         {
@@ -60,12 +57,6 @@ namespace Report_system
 
         #endregion
 
-        #region Request report
-        private void btnRequest_Click(object sender, EventArgs e)
-        {
-            ShowSubMenu(panelRequestSubMenu);
-        }
-        #endregion
 
 
         private void OpenChildForm<MiForm>()where MiForm:Form, new() 

@@ -48,7 +48,7 @@ namespace Report_system
         {
             StreamReader SourceFile = File.OpenText(path_name);
             string File_name = (Path.GetFileNameWithoutExtension(path_name));
-            MessageBox.Show("Распознаем и считываем данные");
+            //MessageBox.Show("Распознаем и считываем данные");
             
             
             //provide the table name in which you would like to load data
@@ -506,7 +506,6 @@ namespace Report_system
             {
                 flag_report = true;
                 Update_Report(File_name, flag_report, 1);
-                MessageBox.Show("Успешно добавлено");
                 SourceFile.Close();
                 SQLConnection.Close();
             }
