@@ -95,11 +95,11 @@ namespace Report_system
             string title = "";
             if (number_of_page == 2)
             {
-                title = "POS-терминал";
+                title = "Наличные POS-терминалы";
             }
             else if (number_of_page == 3)
             {
-                title = "POS-терминалы";
+                title = "Безналичные POS-терминалы";
             }
             else if(number_of_page==1)
             {
@@ -129,6 +129,7 @@ namespace Report_system
             excelrange.Borders.get_Item(Excel.XlBordersIndex.xlEdgeTop).LineStyle = Excel.XlLineStyle.xlContinuous;
         }
 
+        //Добавление данных в Excel
         private void Add_data(string Table_name,int number_of_page,int month,int year)
         {
             try
@@ -179,7 +180,7 @@ namespace Report_system
             }
 
         }
-
+        //Метод для чтения данных из базы данных
         private DataTable GetData(string Table_name,int month,int year)
         {
 
@@ -241,7 +242,7 @@ namespace Report_system
             }
         }
 
-
+        //Метод для выполнения расчетов
         private void Make_calculations(int number_of_page)
         {
             try
@@ -254,7 +255,16 @@ namespace Report_system
                 int row_start = 2;//строка с новой датой
                 string date = excelworksheet.Cells[2, 1].Text;//дата взятая с ячейки excel
                 int usedRowsNum = excelworksheet.UsedRange.Rows.Count; //все используемые строки excel
-                for (rowInd = 1; rowInd < (usedRowsNum+1); rowInd++)
+                //Суммируем общую сумму и количество до того как будем разделять по дням
+                excelworksheet.Cells[usedRowsNum+1, 2].FormulaLocal = "=СУММ(B2:B" + usedRowsNum + ")";
+                excelworksheet.Cells[usedRowsNum + 1, 4].FormulaLocal = "=СУММ(D2:D" + usedRowsNum + ")";
+                decimal total_sum = Convert.ToDecimal(excelworksheet.Cells[usedRowsNum + 1, 4].Text);
+                decimal total_count = Convert.ToDecimal(excelworksheet.Cells[usedRowsNum + 1, 2].Text);
+                //Обнуляем поля
+                excelworksheet.Cells[usedRowsNum + 1, 2] = null;
+                excelworksheet.Cells[usedRowsNum + 1, 4]=null;
+                //Проходимся по всем данным и разделяем по дням и делаем расчеты для каждого дня
+                for (rowInd = 1; rowInd < (usedRowsNum + 1); rowInd++)
                 {
                     int collInd;
                     for (collInd = 1; collInd <= 1; collInd++)
@@ -266,7 +276,7 @@ namespace Report_system
                             InsertRow(row_end);
                             InsertRow(row_end + 1);
                             InsertRow(row_end + 2);
-                            string formula = "=СУММ(D" + row_start + ":D" + (row_end-1) + ")";
+                            string formula = "=СУММ(D" + row_start + ":D" + (row_end - 1) + ")";
                             string formula2 = "=СУММ(B" + row_start + ":B" + (row_end - 1) + ")";
                             excelworksheet.Cells[row_end, 4].FormulaLocal = formula;
                             excelworksheet.Cells[row_end, 2].FormulaLocal = formula2;
@@ -277,9 +287,15 @@ namespace Report_system
                             rowInd += 2;
                         }
                     }
+                    //Вставляем в конец общую сумму и количество
+                    excelworksheet.Cells[usedRowsNum + 1, 1] = "Общая ";
+                    excelworksheet.Cells[usedRowsNum + 1, 2] = total_count;
+                    excelworksheet.Cells[usedRowsNum + 1, 4] = total_sum;
+                    excelworksheet.Cells[usedRowsNum + 1, 2].Interior.Color = Color.Red;
+                    excelworksheet.Cells[usedRowsNum + 1, 4].Interior.Color = Color.Red;
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -291,6 +307,7 @@ namespace Report_system
 
         }
 
+        //Метод для добавления новых строк
         public void InsertRow(int rowNum)
         {
             Excel.Range cellRange = (Excel.Range)excelworksheet.Cells[rowNum, 1];

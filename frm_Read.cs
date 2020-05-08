@@ -153,5 +153,10 @@ namespace Report_system
         {
 
         }
+
+        private void button_Read_Directory_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

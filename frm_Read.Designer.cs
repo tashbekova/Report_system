@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Read));
             this.button_Close = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label_Name_of_form = new System.Windows.Forms.Label();
             this.pb_Status = new System.Windows.Forms.ProgressBar();
             this.lblName = new MaterialSkin.Controls.MaterialLabel();
             this.button_Read = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -39,7 +40,7 @@
             this.reportSystemDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.report_SystemDataSet = new Report_system.Report_SystemDataSet();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.label_Name_of_form = new System.Windows.Forms.Label();
+            this.button_Read_Directory = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportSystemDataSetBindingSource)).BeginInit();
@@ -62,6 +63,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.button_Read_Directory);
             this.panel1.Controls.Add(this.label_Name_of_form);
             this.panel1.Controls.Add(this.pb_Status);
             this.panel1.Controls.Add(this.lblName);
@@ -74,6 +76,16 @@
             this.panel1.Size = new System.Drawing.Size(1237, 667);
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label_Name_of_form
+            // 
+            this.label_Name_of_form.AutoSize = true;
+            this.label_Name_of_form.Font = new System.Drawing.Font("Georgia", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_Name_of_form.Location = new System.Drawing.Point(457, 6);
+            this.label_Name_of_form.Name = "label_Name_of_form";
+            this.label_Name_of_form.Size = new System.Drawing.Size(531, 43);
+            this.label_Name_of_form.TabIndex = 13;
+            this.label_Name_of_form.Text = "Добавление отчета в систему";
             // 
             // pb_Status
             // 
@@ -101,7 +113,7 @@
             // button_Read
             // 
             this.button_Read.Depth = 0;
-            this.button_Read.Location = new System.Drawing.Point(62, 202);
+            this.button_Read.Location = new System.Drawing.Point(118, 202);
             this.button_Read.MouseState = MaterialSkin.MouseState.HOVER;
             this.button_Read.Name = "button_Read";
             this.button_Read.Primary = true;
@@ -136,15 +148,18 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // label_Name_of_form
+            // button_Read_Directory
             // 
-            this.label_Name_of_form.AutoSize = true;
-            this.label_Name_of_form.Font = new System.Drawing.Font("Georgia", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_Name_of_form.Location = new System.Drawing.Point(457, 6);
-            this.label_Name_of_form.Name = "label_Name_of_form";
-            this.label_Name_of_form.Size = new System.Drawing.Size(531, 43);
-            this.label_Name_of_form.TabIndex = 13;
-            this.label_Name_of_form.Text = "Добавление отчета в систему";
+            this.button_Read_Directory.Depth = 0;
+            this.button_Read_Directory.Location = new System.Drawing.Point(768, 202);
+            this.button_Read_Directory.MouseState = MaterialSkin.MouseState.HOVER;
+            this.button_Read_Directory.Name = "button_Read_Directory";
+            this.button_Read_Directory.Primary = true;
+            this.button_Read_Directory.Size = new System.Drawing.Size(351, 39);
+            this.button_Read_Directory.TabIndex = 14;
+            this.button_Read_Directory.Text = "Считать папку";
+            this.button_Read_Directory.UseVisualStyleBackColor = true;
+            this.button_Read_Directory.Click += new System.EventHandler(this.button_Read_Directory_Click);
             // 
             // frm_Read
             // 
@@ -181,5 +196,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         public System.Windows.Forms.ProgressBar pb_Status;
         private System.Windows.Forms.Label label_Name_of_form;
+        private MaterialSkin.Controls.MaterialRaisedButton button_Read_Directory;
     }
 }

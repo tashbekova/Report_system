@@ -35,6 +35,7 @@ namespace Report_system
         private int end_line = 0;
         private int count_Transaction_line = 0;
         private int flag_Transaction = 0;
+        private bool flag_add = true;
 
         //Create Connection to SQL Server
         SqlConnection SQLConnection = new SqlConnection
@@ -159,7 +160,7 @@ namespace Report_system
 
                         int index_SIC = line.IndexOf("SIC:", 0, end_line);  //индекс нахождения SIC
                                                                             //Если это строка с SIC:
-                        if (index_SIC >= 0)
+                        if (index_SIC >= 0 && flag_add==true)
                         {
                             Read_SIC(arr_line, index_SIC);
                         }
@@ -170,7 +171,7 @@ namespace Report_system
 
                         int index_Cycle = line.IndexOf("Cycle Num/Type:", 0, end_line);  //индекс нахождения Cycle Num/Type:
                                                                                          //Если это строка с Cycle Num/Type:
-                        if (index_Cycle >= 0)
+                        if (index_Cycle >= 0 && flag_add==true)
                         {
                             Read_Cycle(arr_line, index_Cycle);
                             continue;
@@ -182,7 +183,7 @@ namespace Report_system
 
                         int index_Device_Name = line.IndexOf("Device Name:", 0, end_line);  //индекс нахождения Device Name:
                                                                                             //Если это строка с Device Name:
-                        if (index_Device_Name >= 0)
+                        if (index_Device_Name >= 0 && flag_add == true)
                         {
                             Read_Device_Name(arr_line, index_Device_Name);
                         }
@@ -193,7 +194,7 @@ namespace Report_system
 
                         int index_Posting_Date = line.IndexOf("Posting Date:", 0, end_line);  //индекс нахождения Posting Date
                                                                                               //Если это строка с Posting Date
-                        if (index_Posting_Date >= 0)
+                        if (index_Posting_Date >= 0 && flag_add == true)
                         {
                             Read_Posting_Date(arr_line, index_Posting_Date);
                             continue;
@@ -202,287 +203,292 @@ namespace Report_system
                         #endregion
 
                         #region Transaction:
-
-                        int index_Transaction_Name = line.IndexOf("Transaction Name", 0, end_line);
-                        //Если это строка с Transaction Name
-                        if (index_Transaction_Name >= 0)
+                        if (flag_add == true)
                         {
-                            index_Trans_Date = line.IndexOf("Trans Date", 0, end_line);
-                            flag_indeks_Transaction = true;
-                            continue;
-                        }
-                        // ---- если есть транзакции ( если в строке есть "Transaction Name:"), то flag_indeks_transaction=true
-                        // ---- flag_transaction=1 означает что считали вторую часть 
-                        //Если больше нет транзакций
-                        if (flag_Transaction == 1 && arr_line.Length == 0 && flag_indeks_Transaction == true && count_Transaction_line==0)
-                        {
-                            // Если больше нет транзакций,то обнуляем
-                            flag_indeks_Transaction = false;
-                            flag_Transaction = 0;
-                            // MessageBox.Show("Больше нет транзакций,переходим к следующему");
-                            continue;
-                        }
-                        //Если название Transaction Name состоит из одной строки
-                        else if (flag_indeks_Transaction == true && count_Transaction_line == 1 && arr_line.Length==0)
-                        {
-                            flag_Transaction = 0;
-                            count_Transaction_line = 0;
-                            flag_indeks_Transaction = false;
-                            string_Transaction_Name_value = string_Transaction_Name_value_part_1;
-                            Add_Data(File_name);
-                            continue;
-                        }
-                        //Если еще не считывали , то считываем строку с данными о транзакции
-                        else if (flag_indeks_Transaction == true && count_Transaction_line == 0 && arr_line.Length!=0)
-                        {
-                            Read_Transaction_part_1(arr_line);
-                            continue;
-                        }
-                        //Если Transaction_Name состоит из двух строк
-                        else if (flag_indeks_Transaction == true && count_Transaction_line == 1 && arr_line.Length!=0)
-                        {
-                            //MessageBox.Show("" + arr_line.Length);
-                            if (arr_line.Length>=38)
+                            int index_Transaction_Name = line.IndexOf("Transaction Name", 0, end_line);
+                            //Если это строка с Transaction Name
+                            if (index_Transaction_Name >= 0)
                             {
-                                flag_Transaction = 1;
+                                index_Trans_Date = line.IndexOf("Trans Date", 0, end_line);
+                                flag_indeks_Transaction = true;
+                                continue;
+                            }
+                            // ---- если есть транзакции ( если в строке есть "Transaction Name:"), то flag_indeks_transaction=true
+                            // ---- flag_transaction=1 означает что считали вторую часть 
+                            //Если больше нет транзакций
+                            if (flag_Transaction == 1 && arr_line.Length == 0 && flag_indeks_Transaction == true && count_Transaction_line == 0)
+                            {
+                                // Если больше нет транзакций,то обнуляем
+                                flag_indeks_Transaction = false;
+                                flag_Transaction = 0;
+                                // MessageBox.Show("Больше нет транзакций,переходим к следующему");
+                                continue;
+                            }
+                            //Если название Transaction Name состоит из одной строки
+                            else if (flag_indeks_Transaction == true && count_Transaction_line == 1 && arr_line.Length == 0)
+                            {
+                                flag_Transaction = 0;
                                 count_Transaction_line = 0;
+                                flag_indeks_Transaction = false;
                                 string_Transaction_Name_value = string_Transaction_Name_value_part_1;
                                 Add_Data(File_name);
+                                continue;
+                            }
+                            //Если еще не считывали , то считываем строку с данными о транзакции
+                            else if (flag_indeks_Transaction == true && count_Transaction_line == 0 && arr_line.Length != 0)
+                            {
                                 Read_Transaction_part_1(arr_line);
                                 continue;
                             }
-                            else
+                            //Если Transaction_Name состоит из двух строк
+                            else if (flag_indeks_Transaction == true && count_Transaction_line == 1 && arr_line.Length != 0)
                             {
-                                Read_Transaction_part_2(arr_line);
-                                //Добавление данных  в БД
-                                Add_Data(File_name);
-                                continue;
+                                //MessageBox.Show("" + arr_line.Length);
+                                if (arr_line.Length >= 38)
+                                {
+                                    flag_Transaction = 1;
+                                    count_Transaction_line = 0;
+                                    string_Transaction_Name_value = string_Transaction_Name_value_part_1;
+                                    Add_Data(File_name);
+                                    Read_Transaction_part_1(arr_line);
+                                    continue;
+                                }
+                                else
+                                {
+                                    Read_Transaction_part_2(arr_line);
+                                    //Добавление данных  в БД
+                                    Add_Data(File_name);
+                                    continue;
+                                }
                             }
                         }
                         #endregion
 
 
                         #region Total 
-                        //присвоение значений переменным
-                        int index_Total_Date = line.IndexOf("TOTAL this Posting Date", 0, end_line);  //индекс нахождения Total Posting Date
-                        int index_Total_For_Cycle = line.IndexOf("TOTAL for Cycle", 0, end_line);
-                        int index_Total_Device = line.IndexOf("TOTAL this Device", 0, end_line);
-                        int index_Total_Currency = line.IndexOf("TOTAL this Currency", 0, end_line);
+                        if (flag_add == true)
+                        { //присвоение значений переменным
+                            int index_Total_Date = line.IndexOf("TOTAL this Posting Date", 0, end_line);  //индекс нахождения Total Posting Date
+                            int index_Total_For_Cycle = line.IndexOf("TOTAL for Cycle", 0, end_line);
+                            int index_Total_Device = line.IndexOf("TOTAL this Device", 0, end_line);
+                            int index_Total_Currency = line.IndexOf("TOTAL this Currency", 0, end_line);
 
-                        //Если это строка с Total 
-                        if (index_Total_Date >= 0)
-                        {
-                            flag_Total_Posting_Date = true;
-                            flag_Total = true;
-                        }
-                        else if (index_Total_For_Cycle >= 0)
-                        {
-                            flag_Total_Cycle = true;
-                            flag_Total = true;
-                        }
-                        else if (index_Total_Device >= 0)
-                        {
-                            flag_Total_Device = true;
-                            flag_Total = true;
-                        }
-                        else if (index_Total_Currency >= 0)
-                        {
-                            flag_Total_Currency = true;
-                            flag_Total = true;
-                        }
-                        //Определяем в какую таблицу добавлять данные
-                        if (flag_Total == true)
-                        {
-                            if (flag_Total_Posting_Date == true)
+
+                            //Если это строка с Total 
+                            if (index_Total_Date >= 0)
                             {
-                                if (File_name.Contains('A'))
-                                {
-                                    Table_Name = "dbo.tbl_Total_Posting_Date_Report_A";
-                                }
-                                else if (File_name.Contains('H'))
-                                {
-                                    Table_Name = "dbo.tbl_Total_Posting_Date_Report_H";
-                                }
-                                else if (File_name.Contains('R'))
-                                {
-                                    Table_Name = "dbo.tbl_Total_Posting_Date_Report_R";
-                                }
+                                flag_Total_Posting_Date = true;
+                                flag_Total = true;
                             }
-                            else if (flag_Total_Cycle == true)
+                            else if (index_Total_For_Cycle >= 0)
                             {
-                                if (File_name.Contains('A'))
-                                {
-                                    Table_Name = "dbo.tbl_Total_for_Cycle_Report_A";
-                                }
-                                else if (File_name.Contains('H'))
-                                {
-                                    Table_Name = "dbo.tbl_Total_for_Cycle_Report_H";
-                                }
-                                else if (File_name.Contains('R'))
-                                {
-                                    Table_Name = "dbo.tbl_Total_for_Cycle_Report_R";
-                                } 
+                                flag_Total_Cycle = true;
+                                flag_Total = true;
                             }
-                            else if (flag_Total_Device == true)
+                            else if (index_Total_Device >= 0)
                             {
-                                if (File_name.Contains('A'))
-                                {
-                                    Table_Name = "dbo.tbl_Total_Device_Report_A";
-                                }
-                                else if (File_name.Contains('H'))
-                                {
-                                    Table_Name = "dbo.tbl_Total_Device_Report_H";
-                                }
-                                else if (File_name.Contains('R'))
-                                {
-                                    Table_Name = "dbo.tbl_Total_Device_Report_R";
-                                }
+                                flag_Total_Device = true;
+                                flag_Total = true;
                             }
-                            else if (flag_Total_Currency == true)
+                            else if (index_Total_Currency >= 0)
                             {
-                                if (File_name.Contains('A'))
-                                {
-                                    Table_Name = "dbo.tbl_Total_Currency_Report_A";
-                                }
-                                else if (File_name.Contains('H'))
-                                {
-                                    Table_Name = "dbo.tbl_Total_Currency_Report_H";
-                                }
-                                else if (File_name.Contains('R'))
-                                {
-                                    Table_Name = "dbo.tbl_Total_Currency_Report_R";
-                                }
+                                flag_Total_Currency = true;
+                                flag_Total = true;
                             }
-                            //создаем листы 
-                            List<char> list_Number_Of_Trans_value = new List<char>();
-                            List<char> list_Transaction_Amount_value = new List<char>();
-                            List<char> list_Discount_value = new List<char>();
-                            List<char> list_Account_Amount_value = new List<char>();
-
-                            int index_number_of_trans = line.IndexOf("Number of Trans:", 0, end_line);
-                            if (index_number_of_trans >= 0)
-                            { ///Проходим по циклу начиная после слов "Number_Of_Trans" и до пробелов
-                                for (int i = index_number_of_trans + 16; i < end_line; i++)
-                                {
-                                    if (arr_line[i] == ' ')
-                                    {
-                                        continue;
-                                    }
-                                    else if (arr_line[i] != ' ')
-                                    {
-                                        //добавляем все символы в лист,чтобы получить массив и преобразовать в строку
-                                        list_Number_Of_Trans_value.Add(arr_line[i]);
-                                    }
-
-                                }
-                                string_Number_Of_Trans_value = new string(list_Number_Of_Trans_value.ToArray());
-                                //MessageBox.Show(string_Number_Of_Trans);
-
-                            }
-
-                            int index_Transaction_Amount = line.IndexOf("Transaction Amount:", 0, end_line);
-                            if (index_Transaction_Amount >= 0)
+                            //Определяем в какую таблицу добавлять данные
+                            if (flag_Total == true)
                             {
-                                for (int i = index_Transaction_Amount + 19; i < end_line; i++)
+                                if (flag_Total_Posting_Date == true)
                                 {
-                                    if (arr_line[i] == ' ' || arr_line[i] == ',')
+                                    if (File_name.Contains('A'))
                                     {
-                                        continue;
+                                        Table_Name = "dbo.tbl_Total_Posting_Date_Report_A";
                                     }
-                                    else if (arr_line[i] != ' ')
+                                    else if (File_name.Contains('H'))
                                     {
-                                        //добавляем все символы в лист,чтобы получить массив и преобразовать в строку
-                                        list_Transaction_Amount_value.Add(arr_line[i]);
+                                        Table_Name = "dbo.tbl_Total_Posting_Date_Report_H";
                                     }
+                                    else if (File_name.Contains('R'))
+                                    {
+                                        Table_Name = "dbo.tbl_Total_Posting_Date_Report_R";
+                                    }
+                                }
+                                else if (flag_Total_Cycle == true)
+                                {
+                                    if (File_name.Contains('A'))
+                                    {
+                                        Table_Name = "dbo.tbl_Total_for_Cycle_Report_A";
+                                    }
+                                    else if (File_name.Contains('H'))
+                                    {
+                                        Table_Name = "dbo.tbl_Total_for_Cycle_Report_H";
+                                    }
+                                    else if (File_name.Contains('R'))
+                                    {
+                                        Table_Name = "dbo.tbl_Total_for_Cycle_Report_R";
+                                    }
+                                }
+                                else if (flag_Total_Device == true)
+                                {
+                                    if (File_name.Contains('A'))
+                                    {
+                                        Table_Name = "dbo.tbl_Total_Device_Report_A";
+                                    }
+                                    else if (File_name.Contains('H'))
+                                    {
+                                        Table_Name = "dbo.tbl_Total_Device_Report_H";
+                                    }
+                                    else if (File_name.Contains('R'))
+                                    {
+                                        Table_Name = "dbo.tbl_Total_Device_Report_R";
+                                    }
+                                }
+                                else if (flag_Total_Currency == true)
+                                {
+                                    if (File_name.Contains('A'))
+                                    {
+                                        Table_Name = "dbo.tbl_Total_Currency_Report_A";
+                                    }
+                                    else if (File_name.Contains('H'))
+                                    {
+                                        Table_Name = "dbo.tbl_Total_Currency_Report_H";
+                                    }
+                                    else if (File_name.Contains('R'))
+                                    {
+                                        Table_Name = "dbo.tbl_Total_Currency_Report_R";
+                                    }
+                                }
+                                //создаем листы 
+                                List<char> list_Number_Of_Trans_value = new List<char>();
+                                List<char> list_Transaction_Amount_value = new List<char>();
+                                List<char> list_Discount_value = new List<char>();
+                                List<char> list_Account_Amount_value = new List<char>();
+
+                                int index_number_of_trans = line.IndexOf("Number of Trans:", 0, end_line);
+                                if (index_number_of_trans >= 0)
+                                { ///Проходим по циклу начиная после слов "Number_Of_Trans" и до пробелов
+                                    for (int i = index_number_of_trans + 16; i < end_line; i++)
+                                    {
+                                        if (arr_line[i] == ' ')
+                                        {
+                                            continue;
+                                        }
+                                        else if (arr_line[i] != ' ')
+                                        {
+                                            //добавляем все символы в лист,чтобы получить массив и преобразовать в строку
+                                            list_Number_Of_Trans_value.Add(arr_line[i]);
+                                        }
+
+                                    }
+                                    string_Number_Of_Trans_value = new string(list_Number_Of_Trans_value.ToArray());
+                                    //MessageBox.Show(string_Number_Of_Trans);
 
                                 }
-                                string_Transaction_Amount_value = new string(list_Transaction_Amount_value.ToArray());
-                                //MessageBox.Show(string_Transaction_Amount_value);
+
+                                int index_Transaction_Amount = line.IndexOf("Transaction Amount:", 0, end_line);
+                                if (index_Transaction_Amount >= 0)
+                                {
+                                    for (int i = index_Transaction_Amount + 19; i < end_line; i++)
+                                    {
+                                        if (arr_line[i] == ' ' || arr_line[i] == ',')
+                                        {
+                                            continue;
+                                        }
+                                        else if (arr_line[i] != ' ')
+                                        {
+                                            //добавляем все символы в лист,чтобы получить массив и преобразовать в строку
+                                            list_Transaction_Amount_value.Add(arr_line[i]);
+                                        }
+
+                                    }
+                                    string_Transaction_Amount_value = new string(list_Transaction_Amount_value.ToArray());
+                                    //MessageBox.Show(string_Transaction_Amount_value);
+                                }
+
+                                int index_Discount = line.IndexOf("Discount:", 0, end_line);
+                                if (index_Discount >= 0)
+                                {
+                                    for (int i = index_Discount + 9; i < end_line; i++)
+                                    {
+                                        if (arr_line[i] == ' ' || arr_line[i] == ',')
+                                        {
+                                            continue;
+                                        }
+                                        else if (arr_line[i] != ' ')
+                                        {
+                                            //добавляем все символы в лист,чтобы получить массив и преобразовать в строку
+                                            list_Discount_value.Add(arr_line[i]);
+                                        }
+
+                                    }
+                                    string_Discount_value = new string(list_Discount_value.ToArray());
+                                    // MessageBox.Show(string_Discount_value);
+                                }
+
+                                int index_Account_Amount = line.IndexOf("Account Amount:", 0, end_line);
+                                if (index_Account_Amount >= 0)
+                                {
+                                    for (int i = index_Account_Amount + 15; i < end_line; i++)
+                                    {
+                                        if (arr_line[i] == ' ' || arr_line[i] == ',')
+                                        {
+                                            continue;
+                                        }
+                                        else if (arr_line[i] != ' ')
+                                        {
+                                            //добавляем все символы в лист,чтобы получить массив и преобразовать в строку
+                                            list_Account_Amount_value.Add(arr_line[i]);
+                                        }
+
+                                    }
+                                    string_Account_Amount_value = new string(list_Account_Amount_value.ToArray());
+                                    // MessageBox.Show(string_Account_Amount_value);
+                                    flag_Total = false;
+                                    flag_Total_Currency = false;
+                                    flag_Total_Cycle = false;
+                                    flag_Total_Device = false;
+                                    flag_Total_Posting_Date = false;
+
+                                    // запрос на добавление в SQL Server
+                                    string query = "Insert into " + Table_Name +
+                                        " (Posting_date," +
+                                        " Device," +
+                                        " Device_name," +
+                                        " Currency," +
+                                        "Number_of_trans," +
+                                        "Transaction_amount," +
+                                        "Discount," +
+                                        "Account_amount," +
+                                        "Name_of_report)" +
+                                        " Values ('" + string_Posting_Date_value + "','" +
+                                   string_Device_value + "','" +
+                                   string_Device_Name_value + "','" +
+                                   string_Currency_value + "','" +
+                                   string_Number_Of_Trans_value + "','" +
+                                   string_Transaction_Amount_value + "','" +
+                                   string_Discount_value + "','" +
+                                   string_Account_Amount_value + "','" +
+                                   int_Report + "')";
+                                    try
+                                    {
+                                        //execute sqlcommand to insert record
+                                        SqlCommand myCommand = new SqlCommand(query, SQLConnection);
+                                        myCommand.ExecuteNonQuery();
+                                        // MessageBox.Show("Добавлен Total");
+                                    }
+                                    catch (SqlException ex)
+                                    {
+                                        MessageBox.Show("Во время соединения произошла ошибка  " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                }
+
+                                //преобразовали в строку,где хранится значение Number Of Trans
+
+                                list_Number_Of_Trans_value.Clear();
+                                list_Transaction_Amount_value.Clear();
+                                list_Discount_value.Clear();
+                                list_Account_Amount_value.Clear();
                             }
-
-                            int index_Discount = line.IndexOf("Discount:", 0, end_line);
-                            if (index_Discount >= 0)
-                            {
-                                for (int i = index_Discount + 9; i < end_line; i++)
-                                {
-                                    if (arr_line[i] == ' ' || arr_line[i] == ',')
-                                    {
-                                        continue;
-                                    }
-                                    else if (arr_line[i] != ' ')
-                                    {
-                                        //добавляем все символы в лист,чтобы получить массив и преобразовать в строку
-                                        list_Discount_value.Add(arr_line[i]);
-                                    }
-
-                                }
-                                string_Discount_value = new string(list_Discount_value.ToArray());
-                                // MessageBox.Show(string_Discount_value);
-                            }
-
-                            int index_Account_Amount = line.IndexOf("Account Amount:", 0, end_line);
-                            if (index_Account_Amount >= 0)
-                            {
-                                for (int i = index_Account_Amount + 15; i < end_line; i++)
-                                {
-                                    if (arr_line[i] == ' ' || arr_line[i] == ',')
-                                    {
-                                        continue;
-                                    }
-                                    else if (arr_line[i] != ' ')
-                                    {
-                                        //добавляем все символы в лист,чтобы получить массив и преобразовать в строку
-                                        list_Account_Amount_value.Add(arr_line[i]);
-                                    }
-
-                                }
-                                string_Account_Amount_value = new string(list_Account_Amount_value.ToArray());
-                                // MessageBox.Show(string_Account_Amount_value);
-                                flag_Total = false;
-                                flag_Total_Currency = false;
-                                flag_Total_Cycle = false;
-                                flag_Total_Device = false;
-                                flag_Total_Posting_Date = false;
-
-                                // запрос на добавление в SQL Server
-                                string query = "Insert into " + Table_Name +
-                                    " (Posting_date," +
-                                    " Device," +
-                                    " Device_name," +
-                                    " Currency," +
-                                    "Number_of_trans," +
-                                    "Transaction_amount," +
-                                    "Discount," +
-                                    "Account_amount," +
-                                    "Name_of_report)" +
-                                    " Values ('" + string_Posting_Date_value + "','" +
-                               string_Device_value + "','" +
-                               string_Device_Name_value + "','" +
-                               string_Currency_value + "','" +
-                               string_Number_Of_Trans_value + "','" +
-                               string_Transaction_Amount_value + "','" +
-                               string_Discount_value + "','" +
-                               string_Account_Amount_value + "','"+
-                               int_Report + "')";
-                                try
-                                {
-                                    //execute sqlcommand to insert record
-                                    SqlCommand myCommand = new SqlCommand(query, SQLConnection);
-                                    myCommand.ExecuteNonQuery();
-                                    // MessageBox.Show("Добавлен Total");
-                                }
-                                catch (SqlException ex)
-                                {
-                                    MessageBox.Show("Во время соединения произошла ошибка  " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                }
-                            }
-
-                            //преобразовали в строку,где хранится значение Number Of Trans
-
-                            list_Number_Of_Trans_value.Clear();
-                            list_Transaction_Amount_value.Clear();
-                            list_Discount_value.Clear();
-                            list_Account_Amount_value.Clear();
                         }
 
                         #endregion
@@ -636,7 +642,16 @@ namespace Report_system
                     }
                 }
             }
-           
+            if (string_Device_value.StartsWith("511"))
+            {
+                string_Device_value = "";
+                flag_add = false;
+            }
+            else
+            {
+                flag_add = true;
+            }
+
             // MessageBox.Show(string_Device_value);
         }
 
