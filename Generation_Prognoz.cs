@@ -20,7 +20,8 @@ namespace Report_system
         private Excel.Worksheet excelworksheet_page1;
         private Excel.Range excelrange;
         private Excel.Sheets excelsheets;
-        string ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'";
+        Connection sql = new Connection();
+        private string ConnectionString = "";
         public void Generation(string path)
         {
             try
@@ -196,6 +197,7 @@ namespace Report_system
         private Decimal GetData(string device,int year,string currency)
         {
             string Table_name = "tbl_Total_Device_Report_A";
+            ConnectionString = sql.Get_Connection_String();
             SqlConnection con = new SqlConnection(ConnectionString);
             DataTable dt= new DataTable();
             decimal sum = 0;
@@ -243,6 +245,7 @@ namespace Report_system
 
         private DataTable GetData_Device()
         {
+            ConnectionString = sql.Get_Connection_String();
             SqlConnection con = new SqlConnection(ConnectionString);
             DataTable dt_Device = new DataTable();
             try
@@ -267,6 +270,7 @@ namespace Report_system
 
         private DataTable GetData_Year()
         {
+            ConnectionString = sql.Get_Connection_String();
             SqlConnection con = new SqlConnection(ConnectionString);
             int year = DateTime.Now.Year;
             int month = DateTime.Now.Month;
@@ -297,6 +301,7 @@ namespace Report_system
 
         private DataTable GetData_Currency()
         {
+            ConnectionString = sql.Get_Connection_String();
             SqlConnection con = new SqlConnection(ConnectionString);
             int year = DateTime.Now.Year;
             DataTable dt_Currency = new DataTable();

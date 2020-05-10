@@ -185,7 +185,8 @@ namespace Report_system
         {
 
             //строка соединения
-            string ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'";
+            Connection sql = new Connection();
+            string ConnectionString = sql.Get_Connection_String();
 
             SqlConnection con = new SqlConnection(ConnectionString);
 

@@ -161,7 +161,8 @@ namespace Report_system
                 FolderBrowserDialog FBD = new FolderBrowserDialog();
                 if (FBD.ShowDialog() == DialogResult.OK)
                 {
-                    string ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'";
+                    Connection sql = new Connection();
+                    string ConnectionString = sql.Get_Connection_String();
                     SqlConnection myConnection = new SqlConnection(ConnectionString);
                     string Table_name = "[dbo].[tbl_Path_Directory_for_save_report]";
                     string path_directory = FBD.SelectedPath;
@@ -192,7 +193,8 @@ namespace Report_system
         {
             try
             {
-                string ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'";
+                Connection sql = new Connection();
+                string ConnectionString = sql.Get_Connection_String();
                 SqlConnection myConnection = new SqlConnection(ConnectionString);
                 string Table_name = "[dbo].[tbl_Path_Directory_for_save_report]";
                 myConnection.Open();

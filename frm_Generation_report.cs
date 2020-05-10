@@ -62,8 +62,6 @@ namespace Report_system
                     int month = 0;
                     int year = 0;
                     string path = "";
-                    System.Diagnostics.Stopwatch swatch = new System.Diagnostics.Stopwatch();
-                    swatch.Start();
                     //string path;
                     string report = comboBox_type_report.SelectedValue.ToString();
                     month = Convert.ToInt32(comboBox_month.SelectedValue.ToString()) ;
@@ -74,10 +72,6 @@ namespace Report_system
                     //string Table_name = "";
                     if (year >= 2000 && year<=year_now)
                     {
-                        if (report == "Промежуточный отчет")
-                        {
-                           
-                        }
                         Check check_data = new Check();
                         int check_A = check_data.Check_Data("tbl_Report_A", month, year);
                         int check_H= check_data.Check_Data("tbl_Report_H", month, year);
@@ -104,9 +98,9 @@ namespace Report_system
                                 path = path_directory + @"\" + year.ToString() + @"\" + report;
                                 if (Directory.Exists(path))
                                 {
-                                    path = path_directory + @"\" + year.ToString() + @"\" + report + @"\" + month.ToString() + "_" + year.ToString() + "_" + report + ".xlsx";
-                                    string path2 = path_directory + @"\" + year.ToString() + @"\" + report + @"\" + month.ToString() + "_" + year.ToString() + "_" + report + ".xls";
-                                    if (System.IO.File.Exists(path))
+                                    path = path_directory + @"\" + year.ToString() + @"\" + report + @"\" + month.ToString() + "_" + year.ToString() + "_" + report + ".xls";
+                                    string path2 = path_directory + @"\" + year.ToString() + @"\" + report + @"\" + month.ToString() + "_" + year.ToString() + "_" + report + ".xlsm";
+                                    if (System.IO.File.Exists(path) || System.IO.File.Exists(path2))
                                     {
                                         MessageBox.Show("Отчёт уже сформирован");
                                         string message = "Отчёт уже сформирован. Хотите ли вы сформировать ещё раз?";
@@ -117,33 +111,56 @@ namespace Report_system
                                         result = MessageBox.Show(message, caption, buttons);
                                         if (result == System.Windows.Forms.DialogResult.Yes)
                                         {
+                                        if (report == "Промежуточный отчет по Visa Cards")
+                                        {
                                             // Start the asynchronous operation.
-                                         Generation_intermediate_report create = new Generation_intermediate_report();
-                                            await Task.Run(() => create.Generation(path, month, year)); 
+                                            Generation_intermediate_report create = new Generation_intermediate_report();
+                                            await Task.Run(() => create.Generation(path, month, year));
+                                        }
+                                        else if(report== "Отчет для Нац.Банка")
+                                        {
+                                            Generation_report_for_National_bank create = new Generation_report_for_National_bank();
+                                            await Task.Run(() => create.Generation(path2));
+
+                                        }
                                          
                                         }
                                     }
                                     else
                                     {
-                                        
+
+                                    if (report == "Промежуточный отчет по Visa Cards")
+                                    {
                                         Generation_intermediate_report create = new Generation_intermediate_report();
                                         await Task.Run(() => create.Generation(path, month, year));
-                                        //SetProgress(100);
+                                    }
+                                    else if (report == "Отчет для Нац.Банка")
+                                    {
 
+                                        Generation_report_for_National_bank create = new Generation_report_for_National_bank();
+                                        await Task.Run(() => create.Generation(path2));
+                                    }
                                     }
                                 }
                                 else
                                 {
+
                                     DirectoryInfo di = Directory.CreateDirectory(path);
-                                    path = path_directory + @"\" + year.ToString() + @"\" + report + @"\" + month.ToString() + "_" + year.ToString() + "_" + report + ".xlsx";
-                                    //MessageBox.Show("Отчет еще не сформирован");
+                                    path = path_directory + @"\" + year.ToString() + @"\" + report + @"\" + month.ToString() + "_" + year.ToString() + "_" + report + ".xls";
+                                    string path2 = path_directory + @"\" + year.ToString() + @"\" + report + @"\" + month.ToString() + "_" + year.ToString() + "_" + report + ".xlsm";
+                                if (report == "Промежуточный отчет по Visa Cards")
+                                {
                                     Generation_intermediate_report create = new Generation_intermediate_report();
                                     await Task.Run(() => create.Generation(path, month, year));
                                 }
+                                else if (report == "Отчет для Нац.Банка")
+                                {
+                                    Generation_report_for_National_bank create = new Generation_report_for_National_bank();
+                                    await Task.Run(() => create.Generation(path2));
+
+                                }
+                            }
                             pb_Status.Visible = false;
-                            // Тут ваш код, время выполнения которого нужно измерить
-                            swatch.Stop();
-                            MessageBox.Show("" + swatch.Elapsed);
                             button_Generation.Enabled = true;
                         }
                         else if(check_A == -2 && check_H == -2 && check_R == -2)
@@ -192,7 +209,8 @@ namespace Report_system
                 FolderBrowserDialog FBD = new FolderBrowserDialog();
                 if (FBD.ShowDialog() == DialogResult.OK)
                 {
-                    string ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'";
+                    Connection sql = new Connection();
+                    string ConnectionString = sql.Get_Connection_String();
                     SqlConnection myConnection = new SqlConnection(ConnectionString);
                     string Table_name = "[dbo].[tbl_Path_Directory_for_save_report]";
                     string path_directory = FBD.SelectedPath;
@@ -220,7 +238,8 @@ namespace Report_system
         }
         private void Show_path()
         {
-            string ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'";
+            Connection sql = new Connection();
+            string ConnectionString = sql.Get_Connection_String();
             SqlConnection myConnection = new SqlConnection(ConnectionString);
             string Table_name = "[dbo].[tbl_Path_Directory_for_save_report]";
             myConnection.Open();

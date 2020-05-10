@@ -158,9 +158,9 @@
             this.comboBox_type_report.DataSource = this.tblTypeofreportBindingSource;
             this.comboBox_type_report.DisplayMember = "Type_of_report";
             this.comboBox_type_report.FormattingEnabled = true;
-            this.comboBox_type_report.Location = new System.Drawing.Point(133, 240);
+            this.comboBox_type_report.Location = new System.Drawing.Point(98, 257);
             this.comboBox_type_report.Name = "comboBox_type_report";
-            this.comboBox_type_report.Size = new System.Drawing.Size(267, 28);
+            this.comboBox_type_report.Size = new System.Drawing.Size(350, 28);
             this.comboBox_type_report.TabIndex = 8;
             this.comboBox_type_report.ValueMember = "Type_of_report";
             // 
@@ -184,7 +184,7 @@
             this.comboBox_year.DataSource = this.tblYearBindingSource;
             this.comboBox_year.DisplayMember = "Name_of_year";
             this.comboBox_year.FormattingEnabled = true;
-            this.comboBox_year.Location = new System.Drawing.Point(808, 240);
+            this.comboBox_year.Location = new System.Drawing.Point(874, 257);
             this.comboBox_year.Name = "comboBox_year";
             this.comboBox_year.Size = new System.Drawing.Size(267, 28);
             this.comboBox_year.TabIndex = 7;
@@ -205,7 +205,7 @@
             this.comboBox_month.DataSource = this.tblMonthBindingSource;
             this.comboBox_month.DisplayMember = "Month_name";
             this.comboBox_month.FormattingEnabled = true;
-            this.comboBox_month.Location = new System.Drawing.Point(479, 240);
+            this.comboBox_month.Location = new System.Drawing.Point(528, 257);
             this.comboBox_month.Name = "comboBox_month";
             this.comboBox_month.Size = new System.Drawing.Size(267, 28);
             this.comboBox_month.TabIndex = 6;

@@ -138,7 +138,8 @@ namespace Report_system
         {
             try
             {
-                string ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'";
+                Connection sql = new Connection();
+                string ConnectionString = sql.Get_Connection_String();
                 SqlConnection myConnection = new SqlConnection(ConnectionString);
                 myConnection.Open();
                 string query = "Select * From " + Table_name +

@@ -7,16 +7,18 @@ namespace Report_system
 {
     public class Check
     {
-        private string ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'";
-
+        Connection sql = new Connection();
+        string ConnectionString = "";
         public int Check_Report(string File_name)
         {
-           SqlConnection SQLConnection = new SqlConnection
-            {
-                ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'"
-            };
+            ConnectionString = sql.Get_Connection_String();
+            SqlConnection SQLConnection = new SqlConnection(ConnectionString);
             string Table_Name = "";
-            if (File_name.Contains('A'))
+            if (File_name.Contains("Infe"))
+            {
+                Table_Name = "dbo.tbl_Result_Report_Infe";
+            }
+            else if (File_name.Contains('A'))
             {
                 Table_Name = "dbo.tbl_Result_Report_A";
             }
@@ -93,6 +95,7 @@ namespace Report_system
             }
                 try
             {
+                ConnectionString = sql.Get_Connection_String();
                 SqlConnection myConnection = new SqlConnection(ConnectionString);
                 myConnection.Open();
                 string query =
@@ -117,6 +120,7 @@ namespace Report_system
         {
             try
             {
+                ConnectionString = sql.Get_Connection_String();
                 SqlConnection myConnection = new SqlConnection(ConnectionString);
                 myConnection.Open();
                 string query =
@@ -147,6 +151,7 @@ namespace Report_system
             }
             try
             {
+                ConnectionString = sql.Get_Connection_String();
                 SqlConnection myConnection = new SqlConnection(ConnectionString);
                 myConnection.Open();
                 string query =
@@ -181,7 +186,7 @@ namespace Report_system
             }
             try
             {
-
+                ConnectionString = sql.Get_Connection_String();
                 SqlConnection myConnection = new SqlConnection(ConnectionString);
                 myConnection.Open();
                 string query =

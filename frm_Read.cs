@@ -70,8 +70,16 @@ namespace Report_system
                             //Добавляем в таблицу название считываемого файла
                             Add_Report(file_name);
                             //Распознаем и считываем данные файла
-                            Read_Report_A report_A = new Read_Report_A();
-                            await Task.Run(() => report_A.Read_file(openFileDialog1.FileName));
+                            if (file_name.Contains("Infe"))
+                            {
+                                Read_report_Infe report = new Read_report_Infe();
+                                await Task.Run(() => report.Read_file(openFileDialog1.FileName));
+                            }
+                            else
+                            {
+                                Read_Report_A report = new Read_Report_A();
+                                await Task.Run(() => report.Read_file(openFileDialog1.FileName));
+                            }
                             MessageBox.Show("Добавлено");
                         }
                         else if(check_result==1)
@@ -80,9 +88,16 @@ namespace Report_system
                         }
                         else if(check_result==2)
                         {
-                            //MessageBox.Show("Отчёт добавлен с ошибками или не полностью");
-                            Read_Report_A report_A = new Read_Report_A();
-                            await Task.Run(() => report_A.Read_file(openFileDialog1.FileName));
+                            if (file_name.Contains("Infe"))
+                            {
+                                Read_report_Infe report = new Read_report_Infe();
+                                await Task.Run(() => report.Read_file(openFileDialog1.FileName));
+                            }
+                            else
+                            {
+                                Read_Report_A report = new Read_Report_A();
+                                await Task.Run(() => report.Read_file(openFileDialog1.FileName));
+                            }
                             MessageBox.Show("Добавлено");
                         }
                        
@@ -108,11 +123,16 @@ namespace Report_system
         }
         private void Add_Report(string File_name)
         {
-            string ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'";
+            Connection sql = new Connection();
+            string ConnectionString = sql.Get_Connection_String();
             SqlConnection SQLConnection = new SqlConnection(ConnectionString);
             string Table_Name = "";
             //Определяем по названию файла в какую таблицу добавлять данные
-            if (File_name.Contains('A'))
+            if (File_name.Contains("Infe"))
+            {
+                Table_Name = "dbo.tbl_Result_Report_Infe";
+            }
+            else if (File_name.Contains('A'))
             {
                 Table_Name = "dbo.tbl_Result_Report_A";
             }

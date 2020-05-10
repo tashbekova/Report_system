@@ -22,7 +22,8 @@ namespace Report_system
         private string device = "";
         private string Table_name = "";
         private string name = "";
-        string ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'";
+        Connection sql = new Connection();
+        string ConnectionString = "";
         public void Generation(string path, string report, int year,string column)
         {
             try
@@ -309,6 +310,7 @@ namespace Report_system
             else if (column == "Device")
                 title = "Место операции";
             //строка соединения
+            ConnectionString = sql.Get_Connection_String();
             SqlConnection con = new SqlConnection(ConnectionString);
 
             DataTable dt = new DataTable();
@@ -365,7 +367,7 @@ namespace Report_system
             else if (column == "Device")
                 title = "Место операции";
             //строка соединения
-
+            ConnectionString = sql.Get_Connection_String();
             SqlConnection con = new SqlConnection(ConnectionString);
 
             DataTable dt = new DataTable();

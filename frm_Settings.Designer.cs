@@ -32,6 +32,7 @@
             this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.button_Edit_Settings = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label_Name_of_form = new System.Windows.Forms.Label();
             this.button_Update = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbutton_Name_of_report = new MaterialSkin.Controls.MaterialRadioButton();
@@ -50,7 +51,6 @@
             this.tbl_Type_of_reportTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_Type_of_reportTableAdapter();
             this.tbl_YearTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_YearTableAdapter();
             this.tbl_Name_of_reportTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_Name_of_reportTableAdapter();
-            this.label_Name_of_form = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_List_Settings)).BeginInit();
@@ -103,6 +103,16 @@
             this.panel1.Size = new System.Drawing.Size(1237, 667);
             this.panel1.TabIndex = 3;
             // 
+            // label_Name_of_form
+            // 
+            this.label_Name_of_form.AutoSize = true;
+            this.label_Name_of_form.Font = new System.Drawing.Font("Georgia", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_Name_of_form.Location = new System.Drawing.Point(547, 2);
+            this.label_Name_of_form.Name = "label_Name_of_form";
+            this.label_Name_of_form.Size = new System.Drawing.Size(213, 43);
+            this.label_Name_of_form.TabIndex = 13;
+            this.label_Name_of_form.Text = "Настройки";
+            // 
             // button_Update
             // 
             this.button_Update.Depth = 0;
@@ -123,9 +133,9 @@
             this.groupBox1.Controls.Add(this.rbutton_Type_of_report);
             this.groupBox1.Controls.Add(this.rbutton_Year);
             this.groupBox1.Controls.Add(this.rbutton_User);
-            this.groupBox1.Location = new System.Drawing.Point(106, 69);
+            this.groupBox1.Location = new System.Drawing.Point(192, 69);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(907, 100);
+            this.groupBox1.Size = new System.Drawing.Size(343, 100);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Настройки";
@@ -135,7 +145,7 @@
             this.rbutton_Name_of_report.AutoSize = true;
             this.rbutton_Name_of_report.Depth = 0;
             this.rbutton_Name_of_report.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rbutton_Name_of_report.Location = new System.Drawing.Point(519, 34);
+            this.rbutton_Name_of_report.Location = new System.Drawing.Point(354, 34);
             this.rbutton_Name_of_report.Margin = new System.Windows.Forms.Padding(0);
             this.rbutton_Name_of_report.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rbutton_Name_of_report.MouseState = MaterialSkin.MouseState.HOVER;
@@ -145,13 +155,14 @@
             this.rbutton_Name_of_report.TabIndex = 3;
             this.rbutton_Name_of_report.Text = "Название поступающего отчета";
             this.rbutton_Name_of_report.UseVisualStyleBackColor = true;
+            this.rbutton_Name_of_report.Visible = false;
             // 
             // rbutton_Type_of_report
             // 
             this.rbutton_Type_of_report.AutoSize = true;
             this.rbutton_Type_of_report.Depth = 0;
             this.rbutton_Type_of_report.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rbutton_Type_of_report.Location = new System.Drawing.Point(349, 34);
+            this.rbutton_Type_of_report.Location = new System.Drawing.Point(683, 34);
             this.rbutton_Type_of_report.Margin = new System.Windows.Forms.Padding(0);
             this.rbutton_Type_of_report.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rbutton_Type_of_report.MouseState = MaterialSkin.MouseState.HOVER;
@@ -161,6 +172,7 @@
             this.rbutton_Type_of_report.TabIndex = 2;
             this.rbutton_Type_of_report.Text = "Тип отчета";
             this.rbutton_Type_of_report.UseVisualStyleBackColor = true;
+            this.rbutton_Type_of_report.Visible = false;
             // 
             // rbutton_Year
             // 
@@ -259,16 +271,6 @@
             // tbl_Name_of_reportTableAdapter
             // 
             this.tbl_Name_of_reportTableAdapter.ClearBeforeFill = true;
-            // 
-            // label_Name_of_form
-            // 
-            this.label_Name_of_form.AutoSize = true;
-            this.label_Name_of_form.Font = new System.Drawing.Font("Georgia", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_Name_of_form.Location = new System.Drawing.Point(547, 2);
-            this.label_Name_of_form.Name = "label_Name_of_form";
-            this.label_Name_of_form.Size = new System.Drawing.Size(213, 43);
-            this.label_Name_of_form.TabIndex = 13;
-            this.label_Name_of_form.Text = "Настройки";
             // 
             // frm_Settings
             // 

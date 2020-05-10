@@ -30,7 +30,8 @@ namespace Report_system
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            string ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'";
+            Connection sql = new Connection();
+            string ConnectionString = sql.Get_Connection_String();
             myConnection = new SqlConnection(ConnectionString);
             myConnection.Open();
         }

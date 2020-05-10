@@ -21,7 +21,6 @@ namespace Report_system
         private string string_Cycle_value = "";
         private string string_Device_Name_value = "";
         private string string_Transaction_Name_value = "";
-        private string string_Trans_Date_value = "";
         private string string_Number_Of_Trans_value = "";
         private string string_Transaction_Amount_value = "";
         private string string_Transaction_Name_value_part_1 = "";
@@ -37,20 +36,16 @@ namespace Report_system
         private int flag_Transaction = 0;
         private bool flag_add = true;
 
-        //Create Connection to SQL Server
-        SqlConnection SQLConnection = new SqlConnection
-            {
-                ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'"
-            };
-
-
+        string ConnectionString = "";
         public void Read_file(string path_name)
         {
             StreamReader SourceFile = File.OpenText(path_name);
             string File_name = (Path.GetFileNameWithoutExtension(path_name));
             //MessageBox.Show("Распознаем и считываем данные");
-            
-            
+            Connection sql = new Connection();
+            ConnectionString = sql.Get_Connection_String();
+            //Create Connection to SQL Server
+            SqlConnection SQLConnection = new SqlConnection(ConnectionString);
             //provide the table name in which you would like to load data
             string Table_Name = "";
 
@@ -803,7 +798,6 @@ namespace Report_system
                         list_Trans_Date_value.Add(arr_line[j]);
                         if (arr_line[j + 1] == ' ')
                         {
-                            string_Trans_Date_value = new string(list_Trans_Date_value.ToArray());
                             count_column++;
                         }
                     }
@@ -963,6 +957,8 @@ namespace Report_system
         //Добавление считанных данных
         private void Add_Data(string File_name)
         {
+            //Create Connection to SQL Server
+            SqlConnection SQLConnection = new SqlConnection(ConnectionString);
             Read_Type_of_card(string_Transaction_Name_value);
             string Table_Name = "";
             if (File_name.Contains('A'))
@@ -991,7 +987,6 @@ namespace Report_system
                 "Cycle_num_type," +
                 "Device_name," +
                 "Transaction_name," +
-                "Trans_date," +
                 "Number_of_trans," +
                 "Transaction_amount," +
                 "Discount," +
@@ -1010,7 +1005,6 @@ namespace Report_system
            string_Cycle_value + "','" +
            string_Device_Name_value + "','" +
            string_Transaction_Name_value + "','" +
-           string_Trans_Date_value + "','" +
            string_Number_Of_Trans_value + "','" +
            string_Transaction_Amount_value + "','" +
            string_Discount_value + "','" +
@@ -1034,6 +1028,8 @@ namespace Report_system
         //Обновление данных о считывании отчета,успешно ли считано или с ошибками
         private void Update_Report(string File_name,bool flag_report,int finish)
         {
+            //Create Connection to SQL Server
+            SqlConnection SQLConnection = new SqlConnection(ConnectionString);
             string result ;
             if(flag_report==true)
             {
@@ -1077,6 +1073,8 @@ namespace Report_system
         //Поиск ID отчета,чтобы добавить в столбец Report_id,потому что там стоит связь
         private void Find_Report(string File_name)
         {
+            //Create Connection to SQL Server
+            SqlConnection SQLConnection = new SqlConnection(ConnectionString);
             string Table_Name = "";
             if (File_name.Contains('A'))
             {
