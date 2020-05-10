@@ -12,7 +12,7 @@ using System.Drawing;
 
 namespace Report_system
 {
-    class Generation_intermediate_report
+    class Generation_intermediate_report_Visa_Cards
     {
         private Excel.Application excelapp;
         private Excel.Workbook excelworkbook;

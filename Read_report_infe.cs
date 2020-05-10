@@ -44,13 +44,15 @@ namespace Report_system
                 excelworkbook.SaveAs(file_path);
                 Excel.Worksheet excelworksheet = (Excel.Worksheet)excelapp.Sheets[1];
                 excelworksheet.get_Range("I2", "I" + excelworksheet.UsedRange.Rows.Count).NumberFormat= "### ##0,00";
-                for(int i=2;i<=excelworksheet.UsedRange.Rows.Count;i++)
+                excelworksheet.get_Range("A2", "A" + excelworksheet.UsedRange.Rows.Count).NumberFormat = "m/d/yyyy";
+                for (int i=2;i<=excelworksheet.UsedRange.Rows.Count;i++)
                 {
                     if(excelworksheet.Cells[i,7].Value==null)
                     {
                         excelworksheet.Cells[i, 7] = 0;
                     }
                 }
+
                 excelworkbook.Saved=true;
                 string excelConnString = String.Format("Provider=Microsoft.JET.OLEDB.4.0;Data Source={0};Extended Properties=\"Excel 8.0;HDR = YES;IMEX=1\"", file_path);
              
@@ -72,7 +74,7 @@ namespace Report_system
                 //assigning Destination table name      
                 objbulk.DestinationTableName = "tbl_Report_Infe";
                 //Mapping Table column    
-                objbulk.ColumnMappings.Add("DATE_PROVODKI_", "Date");
+                objbulk.ColumnMappings.Add("DATE_PROVODKI_", "Posting_date");
                 objbulk.ColumnMappings.Add("SOURCE_DEVICE_", "Device");
                 objbulk.ColumnMappings.Add("TYPE_", "Type");
                 objbulk.ColumnMappings.Add("TRANS_DATE", "Trans_date");

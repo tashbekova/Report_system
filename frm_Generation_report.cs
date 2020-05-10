@@ -68,33 +68,95 @@ namespace Report_system
                     year= (int)((DataRowView)comboBox_year.SelectedItem)[comboBox_year.DisplayMember];
                     string path_directory = label_path_directory.Text.ToString();
                     int year_now =  Convert.ToInt32(DateTime.Now.ToString("yyyy"));
-                    
+
                     //string Table_name = "";
-                    if (year >= 2000 && year<=year_now)
+                    if (year >= 2000 && year <= year_now)
                     {
-                        Check check_data = new Check();
-                        int check_A = check_data.Check_Data("tbl_Report_A", month, year);
-                        int check_H= check_data.Check_Data("tbl_Report_H", month, year);
-                        int check_R= check_data.Check_Data("tbl_Report_R", month, year);
-                        if(check_A<=0 && check_H<=0 && check_R<=0)
+                        if (report == "Промежуточный отчет по ЭлКарт")
                         {
-                            MessageBox.Show("Нет данных за этот месяц и год", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            Check check_data = new Check();
+                            MessageBox.Show("month=" + month.ToString() + "   year=" + year);
+                            int check = check_data.Check_Data("tbl_Report_Infe", month, year);
+                            MessageBox.Show(check.ToString());
+                            if(check==0)
+                            {
+                                MessageBox.Show("Нет данных по ЭлКарт за этот месяц и год ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            else if (check > 0)
+                            {
+                                path = path_directory + @"\" + year.ToString() + @"\" + report;
+                                if (Directory.Exists(path))
+                                {
+                                    path = path_directory + @"\" + year.ToString() + @"\" + report + @"\" + month.ToString() + "_" + year.ToString() + "_" + report + ".xls";
+                                    string path2 = path_directory + @"\" + year.ToString() + @"\" + report + @"\" + month.ToString() + "_" + year.ToString() + "_" + report + ".xlsx";
+                                    if (System.IO.File.Exists(path) || System.IO.File.Exists(path2))
+                                    {
+                                        MessageBox.Show("Отчёт уже сформирован");
+                                        string message = "Отчёт уже сформирован. Хотите ли вы сформировать ещё раз?";
+                                        string caption = "Error Detected in Input";
+                                        MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                                        DialogResult result;
+                                        // Displays the MessageBox.
+                                        result = MessageBox.Show(message, caption, buttons);
+                                        if (result == System.Windows.Forms.DialogResult.Yes)
+                                        {
+                                            Generation_intermediate_report_Elcart create = new Generation_intermediate_report_Elcart();
+                                            await Task.Run(() => create.Generation(path, month, year));
+                                        }
+                                    }
+                                    else
+                                    {
+                                        Generation_intermediate_report_Elcart create = new Generation_intermediate_report_Elcart();
+                                        await Task.Run(() => create.Generation(path, month, year));
+                                    }
+                                }
+                                else
+                                {
+                                    DirectoryInfo di = Directory.CreateDirectory(path);
+                                    path = path_directory + @"\" + year.ToString() + @"\" + report + @"\" + month.ToString() + "_" + year.ToString() + "_" + report + ".xls";
+                                    string path2 = path_directory + @"\" + year.ToString() + @"\" + report + @"\" + month.ToString() + "_" + year.ToString() + "_" + report + ".xlsx";
+                                    Generation_intermediate_report_Elcart create = new Generation_intermediate_report_Elcart();
+                                    await Task.Run(() => create.Generation(path, month, year));
+                                }
+                                pb_Status.Visible = false;
+                                button_Generation.Enabled = true;
+                            }
+                            else if (check == -2 )
+                            {
+                                MessageBox.Show("Произошла ошибка", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+
                         }
-                        else if(check_A > 0 || check_H > 0 || check_R > 0)
+                        else
                         {
-                             if (check_A <= 0 && check_H > 0 && check_R > 0)
+                            Check check_data = new Check();
+                            int check_A = check_data.Check_Data("tbl_Report_A", month, year);
+                            int check_H = check_data.Check_Data("tbl_Report_H", month, year);
+                            int check_R = check_data.Check_Data("tbl_Report_R", month, year);
+                            int check_Infe = check_data.Check_Data("tbl_Report_Infe", month, year);
+                            if (check_A <= 0 && check_H <= 0 && check_R <= 0 && check_Infe<=0)
                             {
-                                MessageBox.Show("Нет данных по отчету A, данные по банкоматам будут пусты", "Error", MessageBoxButtons.OK);
+                                MessageBox.Show("Нет данных за этот месяц и год", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
-                            else if (check_A > 0 && check_H <= 0 && check_R > 0)
+                            else if (check_A > 0 || check_H > 0 || check_R > 0 || check_Infe > 0)
                             {
-                                MessageBox.Show("Нет данных по отчету H, данные по POS-терминалам будут пусты", "Error", MessageBoxButtons.OK);
-                            }
-                            else if (check_A > 0 && check_H > 0 && check_R <= 0)
-                            {
-                                MessageBox.Show("Нет данных по отчету R, данные по POS-терминалам будут пусты", "Error", MessageBoxButtons.OK);
-                            }
-                            
+                                if (check_A <= 0 && check_H > 0 && check_R > 0 && check_Infe >0)
+                                {
+                                    MessageBox.Show("Нет данных по отчету A, данные по банкоматам будут пусты", "Error", MessageBoxButtons.OK);
+                                }
+                                else if (check_A > 0 && check_H <= 0 && check_R > 0 && check_Infe > 0)
+                                {
+                                    MessageBox.Show("Нет данных по отчету H, данные по POS-терминалам будут пусты", "Error", MessageBoxButtons.OK);
+                                }
+                                else if (check_A > 0 && check_H > 0 && check_R <= 0 && check_Infe > 0)
+                                {
+                                    MessageBox.Show("Нет данных по отчету R, данные по POS-терминалам будут пусты", "Error", MessageBoxButtons.OK);
+                                }
+                                else if (check_A > 0 && check_H > 0 && check_R > 0 && check_Infe <= 0)
+                                {
+                                    MessageBox.Show("Нет данных по отчету Infe, данные по ЭлКарт будут пусты", "Error", MessageBoxButtons.OK);
+                                }
+
                                 path = path_directory + @"\" + year.ToString() + @"\" + report;
                                 if (Directory.Exists(path))
                                 {
@@ -111,35 +173,35 @@ namespace Report_system
                                         result = MessageBox.Show(message, caption, buttons);
                                         if (result == System.Windows.Forms.DialogResult.Yes)
                                         {
-                                        if (report == "Промежуточный отчет по Visa Cards")
-                                        {
-                                            // Start the asynchronous operation.
-                                            Generation_intermediate_report create = new Generation_intermediate_report();
-                                            await Task.Run(() => create.Generation(path, month, year));
-                                        }
-                                        else if(report== "Отчет для Нац.Банка")
-                                        {
-                                            Generation_report_for_National_bank create = new Generation_report_for_National_bank();
-                                            await Task.Run(() => create.Generation(path2));
+                                            if (report == "Промежуточный отчет по Visa Cards")
+                                            {
+                                                // Start the asynchronous operation.
+                                                Generation_intermediate_report_Visa_Cards create = new Generation_intermediate_report_Visa_Cards();
+                                                await Task.Run(() => create.Generation(path, month, year));
+                                            }
+                                            else if (report == "Отчет для Нац.Банка")
+                                            {
+                                                Generation_report_for_National_bank create = new Generation_report_for_National_bank();
+                                                await Task.Run(() => create.Generation(path2));
 
-                                        }
-                                         
+                                            }
+
                                         }
                                     }
                                     else
                                     {
 
-                                    if (report == "Промежуточный отчет по Visa Cards")
-                                    {
-                                        Generation_intermediate_report create = new Generation_intermediate_report();
-                                        await Task.Run(() => create.Generation(path, month, year));
-                                    }
-                                    else if (report == "Отчет для Нац.Банка")
-                                    {
+                                        if (report == "Промежуточный отчет по Visa Cards")
+                                        {
+                                            Generation_intermediate_report_Visa_Cards create = new Generation_intermediate_report_Visa_Cards();
+                                            await Task.Run(() => create.Generation(path, month, year));
+                                        }
+                                        else if (report == "Отчет для Нац.Банка")
+                                        {
 
-                                        Generation_report_for_National_bank create = new Generation_report_for_National_bank();
-                                        await Task.Run(() => create.Generation(path2));
-                                    }
+                                            Generation_report_for_National_bank create = new Generation_report_for_National_bank();
+                                            await Task.Run(() => create.Generation(path2));
+                                        }
                                     }
                                 }
                                 else
@@ -148,24 +210,25 @@ namespace Report_system
                                     DirectoryInfo di = Directory.CreateDirectory(path);
                                     path = path_directory + @"\" + year.ToString() + @"\" + report + @"\" + month.ToString() + "_" + year.ToString() + "_" + report + ".xls";
                                     string path2 = path_directory + @"\" + year.ToString() + @"\" + report + @"\" + month.ToString() + "_" + year.ToString() + "_" + report + ".xlsm";
-                                if (report == "Промежуточный отчет по Visa Cards")
-                                {
-                                    Generation_intermediate_report create = new Generation_intermediate_report();
-                                    await Task.Run(() => create.Generation(path, month, year));
-                                }
-                                else if (report == "Отчет для Нац.Банка")
-                                {
-                                    Generation_report_for_National_bank create = new Generation_report_for_National_bank();
-                                    await Task.Run(() => create.Generation(path2));
+                                    if (report == "Промежуточный отчет по Visa Cards")
+                                    {
+                                        Generation_intermediate_report_Visa_Cards create = new Generation_intermediate_report_Visa_Cards();
+                                        await Task.Run(() => create.Generation(path, month, year));
+                                    }
+                                    else if (report == "Отчет для Нац.Банка")
+                                    {
+                                        Generation_report_for_National_bank create = new Generation_report_for_National_bank();
+                                        await Task.Run(() => create.Generation(path2));
 
+                                    }
                                 }
+                                pb_Status.Visible = false;
+                                button_Generation.Enabled = true;
                             }
-                            pb_Status.Visible = false;
-                            button_Generation.Enabled = true;
-                        }
-                        else if(check_A == -2 && check_H == -2 && check_R == -2)
-                        {
-                            MessageBox.Show("Произошла ошибка", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            else if (check_A == -2 && check_H == -2 && check_R == -2)
+                            {
+                                MessageBox.Show("Произошла ошибка", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                     }
                     else

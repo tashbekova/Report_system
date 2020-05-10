@@ -154,7 +154,8 @@
     <Compile Include="frm_Read.Designer.cs">
       <DependentUpon>frm_Read.cs</DependentUpon>
     </Compile>
-    <Compile Include="Generation_intermediate_report.cs" />
+    <Compile Include="Generation_intermediate_report_Visa_Cards.cs" />
+    <Compile Include="Generation_intermediate_report_Elcart.cs" />
     <Compile Include="Generation_Prognoz.cs" />
     <Compile Include="Generation_report_for_National_bank.cs" />
     <Compile Include="Generation_statistic.cs" />
