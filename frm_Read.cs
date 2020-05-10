@@ -51,6 +51,12 @@ namespace Report_system
                     string[] stroka = File.ReadAllLines(openFileDialog1.FileName);
                     //Название файла
                     string file_name = (Path.GetFileNameWithoutExtension(openFileDialog1.FileName));
+                    string extencion= Path.GetExtension(openFileDialog1.FileName);
+                    if (extencion!=".txt")
+                    {
+                        MessageBox.Show("ВЫберите текстовый файл.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     //Показываем на форме названия считываемого файла
                     lblName.Text = file_name;
                     //Если файл пустой
@@ -192,6 +198,12 @@ namespace Report_system
                     string[] fileEntries = Directory.GetFiles(path_directory);
                     foreach (string fileName in fileEntries)
                     {
+                        string extencion = Path.GetExtension(fileName);
+                        //MessageBox.Show(extencion);
+                        if (extencion != ".txt")
+                        {
+                            continue;
+                        }
                         string[] stroka = File.ReadAllLines(fileName);
                         //Название файла
                         string short_file_name = (Path.GetFileNameWithoutExtension(fileName));
@@ -214,8 +226,16 @@ namespace Report_system
                                 //Добавляем в таблицу название считываемого файла
                                 Add_Report(short_file_name);
                                 //Распознаем и считываем данные файла
-                                Read_Report_A report = new Read_Report_A();
-                                await Task.Run(() => report.Read_file(fileName));
+                                if (short_file_name.Contains("Infe"))
+                                {
+                                    Read_report_Infe report = new Read_report_Infe();
+                                    await Task.Run(() => report.Read_file(fileName));
+                                }
+                                else
+                                {
+                                    Read_Report_A report = new Read_Report_A();
+                                    await Task.Run(() => report.Read_file(fileName));
+                                }
                             }
                             else if (check_result == 1)
                             {
@@ -224,8 +244,16 @@ namespace Report_system
                             }
                             else if (check_result == 2)
                             {
-                                Read_Report_A report = new Read_Report_A();
-                                await Task.Run(() => report.Read_file(fileName));
+                                if (short_file_name.Contains("Infe"))
+                                {
+                                    Read_report_Infe report = new Read_report_Infe();
+                                    await Task.Run(() => report.Read_file(fileName));
+                                }
+                                else
+                                {
+                                    Read_Report_A report = new Read_Report_A();
+                                    await Task.Run(() => report.Read_file(fileName));
+                                }
                             }
 
                         }

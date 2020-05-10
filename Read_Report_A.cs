@@ -53,7 +53,6 @@ namespace Report_system
             bool flag_Total_Posting_Date = false;
             bool flag_Total_Cycle = false;
             bool flag_Total_Device = false;
-            bool flag_Total_Currency = false;
             bool flag_Total = false;
             bool flag_report;
 
@@ -266,7 +265,6 @@ namespace Report_system
                             int index_Total_Date = line.IndexOf("TOTAL this Posting Date", 0, end_line);  //индекс нахождения Total Posting Date
                             int index_Total_For_Cycle = line.IndexOf("TOTAL for Cycle", 0, end_line);
                             int index_Total_Device = line.IndexOf("TOTAL this Device", 0, end_line);
-                            int index_Total_Currency = line.IndexOf("TOTAL this Currency", 0, end_line);
 
 
                             //Если это строка с Total 
@@ -283,11 +281,6 @@ namespace Report_system
                             else if (index_Total_Device >= 0)
                             {
                                 flag_Total_Device = true;
-                                flag_Total = true;
-                            }
-                            else if (index_Total_Currency >= 0)
-                            {
-                                flag_Total_Currency = true;
                                 flag_Total = true;
                             }
                             //Определяем в какую таблицу добавлять данные
@@ -338,21 +331,7 @@ namespace Report_system
                                         Table_Name = "dbo.tbl_Total_Device_Report_R";
                                     }
                                 }
-                                else if (flag_Total_Currency == true)
-                                {
-                                    if (File_name.Contains('A'))
-                                    {
-                                        Table_Name = "dbo.tbl_Total_Currency_Report_A";
-                                    }
-                                    else if (File_name.Contains('H'))
-                                    {
-                                        Table_Name = "dbo.tbl_Total_Currency_Report_H";
-                                    }
-                                    else if (File_name.Contains('R'))
-                                    {
-                                        Table_Name = "dbo.tbl_Total_Currency_Report_R";
-                                    }
-                                }
+                               
                                 //создаем листы 
                                 List<char> list_Number_Of_Trans_value = new List<char>();
                                 List<char> list_Transaction_Amount_value = new List<char>();
@@ -439,7 +418,6 @@ namespace Report_system
                                     string_Account_Amount_value = new string(list_Account_Amount_value.ToArray());
                                     // MessageBox.Show(string_Account_Amount_value);
                                     flag_Total = false;
-                                    flag_Total_Currency = false;
                                     flag_Total_Cycle = false;
                                     flag_Total_Device = false;
                                     flag_Total_Posting_Date = false;
@@ -489,7 +467,8 @@ namespace Report_system
                         #endregion
                     }
                 }
-               
+                flag_report = true;
+                Update_Report(File_name, flag_report, 1);
             }
             catch (Exception ex)
             {
@@ -499,8 +478,7 @@ namespace Report_system
             }
             finally
             {
-                flag_report = true;
-                Update_Report(File_name, flag_report, 1);
+             
                 SourceFile.Close();
                 SQLConnection.Close();
             }
@@ -654,7 +632,7 @@ namespace Report_system
             //создаем лист list_SIC_value для хранения значения SIC:
             List<char> list_SIC_value = new List<char>();
             //Проходим по циклу начиная после слов "SIC:" и до пробелов
-            for (int i = index_SIC + 6; i < end_line; i++)
+            for (int i = index_SIC + 6; i < 78; i++)
             {
                 if (arr_line[i] == ' ')
                 {
@@ -973,7 +951,7 @@ namespace Report_system
             {
                 Table_Name = "dbo.tbl_Report_R";
             }
-
+            SQLConnection.Open();
             // запрос на добавление в SQL Server
             string query = "Insert into " + Table_Name +
                 " (Posting_date," +
@@ -1023,6 +1001,10 @@ namespace Report_system
             {
                 MessageBox.Show("Произошла ошибка при добавлении данных   " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            finally
+            {
+                SQLConnection.Close();
+            }
         }
 
         //Обновление данных о считывании отчета,успешно ли считано или с ошибками
@@ -1030,6 +1012,7 @@ namespace Report_system
         {
             //Create Connection to SQL Server
             SqlConnection SQLConnection = new SqlConnection(ConnectionString);
+            SQLConnection.Open();
             string result ;
             if(flag_report==true)
             {
@@ -1068,6 +1051,10 @@ namespace Report_system
             {
                 MessageBox.Show("Произошла ошибка при добавлении названия отчёта в БД   " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            finally
+            {
+                SQLConnection.Close();
+            }
         }
 
         //Поиск ID отчета,чтобы добавить в столбец Report_id,потому что там стоит связь
@@ -1088,6 +1075,7 @@ namespace Report_system
             {
                 Table_Name = "tbl_Result_Report_R";
             }
+            SQLConnection.Open();
             // запрос на добавление в SQL Server
             string query = "SELECT " + Table_Name + ".ID FROM  " + Table_Name +
                             "  WHERE " + Table_Name + ".Name_of_report='" + File_name + "'";
@@ -1104,7 +1092,7 @@ namespace Report_system
             }
             finally
             {
-
+                SQLConnection.Close();
             }
         }
 

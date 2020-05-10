@@ -164,14 +164,6 @@ namespace Report_system
             {
                 Find_Table_name(report, column);
 
-                string name = "";
-                if (column == "Currency")
-                    name = "валюте";
-                else if (column == "Type_of_card")
-                    name = "видам карт";
-                else if (column == "Device")
-                    name = "месту операции";
-
                 excelapp = new Excel.Application();
                 //добавляем книгу
                 excelworkbook = excelapp.Workbooks.Add(Type.Missing);
@@ -553,9 +545,7 @@ namespace Report_system
             if (report == "Report A")
             {
                 device = "банкомате";
-                if (column == "Currency")
-                    Table_name = "tbl_Total_Currency_Report_A";
-                else if (column == "Type_of_card")
+                if (column == "Type_of_card" || column == "Currency")
                     Table_name = "tbl_Report_A";
                 else if (column == "Device")
                     Table_name = "tbl_Total_Device_Report_A";
@@ -563,9 +553,7 @@ namespace Report_system
             else if (report == "Report H")
             {
                 device = "POS-терминале";
-                if (column == "Currency")
-                    Table_name = "tbl_Total_Currency_Report_H";
-                else if (column == "Type_of_card")
+                if (column == "Type_of_card" || column == "Currency")
                     Table_name = "tbl_Report_H";
                 else if (column == "Device")
                     Table_name = "tbl_Total_Device_Report_H";
@@ -573,9 +561,7 @@ namespace Report_system
             else if (report == "Report R")
             {
                 device = "POS-терминале";
-                if (column == "Currency")
-                    Table_name = "tbl_Total_Currency_Report_R";
-                else if (column == "Type_of_card")
+                 if (column == "Type_of_card" || column == "Currency")
                     Table_name = "tbl_Report_R";
                 else if (column == "Device")
                     Table_name = "tbl_Total_Device_Report_R";

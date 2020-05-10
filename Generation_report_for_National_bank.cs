@@ -14,7 +14,7 @@ namespace Report_system
         private Excel.Application excelapp;
         private Excel.Workbook excelworkbook;
         private Excel.Worksheet excelworksheet;
-        private Excel.Range excelrange;
+       // private Excel.Range excelrange;
         private Excel.Sheets excelsheets;
         public void Generation(string report_path)
         {
