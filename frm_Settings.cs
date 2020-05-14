@@ -87,7 +87,9 @@ namespace Report_system
             {
                 column = 2;
                 Table_name = "tbl_Region";
-                Load_Data(Table_name, column);
+                button_Update.Visible = false;
+                Load_Data(Table_name);
+
             }
             dataGridView_List_Settings.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             flag_empty = true;
@@ -126,7 +128,26 @@ namespace Report_system
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void Load_Data(string Table_name)
+        {
 
+            try
+            {
+                sqlDataAdapter = new SqlDataAdapter("SELECT * From " + Table_name, myConnection);
+
+                sqlBuilder = new SqlCommandBuilder(sqlDataAdapter);
+
+                dataSet = new DataSet();
+
+                sqlDataAdapter.Fill(dataSet, Table_name);
+
+                dataGridView_List_Settings.DataSource = dataSet.Tables[Table_name];
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void Reload_Data(string Table_name, int column)
         {
             try
