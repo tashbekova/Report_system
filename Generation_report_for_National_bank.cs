@@ -43,6 +43,8 @@ namespace Report_system
                 if (check_Infe >= 0)
                 { Make_calculations_Cash_Elcart_page1(month, year);
                     Make_calculations_Elcart_page1(month, year);
+                    Make_calculations_Visa_Cash_page1(month, year);
+                    Make_calculations_Visa_page1(month, year);
 
                 }
 
