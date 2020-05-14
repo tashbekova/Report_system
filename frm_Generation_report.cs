@@ -75,9 +75,7 @@ namespace Report_system
                         if (report == "ѕромежуточный отчет по Ёл арт")
                         {
                             Check check_data = new Check();
-                            MessageBox.Show("month=" + month.ToString() + "   year=" + year);
                             int check = check_data.Check_Data("tbl_Report_Infe", month, year);
-                            MessageBox.Show(check.ToString());
                             if(check==0)
                             {
                                 MessageBox.Show("Ќет данных по Ёл арт за этот мес€ц и год ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

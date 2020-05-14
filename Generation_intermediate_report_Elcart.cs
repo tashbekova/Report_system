@@ -181,7 +181,6 @@ namespace Report_system
                     " FROM " + Table_name +
                     " WHERE MONTH(" + Table_name + ".Posting_date)=" + month + " and YEAR(" + Table_name + ".Posting_date)=" + year +
                     " ORDER BY " + Table_name + ".Posting_date";
-                // MessageBox.Show(query);
                 SqlCommand comm = new SqlCommand(query, con);
                 SqlDataAdapter da = new SqlDataAdapter(comm);
                 DataSet ds = new DataSet();
