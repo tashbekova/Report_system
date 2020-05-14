@@ -140,21 +140,28 @@ namespace Report_system
                             }
                             else if (check_A > 0 || check_H > 0 || check_R > 0 || check_Infe > 0)
                             {
-                                if (check_A <= 0 && check_H > 0 && check_R > 0 && check_Infe >0)
+                                if (check_A <= 0 && check_H > 0 && check_R > 0 )
                                 {
                                     MessageBox.Show("Нет данных по отчету A, данные по банкоматам будут пусты", "Error", MessageBoxButtons.OK);
                                 }
-                                else if (check_A > 0 && check_H <= 0 && check_R > 0 && check_Infe > 0)
+                                else if (check_A > 0 && check_H <= 0 && check_R > 0 )
                                 {
                                     MessageBox.Show("Нет данных по отчету H, данные по POS-терминалам будут пусты", "Error", MessageBoxButtons.OK);
                                 }
-                                else if (check_A > 0 && check_H > 0 && check_R <= 0 && check_Infe > 0)
+                                else if (check_A > 0 && check_H > 0 && check_R <= 0 )
                                 {
                                     MessageBox.Show("Нет данных по отчету R, данные по POS-терминалам будут пусты", "Error", MessageBoxButtons.OK);
                                 }
-                                else if (check_A > 0 && check_H > 0 && check_R > 0 && check_Infe <= 0)
+                                else if (check_A > 0 && check_H > 0 && check_R > 0)
                                 {
                                     MessageBox.Show("Нет данных по отчету Infe, данные по ЭлКарт будут пусты", "Error", MessageBoxButtons.OK);
+                                }
+                                if (report == "Отчет для Нац.Банка")
+                                {
+                                    if (check_Infe <= 0)
+                                    {
+                                        MessageBox.Show("Нет данных по отчету Infe, данные по ЭлКарт будут пусты", "Error", MessageBoxButtons.OK);
+                                    }
                                 }
 
                                 path = path_directory + @"\" + year.ToString() + @"\" + report;
@@ -182,7 +189,7 @@ namespace Report_system
                                             else if (report == "Отчет для Нац.Банка")
                                             {
                                                 Generation_report_for_National_bank create = new Generation_report_for_National_bank();
-                                                await Task.Run(() => create.Generation(path2));
+                                                await Task.Run(() => create.Generation(path2,month,year));
 
                                             }
 
@@ -200,7 +207,7 @@ namespace Report_system
                                         {
 
                                             Generation_report_for_National_bank create = new Generation_report_for_National_bank();
-                                            await Task.Run(() => create.Generation(path2));
+                                            await Task.Run(() => create.Generation(path2,month,year));
                                         }
                                     }
                                 }
@@ -218,7 +225,7 @@ namespace Report_system
                                     else if (report == "Отчет для Нац.Банка")
                                     {
                                         Generation_report_for_National_bank create = new Generation_report_for_National_bank();
-                                        await Task.Run(() => create.Generation(path2));
+                                        await Task.Run(() => create.Generation(path2,month,year));
 
                                     }
                                 }

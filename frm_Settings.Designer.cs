@@ -35,8 +35,10 @@
             this.label_Name_of_form = new System.Windows.Forms.Label();
             this.button_Update = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbutton_Name_of_report = new MaterialSkin.Controls.MaterialRadioButton();
-            this.rbutton_Type_of_report = new MaterialSkin.Controls.MaterialRadioButton();
+            this.rbutton_Name_of_Region = new MaterialSkin.Controls.MaterialRadioButton();
+            this.rbutton_Name_of_POS = new MaterialSkin.Controls.MaterialRadioButton();
+            this.rbutton_Name_of_ATM = new MaterialSkin.Controls.MaterialRadioButton();
+            this.rbutton_Name_of_Cash_POS = new MaterialSkin.Controls.MaterialRadioButton();
             this.rbutton_Year = new MaterialSkin.Controls.MaterialRadioButton();
             this.rbutton_User = new MaterialSkin.Controls.MaterialRadioButton();
             this.dataGridView_List_Settings = new System.Windows.Forms.DataGridView();
@@ -78,7 +80,7 @@
             // button_Edit_Settings
             // 
             this.button_Edit_Settings.Depth = 0;
-            this.button_Edit_Settings.Location = new System.Drawing.Point(389, 190);
+            this.button_Edit_Settings.Location = new System.Drawing.Point(466, 190);
             this.button_Edit_Settings.MouseState = MaterialSkin.MouseState.HOVER;
             this.button_Edit_Settings.Name = "button_Edit_Settings";
             this.button_Edit_Settings.Primary = true;
@@ -129,57 +131,89 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.rbutton_Name_of_report);
-            this.groupBox1.Controls.Add(this.rbutton_Type_of_report);
+            this.groupBox1.Controls.Add(this.rbutton_Name_of_Region);
+            this.groupBox1.Controls.Add(this.rbutton_Name_of_POS);
+            this.groupBox1.Controls.Add(this.rbutton_Name_of_ATM);
+            this.groupBox1.Controls.Add(this.rbutton_Name_of_Cash_POS);
             this.groupBox1.Controls.Add(this.rbutton_Year);
             this.groupBox1.Controls.Add(this.rbutton_User);
-            this.groupBox1.Location = new System.Drawing.Point(192, 69);
+            this.groupBox1.Location = new System.Drawing.Point(106, 69);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(343, 100);
+            this.groupBox1.Size = new System.Drawing.Size(1057, 100);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Настройки";
             // 
-            // rbutton_Name_of_report
+            // rbutton_Name_of_Region
             // 
-            this.rbutton_Name_of_report.AutoSize = true;
-            this.rbutton_Name_of_report.Depth = 0;
-            this.rbutton_Name_of_report.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rbutton_Name_of_report.Location = new System.Drawing.Point(354, 34);
-            this.rbutton_Name_of_report.Margin = new System.Windows.Forms.Padding(0);
-            this.rbutton_Name_of_report.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.rbutton_Name_of_report.MouseState = MaterialSkin.MouseState.HOVER;
-            this.rbutton_Name_of_report.Name = "rbutton_Name_of_report";
-            this.rbutton_Name_of_report.Ripple = true;
-            this.rbutton_Name_of_report.Size = new System.Drawing.Size(291, 30);
-            this.rbutton_Name_of_report.TabIndex = 3;
-            this.rbutton_Name_of_report.Text = "Название поступающего отчета";
-            this.rbutton_Name_of_report.UseVisualStyleBackColor = true;
-            this.rbutton_Name_of_report.Visible = false;
+            this.rbutton_Name_of_Region.AutoSize = true;
+            this.rbutton_Name_of_Region.Depth = 0;
+            this.rbutton_Name_of_Region.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbutton_Name_of_Region.Location = new System.Drawing.Point(930, 34);
+            this.rbutton_Name_of_Region.Margin = new System.Windows.Forms.Padding(0);
+            this.rbutton_Name_of_Region.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbutton_Name_of_Region.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbutton_Name_of_Region.Name = "rbutton_Name_of_Region";
+            this.rbutton_Name_of_Region.Ripple = true;
+            this.rbutton_Name_of_Region.Size = new System.Drawing.Size(87, 30);
+            this.rbutton_Name_of_Region.TabIndex = 5;
+            this.rbutton_Name_of_Region.Text = "Регион";
+            this.rbutton_Name_of_Region.UseVisualStyleBackColor = true;
             // 
-            // rbutton_Type_of_report
+            // rbutton_Name_of_POS
             // 
-            this.rbutton_Type_of_report.AutoSize = true;
-            this.rbutton_Type_of_report.Depth = 0;
-            this.rbutton_Type_of_report.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rbutton_Type_of_report.Location = new System.Drawing.Point(683, 34);
-            this.rbutton_Type_of_report.Margin = new System.Windows.Forms.Padding(0);
-            this.rbutton_Type_of_report.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.rbutton_Type_of_report.MouseState = MaterialSkin.MouseState.HOVER;
-            this.rbutton_Type_of_report.Name = "rbutton_Type_of_report";
-            this.rbutton_Type_of_report.Ripple = true;
-            this.rbutton_Type_of_report.Size = new System.Drawing.Size(119, 30);
-            this.rbutton_Type_of_report.TabIndex = 2;
-            this.rbutton_Type_of_report.Text = "Тип отчета";
-            this.rbutton_Type_of_report.UseVisualStyleBackColor = true;
-            this.rbutton_Type_of_report.Visible = false;
+            this.rbutton_Name_of_POS.AutoSize = true;
+            this.rbutton_Name_of_POS.Depth = 0;
+            this.rbutton_Name_of_POS.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbutton_Name_of_POS.Location = new System.Drawing.Point(720, 34);
+            this.rbutton_Name_of_POS.Margin = new System.Windows.Forms.Padding(0);
+            this.rbutton_Name_of_POS.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbutton_Name_of_POS.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbutton_Name_of_POS.Name = "rbutton_Name_of_POS";
+            this.rbutton_Name_of_POS.Ripple = true;
+            this.rbutton_Name_of_POS.Size = new System.Drawing.Size(178, 30);
+            this.rbutton_Name_of_POS.TabIndex = 4;
+            this.rbutton_Name_of_POS.Text = "Безналичный POS";
+            this.rbutton_Name_of_POS.UseVisualStyleBackColor = true;
+            // 
+            // rbutton_Name_of_ATM
+            // 
+            this.rbutton_Name_of_ATM.AutoSize = true;
+            this.rbutton_Name_of_ATM.Depth = 0;
+            this.rbutton_Name_of_ATM.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbutton_Name_of_ATM.Location = new System.Drawing.Point(321, 34);
+            this.rbutton_Name_of_ATM.Margin = new System.Windows.Forms.Padding(0);
+            this.rbutton_Name_of_ATM.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbutton_Name_of_ATM.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbutton_Name_of_ATM.Name = "rbutton_Name_of_ATM";
+            this.rbutton_Name_of_ATM.Ripple = true;
+            this.rbutton_Name_of_ATM.Size = new System.Drawing.Size(110, 30);
+            this.rbutton_Name_of_ATM.TabIndex = 3;
+            this.rbutton_Name_of_ATM.Text = "Банкомат";
+            this.rbutton_Name_of_ATM.UseVisualStyleBackColor = true;
+            // 
+            // rbutton_Name_of_Cash_POS
+            // 
+            this.rbutton_Name_of_Cash_POS.AutoSize = true;
+            this.rbutton_Name_of_Cash_POS.Depth = 0;
+            this.rbutton_Name_of_Cash_POS.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbutton_Name_of_Cash_POS.Location = new System.Drawing.Point(456, 34);
+            this.rbutton_Name_of_Cash_POS.Margin = new System.Windows.Forms.Padding(0);
+            this.rbutton_Name_of_Cash_POS.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbutton_Name_of_Cash_POS.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbutton_Name_of_Cash_POS.Name = "rbutton_Name_of_Cash_POS";
+            this.rbutton_Name_of_Cash_POS.Ripple = true;
+            this.rbutton_Name_of_Cash_POS.Size = new System.Drawing.Size(236, 30);
+            this.rbutton_Name_of_Cash_POS.TabIndex = 2;
+            this.rbutton_Name_of_Cash_POS.Text = "Наличный POS-терминал";
+            this.rbutton_Name_of_Cash_POS.UseVisualStyleBackColor = true;
             // 
             // rbutton_Year
             // 
             this.rbutton_Year.AutoSize = true;
             this.rbutton_Year.Depth = 0;
             this.rbutton_Year.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rbutton_Year.Location = new System.Drawing.Point(231, 34);
+            this.rbutton_Year.Location = new System.Drawing.Point(211, 34);
             this.rbutton_Year.Margin = new System.Windows.Forms.Padding(0);
             this.rbutton_Year.MouseLocation = new System.Drawing.Point(-1, -1);
             this.rbutton_Year.MouseState = MaterialSkin.MouseState.HOVER;
@@ -318,11 +352,13 @@
         private System.Windows.Forms.BindingSource tblNameofreportBindingSource;
         private Report_SystemDataSetTableAdapters.tbl_Name_of_reportTableAdapter tbl_Name_of_reportTableAdapter;
         private System.Windows.Forms.GroupBox groupBox1;
-        private MaterialSkin.Controls.MaterialRadioButton rbutton_Name_of_report;
-        private MaterialSkin.Controls.MaterialRadioButton rbutton_Type_of_report;
+        private MaterialSkin.Controls.MaterialRadioButton rbutton_Name_of_ATM;
+        private MaterialSkin.Controls.MaterialRadioButton rbutton_Name_of_Cash_POS;
         private MaterialSkin.Controls.MaterialRadioButton rbutton_Year;
         private MaterialSkin.Controls.MaterialRadioButton rbutton_User;
         private MaterialSkin.Controls.MaterialRaisedButton button_Update;
         private System.Windows.Forms.Label label_Name_of_form;
+        private MaterialSkin.Controls.MaterialRadioButton rbutton_Name_of_POS;
+        private MaterialSkin.Controls.MaterialRadioButton rbutton_Name_of_Region;
     }
 }

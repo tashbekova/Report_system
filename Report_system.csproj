@@ -161,6 +161,7 @@
     <Compile Include="Generation_statistic.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Read_device.cs" />
     <Compile Include="Read_Report_A.cs" />
     <Compile Include="Read_report_Infe.cs" />
     <Compile Include="Report_SystemDataSet.Designer.cs">

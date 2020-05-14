@@ -43,7 +43,7 @@ namespace Report_system
 
                 excelworkbook.SaveAs(file_path);
                 Excel.Worksheet excelworksheet = (Excel.Worksheet)excelapp.Sheets[1];
-                excelworksheet.get_Range("I2", "I" + excelworksheet.UsedRange.Rows.Count).NumberFormat= "### ##0,00";
+                excelworksheet.get_Range("I2", "I" + excelworksheet.UsedRange.Rows.Count).NumberFormat= "0";
                 excelworksheet.get_Range("A2", "A" + excelworksheet.UsedRange.Rows.Count).NumberFormat = "m/d/yyyy";
                 for (int i=2;i<=excelworksheet.UsedRange.Rows.Count;i++)
                 {
@@ -52,8 +52,7 @@ namespace Report_system
                         excelworksheet.Cells[i, 7] = 0;
                     }
                 }
-
-                excelworkbook.Saved=true;
+                excelworkbook.SaveAs(file_path);
                 string excelConnString = String.Format("Provider=Microsoft.JET.OLEDB.4.0;Data Source={0};Extended Properties=\"Excel 8.0;HDR = YES;IMEX=1\"", file_path);
              
                 OleDbConnection Econ = new OleDbConnection(excelConnString);

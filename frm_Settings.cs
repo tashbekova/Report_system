@@ -47,8 +47,13 @@ namespace Report_system
             button_Update.Visible = true;
             dataGridView_List_Settings.Visible = true;
             if (flag_empty == true)
-            { dataSet.Tables[Table_name].Clear(); }
-            if(rbutton_User.Checked==true)
+            {
+                dataSet.Tables[Table_name].Clear();
+                //dataGridView_List_Settings.Rows.Clear();
+                dataGridView_List_Settings.DataSource = null;
+                dataGridView_List_Settings.Refresh();
+            }
+            if (rbutton_User.Checked==true)
             {
                 column = 3;
                 Table_name = "tbl_User";
@@ -60,16 +65,28 @@ namespace Report_system
                 Table_name = "tbl_Year";
                 Load_Data(Table_name, column);
             }
-            else if(rbutton_Type_of_report.Checked==true)
+            else if(rbutton_Name_of_ATM.Checked==true)
             {
-                column = 2;
-                Table_name = "tbl_Type_of_report";
+                column = 4;
+                Table_name = "tbl_ATM_Region";
                 Load_Data(Table_name, column);
             }
-            else if(rbutton_Name_of_report.Checked==true)
+            else if(rbutton_Name_of_Cash_POS.Checked==true)
+            {
+                column = 3;
+                Table_name = "tbl_POS_Cash_Region";
+                Load_Data(Table_name, column);
+            }
+            else if (rbutton_Name_of_POS.Checked == true)
+            {
+                column = 3;
+                Table_name = "tbl_POS_Region";
+                Load_Data(Table_name, column);
+            }
+            else if (rbutton_Name_of_Region.Checked == true)
             {
                 column = 2;
-                Table_name = "tbl_Name_of_report";
+                Table_name = "tbl_Region";
                 Load_Data(Table_name, column);
             }
             dataGridView_List_Settings.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -78,8 +95,10 @@ namespace Report_system
        
         private void Load_Data(string Table_name,int column)
         {
+          
             try
             {
+             
                 sqlDataAdapter = new SqlDataAdapter("SELECT *, 'Delete' AS [Delete] From " + Table_name, myConnection);
 
                 sqlBuilder = new SqlCommandBuilder(sqlDataAdapter);
@@ -89,7 +108,7 @@ namespace Report_system
                 sqlBuilder.GetDeleteCommand();
 
                 dataSet = new DataSet();
-
+               
                 sqlDataAdapter.Fill(dataSet, Table_name);
 
                 dataGridView_List_Settings.DataSource = dataSet.Tables[Table_name];
@@ -166,13 +185,25 @@ namespace Report_system
                         {
                             row["Name_of_year"] = dataGridView_List_Settings.Rows[rowIndex].Cells["Name_of_year"].Value;
                         }
-                        else if (rbutton_Type_of_report.Checked == true)
+                        else if (rbutton_Name_of_ATM.Checked == true)
                         {
-                            row["Type_of_report"] = dataGridView_List_Settings.Rows[rowIndex].Cells["Type_of_report"].Value;
+                            row["Device"] = dataGridView_List_Settings.Rows[rowIndex].Cells["Device"].Value;
+                            row["Device_infe"] = dataGridView_List_Settings.Rows[rowIndex].Cells["Device_infe"].Value;
+                            row["Region_id"] = dataGridView_List_Settings.Rows[rowIndex].Cells["Region_id"].Value;
                         }
-                        else if (rbutton_Name_of_report.Checked == true)
+                        else if (rbutton_Name_of_Cash_POS.Checked == true)
                         {
-                            row["Type_of_report"] = dataGridView_List_Settings.Rows[rowIndex].Cells["Type_of_report"].Value;
+                            row["Device"] = dataGridView_List_Settings.Rows[rowIndex].Cells["Device"].Value;
+                            row["Region_id"] = dataGridView_List_Settings.Rows[rowIndex].Cells["Region_id"].Value;
+                        }
+                        else if (rbutton_Name_of_POS.Checked == true)
+                        {
+                            row["Device"] = dataGridView_List_Settings.Rows[rowIndex].Cells["Device"].Value;
+                            row["Region_id"] = dataGridView_List_Settings.Rows[rowIndex].Cells["Region_id"].Value;
+                        }
+                        else if (rbutton_Name_of_Region.Checked == true)
+                        {
+                            row["Region"] = dataGridView_List_Settings.Rows[rowIndex].Cells["Region"].Value;
                         }
                         dataSet.Tables[Table_name].Rows.Add(row);
                         dataSet.Tables[Table_name].Rows.RemoveAt(dataSet.Tables[Table_name].Rows.Count - 1);
@@ -193,13 +224,25 @@ namespace Report_system
                         {
                             dataSet.Tables[Table_name].Rows[r]["Name_of_year"] = dataGridView_List_Settings.Rows[r].Cells["Name_of_year"].Value;
                         }
-                        else if (rbutton_Type_of_report.Checked == true)
+                        else if (rbutton_Name_of_ATM.Checked == true)
                         {
-                            dataSet.Tables[Table_name].Rows[r]["Type_of_report"] = dataGridView_List_Settings.Rows[r].Cells["Type_of_report"].Value;
+                            dataSet.Tables[Table_name].Rows[r]["Device"] = dataGridView_List_Settings.Rows[r].Cells["Device"].Value;
+                            dataSet.Tables[Table_name].Rows[r]["Device_infe"] = dataGridView_List_Settings.Rows[r].Cells["Device_infe"].Value;
+                            dataSet.Tables[Table_name].Rows[r]["Region_id"] = dataGridView_List_Settings.Rows[r].Cells["Region_id"].Value;
                         }
-                        else if (rbutton_Name_of_report.Checked == true)
+                        else if (rbutton_Name_of_Cash_POS.Checked == true)
                         {
-                            dataSet.Tables[Table_name].Rows[r]["Type_of_report"] = dataGridView_List_Settings.Rows[r].Cells["Type_of_report"].Value;
+                            dataSet.Tables[Table_name].Rows[r]["Device"] = dataGridView_List_Settings.Rows[r].Cells["Device"].Value;
+                            dataSet.Tables[Table_name].Rows[r]["Region_id"] = dataGridView_List_Settings.Rows[r].Cells["Region_id"].Value;
+                        }
+                        else if (rbutton_Name_of_POS.Checked == true)
+                        {
+                            dataSet.Tables[Table_name].Rows[r]["Device"] = dataGridView_List_Settings.Rows[r].Cells["Device"].Value;
+                            dataSet.Tables[Table_name].Rows[r]["Region_id"] = dataGridView_List_Settings.Rows[r].Cells["Region_id"].Value;
+                        }
+                        else if (rbutton_Name_of_Region.Checked == true)
+                        {
+                            dataSet.Tables[Table_name].Rows[r]["Region"] = dataGridView_List_Settings.Rows[r].Cells["Region"].Value;
                         }
                         sqlDataAdapter.Update(dataSet, Table_name);
                         dataGridView_List_Settings.Rows[e.RowIndex].Cells[column].Value = "Delete";
@@ -266,13 +309,21 @@ namespace Report_system
             {
                 Reload_Data("tbl_Year", 2);
             }
-            else if (rbutton_Type_of_report.Checked == true)
+            else if (rbutton_Name_of_Cash_POS.Checked == true)
             {
-                Reload_Data("tbl_Type_of_report", 2);
+                Reload_Data("tbl_POS_Cash_Region", 2);
             }
-            else if (rbutton_Name_of_report.Checked == true)
+            else if (rbutton_Name_of_ATM.Checked == true)
             {
-                Reload_Data("tbl_Name_of_report", 2);
+                Reload_Data("tbl_ATM_Region", 2);
+            }
+            else if (rbutton_Name_of_POS.Checked == true)
+            {
+                Reload_Data("tbl_POS_Region", 2);
+            }
+            else if (rbutton_Name_of_Region.Checked == true)
+            {
+                Reload_Data("tbl_Region", 2);
             }
         }
     }

@@ -131,7 +131,7 @@ namespace Report_system
                             data = DateTime.Parse(dt.Rows[rowInd].ItemArray[collInd].ToString()).ToShortDateString();
                             excelworksheet.Cells[rowInd + 2, collInd + 1] = data;
                         }
-                        else if (collInd == 3)
+                        else if (collInd == 4 || collInd==5)
                         {
                             data2 = Convert.ToDecimal(dt.Rows[rowInd].ItemArray[collInd]);
                             excelworksheet.Cells[rowInd + 2, collInd + 1] = data2;
@@ -232,8 +232,8 @@ namespace Report_system
                 //Суммируем общую сумму и количество до того как будем разделять по дням
                 excelworksheet.Cells[usedRowsNum + 1, 4].FormulaLocal = "=СУММ(D2:D" + usedRowsNum + ")";
                 excelworksheet.Cells[usedRowsNum + 1, 5].FormulaLocal = "=СУММ(E2:E" + usedRowsNum + ")";
-                int total_sum = Convert.ToInt32(excelworksheet.Cells[usedRowsNum + 1, 4].Text);
-                int total_interch = Convert.ToInt32(excelworksheet.Cells[usedRowsNum + 1, 5].Text);
+                int total_sum = Convert.ToDecimal(excelworksheet.Cells[usedRowsNum + 1, 4].Text);
+                int total_interch = Convert.ToDecimal(excelworksheet.Cells[usedRowsNum + 1, 5].Text);
                 //Обнуляем поля
                 excelworksheet.Cells[usedRowsNum + 1, 4] = null;
                 excelworksheet.Cells[usedRowsNum + 1, 5] = null;

@@ -277,5 +277,11 @@ namespace Report_system
                 GC.Collect();
             }
         }
+
+        private void materialRaisedButton1_Click_1(object sender, EventArgs e)
+        {
+            Read_device device = new Read_device();
+            device.Read_device_infe(@"D:\загрузки Google Chrome\для Элизы.xlsx");
+        }
     }
 }
