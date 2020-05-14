@@ -43,6 +43,7 @@ namespace Report_system
                     Draw_line(1);
 
                 }
+                MessageBox.Show("Успешно сформирован отчет");
             }
             catch (Exception ex)
             {
@@ -68,7 +69,7 @@ namespace Report_system
                 ReleaseObject(excelsheets);
                 ReleaseObject(excelworkbook);
                 ReleaseObject(excelapp);
-                MessageBox.Show("Успешно сформирован отчет");
+               
                 GC.Collect();
 
             }
@@ -82,7 +83,8 @@ namespace Report_system
             excelworksheet.Name = "Элкарт";
             //выделяем первую строку
             excelrange = excelworksheet.get_Range("A1:H1", Type.Missing);
-
+            excelworksheet.get_Range("G2", "G" + excelworksheet.UsedRange.Rows.Count).NumberFormat = "0";
+            excelworksheet.get_Range("D2", "E" + excelworksheet.UsedRange.Rows.Count).NumberFormat = "##0,00";
             //делаем полужирный текст и перенос слов
             excelrange.WrapText = true;
             excelrange.Font.Bold = true;
@@ -121,6 +123,7 @@ namespace Report_system
                     data = dt.Columns[i].ColumnName.ToString();
                     excelworksheet.Cells[1, i + 1] = data;
                 }
+             
                 //заполняем строки
                 for (rowInd = 0; rowInd < dt.Rows.Count; rowInd++)
                 {
@@ -131,7 +134,7 @@ namespace Report_system
                             data = DateTime.Parse(dt.Rows[rowInd].ItemArray[collInd].ToString()).ToShortDateString();
                             excelworksheet.Cells[rowInd + 2, collInd + 1] = data;
                         }
-                        else if (collInd == 4 || collInd==5)
+                        else if (collInd == 3 || collInd==4)
                         {
                             data2 = Convert.ToDecimal(dt.Rows[rowInd].ItemArray[collInd]);
                             excelworksheet.Cells[rowInd + 2, collInd + 1] = data2;
@@ -232,8 +235,8 @@ namespace Report_system
                 //Суммируем общую сумму и количество до того как будем разделять по дням
                 excelworksheet.Cells[usedRowsNum + 1, 4].FormulaLocal = "=СУММ(D2:D" + usedRowsNum + ")";
                 excelworksheet.Cells[usedRowsNum + 1, 5].FormulaLocal = "=СУММ(E2:E" + usedRowsNum + ")";
-                int total_sum = Convert.ToDecimal(excelworksheet.Cells[usedRowsNum + 1, 4].Text);
-                int total_interch = Convert.ToDecimal(excelworksheet.Cells[usedRowsNum + 1, 5].Text);
+                decimal total_sum = Convert.ToDecimal(excelworksheet.Cells[usedRowsNum + 1, 4].Text);
+                decimal total_interch = Convert.ToDecimal(excelworksheet.Cells[usedRowsNum + 1, 5].Text);
                 //Обнуляем поля
                 excelworksheet.Cells[usedRowsNum + 1, 4] = null;
                 excelworksheet.Cells[usedRowsNum + 1, 5] = null;

@@ -46,6 +46,10 @@ namespace Report_system
                     Make_calculations_Yurid_Cash_page2(month, year);
                     Make_calculations_Yurid_page2(month, year);
                 }
+                else
+                {
+                    MessageBox.Show("Нет данных по ЭлКарт за этот месяц и год", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
                 if(check_A>0 && check_H>0 && check_R>0)
                 {

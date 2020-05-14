@@ -87,6 +87,10 @@ namespace Report_system
                         {
                             Table_name = "tbl_Result_Report_R";
                         }
+                        else if(report=="Report Infe")
+                        {
+                            Table_name = "tbl_Result_Report_Infe";
+                        }
 
                         Check check_data = new Check();
                         int check = check_data.Check_Data(Table_name, month, year);

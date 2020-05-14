@@ -134,36 +134,12 @@ namespace Report_system
                             int check_H = check_data.Check_Data("tbl_Report_H", month, year);
                             int check_R = check_data.Check_Data("tbl_Report_R", month, year);
                             int check_Infe = check_data.Check_Data("tbl_Report_Infe", month, year);
-                            if (check_A <= 0 && check_H <= 0 && check_R <= 0 && check_Infe<=0)
+                            if (check_A <= 0 && check_H <= 0 && check_R <= 0)
                             {
                                 MessageBox.Show("Нет данных за этот месяц и год", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             else if (check_A > 0 || check_H > 0 || check_R > 0 || check_Infe > 0)
                             {
-                                if (check_A <= 0 && check_H > 0 && check_R > 0 )
-                                {
-                                    MessageBox.Show("Нет данных по отчету A, данные по банкоматам будут пусты", "Error", MessageBoxButtons.OK);
-                                }
-                                else if (check_A > 0 && check_H <= 0 && check_R > 0 )
-                                {
-                                    MessageBox.Show("Нет данных по отчету H, данные по POS-терминалам будут пусты", "Error", MessageBoxButtons.OK);
-                                }
-                                else if (check_A > 0 && check_H > 0 && check_R <= 0 )
-                                {
-                                    MessageBox.Show("Нет данных по отчету R, данные по POS-терминалам будут пусты", "Error", MessageBoxButtons.OK);
-                                }
-                                else if (check_A > 0 && check_H > 0 && check_R > 0)
-                                {
-                                    MessageBox.Show("Нет данных по отчету Infe, данные по ЭлКарт будут пусты", "Error", MessageBoxButtons.OK);
-                                }
-                                if (report == "Отчет для Нац.Банка")
-                                {
-                                    if (check_Infe <= 0)
-                                    {
-                                        MessageBox.Show("Нет данных по отчету Infe, данные по ЭлКарт будут пусты", "Error", MessageBoxButtons.OK);
-                                    }
-                                }
-
                                 path = path_directory + @"\" + year.ToString() + @"\" + report;
                                 if (Directory.Exists(path))
                                 {
