@@ -156,12 +156,12 @@
     </Compile>
     <Compile Include="Generation_intermediate_report_Visa_Cards.cs" />
     <Compile Include="Generation_intermediate_report_Elcart.cs" />
-    <Compile Include="Generation_Prognoz.cs" />
+    <Compile Include="Generation_Prognoz_ElCard.cs" />
+    <Compile Include="Generation_Prognoz_Visa.cs" />
     <Compile Include="Generation_report_for_National_bank.cs" />
     <Compile Include="Generation_statistic.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Read_device.cs" />
     <Compile Include="Read_Report_A.cs" />
     <Compile Include="Read_report_Infe.cs" />
     <Compile Include="Report_SystemDataSet.Designer.cs">

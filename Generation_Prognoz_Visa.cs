@@ -11,7 +11,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Report_system
 {
-    class Generation_Prognoz
+    class Generation_Prognoz_Visa
     {
         private Excel.Application excelapp;
         private Excel.Workbook excelworkbook;
@@ -175,7 +175,7 @@ namespace Report_system
                 ReleaseObject(excelsheets);
                 ReleaseObject(excelworkbook);
                 ReleaseObject(excelapp);
-                MessageBox.Show("Успешно сформирован отчет");
+                MessageBox.Show("Успешно сформирован прогноз");
                 GC.Collect();
 
             }

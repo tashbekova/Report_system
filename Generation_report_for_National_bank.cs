@@ -41,14 +41,30 @@ namespace Report_system
                 int check_Infe= check_data.Check_Data("tbl_Report_Infe", month, year);
 
                 if (check_Infe >= 0)
-                { Make_calculations_Cash_Elcart_page1(month, year);
+                {   Make_calculations_Cash_Elcart_page1(month, year);
                     Make_calculations_Elcart_page1(month, year);
-                    Make_calculations_Visa_Cash_page1(month, year);
-                    Make_calculations_Visa_page1(month, year);
-
+                    Make_calculations_Yurid_Cash_page2(month, year);
+                    Make_calculations_Yurid_page2(month, year);
                 }
 
-            }
+                if(check_A>0 && check_H>0 && check_R>0)
+                {
+                    Make_calculations_Visa_Cash_page1(month, year);
+                    Make_calculations_Visa_page1(month, year);
+                }
+                else if(check_H<=0)
+                {
+                    MessageBox.Show("Нет данных по Visa картам из наличных POS-терминалов за этот месяц и год", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (check_A <= 0)
+                {
+                    MessageBox.Show("Нет данных по Visa картам из банкоматов за этот месяц и год", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (check_R <= 0)
+                {
+                    MessageBox.Show("Нет данных по Visa картам из безналичных POS-терминалов  за этот месяц и год", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+        }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -747,6 +763,216 @@ namespace Report_system
 
         }
 
+        private void Make_calculations_Yurid_Cash_page2(int month,int year)
+        {
+            try
+            {
+                ConnectionString = sql.Get_Connection_String();
+                SqlConnection con = new SqlConnection(ConnectionString);
+                con.Open();
+                excelworksheet = (Excel.Worksheet)excelsheets.get_Item(2);
+                excelworksheet.Activate();
+                string Table_name = "";
+                string Table_name_infe = "tbl_Report_Infe";
+                decimal Summa_Infe_Cash_Halyk_Kyrgyz_card = 0;
+                decimal Count_Infe_Cash_Halyk_Kyrgyz_card = 0;
+                decimal Summa_Excel_Cash_Halyk_Kyrgyz_card = 0;
+                decimal Count_Excel_Cash_Halyk_Kyrgyz_card = 0;
+
+                for (int table_id = 0; table_id < 2; table_id++)
+                {
+                    if (table_id == 0)
+                        Table_name = "tbl_ATM_Region";
+                    else
+                        Table_name = "tbl_POS_Cash_Region";
+                    for (int region_id = 1; region_id <= 8; region_id++)
+                    {
+                        System.Data.DataTable dt_Device_Infe = GetData_Device(Table_name, region_id, true);
+                        if (dt_Device_Infe == null)
+                        {
+                            continue;
+                        }
+                        else if (dt_Device_Infe != null)
+                        {
+                            for (int device_id = 0; device_id < dt_Device_Infe.Rows.Count; device_id++)
+                            {
+                                //////////////////////////////////////
+                                string query_Count_Halyk_Card = "SELECT " +
+                                    "Count(" + Table_name_infe + ".Summa)" +
+                                    " FROM " + Table_name_infe +
+                                    " WHERE YEAR(" + Table_name_infe + ".Posting_date)=" + year +
+                                    " AND MONTH(" + Table_name_infe + ".Posting_date)=" + month +
+                                    " AND (Device = '" + dt_Device_Infe.Rows[device_id].ItemArray[0] + "') " +
+                                    " AND " + Table_name_infe + ".Currency like 'KGS'" +
+                                    " AND " + Table_name_infe + ".Target_number  like '94173070%'";
+
+                                SqlCommand command1 = new SqlCommand(query_Count_Halyk_Card, con);
+                                Count_Infe_Cash_Halyk_Kyrgyz_card = Convert.ToInt32(command1.ExecuteScalar());
+
+                                if (Count_Infe_Cash_Halyk_Kyrgyz_card != 0)
+                                {
+                                    Count_Excel_Cash_Halyk_Kyrgyz_card = Convert.ToInt32(excelworksheet.Cells[region_id + 115, 10].Value);
+                                    Count_Excel_Cash_Halyk_Kyrgyz_card = Count_Excel_Cash_Halyk_Kyrgyz_card + Count_Infe_Cash_Halyk_Kyrgyz_card;
+                                    excelworksheet.Cells[region_id + 115, 10] = Count_Excel_Cash_Halyk_Kyrgyz_card;
+
+
+                                    string query_Sum_Halyk_Card = "SELECT " +
+                                    "SUM(" + Table_name_infe + ".Summa)" +
+                                  " FROM " + Table_name_infe +
+                                  " WHERE YEAR(" + Table_name_infe + ".Posting_date)=" + year +
+                                  " AND MONTH(" + Table_name_infe + ".Posting_date)=" + month +
+                                   " AND (Device = '" + dt_Device_Infe.Rows[device_id].ItemArray[0] + "') " +
+                                    " AND " + Table_name_infe + ".Currency like 'KGS'" +
+                                    " AND " + Table_name_infe + ".Target_number  like '94173070%'";
+
+                                    SqlCommand command5 = new SqlCommand(query_Sum_Halyk_Card, con);
+                                    Summa_Infe_Cash_Halyk_Kyrgyz_card = Convert.ToDecimal(command5.ExecuteScalar());
+                                    if (Summa_Infe_Cash_Halyk_Kyrgyz_card != 0)
+                                    {
+                                        Summa_Excel_Cash_Halyk_Kyrgyz_card = Convert.ToDecimal(excelworksheet.Cells[region_id + 115, 11].Value);
+                                        Summa_Excel_Cash_Halyk_Kyrgyz_card = Summa_Excel_Cash_Halyk_Kyrgyz_card + (Summa_Infe_Cash_Halyk_Kyrgyz_card / 1000);
+                                        excelworksheet.Cells[region_id + 115, 11] = Summa_Excel_Cash_Halyk_Kyrgyz_card;
+                                    }
+                                }
+                               //****************************
+                                 query_Count_Halyk_Card = "SELECT " +
+                               "Count(" + Table_name_infe + ".Summa)" +
+                               " FROM " + Table_name_infe +
+                               " WHERE YEAR(" + Table_name_infe + ".Posting_date)=" + year +
+                               " AND MONTH(" + Table_name_infe + ".Posting_date)=" + month +
+                               " AND (Device = '" + dt_Device_Infe.Rows[device_id].ItemArray[0] + "') " +
+                               " AND " + Table_name_infe + ".Currency not like 'KGS'" +
+                               " AND " + Table_name_infe + ".Target_number  like '94173070%'";
+
+                                 command1 = new SqlCommand(query_Count_Halyk_Card, con);
+                                Count_Infe_Cash_Halyk_Kyrgyz_card = Convert.ToInt32(command1.ExecuteScalar());
+
+                                if (Count_Infe_Cash_Halyk_Kyrgyz_card != 0)
+                                {
+                                    Count_Excel_Cash_Halyk_Kyrgyz_card = Convert.ToInt32(excelworksheet.Cells[region_id + 115, 12].Value);
+                                    Count_Excel_Cash_Halyk_Kyrgyz_card = Count_Excel_Cash_Halyk_Kyrgyz_card + Count_Infe_Cash_Halyk_Kyrgyz_card;
+                                    excelworksheet.Cells[region_id + 115, 12] = Count_Excel_Cash_Halyk_Kyrgyz_card;
+
+
+                                     string query_Sum_Halyk_Card = "SELECT " +
+                                    "SUM(" + Table_name_infe + ".Summa)" +
+                                  " FROM " + Table_name_infe +
+                                  " WHERE YEAR(" + Table_name_infe + ".Posting_date)=" + year +
+                                  " AND MONTH(" + Table_name_infe + ".Posting_date)=" + month +
+                                   " AND (Device = '" + dt_Device_Infe.Rows[device_id].ItemArray[0] + "') " +
+                                    " AND " + Table_name_infe + ".Currency not like 'KGS'" +
+                                    " AND " + Table_name_infe + ".Target_number  like '94173070%'";
+
+                                    SqlCommand command5 = new SqlCommand(query_Sum_Halyk_Card, con);
+                                    Summa_Infe_Cash_Halyk_Kyrgyz_card = Convert.ToDecimal(command5.ExecuteScalar());
+                                    if (Summa_Infe_Cash_Halyk_Kyrgyz_card != 0)
+                                    {
+                                        Summa_Excel_Cash_Halyk_Kyrgyz_card = Convert.ToDecimal(excelworksheet.Cells[region_id + 115, 13].Value);
+                                        Summa_Excel_Cash_Halyk_Kyrgyz_card = Summa_Excel_Cash_Halyk_Kyrgyz_card + (Summa_Infe_Cash_Halyk_Kyrgyz_card / 1000);
+                                        excelworksheet.Cells[region_id + 115, 13] = Summa_Excel_Cash_Halyk_Kyrgyz_card;
+                                    }
+                                }
+                                
+                                // ---------------------------------------
+
+                            }
+                        }
+
+                    }
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+
+            }
+        }
+
+        private void Make_calculations_Yurid_page2(int month, int year)
+        {
+            try
+            {
+                ConnectionString = sql.Get_Connection_String();
+                SqlConnection con = new SqlConnection(ConnectionString);
+                con.Open();
+                excelworksheet = (Excel.Worksheet)excelsheets.get_Item(2);
+                excelworksheet.Activate();
+                string Table_name = "tbl_POS_Region";
+                string Table_name_infe = "tbl_Report_Infe";
+                decimal Summa_Infe_Halyk_Kyrgyz_card = 0;
+                decimal Count_Infe_Halyk_Kyrgyz_card = 0;
+                decimal Summa_Excel_Halyk_Kyrgyz_card = 0;
+                decimal Count_Excel_Halyk_Kyrgyz_card = 0;
+                
+
+                    for (int region_id = 1; region_id <= 8; region_id++)
+                    {
+                        System.Data.DataTable dt_Device_Infe = GetData_Device(Table_name, region_id, true);
+                        if (dt_Device_Infe == null)
+                        {
+                            continue;
+                        }
+                        else if (dt_Device_Infe != null)
+                        {
+                            for (int device_id = 0; device_id < dt_Device_Infe.Rows.Count; device_id++)
+                            {
+                                //////////////////////////////////////
+                                string query_Count_Halyk_Card = "SELECT " +
+                                    "Count(" + Table_name_infe + ".Summa)" +
+                                    " FROM " + Table_name_infe +
+                                    " WHERE YEAR(" + Table_name_infe + ".Posting_date)=" + year +
+                                    " AND MONTH(" + Table_name_infe + ".Posting_date)=" + month +
+                                    " AND (Device = '" + dt_Device_Infe.Rows[device_id].ItemArray[0] + "') " +
+                                    " AND " + Table_name_infe + ".Currency like 'KGS'" +
+                                    " AND " + Table_name_infe + ".Target_number  like '94173070%'";
+
+                                SqlCommand command1 = new SqlCommand(query_Count_Halyk_Card, con);
+                                Count_Infe_Halyk_Kyrgyz_card = Convert.ToInt32(command1.ExecuteScalar());
+
+                                if (Count_Infe_Halyk_Kyrgyz_card != 0)
+                                {
+                                    Count_Excel_Halyk_Kyrgyz_card = Convert.ToInt32(excelworksheet.Cells[region_id + 115, 15].Value);
+                                    Count_Excel_Halyk_Kyrgyz_card = Count_Excel_Halyk_Kyrgyz_card + Count_Infe_Halyk_Kyrgyz_card;
+                                    excelworksheet.Cells[region_id + 115, 15] = Count_Excel_Halyk_Kyrgyz_card;
+
+
+                                    string query_Sum_Halyk_Card = "SELECT " +
+                                    "SUM(" + Table_name_infe + ".Summa)" +
+                                  " FROM " + Table_name_infe +
+                                  " WHERE YEAR(" + Table_name_infe + ".Posting_date)=" + year +
+                                  " AND MONTH(" + Table_name_infe + ".Posting_date)=" + month +
+                                   " AND (Device = '" + dt_Device_Infe.Rows[device_id].ItemArray[0] + "') " +
+                                    " AND " + Table_name_infe + ".Currency like 'KGS'" +
+                                    " AND " + Table_name_infe + ".Target_number  like '94173070%'";
+
+                                    SqlCommand command5 = new SqlCommand(query_Sum_Halyk_Card, con);
+                                    Summa_Infe_Halyk_Kyrgyz_card = Convert.ToDecimal(command5.ExecuteScalar());
+                                    if (Summa_Infe_Halyk_Kyrgyz_card != 0)
+                                    {
+                                        Summa_Excel_Halyk_Kyrgyz_card = Convert.ToDecimal(excelworksheet.Cells[region_id + 115, 16].Value);
+                                        Summa_Excel_Halyk_Kyrgyz_card = Summa_Excel_Halyk_Kyrgyz_card + (Summa_Infe_Halyk_Kyrgyz_card / 1000);
+                                        excelworksheet.Cells[region_id + 115, 16] = Summa_Excel_Halyk_Kyrgyz_card;
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+
+            }
+        }
         private System.Data.DataTable GetData_Device(string Table_name,int Region_Id,bool flag_infe)
         {
             ConnectionString = sql.Get_Connection_String();

@@ -39,28 +39,29 @@ namespace Report_system
                     button_Make_prognoz.Enabled = false;
                     pb_Status.Visible = true;
                     string path;
-                    string Table_name = "[dbo].[tbl_Total_Device_Report_A]";
+                    string Table_name = "";
                     string path_directory = label_path_directory.Text.ToString();
-                    Generation_Prognoz prognoz = new Generation_Prognoz();
+                   
                     int year = System.DateTime.Now.Year;
                     Check check_data = new Check();
                     int check = 0;
-                    if (rbutton_Year.Checked == true)
+                    if (rbutton_Visa.Checked == true)
                     {
-                        check = check_data.Check_Data(Table_name);
+                     Table_name = "[dbo].[tbl_Total_Device_Report_A]";
+                    check = check_data.Check_Data(Table_name);
                         if (check == 0)
                         {
                             MessageBox.Show("Нет данных по банкоматам", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         else if (check >= 1)
                         {
-                            path = path_directory + @"\" + year.ToString()+@"\Годовой";
+                            path = path_directory + @"\" + year.ToString();
                             if (Directory.Exists(path))
                             {
-                            path = path_directory + @"\" + year.ToString()+@"\Годовой" +@"\" + DateTime.Now.ToShortDateString() + ".xlsx";
+                            path = path_directory + @"\" + year.ToString()+@"\Visa_" + DateTime.Now.ToShortDateString() + ".xlsx";
                             if (System.IO.File.Exists(path))
                                     {
-                                        string message = "Прогноз уже сделан за сегодня. Хотите ли вы сформировать ещё раз?";
+                                        string message = "Прогноз уже сформирован за сегодня. Хотите ли вы сформировать ещё раз?";
                                         string caption = "Error Detected in Input";
                                         MessageBoxButtons buttons = MessageBoxButtons.YesNo;
                                         DialogResult result;
@@ -68,21 +69,22 @@ namespace Report_system
                                         result = MessageBox.Show(message, caption, buttons);
                                         if (result == System.Windows.Forms.DialogResult.Yes)
                                         {
-                                            await Task.Run(() => prognoz.Generation(path));
+                                    Generation_Prognoz_Visa prognoz = new Generation_Prognoz_Visa();
+                                    await Task.Run(() => prognoz.Generation(path));
                                     }
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Прогноз еще не сформирован");
-                                        await Task.Run(() => prognoz.Generation(path));
+                                Generation_Prognoz_Visa prognoz = new Generation_Prognoz_Visa();
+                                await Task.Run(() => prognoz.Generation(path));
                                     }
                             }
                                 else
                                 {
                                     DirectoryInfo di = Directory.CreateDirectory(path);
-                                    path = path_directory + @"\" + year.ToString() + @"\Годовой" + @"\" + DateTime.Now.ToShortDateString()+ ".xlsx";
-                                    MessageBox.Show("Прогноз еще не сформирован");
-                                    await Task.Run(() => prognoz.Generation(path));
+                                     path = path_directory + @"\" + year.ToString() + @"\Visa_" + DateTime.Now.ToShortDateString() + ".xlsx";
+                            Generation_Prognoz_Visa prognoz = new Generation_Prognoz_Visa();
+                            await Task.Run(() => prognoz.Generation(path));
                         } 
                         }
                         else if (check == 2)
@@ -90,20 +92,20 @@ namespace Report_system
                             MessageBox.Show("Произошла ошибка", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
-                    else if (rbutton_Time.Checked == true)
+                    else if (rbutton_ElCard.Checked == true)
                     {
-                       
-                            check = check_data.Check_Data(Table_name);
+                    Table_name = "[dbo].[tbl_Report_Infe]";
+                    check = check_data.Check_Data(Table_name);
                             if (check == 0)
                             {
                                 MessageBox.Show("Нет данных за этот период времени", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                                 else if (check >= 1)
                                 {
-                                    path = path_directory + @"\" + year.ToString() + @"\По месяцам";
+                                    path = path_directory + @"\" + year.ToString() ;
                                 if (Directory.Exists(path))
                                 {
-                                 path = path_directory + @"\" + year.ToString() + @"\По месяцам" + @"\" + DateTime.Now.ToShortDateString() + ".xlsx";
+                                 path = path_directory + @"\" + year.ToString() + @"\ElCard_" +  DateTime.Now.ToShortDateString() + ".xlsx";
                                         if (System.IO.File.Exists(path))
                                         {
                                             string message = "Прогноз уже сформирован за сегодня. Хотите ли вы сформировать ещё раз?";
@@ -114,40 +116,42 @@ namespace Report_system
                                             result = MessageBox.Show(message, caption, buttons);
                                             if (result == System.Windows.Forms.DialogResult.Yes)
                                             {
-                                                //await Task.Run(() => statistic.Generation(path, report, month, month2, year, column));
-                                            }
+                                    Generation_Prognoz_ElCard prognoz = new Generation_Prognoz_ElCard();
+                                    await Task.Run(() => prognoz.Generation(path));
+                                }
                                         }
                                         else
                                         {
-                                            MessageBox.Show("Прогноз еще не сформирован");
-                                            //await Task.Run(() => statistic.Generation(path, report, month, month2, year, column));
-                                        }
+                                Generation_Prognoz_ElCard prognoz = new Generation_Prognoz_ElCard();
+                                await Task.Run(() => prognoz.Generation(path));
+                            }
                                     }
                                     else
                                     {
                                         DirectoryInfo di = Directory.CreateDirectory(path);
-                                        path = path_directory + @"\" + year.ToString() + @"\По месяцам" + @"\" + DateTime.Now.ToShortDateString() + ".xlsx";
-                                        MessageBox.Show("Прогноз еще не сформирован");
-                                        
-                                        //await Task.Run(() => statistic.Generation(path, report, month, month2, year, column));
-                                    }
+                                         path = path_directory + @"\" + year.ToString() + @"\ElCard_" + DateTime.Now.ToShortDateString() + ".xlsx";
+
+                            Generation_Prognoz_ElCard prognoz = new Generation_Prognoz_ElCard();
+                            await Task.Run(() => prognoz.Generation(path));
+                        }
                                 }
                             else if (check == 2)
                             {
                                 MessageBox.Show("Произошла ошибка", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
+                button_Make_prognoz.Enabled = true;
             }
             catch(Exception ex)
             {
                 pb_Status.Visible = false;
-                button_Make_prognoz.Enabled = false;
+                button_Make_prognoz.Enabled = true;
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 GC.Collect();
             }
             finally
             {
-                button_Make_prognoz.Enabled = false;
+                button_Make_prognoz.Enabled = true;
                 pb_Status.Visible = false;
                 GC.Collect();
             }

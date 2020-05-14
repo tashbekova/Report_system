@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_Read));
             this.button_Close = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
             this.button_Read_Directory = new MaterialSkin.Controls.MaterialRaisedButton();
             this.label_Name_of_form = new System.Windows.Forms.Label();
             this.pb_Status = new System.Windows.Forms.ProgressBar();
@@ -64,7 +63,6 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.materialRaisedButton1);
             this.panel1.Controls.Add(this.button_Read_Directory);
             this.panel1.Controls.Add(this.label_Name_of_form);
             this.panel1.Controls.Add(this.pb_Status);
@@ -78,19 +76,6 @@
             this.panel1.Size = new System.Drawing.Size(1237, 667);
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // materialRaisedButton1
-            // 
-            this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(393, 312);
-            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialRaisedButton1.Name = "materialRaisedButton1";
-            this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(252, 23);
-            this.materialRaisedButton1.TabIndex = 15;
-            this.materialRaisedButton1.Text = "materialRaisedButton1";
-            this.materialRaisedButton1.UseVisualStyleBackColor = true;
-            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click_1);
             // 
             // button_Read_Directory
             // 
@@ -212,6 +197,5 @@
         public System.Windows.Forms.ProgressBar pb_Status;
         private System.Windows.Forms.Label label_Name_of_form;
         private MaterialSkin.Controls.MaterialRaisedButton button_Read_Directory;
-        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
     }
 }

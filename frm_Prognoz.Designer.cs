@@ -31,14 +31,15 @@
             this.components = new System.ComponentModel.Container();
             this.button_Close = new MaterialSkin.Controls.MaterialRaisedButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label_Name_of_form = new System.Windows.Forms.Label();
             this.pb_Status = new System.Windows.Forms.ProgressBar();
             this.label_path_name = new MaterialSkin.Controls.MaterialLabel();
             this.button_Edit_path_directory = new MaterialSkin.Controls.MaterialRaisedButton();
             this.label_path_directory = new MaterialSkin.Controls.MaterialLabel();
             this.button_Make_prognoz = new MaterialSkin.Controls.MaterialRaisedButton();
             this.groupBox_Type_of_time = new System.Windows.Forms.GroupBox();
-            this.rbutton_Time = new MaterialSkin.Controls.MaterialRadioButton();
-            this.rbutton_Year = new MaterialSkin.Controls.MaterialRadioButton();
+            this.rbutton_ElCard = new MaterialSkin.Controls.MaterialRadioButton();
+            this.rbutton_Visa = new MaterialSkin.Controls.MaterialRadioButton();
             this.tblMonthBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.report_SystemDataSet = new Report_system.Report_SystemDataSet();
             this.tblYearBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -52,7 +53,6 @@
             this.tbl_Type_of_reportTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_Type_of_reportTableAdapter();
             this.tbl_YearTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_YearTableAdapter();
             this.tbl_Name_of_reportTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_Name_of_reportTableAdapter();
-            this.label_Name_of_form = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox_Type_of_time.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblMonthBindingSource1)).BeginInit();
@@ -95,6 +95,16 @@
             this.panel1.Size = new System.Drawing.Size(1237, 667);
             this.panel1.TabIndex = 3;
             // 
+            // label_Name_of_form
+            // 
+            this.label_Name_of_form.AutoSize = true;
+            this.label_Name_of_form.Font = new System.Drawing.Font("Georgia", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label_Name_of_form.Location = new System.Drawing.Point(438, 2);
+            this.label_Name_of_form.Name = "label_Name_of_form";
+            this.label_Name_of_form.Size = new System.Drawing.Size(456, 43);
+            this.label_Name_of_form.TabIndex = 21;
+            this.label_Name_of_form.Text = "Формирование прогноза";
+            // 
             // pb_Status
             // 
             this.pb_Status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(137)))), ((int)(((byte)(123)))));
@@ -114,9 +124,9 @@
             this.label_path_name.Location = new System.Drawing.Point(35, 125);
             this.label_path_name.MouseState = MaterialSkin.MouseState.HOVER;
             this.label_path_name.Name = "label_path_name";
-            this.label_path_name.Size = new System.Drawing.Size(321, 24);
+            this.label_path_name.Size = new System.Drawing.Size(299, 24);
             this.label_path_name.TabIndex = 19;
-            this.label_path_name.Text = "Папка для сохранения  статистики";
+            this.label_path_name.Text = "Папка для сохранения прогноза";
             // 
             // button_Edit_path_directory
             // 
@@ -158,48 +168,48 @@
             // 
             // groupBox_Type_of_time
             // 
-            this.groupBox_Type_of_time.Controls.Add(this.rbutton_Time);
-            this.groupBox_Type_of_time.Controls.Add(this.rbutton_Year);
+            this.groupBox_Type_of_time.Controls.Add(this.rbutton_ElCard);
+            this.groupBox_Type_of_time.Controls.Add(this.rbutton_Visa);
             this.groupBox_Type_of_time.Location = new System.Drawing.Point(457, 200);
             this.groupBox_Type_of_time.Name = "groupBox_Type_of_time";
             this.groupBox_Type_of_time.Size = new System.Drawing.Size(334, 75);
             this.groupBox_Type_of_time.TabIndex = 10;
             this.groupBox_Type_of_time.TabStop = false;
-            this.groupBox_Type_of_time.Text = "Статистика";
+            this.groupBox_Type_of_time.Text = "Прогноз";
             // 
-            // rbutton_Time
+            // rbutton_ElCard
             // 
-            this.rbutton_Time.AutoSize = true;
-            this.rbutton_Time.Depth = 0;
-            this.rbutton_Time.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rbutton_Time.Location = new System.Drawing.Point(172, 23);
-            this.rbutton_Time.Margin = new System.Windows.Forms.Padding(0);
-            this.rbutton_Time.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.rbutton_Time.MouseState = MaterialSkin.MouseState.HOVER;
-            this.rbutton_Time.Name = "rbutton_Time";
-            this.rbutton_Time.Ripple = true;
-            this.rbutton_Time.Size = new System.Drawing.Size(129, 30);
-            this.rbutton_Time.TabIndex = 12;
-            this.rbutton_Time.Text = "По месяцам";
-            this.rbutton_Time.UseVisualStyleBackColor = true;
+            this.rbutton_ElCard.AutoSize = true;
+            this.rbutton_ElCard.Depth = 0;
+            this.rbutton_ElCard.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbutton_ElCard.Location = new System.Drawing.Point(174, 23);
+            this.rbutton_ElCard.Margin = new System.Windows.Forms.Padding(0);
+            this.rbutton_ElCard.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbutton_ElCard.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbutton_ElCard.Name = "rbutton_ElCard";
+            this.rbutton_ElCard.Ripple = true;
+            this.rbutton_ElCard.Size = new System.Drawing.Size(90, 30);
+            this.rbutton_ElCard.TabIndex = 12;
+            this.rbutton_ElCard.Text = "ЭлКарт";
+            this.rbutton_ElCard.UseVisualStyleBackColor = true;
             // 
-            // rbutton_Year
+            // rbutton_Visa
             // 
-            this.rbutton_Year.AutoSize = true;
-            this.rbutton_Year.Checked = true;
-            this.rbutton_Year.Depth = 0;
-            this.rbutton_Year.Font = new System.Drawing.Font("Roboto", 10F);
-            this.rbutton_Year.Location = new System.Drawing.Point(3, 23);
-            this.rbutton_Year.Margin = new System.Windows.Forms.Padding(0);
-            this.rbutton_Year.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.rbutton_Year.MouseState = MaterialSkin.MouseState.HOVER;
-            this.rbutton_Year.Name = "rbutton_Year";
-            this.rbutton_Year.Ripple = true;
-            this.rbutton_Year.Size = new System.Drawing.Size(98, 30);
-            this.rbutton_Year.TabIndex = 11;
-            this.rbutton_Year.TabStop = true;
-            this.rbutton_Year.Text = "Годовая";
-            this.rbutton_Year.UseVisualStyleBackColor = true;
+            this.rbutton_Visa.AutoSize = true;
+            this.rbutton_Visa.Checked = true;
+            this.rbutton_Visa.Depth = 0;
+            this.rbutton_Visa.Font = new System.Drawing.Font("Roboto", 10F);
+            this.rbutton_Visa.Location = new System.Drawing.Point(44, 23);
+            this.rbutton_Visa.Margin = new System.Windows.Forms.Padding(0);
+            this.rbutton_Visa.MouseLocation = new System.Drawing.Point(-1, -1);
+            this.rbutton_Visa.MouseState = MaterialSkin.MouseState.HOVER;
+            this.rbutton_Visa.Name = "rbutton_Visa";
+            this.rbutton_Visa.Ripple = true;
+            this.rbutton_Visa.Size = new System.Drawing.Size(64, 30);
+            this.rbutton_Visa.TabIndex = 11;
+            this.rbutton_Visa.TabStop = true;
+            this.rbutton_Visa.Text = "Visa";
+            this.rbutton_Visa.UseVisualStyleBackColor = true;
             // 
             // tblMonthBindingSource1
             // 
@@ -261,16 +271,6 @@
             // 
             this.tbl_Name_of_reportTableAdapter.ClearBeforeFill = true;
             // 
-            // label_Name_of_form
-            // 
-            this.label_Name_of_form.AutoSize = true;
-            this.label_Name_of_form.Font = new System.Drawing.Font("Georgia", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_Name_of_form.Location = new System.Drawing.Point(438, 2);
-            this.label_Name_of_form.Name = "label_Name_of_form";
-            this.label_Name_of_form.Size = new System.Drawing.Size(456, 43);
-            this.label_Name_of_form.TabIndex = 21;
-            this.label_Name_of_form.Text = "Формирование прогноза";
-            // 
             // frm_Prognoz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -312,8 +312,8 @@
         private System.Windows.Forms.BindingSource tblTypeofreportBindingSource;
         private Report_SystemDataSetTableAdapters.tbl_Type_of_reportTableAdapter tbl_Type_of_reportTableAdapter;
         private System.Windows.Forms.GroupBox groupBox_Type_of_time;
-        private MaterialSkin.Controls.MaterialRadioButton rbutton_Time;
-        private MaterialSkin.Controls.MaterialRadioButton rbutton_Year;
+        private MaterialSkin.Controls.MaterialRadioButton rbutton_ElCard;
+        private MaterialSkin.Controls.MaterialRadioButton rbutton_Visa;
         private MaterialSkin.Controls.MaterialRaisedButton button_Make_prognoz;
         private MaterialSkin.Controls.MaterialLabel label_path_name;
         private MaterialSkin.Controls.MaterialRaisedButton button_Edit_path_directory;
