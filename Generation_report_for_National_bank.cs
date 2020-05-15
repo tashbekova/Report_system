@@ -277,7 +277,6 @@ namespace Report_system
                 con.Open();
                 excelworksheet = (Excel.Worksheet)excelsheets.get_Item(1);
                 excelworksheet.Activate();
-                string Table_name = "";
                 string Table_name_infe = "tbl_Report_Infe";
                 decimal Summa_Infe_Halyk_Kyrgyz_card = 0;
                 decimal Summa_Infe_Halyk_Kazakh_card = 0;

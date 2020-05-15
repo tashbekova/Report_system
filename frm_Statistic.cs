@@ -105,6 +105,11 @@ namespace Report_system
                     else if (rbutton_Type_of_card.Checked == true)
                     { 
                         column = "Type_of_card";
+                        if(report=="Report Infe")
+                        {
+                            MessageBox.Show("Выберите другой тип статистики,не по типам карт.Этот вид не поддерживается Элкарт");
+                            return;
+                        }
                     }
                     else if (rbutton_Device.Checked == true)
                     { 
@@ -122,6 +127,10 @@ namespace Report_system
                     else if (report == "Report R")
                     {
                         Table_name = "tbl_Report_R";
+                    }
+                    else if(report=="Report Infe")
+                    {
+                        Table_name = "tbl_Report_Infe";
                     }
                     Check check_data = new Check();
                     int check = 0;

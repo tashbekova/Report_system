@@ -139,6 +139,7 @@
             this.button_Edit_path_directory.TabIndex = 18;
             this.button_Edit_path_directory.Text = "Изменить папку ";
             this.button_Edit_path_directory.UseVisualStyleBackColor = true;
+            this.button_Edit_path_directory.Click += new System.EventHandler(this.button_Edit_path_directory_Click_1);
             // 
             // label_path_directory
             // 

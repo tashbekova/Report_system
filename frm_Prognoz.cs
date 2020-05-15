@@ -230,5 +230,10 @@ namespace Report_system
         {
 
         }
+
+        private void button_Edit_path_directory_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

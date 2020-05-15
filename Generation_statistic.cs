@@ -77,13 +77,20 @@ namespace Report_system
                             data2 = Convert.ToDecimal(dt.Rows[rowInd].ItemArray[collInd]);
                             excelworksheet.Cells[rowInd + 3, collInd + 1] = data2;
                         }
-                        else
+                        else if(column== "Device" && collInd==0)
                         {
-                            data = dt.Rows[rowInd].ItemArray[collInd].ToString();
+                            data = dt.Rows[rowInd].ItemArray[collInd].ToString()+"b";
                             excelworksheet.Cells[rowInd + 3, collInd + 1] = data;
                         }
+                        else
+                        {
+                            data = dt.Rows[rowInd].ItemArray[collInd].ToString() ;
+                            excelworksheet.Cells[rowInd + 3, collInd + 1] = data;
+                        }
+
                     }
                 }
+               // excelworksheet.get_Range("A2", "A" + excelworksheet.UsedRange.Rows.Count.ToString()).NumberFormat = "Текстовый";
                 Make_calculations(dt.Rows.Count,1);
                 Draw_line(1);
                 excelworksheet.Cells[1, 1].Rows.RowHeight = 70;
@@ -110,7 +117,7 @@ namespace Report_system
                             data2 = Convert.ToDecimal(dt2.Rows[rowInd].ItemArray[collInd]);
                             excelworksheet.Cells[rowInd + 3, collInd + 1] = data2;
                         }
-                        else
+                        else 
                         {
                             data = dt2.Rows[rowInd].ItemArray[collInd].ToString();
                             excelworksheet.Cells[rowInd + 3, collInd + 1] = data;
@@ -210,6 +217,11 @@ namespace Report_system
                         {
                             data2 = Convert.ToDecimal(dt.Rows[rowInd].ItemArray[collInd]);
                             excelworksheet.Cells[rowInd + 3, collInd + 1] = data2;
+                        }
+                        else if(column=="Device" && collInd==0)
+                        {
+                            data = dt.Rows[rowInd].ItemArray[collInd].ToString()+"b";
+                            excelworksheet.Cells[rowInd + 3, collInd + 1] = data;
                         }
                         else
                         {
@@ -312,6 +324,17 @@ namespace Report_system
                 con.Open();
                 if (flag_full_data == false)
                 {
+                    if(Table_name=="tbl_Report_Infe")
+                    {
+                        query = "SELECT " +
+                     Table_name + "." + column + " AS \"" + title + "\", " +
+                    "SUM(" + Table_name + ".Summa) AS \"Сумма\"" +
+                     " FROM " + Table_name +
+                     " WHERE YEAR(" + Table_name + ".Posting_date)=" + year +
+                     " GROUP BY " + Table_name + "." + column +
+                     " ORDER BY Сумма DESC";
+                    }
+                    else
                       query = "SELECT " +
                       Table_name + "." + column + " AS \"" + title + "\", " +
                      "SUM(" + Table_name + ".Account_amount) AS \"Сумма\"," +
@@ -323,7 +346,17 @@ namespace Report_system
                 }
                 else if(flag_full_data==true)
                 {
-                    query = "SELECT " +
+                    if (Table_name == "tbl_Report_Infe")
+                    {
+                        query = "SELECT " +
+                        Table_name + "." + column + " AS \"" + title + "\", " +
+                        Table_name + ".Summa AS \"Сумма\"" +
+                        " FROM " + Table_name +
+                        " WHERE YEAR(" + Table_name + ".Posting_date)=" + year +
+                        " ORDER BY " + column;
+                    }
+                    else
+                        query = "SELECT " +
                        Table_name + "." + column + " AS \"" + title + "\", " +
                        Table_name + ".Account_amount AS \"Сумма\"," +
                        Table_name + ".Number_of_trans AS \"Количество совершенных операций\" " +
@@ -369,7 +402,20 @@ namespace Report_system
                 con.Open();
                 if (flag_full_data == false)
                 {
+                    if (Table_name == "tbl_Report_Infe")
+                    {
                         query = "SELECT " +
+                       Table_name + "." + column + " AS \"" + title + "\", " +
+                       "SUM(" + Table_name + ".Summa) AS \"Сумма\"" +
+                       " FROM " + Table_name +
+                       " WHERE YEAR(" + Table_name + ".Posting_date)=" + year +
+                       "AND MONTH(" + Table_name + ".Posting_date)>=" + month +
+                       "AND MONTH(" + Table_name + ".Posting_date)<=" + month2 +
+                       " GROUP BY " + Table_name + "." + column +
+                      " ORDER BY Сумма DESC";
+                    }
+                    else
+                    query = "SELECT " +
                        Table_name + "." + column + " AS \"" + title + "\", " +
                        "SUM(" + Table_name + ".Account_amount) AS \"Сумма\"," +
                        "SUM(" + Table_name + ".Number_of_trans) AS \"Количество совершенных операций\" " +
@@ -382,6 +428,18 @@ namespace Report_system
                 }
                 else
                 {
+                    if(Table_name=="tbl_Report_Infe")
+                    {
+                        query = "SELECT " +
+                        Table_name + "." + column + " AS \"" + title + "\", " +
+                        Table_name + ".Summa AS \"Сумма\"" +
+                        " FROM " + Table_name +
+                        " WHERE YEAR(" + Table_name + ".Posting_date)=" + year +
+                        "AND MONTH(" + Table_name + ".Posting_date)>=" + month +
+                        "AND MONTH(" + Table_name + ".Posting_date)<=" + month2 +
+                       " ORDER BY " + column;
+                    }
+                    else
                     query = "SELECT " +
                        Table_name + "." + column + " AS \"" + title + "\", " +
                        Table_name + ".Account_amount AS \"Сумма\"," +
@@ -437,11 +495,14 @@ namespace Report_system
                 excelworksheet = (Excel.Worksheet)excelsheets.get_Item(number_of_page);
                 excelworksheet.Activate();
                 string formula = "=СУММ(B3:B"+(rows_count+2)+ ")";
-                string formula2 = "=СУММ(C3:C"+(rows_count+2)+ ")";
                 excelworksheet.Cells[(rows_count + 3), 2].FormulaLocal = formula;
-                excelworksheet.Cells[(rows_count + 3), 3].FormulaLocal = formula2;
                 excelworksheet.Cells[(rows_count + 3), 2].Interior.Color = Color.Red;
-                excelworksheet.Cells[(rows_count + 3), 3].Interior.Color = Color.Red;
+                if (Table_name != "tbl_Report_Infe")
+                {
+                    string formula2 = "=СУММ(C3:C" + (rows_count + 2) + ")";
+                    excelworksheet.Cells[(rows_count + 3), 3].FormulaLocal = formula2;
+                    excelworksheet.Cells[(rows_count + 3), 3].Interior.Color = Color.Red;
+                }
 
             }
             catch (Exception ex)
@@ -565,6 +626,11 @@ namespace Report_system
                     Table_name = "tbl_Report_R";
                 else if (column == "Device")
                     Table_name = "tbl_Total_Device_Report_R";
+            }
+            else if (report == "Report Infe")
+            {
+                device = "по Элкарт";
+                Table_name = "tbl_Report_Infe";
             }
             if (column == "Currency")
                 name = "валюте";
