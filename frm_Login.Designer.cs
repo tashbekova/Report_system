@@ -71,7 +71,7 @@
             // 
             this.txtLogin.Depth = 0;
             this.txtLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtLogin.Hint = "Login";
+            this.txtLogin.Hint = "Логин";
             this.txtLogin.Location = new System.Drawing.Point(126, 92);
             this.txtLogin.Margin = new System.Windows.Forms.Padding(4);
             this.txtLogin.MouseState = MaterialSkin.MouseState.HOVER;
@@ -87,7 +87,8 @@
             // txtPassword
             // 
             this.txtPassword.Depth = 0;
-            this.txtPassword.Hint = "Password";
+            this.txtPassword.Hint = "Пароль";
+            this.txtPassword.ImeMode = System.Windows.Forms.ImeMode.On;
             this.txtPassword.Location = new System.Drawing.Point(126, 190);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.MouseState = MaterialSkin.MouseState.HOVER;

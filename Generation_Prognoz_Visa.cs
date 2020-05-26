@@ -166,8 +166,8 @@ namespace Report_system
                 excelapp.UserControl = true;
 
                 //excelapp.DefaultFilePath = path;
-                // excelworkbook.Saved = true;
-                //excelworkbook.SaveAs(path);
+                excelworkbook.Saved = true;
+                excelworkbook.SaveAs(path);
 
                 ////Отсоединяемся от Excel
                 ReleaseObject(excelrange);

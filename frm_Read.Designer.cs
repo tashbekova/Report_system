@@ -126,7 +126,7 @@
             // button_Read
             // 
             this.button_Read.Depth = 0;
-            this.button_Read.Location = new System.Drawing.Point(118, 202);
+            this.button_Read.Location = new System.Drawing.Point(168, 202);
             this.button_Read.MouseState = MaterialSkin.MouseState.HOVER;
             this.button_Read.Name = "button_Read";
             this.button_Read.Primary = true;

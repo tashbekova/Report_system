@@ -37,7 +37,7 @@ namespace Report_system
 
         private async void button_Read_Click(object sender, EventArgs e)
         {
-            openFileDialog1.Filter = "Text files(*.txt)|*.txt|All files(*.*)|*.*";
+            openFileDialog1.Filter = "Text files(*.txt)|*.txt";
             try
             {
                 //Виден прогресс бар
@@ -54,7 +54,7 @@ namespace Report_system
                     string extencion= Path.GetExtension(openFileDialog1.FileName);
                     if (extencion!=".txt")
                     {
-                        MessageBox.Show("ВЫберите текстовый файл.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Выберите текстовый файл.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                     //Показываем на форме названия считываемого файла
@@ -231,7 +231,7 @@ namespace Report_system
                                     Read_report_Infe report = new Read_report_Infe();
                                     await Task.Run(() => report.Read_file(fileName));
                                 }
-                                else
+                                else 
                                 {
                                     Read_Report_A report = new Read_Report_A();
                                     await Task.Run(() => report.Read_file(fileName));

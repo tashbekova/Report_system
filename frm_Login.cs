@@ -8,8 +8,10 @@ using System.Data.OleDb;
 
 namespace Report_system
 {
+
     public partial class frm_Login : MaterialForm
     {
+        
         public frm_Login()
         {
             InitializeComponent();
@@ -40,12 +42,13 @@ namespace Report_system
             sda.Fill(dtbl);
             if(dtbl.Rows.Count==1)
             {
+                int role = Convert.ToInt32(dtbl.Rows[0][3]);
                 frm_Login form = new frm_Login();
                 form.Close();
                 //form.Hide();
                 Frm_Home newform = new Frm_Home();
+                newform.role = role;
                 newform.Show();
-                //this.Close();
             }
             else
             {
@@ -63,6 +66,7 @@ namespace Report_system
             //form.Hide();
             Frm_Home newform = new Frm_Home();
             newform.Show();
+            newform.role = 0;
             //this.Close();
             /////
             //DataTable table = new OleDbEnumerator().GetElements();

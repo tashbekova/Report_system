@@ -95,6 +95,7 @@ namespace Report_system
                 Draw_line(1);
                 excelworksheet.Cells[1, 1].Rows.RowHeight = 70;
 
+
                 excelworksheet = (Excel.Worksheet)excelsheets.get_Item(2);
                 excelworksheet.Activate();
 
@@ -149,8 +150,8 @@ namespace Report_system
 
                 // Make_calculations();
                 //excelapp.DefaultFilePath = path;
-                // excelworkbook.Saved = true;
-                //excelworkbook.SaveAs(path);
+                excelworkbook.Saved = true;
+                excelworkbook.SaveAs(path);
 
                 ////Отсоединяемся от Excel
                 ReleaseObject(excelrange);
@@ -288,8 +289,8 @@ namespace Report_system
 
                 Draw_Chart(column);
                 //excelapp.DefaultFilePath = path;
-                // excelworkbook.Saved = true;
-                //excelworkbook.SaveAs(path);
+                excelworkbook.Saved = true;
+                excelworkbook.SaveAs(path);
 
                 ////Отсоединяемся от Excel
                 ReleaseObject(excelrange);
@@ -396,10 +397,10 @@ namespace Report_system
             SqlConnection con = new SqlConnection(ConnectionString);
 
             DataTable dt = new DataTable();
-            string query = "";
             try
             {
                 con.Open();
+                string query;
                 if (flag_full_data == false)
                 {
                     if (Table_name == "tbl_Report_Infe")
@@ -415,20 +416,20 @@ namespace Report_system
                       " ORDER BY Сумма DESC";
                     }
                     else
-                    query = "SELECT " +
-                       Table_name + "." + column + " AS \"" + title + "\", " +
-                       "SUM(" + Table_name + ".Account_amount) AS \"Сумма\"," +
-                       "SUM(" + Table_name + ".Number_of_trans) AS \"Количество совершенных операций\" " +
-                       " FROM " + Table_name +
-                       " WHERE YEAR(" + Table_name + ".Posting_date)=" + year +
-                       "AND MONTH(" + Table_name + ".Posting_date)>=" + month +
-                       "AND MONTH(" + Table_name + ".Posting_date)<=" + month2 +
-                       " GROUP BY " + Table_name + "." + column +
-                      " ORDER BY Сумма DESC";
+                        query = "SELECT " +
+                           Table_name + "." + column + " AS \"" + title + "\", " +
+                           "SUM(" + Table_name + ".Account_amount) AS \"Сумма\"," +
+                           "SUM(" + Table_name + ".Number_of_trans) AS \"Количество совершенных операций\" " +
+                           " FROM " + Table_name +
+                           " WHERE YEAR(" + Table_name + ".Posting_date)=" + year +
+                           "AND MONTH(" + Table_name + ".Posting_date)>=" + month +
+                           "AND MONTH(" + Table_name + ".Posting_date)<=" + month2 +
+                           " GROUP BY " + Table_name + "." + column +
+                          " ORDER BY Сумма DESC";
                 }
                 else
                 {
-                    if(Table_name=="tbl_Report_Infe")
+                    if (Table_name == "tbl_Report_Infe")
                     {
                         query = "SELECT " +
                         Table_name + "." + column + " AS \"" + title + "\", " +
@@ -440,15 +441,15 @@ namespace Report_system
                        " ORDER BY " + column;
                     }
                     else
-                    query = "SELECT " +
-                       Table_name + "." + column + " AS \"" + title + "\", " +
-                       Table_name + ".Account_amount AS \"Сумма\"," +
-                       Table_name + ".Number_of_trans AS \"Количество совершенных операций\" " +
-                       " FROM " + Table_name +
-                       " WHERE YEAR(" + Table_name + ".Posting_date)=" + year +
-                       "AND MONTH(" + Table_name + ".Posting_date)>=" + month +
-                       "AND MONTH(" + Table_name + ".Posting_date)<=" + month2 +
-                      " ORDER BY "+column;
+                        query = "SELECT " +
+                           Table_name + "." + column + " AS \"" + title + "\", " +
+                           Table_name + ".Account_amount AS \"Сумма\"," +
+                           Table_name + ".Number_of_trans AS \"Количество совершенных операций\" " +
+                           " FROM " + Table_name +
+                           " WHERE YEAR(" + Table_name + ".Posting_date)=" + year +
+                           "AND MONTH(" + Table_name + ".Posting_date)>=" + month +
+                           "AND MONTH(" + Table_name + ".Posting_date)<=" + month2 +
+                          " ORDER BY " + column;
                 }
                 SqlCommand comm = new SqlCommand(query, con);
                 SqlDataAdapter da = new SqlDataAdapter(comm);

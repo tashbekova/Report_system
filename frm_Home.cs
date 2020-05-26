@@ -8,6 +8,7 @@ namespace Report_system
 {
     public partial class Frm_Home : MaterialForm
     {
+        public int role;
         public Frm_Home()
         {
             InitializeComponent();
@@ -83,15 +84,8 @@ namespace Report_system
         }
        
 
-        private void panelSubMenu_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
 
-        private void panelChildForm_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
 
         private void btnMakeRegularReport_Click(object sender, EventArgs e)
         {
@@ -105,10 +99,7 @@ namespace Report_system
             OpenChildForm<frm_Generation_report>();
         }
 
-        private void panelRequestSubMenu_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
 
         private void button_Show_List_Reports_Click(object sender, EventArgs e)
         {
@@ -135,8 +126,15 @@ namespace Report_system
 
         private void button_Settings_Click(object sender, EventArgs e)
         {
-            HideSubMenu();
-            OpenChildForm<frm_Settings>();
+            if (role == 1)
+            {
+                HideSubMenu();
+                OpenChildForm<frm_Settings>();
+            }
+            else
+            {
+                MessageBox.Show("Только администратор может заходить");
+            }
         }
     }
 }

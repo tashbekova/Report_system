@@ -98,7 +98,7 @@ namespace Report_system
                     check = check_data.Check_Data(Table_name);
                             if (check == 0)
                             {
-                                MessageBox.Show("Нет данных за этот период времени", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Нет данных по банкоматам", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                                 else if (check >= 1)
                                 {

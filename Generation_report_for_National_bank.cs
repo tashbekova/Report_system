@@ -149,7 +149,7 @@ namespace Report_system
                                 if ( Count_Infe_Cash_Halyk_Kyrgyz_card != 0)
                                 {
                                     Count_Excel_Cash_Halyk_Kyrgyz_card = Convert.ToInt32(excelworksheet.Cells[region_id + 130, 16].Value);
-                                    Count_Excel_Cash_Halyk_Kyrgyz_card = Count_Excel_Cash_Halyk_Kyrgyz_card + Count_Infe_Cash_Halyk_Kyrgyz_card;
+                                    Count_Excel_Cash_Halyk_Kyrgyz_card += Count_Infe_Cash_Halyk_Kyrgyz_card;
                                     excelworksheet.Cells[region_id + 130, 16] = Count_Excel_Cash_Halyk_Kyrgyz_card;
 
 
@@ -167,7 +167,7 @@ namespace Report_system
                                     if (Summa_Infe_Cash_Halyk_Kyrgyz_card != 0)
                                     {
                                         Summa_Excel_Cash_Halyk_Kyrgyz_card = Convert.ToDecimal(excelworksheet.Cells[region_id + 130, 17].Value);
-                                        Summa_Excel_Cash_Halyk_Kyrgyz_card = Summa_Excel_Cash_Halyk_Kyrgyz_card + (Summa_Infe_Cash_Halyk_Kyrgyz_card/1000);
+                                        Summa_Excel_Cash_Halyk_Kyrgyz_card += (Summa_Infe_Cash_Halyk_Kyrgyz_card/1000);
                                         excelworksheet.Cells[region_id + 130, 17] = Summa_Excel_Cash_Halyk_Kyrgyz_card;
                                     }
                                 }
@@ -188,7 +188,7 @@ namespace Report_system
                                 if (Count_Infe_Cash_Other_card != 0)
                                 {
                                     Count_Excel_Cash_Other_card = Convert.ToInt32(excelworksheet.Cells[region_id + 139, 16].Value);
-                                    Count_Excel_Cash_Other_card = Count_Excel_Cash_Other_card + Count_Infe_Cash_Other_card;
+                                    Count_Excel_Cash_Other_card += Count_Infe_Cash_Other_card;
                                     excelworksheet.Cells[region_id + 139, 16] = Count_Excel_Cash_Other_card;
 
                                     string query_Sum_Other_Card = "SELECT " +
@@ -206,7 +206,7 @@ namespace Report_system
                                     if (Summa_Infe_Cash_Other_card != 0)
                                     {
                                         Summa_Excel_Cash_Other_card = Convert.ToDecimal(excelworksheet.Cells[region_id + 139, 17].Value);
-                                        Summa_Excel_Cash_Other_card = Summa_Excel_Cash_Other_card + (Summa_Infe_Cash_Other_card/1000);
+                                        Summa_Excel_Cash_Other_card += (Summa_Infe_Cash_Other_card/1000);
                                         excelworksheet.Cells[region_id + 139, 17] = Summa_Excel_Cash_Other_card;
                                     }
                                 }
@@ -225,7 +225,7 @@ namespace Report_system
                                 if (Count_Infe_Cash_Halyk_Kazakh_card != 0)
                                 {
                                     Count_Excel_Cash_Halyk_Kazakh_card = Convert.ToInt32(excelworksheet.Cells[region_id + 148, 16].Value);
-                                    Count_Excel_Cash_Halyk_Kazakh_card = Count_Excel_Cash_Halyk_Kazakh_card + Count_Infe_Cash_Halyk_Kazakh_card;
+                                    Count_Excel_Cash_Halyk_Kazakh_card += Count_Infe_Cash_Halyk_Kazakh_card;
                                     excelworksheet.Cells[region_id + 148, 16] = Count_Excel_Cash_Halyk_Kazakh_card;
 
                                     string query_Sum_Kazakh_Card = "SELECT " +
@@ -241,7 +241,7 @@ namespace Report_system
                                     if (Summa_Infe_Cash_Halyk_Kazakh_card != 0)
                                     {
                                         Summa_Excel_Cash_Halyk_Kazakh_card = Convert.ToDecimal(excelworksheet.Cells[region_id + 148, 17].Value);
-                                        Summa_Excel_Cash_Halyk_Kazakh_card = Summa_Excel_Cash_Halyk_Kazakh_card + (Summa_Infe_Cash_Halyk_Kazakh_card/1000);
+                                        Summa_Excel_Cash_Halyk_Kazakh_card += (Summa_Infe_Cash_Halyk_Kazakh_card/1000);
                                         excelworksheet.Cells[region_id + 148, 17] = Summa_Excel_Cash_Halyk_Kazakh_card;
                                     }
                                 }
@@ -319,7 +319,7 @@ namespace Report_system
                                 if (Count_Infe_Halyk_Kyrgyz_card != 0)
                                 {
                                     Count_Excel_Halyk_Kyrgyz_card = Convert.ToInt32(excelworksheet.Cells[region_id + 130, 18].Value);
-                                    Count_Excel_Halyk_Kyrgyz_card = Count_Excel_Halyk_Kyrgyz_card + Count_Infe_Halyk_Kyrgyz_card;
+                                    Count_Excel_Halyk_Kyrgyz_card += Count_Infe_Halyk_Kyrgyz_card;
                                     excelworksheet.Cells[region_id + 130, 18] = Count_Excel_Halyk_Kyrgyz_card;
 
 
@@ -337,7 +337,7 @@ namespace Report_system
                                     if (Summa_Infe_Halyk_Kyrgyz_card != 0)
                                     {
                                         Summa_Excel_Halyk_Kyrgyz_card = Convert.ToDecimal(excelworksheet.Cells[region_id + 130, 19].Value);
-                                        Summa_Excel_Halyk_Kyrgyz_card = Summa_Excel_Halyk_Kyrgyz_card + (Summa_Infe_Halyk_Kyrgyz_card / 1000);
+                                        Summa_Excel_Halyk_Kyrgyz_card += (Summa_Infe_Halyk_Kyrgyz_card / 1000);
                                         excelworksheet.Cells[region_id + 130, 19] = Summa_Excel_Halyk_Kyrgyz_card;
                                     }
                                 }
@@ -358,7 +358,7 @@ namespace Report_system
                                 if (Count_Infe_Other_card != 0)
                                 {
                                     Count_Excel_Other_card = Convert.ToInt32(excelworksheet.Cells[region_id + 139, 18].Value);
-                                    Count_Excel_Other_card = Count_Excel_Other_card + Count_Infe_Other_card;
+                                    Count_Excel_Other_card += Count_Infe_Other_card;
                                     excelworksheet.Cells[region_id + 139, 18] = Count_Excel_Other_card;
 
                                     string query_Sum_Other_Card = "SELECT " +
@@ -376,7 +376,7 @@ namespace Report_system
                                     if (Summa_Infe_Other_card != 0)
                                     {
                                         Summa_Excel_Other_card = Convert.ToDecimal(excelworksheet.Cells[region_id + 139, 19].Value);
-                                        Summa_Excel_Other_card = Summa_Excel_Other_card + (Summa_Infe_Other_card / 1000);
+                                        Summa_Excel_Other_card += (Summa_Infe_Other_card / 1000);
                                         excelworksheet.Cells[region_id + 139, 19] = Summa_Excel_Other_card;
                                     }
                                 }
@@ -396,7 +396,7 @@ namespace Report_system
                                 if (Count_Infe_Halyk_Kazakh_card != 0)
                                 {
                                     Count_Excel_Halyk_Kazakh_card = Convert.ToInt32(excelworksheet.Cells[region_id + 148, 18].Value);
-                                    Count_Excel_Halyk_Kazakh_card = Count_Excel_Halyk_Kazakh_card + Count_Infe_Halyk_Kazakh_card;
+                                    Count_Excel_Halyk_Kazakh_card += Count_Infe_Halyk_Kazakh_card;
                                     excelworksheet.Cells[region_id + 148, 19] = Count_Excel_Halyk_Kazakh_card;
 
                                     string query_Sum_Kazakh_Card = "SELECT " +
@@ -412,7 +412,7 @@ namespace Report_system
                                     if (Summa_Infe_Halyk_Kazakh_card != 0)
                                     {
                                         Summa_Excel_Halyk_Kazakh_card = Convert.ToDecimal(excelworksheet.Cells[region_id + 148, 19].Value);
-                                        Summa_Excel_Halyk_Kazakh_card = Summa_Excel_Halyk_Kazakh_card + (Summa_Infe_Halyk_Kazakh_card / 1000);
+                                        Summa_Excel_Halyk_Kazakh_card += (Summa_Infe_Halyk_Kazakh_card / 1000);
                                         excelworksheet.Cells[region_id + 148, 19] = Summa_Excel_Halyk_Kazakh_card;
                                     }
                                 }
@@ -499,7 +499,7 @@ namespace Report_system
                                 if (Count_Halyk_Kyrgyz_card != 0)
                                 {
                                     Count_Excel_Halyk_Kyrgyz_card = Convert.ToInt32(excelworksheet.Cells[region_id + 167, 16].Value);
-                                    Count_Excel_Halyk_Kyrgyz_card = Count_Excel_Halyk_Kyrgyz_card + Count_Halyk_Kyrgyz_card;
+                                    Count_Excel_Halyk_Kyrgyz_card += Count_Halyk_Kyrgyz_card;
                                     excelworksheet.Cells[region_id + 167, 16] = Count_Excel_Halyk_Kyrgyz_card;
 
 
@@ -516,7 +516,7 @@ namespace Report_system
                                     if (Summa_Halyk_Kyrgyz_card != 0)
                                     {
                                         Summa_Excel_Halyk_Kyrgyz_card = Convert.ToDecimal(excelworksheet.Cells[region_id + 167, 17].Value);
-                                        Summa_Excel_Halyk_Kyrgyz_card = Summa_Excel_Halyk_Kyrgyz_card + (Summa_Halyk_Kyrgyz_card / 1000);
+                                        Summa_Excel_Halyk_Kyrgyz_card += (Summa_Halyk_Kyrgyz_card / 1000);
                                         excelworksheet.Cells[region_id + 167, 17] = Summa_Excel_Halyk_Kyrgyz_card;
                                     }
                                 }
@@ -535,7 +535,7 @@ namespace Report_system
                                 if (Count_Other_card != 0)
                                 {
                                     Count_Excel_Other_card = Convert.ToInt32(excelworksheet.Cells[region_id + 176, 16].Value);
-                                    Count_Excel_Other_card = Count_Excel_Other_card + Count_Other_card;
+                                    Count_Excel_Other_card += Count_Other_card;
                                     excelworksheet.Cells[region_id + 176, 16] = Count_Excel_Other_card;
 
                                     string query_Sum_Other_Card = "SELECT " +
@@ -551,7 +551,7 @@ namespace Report_system
                                     if (Summa_Other_card != 0)
                                     {
                                         Summa_Excel_Other_card = Convert.ToDecimal(excelworksheet.Cells[region_id + 176, 17].Value);
-                                        Summa_Excel_Other_card = Summa_Excel_Other_card + (Summa_Other_card / 1000);
+                                        Summa_Excel_Other_card += (Summa_Other_card / 1000);
                                         excelworksheet.Cells[region_id + 176, 17] = Summa_Excel_Other_card;
                                     }
                                 }
@@ -571,7 +571,7 @@ namespace Report_system
                                 if (Count_Halyk_Kazakh_card != 0)
                                 {
                                     Count_Excel_Halyk_Kazakh_card = Convert.ToInt32(excelworksheet.Cells[region_id + 185, 16].Value);
-                                    Count_Excel_Halyk_Kazakh_card = Count_Excel_Halyk_Kazakh_card + Count_Halyk_Kazakh_card;
+                                    Count_Excel_Halyk_Kazakh_card += Count_Halyk_Kazakh_card;
                                     excelworksheet.Cells[region_id + 185, 16] = Count_Excel_Halyk_Kazakh_card;
 
                                     string query_Sum_Kazakh_Card = "SELECT " +
@@ -588,7 +588,7 @@ namespace Report_system
                                     if (Summa_Halyk_Kazakh_card != 0)
                                     {
                                         Summa_Excel_Halyk_Kazakh_card = Convert.ToDecimal(excelworksheet.Cells[region_id + 185, 17].Value);
-                                        Summa_Excel_Halyk_Kazakh_card = Summa_Excel_Halyk_Kazakh_card + (Summa_Halyk_Kazakh_card / 1000);
+                                        Summa_Excel_Halyk_Kazakh_card += (Summa_Halyk_Kazakh_card / 1000);
                                         excelworksheet.Cells[region_id + 185, 17] = Summa_Excel_Halyk_Kazakh_card;
                                     }
                                 }
@@ -657,7 +657,7 @@ namespace Report_system
                                 if (Count_Halyk_Kyrgyz_card != 0)
                                 {
                                     Count_Excel_Halyk_Kyrgyz_card = Convert.ToInt32(excelworksheet.Cells[region_id + 167, 18].Value);
-                                    Count_Excel_Halyk_Kyrgyz_card = Count_Excel_Halyk_Kyrgyz_card + Count_Halyk_Kyrgyz_card;
+                                    Count_Excel_Halyk_Kyrgyz_card += Count_Halyk_Kyrgyz_card;
                                     excelworksheet.Cells[region_id + 167, 18] = Count_Excel_Halyk_Kyrgyz_card;
 
 
@@ -674,7 +674,7 @@ namespace Report_system
                                     if (Summa_Halyk_Kyrgyz_card != 0)
                                     {
                                         Summa_Excel_Halyk_Kyrgyz_card = Convert.ToDecimal(excelworksheet.Cells[region_id + 167, 19].Value);
-                                        Summa_Excel_Halyk_Kyrgyz_card = Summa_Excel_Halyk_Kyrgyz_card + (Summa_Halyk_Kyrgyz_card / 1000);
+                                        Summa_Excel_Halyk_Kyrgyz_card += (Summa_Halyk_Kyrgyz_card / 1000);
                                         excelworksheet.Cells[region_id + 167, 19] = Summa_Excel_Halyk_Kyrgyz_card;
                                     }
                                 }
@@ -693,7 +693,7 @@ namespace Report_system
                                 if (Count_Other_card != 0)
                                 {
                                     Count_Excel_Other_card = Convert.ToInt32(excelworksheet.Cells[region_id + 176, 18].Value);
-                                    Count_Excel_Other_card = Count_Excel_Other_card + Count_Other_card;
+                                    Count_Excel_Other_card += Count_Other_card;
                                     excelworksheet.Cells[region_id + 176, 18] = Count_Excel_Other_card;
 
                                     string query_Sum_Other_Card = "SELECT " +
@@ -709,7 +709,7 @@ namespace Report_system
                                     if (Summa_Other_card != 0)
                                     {
                                         Summa_Excel_Other_card = Convert.ToDecimal(excelworksheet.Cells[region_id + 176, 19].Value);
-                                        Summa_Excel_Other_card = Summa_Excel_Other_card + (Summa_Other_card / 1000);
+                                        Summa_Excel_Other_card += (Summa_Other_card / 1000);
                                         excelworksheet.Cells[region_id + 176, 19] = Summa_Excel_Other_card;
                                     }
                                 }
@@ -729,7 +729,7 @@ namespace Report_system
                                 if (Count_Halyk_Kazakh_card != 0)
                                 {
                                     Count_Excel_Halyk_Kazakh_card = Convert.ToInt32(excelworksheet.Cells[region_id + 185, 18].Value);
-                                    Count_Excel_Halyk_Kazakh_card = Count_Excel_Halyk_Kazakh_card + Count_Halyk_Kazakh_card;
+                                    Count_Excel_Halyk_Kazakh_card += Count_Halyk_Kazakh_card;
                                     excelworksheet.Cells[region_id + 185, 18] = Count_Excel_Halyk_Kazakh_card;
 
                                     string query_Sum_Kazakh_Card = "SELECT " +
@@ -746,7 +746,7 @@ namespace Report_system
                                     if (Summa_Halyk_Kazakh_card != 0)
                                     {
                                         Summa_Excel_Halyk_Kazakh_card = Convert.ToDecimal(excelworksheet.Cells[region_id + 185, 19].Value);
-                                        Summa_Excel_Halyk_Kazakh_card = Summa_Excel_Halyk_Kazakh_card + (Summa_Halyk_Kazakh_card / 1000);
+                                        Summa_Excel_Halyk_Kazakh_card += (Summa_Halyk_Kazakh_card / 1000);
                                         excelworksheet.Cells[region_id + 185, 19] = Summa_Excel_Halyk_Kazakh_card;
                                     }
                                 }
@@ -815,7 +815,7 @@ namespace Report_system
                                 if (Count_Infe_Cash_Halyk_Kyrgyz_card != 0)
                                 {
                                     Count_Excel_Cash_Halyk_Kyrgyz_card = Convert.ToInt32(excelworksheet.Cells[region_id + 115, 10].Value);
-                                    Count_Excel_Cash_Halyk_Kyrgyz_card = Count_Excel_Cash_Halyk_Kyrgyz_card + Count_Infe_Cash_Halyk_Kyrgyz_card;
+                                    Count_Excel_Cash_Halyk_Kyrgyz_card += Count_Infe_Cash_Halyk_Kyrgyz_card;
                                     excelworksheet.Cells[region_id + 115, 10] = Count_Excel_Cash_Halyk_Kyrgyz_card;
 
 
@@ -833,7 +833,7 @@ namespace Report_system
                                     if (Summa_Infe_Cash_Halyk_Kyrgyz_card != 0)
                                     {
                                         Summa_Excel_Cash_Halyk_Kyrgyz_card = Convert.ToDecimal(excelworksheet.Cells[region_id + 115, 11].Value);
-                                        Summa_Excel_Cash_Halyk_Kyrgyz_card = Summa_Excel_Cash_Halyk_Kyrgyz_card + (Summa_Infe_Cash_Halyk_Kyrgyz_card / 1000);
+                                        Summa_Excel_Cash_Halyk_Kyrgyz_card += (Summa_Infe_Cash_Halyk_Kyrgyz_card / 1000);
                                         excelworksheet.Cells[region_id + 115, 11] = Summa_Excel_Cash_Halyk_Kyrgyz_card;
                                     }
                                 }
@@ -853,7 +853,7 @@ namespace Report_system
                                 if (Count_Infe_Cash_Halyk_Kyrgyz_card != 0)
                                 {
                                     Count_Excel_Cash_Halyk_Kyrgyz_card = Convert.ToInt32(excelworksheet.Cells[region_id + 115, 12].Value);
-                                    Count_Excel_Cash_Halyk_Kyrgyz_card = Count_Excel_Cash_Halyk_Kyrgyz_card + Count_Infe_Cash_Halyk_Kyrgyz_card;
+                                    Count_Excel_Cash_Halyk_Kyrgyz_card += Count_Infe_Cash_Halyk_Kyrgyz_card;
                                     excelworksheet.Cells[region_id + 115, 12] = Count_Excel_Cash_Halyk_Kyrgyz_card;
 
 
@@ -871,7 +871,7 @@ namespace Report_system
                                     if (Summa_Infe_Cash_Halyk_Kyrgyz_card != 0)
                                     {
                                         Summa_Excel_Cash_Halyk_Kyrgyz_card = Convert.ToDecimal(excelworksheet.Cells[region_id + 115, 13].Value);
-                                        Summa_Excel_Cash_Halyk_Kyrgyz_card = Summa_Excel_Cash_Halyk_Kyrgyz_card + (Summa_Infe_Cash_Halyk_Kyrgyz_card / 1000);
+                                        Summa_Excel_Cash_Halyk_Kyrgyz_card += (Summa_Infe_Cash_Halyk_Kyrgyz_card / 1000);
                                         excelworksheet.Cells[region_id + 115, 13] = Summa_Excel_Cash_Halyk_Kyrgyz_card;
                                     }
                                 }
@@ -939,7 +939,7 @@ namespace Report_system
                                 if (Count_Infe_Halyk_Kyrgyz_card != 0)
                                 {
                                     Count_Excel_Halyk_Kyrgyz_card = Convert.ToInt32(excelworksheet.Cells[region_id + 115, 15].Value);
-                                    Count_Excel_Halyk_Kyrgyz_card = Count_Excel_Halyk_Kyrgyz_card + Count_Infe_Halyk_Kyrgyz_card;
+                                    Count_Excel_Halyk_Kyrgyz_card += Count_Infe_Halyk_Kyrgyz_card;
                                     excelworksheet.Cells[region_id + 115, 15] = Count_Excel_Halyk_Kyrgyz_card;
 
 
@@ -957,7 +957,7 @@ namespace Report_system
                                     if (Summa_Infe_Halyk_Kyrgyz_card != 0)
                                     {
                                         Summa_Excel_Halyk_Kyrgyz_card = Convert.ToDecimal(excelworksheet.Cells[region_id + 115, 16].Value);
-                                        Summa_Excel_Halyk_Kyrgyz_card = Summa_Excel_Halyk_Kyrgyz_card + (Summa_Infe_Halyk_Kyrgyz_card / 1000);
+                                        Summa_Excel_Halyk_Kyrgyz_card += (Summa_Infe_Halyk_Kyrgyz_card / 1000);
                                         excelworksheet.Cells[region_id + 115, 16] = Summa_Excel_Halyk_Kyrgyz_card;
                                     }
                                 }
@@ -981,7 +981,7 @@ namespace Report_system
             ConnectionString = sql.Get_Connection_String();
             SqlConnection con = new SqlConnection(ConnectionString);
             System.Data.DataTable dt_Device = new System.Data.DataTable();
-            string column = "";
+            string column;
             if (Table_name == "tbl_ATM_Region" && flag_infe==true)
                 column = "Device_infe";
             else if(Table_name == "tbl_ATM_Region" && flag_infe == false)

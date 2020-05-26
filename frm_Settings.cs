@@ -55,7 +55,7 @@ namespace Report_system
             }
             if (rbutton_User.Checked==true)
             {
-                column = 3;
+                column = 4;
                 Table_name = "tbl_User";
                 Load_Data(Table_name, column);
             }
@@ -324,7 +324,7 @@ namespace Report_system
         {
             if (rbutton_User.Checked == true)
             {
-                Reload_Data("tbl_User", 3);
+                Reload_Data("tbl_User", 4);
             }
             else if (rbutton_Year.Checked == true)
             {

@@ -197,11 +197,11 @@ namespace Report_system
                                     path = path_directory + @"\" + year.ToString() + @"\" + report;
                                     if (Directory.Exists(path))
                                     {
-                                        path = path_directory + @"\" + year.ToString() + @"\" + report + @"\" + column.ToString() + "_" + month.ToString() + "/" +
-                                        year.ToString() + "-" + month2.ToString() + "/" + year.ToString() + "_" + report + ".xlsx";
+                                        path = path_directory + @"\" + year.ToString() + @"\" + report + @"\" + column.ToString() + "_" + month.ToString() + "." +
+                                        year.ToString() + "-" + month2.ToString() + "." + year.ToString() + "_" + report + ".xlsx";
 
                                         string path2 = path_directory + @"\" + year.ToString() + @"\" + report + @"\" + column.ToString() + "_" + month.ToString() +
-                                        "/" + year.ToString() + "-" + month2.ToString() + "/" + year.ToString() + "_" + report + ".xls";
+                                        "." + year.ToString() + "-" + month2.ToString() + "." + year.ToString() + "_" + report + ".xls";
                                         if (System.IO.File.Exists(path))
                                         {
                                             // pb_Status.PerformStep();
@@ -230,7 +230,7 @@ namespace Report_system
                                         //pb_Status.PerformStep();
                                         DirectoryInfo di = Directory.CreateDirectory(path);
                                         path = path_directory + @"\" + year.ToString() + @"\" + report + @"\" +
-                                        month.ToString() + "/" + year.ToString() + "-" + month2.ToString() + "/" + year.ToString() + "_" + report + ".xlsx";
+                                        month.ToString() + "." + year.ToString() + "-" + month2.ToString() + "." + year.ToString() + "_" + report + ".xlsx";
                                         // pb_Status.PerformStep();
                                         MessageBox.Show("Статистика еще не сформирована");
                                         //pb_Status.PerformStep();

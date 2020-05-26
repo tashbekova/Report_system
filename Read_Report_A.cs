@@ -8,7 +8,7 @@ using System.Numerics;
 
 namespace Report_system
 {
-    class Read_Report_A
+    public class Read_Report_A
     {
         private string string_Financial_value = "";
         private string string_Office_value = "";
@@ -1058,8 +1058,10 @@ namespace Report_system
         }
 
         //Поиск ID отчета,чтобы добавить в столбец Report_id,потому что там стоит связь
-        private void Find_Report(string File_name)
+        public BigInteger Find_Report(string File_name)
         {
+            Connection sql = new Connection();
+            ConnectionString = sql.Get_Connection_String();
             //Create Connection to SQL Server
             SqlConnection SQLConnection = new SqlConnection(ConnectionString);
             string Table_Name = "";
@@ -1085,10 +1087,13 @@ namespace Report_system
                 SqlCommand myCommand = new SqlCommand(query, SQLConnection);
                 BigInteger.TryParse((myCommand.ExecuteScalar().ToString()), out BigInteger ID_Report);
                 int_Report = ID_Report;
+                return int_Report;
             }
             catch (SqlException ex)
             {
+                
                 MessageBox.Show("Произошла ошибка при добавлении названия отчёта в БД   " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
             }
             finally
             {

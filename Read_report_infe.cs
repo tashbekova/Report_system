@@ -150,7 +150,7 @@ namespace Report_system
             }
         }
 
-        private void Find_Report(string File_name)
+        private BigInteger Find_Report(string File_name)
         {
             SqlConnection SQLConnection = new SqlConnection(ConnectionString);
             SQLConnection.Open();
@@ -164,10 +164,12 @@ namespace Report_system
                 SqlCommand myCommand = new SqlCommand(query, SQLConnection);
                 BigInteger.TryParse((myCommand.ExecuteScalar().ToString()), out BigInteger ID_Report);
                 int_Report = ID_Report;
+                return int_Report;
             }
             catch (SqlException ex)
             {
                 MessageBox.Show("Произошла ошибка при добавлении названия отчёта в БД   " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
             }
             finally
             {
