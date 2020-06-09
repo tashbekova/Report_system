@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace Report_system
 {
@@ -23,11 +24,23 @@ namespace Report_system
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "report_SystemDataSet.tbl_Type_of_report". При необходимости она может быть перемещена или удалена.
-            this.tbl_Type_of_reportTableAdapter.Fill(this.report_SystemDataSet.tbl_Type_of_report);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "report_SystemDataSet.tbl_Name_of_report". При необходимости она может быть перемещена или удалена.
+            this.tbl_Name_of_reportTableAdapter.Fill(this.report_SystemDataSet.tbl_Name_of_report);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "report_SystemDataSet.tbl_Year". При необходимости она может быть перемещена или удалена.
+            this.tbl_YearTableAdapter.Fill(this.report_SystemDataSet.tbl_Year);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "report_SystemDataSet.tbl_Month". При необходимости она может быть перемещена или удалена.
             this.tbl_MonthTableAdapter.Fill(this.report_SystemDataSet.tbl_Month);
 
+            comboBox_month.SelectedIndex = DateTime.Now.Month - 1;
+            int index = comboBox_year.FindString((System.DateTime.Now.Year).ToString());
+            if (index < 0)
+            {
+                MessageBox.Show("Нынешнего года нет в Базе данных");
+            }
+            else
+            {
+                comboBox_year.SelectedIndex = index;
+            }
         }
 
         private void materialRaisedButton1_Click(object sender, EventArgs e)
@@ -52,50 +65,76 @@ namespace Report_system
         {
             if(comboBox_month.SelectedItem!=null && comboBox_year.SelectedItem!=null && comboBox_type_report.SelectedItem!=null)
             {
-                dataGridView_List_Reports.Rows.Clear();
-                string Table_name= "";
-                string report = comboBox_type_report.SelectedValue.ToString();
-                int month = Convert.ToInt32(comboBox_month.SelectedValue.ToString());
-                int year = Convert.ToInt32(comboBox_year.SelectedItem.ToString());
-                if(year>=2000)
+                try
                 {
-                    if (report=="Report A")
+                    pb_Status.Visible = true;
+                    dataGridView_List_Reports.Rows.Clear();
+                    string Table_name = "";
+                    string report = comboBox_type_report.SelectedValue.ToString();
+                    int month = Convert.ToInt32(comboBox_month.SelectedValue.ToString());
+                    int year = (int)((DataRowView)comboBox_year.SelectedItem)[comboBox_year.DisplayMember];
+                    if (year >= 2000)
                     {
-                        Table_name= "tbl_Result_Report_A";
+                        if (report == "Report A")
+                        {
+                            Table_name = "tbl_Result_Report_A";
+                        }
+                        else if (report == "Report H")
+                        {
+                            Table_name = "tbl_Result_Report_H";
+                        }
+                        else if (report == "Report R")
+                        {
+                            Table_name = "tbl_Result_Report_R";
+                        }
+                        else if(report=="Report Infe")
+                        {
+                            Table_name = "tbl_Result_Report_Infe";
+                        }
+
+                        Check check_data = new Check();
+                        int check = check_data.Check_Data(Table_name, month, year);
+                        if (check == 0)
+                        {
+                            MessageBox.Show("Нет добавленных отчетов на этот месяц", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else if (check >= 1)
+                        {
+                            dataGridView_List_Reports.Visible = true;
+                            Load_Data(Table_name, month, year);
+                        }
+                        else if (check == 2)
+                        {
+                            MessageBox.Show("Произошла ошибка", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
-                    Check check_data = new Check();
-                    int check=check_data.Check_Data(Table_name,month, year);
-                    if(check==0)
+                    else
                     {
-                        MessageBox.Show("Нет добавленных отчетов на этот месяц");
+                        MessageBox.Show("Введите правильный год", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    else if(check>=1)
-                    {
-                        Load_Data(Table_name,month,year);
-                    }
-                    else if(check==2)
-                    {
-                        MessageBox.Show("Произошла ошибка");
-                    }
+                    pb_Status.Visible = false;
                 }
-                else
+                catch(Exception ex)
                 {
-                    MessageBox.Show("Введите правильный год");
+                    pb_Status.Visible = false;
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                
-                //if(comboBox_month)
+                finally
+                {
+                    pb_Status.Visible = false;
+                }
             }
             else if(comboBox_type_report.SelectedItem==null)
             {
-                MessageBox.Show("Выберите вид отчета");
+                MessageBox.Show("Выберите вид отчета", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if(comboBox_month.SelectedItem==null)
             {
-                MessageBox.Show("Выберите месяц");
+                MessageBox.Show("Выберите месяц", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if(comboBox_year.SelectedItem==null)
             {
-                MessageBox.Show("Выберите год");
+                MessageBox.Show("Выберите год", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -103,7 +142,8 @@ namespace Report_system
         {
             try
             {
-                string ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'";
+                Connection sql = new Connection();
+                string ConnectionString = sql.Get_Connection_String();
                 SqlConnection myConnection = new SqlConnection(ConnectionString);
                 myConnection.Open();
                 string query = "Select * From " + Table_name +
@@ -128,7 +168,7 @@ namespace Report_system
             }
             catch(Exception ex)
             {
-                MessageBox.Show(""+ex);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

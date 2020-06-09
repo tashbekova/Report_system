@@ -4,11 +4,14 @@ using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System.Data.SqlClient;
+using System.Data.OleDb;
 
 namespace Report_system
 {
+
     public partial class frm_Login : MaterialForm
     {
+        
         public frm_Login()
         {
             InitializeComponent();
@@ -30,23 +33,26 @@ namespace Report_system
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            SqlConnection sqlcon = new SqlConnection(@"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'");
+            Connection sql = new Connection();
+            string ConnectionString = sql.Get_Connection_String();
+            SqlConnection sqlcon = new SqlConnection(ConnectionString);
             string query = "Select * from tbl_User Where Login = '" + txtLogin.Text.Trim() + "' and Password = '" + txtPassword.Text.Trim() + "'";
             SqlDataAdapter sda = new SqlDataAdapter(query, sqlcon);
             DataTable dtbl = new DataTable();
             sda.Fill(dtbl);
             if(dtbl.Rows.Count==1)
             {
+                int role = Convert.ToInt32(dtbl.Rows[0][3]);
                 frm_Login form = new frm_Login();
                 form.Close();
                 //form.Hide();
                 Frm_Home newform = new Frm_Home();
+                newform.role = role;
                 newform.Show();
-                //this.Close();
             }
             else
             {
-                MessageBox.Show("Проверьте логин или пароль");
+                MessageBox.Show("Проверьте логин или пароль", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
           
@@ -54,13 +60,21 @@ namespace Report_system
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            
+
             frm_Login form = new frm_Login();
             form.Close();
             //form.Hide();
             Frm_Home newform = new Frm_Home();
             newform.Show();
+            newform.role = 0;
             //this.Close();
+            /////
+            //DataTable table = new OleDbEnumerator().GetElements();
+            //string inf = "";
+            //foreach (DataRow row in table.Rows)
+            //    inf += row["SOURCES_NAME"] + "\n";
+
+            //MessageBox.Show(inf);
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Report_system
 {
-    partial class frm_Generation
+    partial class frm_Generation_report
     {
         /// <summary>
         /// Required designer variable.
@@ -41,27 +41,32 @@
             this.reportSystemDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.report_SystemDataSet = new Report_system.Report_SystemDataSet();
             this.comboBox_year = new System.Windows.Forms.ComboBox();
+            this.tblYearBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.report_SystemDataSet1 = new Report_system.Report_SystemDataSet();
             this.comboBox_month = new System.Windows.Forms.ComboBox();
             this.tblMonthBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pb_Status = new System.Windows.Forms.ProgressBar();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.tbl_MonthTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_MonthTableAdapter();
             this.tbl_Type_of_reportTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_Type_of_reportTableAdapter();
+            this.tbl_YearTableAdapter = new Report_system.Report_SystemDataSetTableAdapters.tbl_YearTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblTypeofreportBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportSystemDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.report_SystemDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblYearBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report_SystemDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblMonthBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // materialRaisedButton1
             // 
             this.materialRaisedButton1.Depth = 0;
-            this.materialRaisedButton1.Location = new System.Drawing.Point(1083, 3);
+            this.materialRaisedButton1.Location = new System.Drawing.Point(1080, 12);
             this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialRaisedButton1.Name = "materialRaisedButton1";
             this.materialRaisedButton1.Primary = true;
-            this.materialRaisedButton1.Size = new System.Drawing.Size(154, 23);
+            this.materialRaisedButton1.Size = new System.Drawing.Size(154, 39);
             this.materialRaisedButton1.TabIndex = 0;
             this.materialRaisedButton1.Text = "Закрыть";
             this.materialRaisedButton1.UseVisualStyleBackColor = true;
@@ -70,11 +75,11 @@
             // button_Generation
             // 
             this.button_Generation.Depth = 0;
-            this.button_Generation.Location = new System.Drawing.Point(400, 352);
+            this.button_Generation.Location = new System.Drawing.Point(440, 363);
             this.button_Generation.MouseState = MaterialSkin.MouseState.HOVER;
             this.button_Generation.Name = "button_Generation";
             this.button_Generation.Primary = true;
-            this.button_Generation.Size = new System.Drawing.Size(477, 39);
+            this.button_Generation.Size = new System.Drawing.Size(438, 39);
             this.button_Generation.TabIndex = 1;
             this.button_Generation.Text = "Формирование отчёта";
             this.button_Generation.UseVisualStyleBackColor = true;
@@ -103,7 +108,7 @@
             // 
             this.label_Name_of_form.AutoSize = true;
             this.label_Name_of_form.Font = new System.Drawing.Font("Georgia", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label_Name_of_form.Location = new System.Drawing.Point(444, 12);
+            this.label_Name_of_form.Location = new System.Drawing.Point(490, 2);
             this.label_Name_of_form.Name = "label_Name_of_form";
             this.label_Name_of_form.Size = new System.Drawing.Size(409, 43);
             this.label_Name_of_form.TabIndex = 12;
@@ -153,9 +158,9 @@
             this.comboBox_type_report.DataSource = this.tblTypeofreportBindingSource;
             this.comboBox_type_report.DisplayMember = "Type_of_report";
             this.comboBox_type_report.FormattingEnabled = true;
-            this.comboBox_type_report.Location = new System.Drawing.Point(133, 240);
+            this.comboBox_type_report.Location = new System.Drawing.Point(98, 257);
             this.comboBox_type_report.Name = "comboBox_type_report";
-            this.comboBox_type_report.Size = new System.Drawing.Size(267, 28);
+            this.comboBox_type_report.Size = new System.Drawing.Size(350, 28);
             this.comboBox_type_report.TabIndex = 8;
             this.comboBox_type_report.ValueMember = "Type_of_report";
             // 
@@ -176,26 +181,31 @@
             // 
             // comboBox_year
             // 
+            this.comboBox_year.DataSource = this.tblYearBindingSource;
+            this.comboBox_year.DisplayMember = "Name_of_year";
             this.comboBox_year.FormattingEnabled = true;
-            this.comboBox_year.Items.AddRange(new object[] {
-            "2019",
-            "2020",
-            "2021",
-            "2022",
-            "2023",
-            "2024"});
-            this.comboBox_year.Location = new System.Drawing.Point(808, 240);
+            this.comboBox_year.Location = new System.Drawing.Point(874, 257);
             this.comboBox_year.Name = "comboBox_year";
             this.comboBox_year.Size = new System.Drawing.Size(267, 28);
             this.comboBox_year.TabIndex = 7;
-            this.comboBox_year.Text = "Год";
+            this.comboBox_year.ValueMember = "Name_of_year";
+            // 
+            // tblYearBindingSource
+            // 
+            this.tblYearBindingSource.DataMember = "tbl_Year";
+            this.tblYearBindingSource.DataSource = this.report_SystemDataSet1;
+            // 
+            // report_SystemDataSet1
+            // 
+            this.report_SystemDataSet1.DataSetName = "Report_SystemDataSet";
+            this.report_SystemDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // comboBox_month
             // 
             this.comboBox_month.DataSource = this.tblMonthBindingSource;
             this.comboBox_month.DisplayMember = "Month_name";
             this.comboBox_month.FormattingEnabled = true;
-            this.comboBox_month.Location = new System.Drawing.Point(479, 240);
+            this.comboBox_month.Location = new System.Drawing.Point(528, 257);
             this.comboBox_month.Name = "comboBox_month";
             this.comboBox_month.Size = new System.Drawing.Size(267, 28);
             this.comboBox_month.TabIndex = 6;
@@ -208,10 +218,11 @@
             // 
             // pb_Status
             // 
-            this.pb_Status.ForeColor = System.Drawing.Color.Green;
-            this.pb_Status.Location = new System.Drawing.Point(268, 71);
+            this.pb_Status.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(137)))), ((int)(((byte)(123)))));
+            this.pb_Status.Location = new System.Drawing.Point(461, 71);
             this.pb_Status.Name = "pb_Status";
-            this.pb_Status.Size = new System.Drawing.Size(742, 23);
+            this.pb_Status.Size = new System.Drawing.Size(360, 23);
+            this.pb_Status.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.pb_Status.TabIndex = 5;
             this.pb_Status.Visible = false;
             // 
@@ -227,7 +238,11 @@
             // 
             this.tbl_Type_of_reportTableAdapter.ClearBeforeFill = true;
             // 
-            // frm_Generation
+            // tbl_YearTableAdapter
+            // 
+            this.tbl_YearTableAdapter.ClearBeforeFill = true;
+            // 
+            // frm_Generation_report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -236,7 +251,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frm_Generation";
+            this.Name = "frm_Generation_report";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Формироапние отчёта";
             this.Load += new System.EventHandler(this.Form3_Load);
@@ -245,6 +260,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tblTypeofreportBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reportSystemDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.report_SystemDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblYearBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report_SystemDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblMonthBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -270,5 +287,8 @@
         private MaterialSkin.Controls.MaterialLabel label_path_name;
         private System.Windows.Forms.Label label_Name_of_form;
         public System.Windows.Forms.ProgressBar pb_Status;
+        private Report_SystemDataSet report_SystemDataSet1;
+        private System.Windows.Forms.BindingSource tblYearBindingSource;
+        private Report_SystemDataSetTableAdapters.tbl_YearTableAdapter tbl_YearTableAdapter;
     }
 }

@@ -1,20 +1,36 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Report_system
 {
-    class Check
+    public class Check
     {
-        
+        Connection sql = new Connection();
+        string ConnectionString = "";
         public int Check_Report(string File_name)
         {
-           SqlConnection SQLConnection = new SqlConnection
+            ConnectionString = sql.Get_Connection_String();
+            SqlConnection SQLConnection = new SqlConnection(ConnectionString);
+            string Table_Name = "";
+            if (File_name.Contains("Infe"))
             {
-                ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'"
-            };
+                Table_Name = "dbo.tbl_Result_Report_Infe";
+            }
+            else if (File_name.Contains('A'))
+            {
+                Table_Name = "dbo.tbl_Result_Report_A";
+            }
+            else if (File_name.Contains('H'))
+            {
+                Table_Name = "dbo.tbl_Result_Report_H";
+            }
+            else if (File_name.Contains('R'))
+            {
+                Table_Name = "dbo.tbl_Result_Report_R";
+            }
             SQLConnection.Open();
-            string Table_Name = "dbo.tbl_Result_Report_A";
             string query =
                 "SELECT COUNT(*) FROM " +
                 Table_Name +
@@ -60,7 +76,7 @@ namespace Report_system
             catch (SqlException ex)
             {
                 SQLConnection.Close();
-                MessageBox.Show("Произошла ошибка при проверке" + ex);
+                MessageBox.Show("Произошла ошибка при проверке " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return 3;
             }
         }
@@ -79,8 +95,7 @@ namespace Report_system
             }
                 try
             {
-
-                string ConnectionString = @"Data Source=DESKTOP-7N0MIBC\SQLEXPRESS;Initial Catalog=Report_System;User ID=sa;Password='123'";
+                ConnectionString = sql.Get_Connection_String();
                 SqlConnection myConnection = new SqlConnection(ConnectionString);
                 myConnection.Open();
                 string query =
@@ -95,7 +110,98 @@ namespace Report_system
             }
             catch (Exception ex)
             {
-                MessageBox.Show("" + ex);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -2;
+            }
+
+        }
+
+        public int Check_Data(string Table_Name)
+        {
+            try
+            {
+                ConnectionString = sql.Get_Connection_String();
+                SqlConnection myConnection = new SqlConnection(ConnectionString);
+                myConnection.Open();
+                string query =
+                "SELECT COUNT(*) FROM " + Table_Name;
+                SqlCommand command = new SqlCommand(query, myConnection);
+                int rowcount = (int)command.ExecuteScalar();
+                myConnection.Close();
+                return rowcount;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -2;
+            }
+
+        }
+
+        public int Check_Data(string Table_Name,int year)
+        {
+            string column = "";
+            if (Table_Name.StartsWith("tbl_Report"))
+            {
+                column = "Posting_date";
+            }
+            else if (Table_Name.StartsWith("tbl_Result"))
+            {
+                column = "Date_of_read";
+            }
+            try
+            {
+                ConnectionString = sql.Get_Connection_String();
+                SqlConnection myConnection = new SqlConnection(ConnectionString);
+                myConnection.Open();
+                string query =
+                "SELECT COUNT(*) FROM " +
+                Table_Name +
+                " WHERE " +
+                "YEAR(" + column + ")= '" + year + "'";
+                SqlCommand command = new SqlCommand(query, myConnection);
+                int rowcount = (int)command.ExecuteScalar();
+                myConnection.Close();
+                return rowcount;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 2;
+            }
+
+        }
+
+
+        public int Check_Data(string Table_Name,int month,int month2, int year)
+        {
+            string column = "";
+            if (Table_Name.StartsWith("tbl_Report"))
+            {
+                column = "Posting_date";
+            }
+            else if (Table_Name.StartsWith("tbl_Result"))
+            {
+                column = "Date_of_read";
+            }
+            try
+            {
+                ConnectionString = sql.Get_Connection_String();
+                SqlConnection myConnection = new SqlConnection(ConnectionString);
+                myConnection.Open();
+                string query =
+                "SELECT COUNT(*) FROM " +
+                Table_Name +
+                " WHERE " +
+                "YEAR(" + column + ")= '" + year + "' and Month("+column+")>="+month+" and Month("+column+")<="+month2 ;
+                SqlCommand command = new SqlCommand(query, myConnection);
+                int rowcount = (int)command.ExecuteScalar();
+                myConnection.Close();
+                return rowcount;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return 2;
             }
 

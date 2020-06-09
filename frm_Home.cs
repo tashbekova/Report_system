@@ -8,6 +8,7 @@ namespace Report_system
 {
     public partial class Frm_Home : MaterialForm
     {
+        public int role;
         public Frm_Home()
         {
             InitializeComponent();
@@ -31,14 +32,11 @@ namespace Report_system
         private void CustomizeDesign()
         {
             panelRegularSubMenu.Visible = false;
-            panelRequestSubMenu.Visible = false;
         }
         private void HideSubMenu()
         {
-            if (panelRequestSubMenu.Visible == true)
-                panelRequestSubMenu.Visible = false;
-            if (panelRequestSubMenu.Visible == true)
-                panelRequestSubMenu.Visible = false;
+            if (panelRegularSubMenu.Visible == true)
+                panelRegularSubMenu.Visible = false;
         }
        private void ShowSubMenu(Panel subMenu)
         {
@@ -60,12 +58,6 @@ namespace Report_system
 
         #endregion
 
-        #region Request report
-        private void btnRequest_Click(object sender, EventArgs e)
-        {
-            ShowSubMenu(panelRequestSubMenu);
-        }
-        #endregion
 
 
         private void OpenChildForm<MiForm>()where MiForm:Form, new() 
@@ -92,15 +84,8 @@ namespace Report_system
         }
        
 
-        private void panelSubMenu_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
 
-        private void panelChildForm_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
 
         private void btnMakeRegularReport_Click(object sender, EventArgs e)
         {
@@ -111,13 +96,10 @@ namespace Report_system
         private void btn_Generation_Click(object sender, EventArgs e)
         {
             HideSubMenu();
-            OpenChildForm<frm_Generation>();
+            OpenChildForm<frm_Generation_report>();
         }
 
-        private void panelRequestSubMenu_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
 
         private void button_Show_List_Reports_Click(object sender, EventArgs e)
         {
@@ -132,7 +114,27 @@ namespace Report_system
 
         private void button_Prognoz_Click(object sender, EventArgs e)
         {
+            HideSubMenu();
+            OpenChildForm<frm_Prognoz>();
+        }
 
+        private void button_Statistika_Click(object sender, EventArgs e)
+        {
+            HideSubMenu();
+            OpenChildForm<frm_Statistic>();
+        }
+
+        private void button_Settings_Click(object sender, EventArgs e)
+        {
+            if (role == 1)
+            {
+                HideSubMenu();
+                OpenChildForm<frm_Settings>();
+            }
+            else
+            {
+                MessageBox.Show("Только администратор может заходить");
+            }
         }
     }
 }
